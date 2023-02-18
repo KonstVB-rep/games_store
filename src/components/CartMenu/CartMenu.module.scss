@@ -1,0 +1,33 @@
+@import '../../index';
+.menu {
+  width: max-content;
+  height: auto;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.90);
+  z-index: 1;
+  .orders{
+    flex-grow: 1;
+    padding: 5px 0;
+    border-bottom: 1px solid $color-white;
+    .grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr 2fr;;
+      gap: 20px;
+      & span:not(:first-child){
+        text-align: end;
+      }
+    }
+  }
+  .total{
+    display: flex;
+    justify-content: space-between;
+  }
+
+}

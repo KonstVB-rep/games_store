@@ -1,16 +1,11 @@
-:root {
-  --clr-body: #1b0c13;
-  --clr-white: #ffffff;
-}
-
 body {
   margin: 0;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var($color-body);
-  color: $color-white;
+  background-color: #1b0c13;
+  color: #ffffff;
 }
 
 code {
@@ -21,6 +16,7 @@ code {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: #ffffff;
 }
 
 button, a {
@@ -29,7 +25,7 @@ button, a {
 
 a {
   text-decoration: none;
-  color: $color-white;
+  color: #ffffff;
 }
 
 ul {
@@ -48,4 +44,13 @@ ul {
   text-decoration-thickness: 3px;
 }
 
-/*# sourceMappingURL=index.css.map */
+.item {
+  padding: 5px 0;
+  border-top: 1px solid #ffffff;
+}
+.item__title {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=CartMenuItem.module.css.map */

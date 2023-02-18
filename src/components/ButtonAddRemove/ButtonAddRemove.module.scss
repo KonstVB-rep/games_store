@@ -12,6 +12,7 @@
     font-size: 40px;
     border: none;
     line-height: 0;
+    transition: .3s;
     &:hover,
     &:focus-visible{
       transform: scale(1.2);
@@ -37,13 +38,13 @@
         display: inline-block;
         width: 20px;
         height: 4px;
-        background-color: var(--clr-white);
+        background-color: $color-white;
       }
     }
 
     &_add {
       background-color: $effect-color;
-      color: var(--clr-white);
+      color: $color-white;
 
       &:active {
         animation: pulseAdd 0.3s;

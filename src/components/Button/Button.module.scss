@@ -3,27 +3,15 @@
 .btn{
   position: relative;
   padding: 10px 25px;
+  max-width: 200px;
   background-color: $primary-color;
-  color:var(--clr-white);
+  color:$color-white;
   border:none;
   border-radius: 25px;
   text-transform: uppercase;
   transition: all 0.3s,outline 0.1s;
-  //&::before{
-  //  content: '-';
-  //  display: block;
-  //  position: absolute;
-  //  height: 50px;
-  //  width: 50px;
-  //  left: 0;
-  //  top:50%;
-  //  bottom: 0;
-  //  transform:translateY(-50%);
-  //  border-radius: 50%;
-  //  background-color: white;
-  //}
   &:hover,
-  &:focus{
+  &:focus-visible{
     background-color:$effect-color;
     box-shadow: inset 150px 0 0 0 $effect-color;
     transform: scale(1.1);

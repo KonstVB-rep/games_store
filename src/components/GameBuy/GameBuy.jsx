@@ -5,14 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addProduct,
   removeProduct,
-  selectCart,
+  selectAllItems,
 } from "../../store/cart/cartSlice";
 import { ruble } from "../../constants/currency";
 import ButtonAddRemove from "../ButtonAddRemove/ButtonAddRemove";
 
 const GameBuy = ({ game }) => {
   const dispatch = useDispatch();
-  const cart = useSelector(selectCart);
+  const cart = useSelector(selectAllItems);
 
   const addProductInCart = (e) => {
     e.stopPropagation();

@@ -1,13 +1,78 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1b0c13;
+  color: #ffffff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+}
+
+.App {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.active {
+  text-decoration-line: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 3px;
+}
+
 .cart {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
+}
+.cart::before {
+  content: attr(data-count);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: -15px;
+  top: -10px;
+  bottom: 0;
+  border-radius: 50%;
+  border: none;
+  background-color: indianred;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
 }
 .cart__icon {
   width: 45px;
   height: 45px;
   padding: 10px;
-  box-shadow: white 0 0 0 2px;
+  box-shadow: #ffffff 0 0 0 2px;
   border-radius: 50%;
 }
 .cart__icon:hover {
@@ -15,7 +80,7 @@
 }
 .cart__total-price {
   padding: 5px 20px;
-  box-shadow: white 0 0 0 2px;
+  box-shadow: #ffffff 0 0 0 2px;
   border-radius: 30px;
 }
 

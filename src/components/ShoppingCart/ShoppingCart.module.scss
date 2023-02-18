@@ -1,13 +1,32 @@
-
+@import '../../index';
 .cart{
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
+  &::before{
+    content: attr(data-count);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: -15px;
+    top:-10px;
+    bottom: 0;
+    border-radius: 50%;
+    border:none;
+    background-color:indianred;
+    color: $color-white;
+    font-weight: bold;
+    font-size: 18px;
+  }
   &__icon{
     width: 45px;
     height: 45px;
     padding: 10px;
-    box-shadow: white 0 0 0 2px;
+    box-shadow:  $color-white 0 0 0 2px;
     border-radius: 50%;
     &:hover{
       box-shadow: deeppink 0 0 0 4px ;
@@ -15,7 +34,7 @@
   }
   &__total-price{
     padding: 5px 20px;
-    box-shadow: white 0 0 0 2px;
+    box-shadow:  $color-white 0 0 0 2px;
     border-radius: 30px;
   }
 }
