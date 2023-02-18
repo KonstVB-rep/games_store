@@ -1,0 +1,22 @@
+
+.cart{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  &__icon{
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    box-shadow: white 0 0 0 2px;
+    border-radius: 50%;
+    &:hover{
+      box-shadow: deeppink 0 0 0 4px ;
+    }
+  }
+  &__total-price{
+    padding: 5px 20px;
+    box-shadow: white 0 0 0 2px;
+    border-radius: 30px;
+  }
+}

@@ -1,0 +1,12 @@
+.wrapper {
+  position: relative;
+  width: 320px;
+  height: 200px;
+  margin: 0;
+}
+.wrapper .img {
+  width: inherit;
+  height: inherit;
+}
+
+/*# sourceMappingURL=GamePoster.module.css.map */
