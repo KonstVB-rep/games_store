@@ -1,38 +1,32 @@
 import React from "react";
 import cn from "./GameCard.module.scss";
 import { GamePoster } from "../GameCover";
+import { GameBuy } from "../GameBuy";
+import { Genres } from "../Genres";
 
-const GameCard = ({
-  name,
-  genres,
-  img,
-  price,
-  rating,
-  ratingsCount,
-  released,
-  updated,
-}) => {
-  console.log(genres);
+const GameCard = (props) => {
+  const { name, genres, img, price, rating, ratingsCount, released } = props;
   return (
     <div className={cn["game-card"]} onClick={() => {}}>
       <GamePoster img={img} />
       <div className={cn.details}>
-        <span className={cn.title}>{name}</span>
-        <div className={cn.genres__list}>
-          {genres.length &&
-            genres.map((genre) => (
-              <span className={cn.genre} key={genre.id}>
-                {genre.name}
-              </span>
-            ))}
+        <p className={cn.title}>{name}</p>
+        <Genres genres={genres} />
+        <div className={cn.details__secondary}>
+          <p>
+            <span>Rating</span>
+            <span>{rating}</span>
+          </p>
+          <p>
+            <span>Ratings count:</span>
+            <span>{ratingsCount}</span>
+          </p>
+          <p>
+            <span>Release date:</span>
+            <span>{released}</span>
+          </p>
         </div>
-        <p>Rating: {rating} from 5</p>
-        <p>Ratings count: {ratingsCount}</p>
-        <p>Release date: {released}</p>
-        <div className={cn.purchase}>
-          {/*<GameBuy game={game} />*/}
-          {/*{price}*/}
-        </div>
+        <GameBuy games={props} />
       </div>
     </div>
   );

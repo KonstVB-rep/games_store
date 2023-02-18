@@ -48,4 +48,17 @@ ul {
   text-decoration-thickness: 3px;
 }
 
-/*# sourceMappingURL=index.css.map */
+.purchase {
+  display: flex;
+  align-items: baseline;
+  align-self: end;
+  padding: 2px 2px 2px 15px;
+  gap: 15px;
+  width: fit-content;
+  background-color: #e3e2e2;
+  color: #000000;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=GameBuy.module.css.map */

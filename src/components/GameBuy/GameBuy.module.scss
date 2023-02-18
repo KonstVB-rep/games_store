@@ -1,0 +1,14 @@
+@import '../../index';
+
+.purchase{
+  display: flex;
+  align-items: baseline;
+  align-self: end;
+  padding: 2px 2px 2px 15px;
+  gap: 15px;
+  width: fit-content;
+  background-color: #e3e2e2;
+  color: $color-black;
+  border-radius: 25px;
+  font-weight: bold;
+}

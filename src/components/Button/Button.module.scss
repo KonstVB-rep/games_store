@@ -1,0 +1,26 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #3d55a1;
+$effect-color: #5b955b;
+
+.btn{
+  padding: 10px 25px;
+  background-color: $primary-color;
+  color:var(--clr-white);
+  border:none;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s,outline 0.1s;
+  &:hover{
+    background-color:$effect-color;
+    box-shadow: inset 150px 0 0 0 $effect-color;
+    transform: scale(1.1);
+  }
+  &:active{
+    animation: pulse 0.3s;
+    box-shadow: 0 0 0 2em rgba(#fff,0);
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 $effect-color; }
+  }
+
+}

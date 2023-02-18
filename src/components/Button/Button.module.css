@@ -1,0 +1,25 @@
+.btn {
+  padding: 10px 25px;
+  background-color: #3d55a1;
+  color: var(--clr-white);
+  border: none;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s, outline 0.1s;
+}
+.btn:hover {
+  background-color: #5b955b;
+  box-shadow: inset 150px 0 0 0 #5b955b;
+  transform: scale(1.1);
+}
+.btn:active {
+  animation: pulse 0.3s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #5b955b;
+  }
+}
+
+/*# sourceMappingURL=Button.module.css.map */

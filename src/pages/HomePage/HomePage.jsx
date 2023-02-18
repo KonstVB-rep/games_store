@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { GAMES_URL } from "../../api";
 import { GameCard } from "../../components/GameCard";
-import { fetchGames, loadGames, selectAllGames } from "../../store/gamesSlice";
+import {
+  fetchGames,
+  loadGames,
+  selectAllGames,
+} from "../../store/games/gamesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import cn from "./HomePage.module.scss";
 
