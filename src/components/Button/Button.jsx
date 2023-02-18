@@ -1,7 +1,7 @@
 import React from "react";
 import cd from "./Button.module.scss";
 
-const Button = ({ children, btnClass, onClick }) => {
+const Button = ({ children, onClick }) => {
   return (
     <button className={cd.btn} onClick={onClick}>
       {children}

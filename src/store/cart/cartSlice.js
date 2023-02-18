@@ -2,23 +2,29 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: [],
+  initialState: {
+    cartItems: [],
+  },
   reducers: {
     addProduct: (state, action) => {
-      state.push(action.payload);
+      state.cartItems.push(action.payload);
     },
     removeProduct: (state, action) => {
-      const targetIdx = state.findIndex((item) => action.payload);
-      state.splice(targetIdx, 1);
+      const targetIndex = state.cartItems.findIndex(
+        (item) => item.id === action.payload
+      );
+      state.cartItems.splice(targetIndex, 1);
     },
   },
 });
 
 export const { addProduct, removeProduct } = cartSlice.actions;
-export const selectCart = (state) => state.cartList;
+export const selectCart = (state) => state.cart.cartItems;
 export const selectTotalPrice = (state) => {
-  return state.cart.length
-    ? state.cart.map((item) => item.price).reduce((acc, item) => acc + item, 0)
+  return state.cart.cartItems.length
+    ? state.cart.cartItems
+        .map((item) => item.price)
+        .reduce((acc, item) => acc + item, 0)
     : 0;
 };
 const cartReducer = cartSlice.reducer;

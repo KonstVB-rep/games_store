@@ -26,7 +26,7 @@ const GameCard = (props) => {
             <span>{released}</span>
           </p>
         </div>
-        <GameBuy games={props} />
+        <GameBuy game={props} />
       </div>
     </div>
   );

@@ -1,24 +1,45 @@
 import React from "react";
 import { Button } from "../Button";
 import cn from "./GameBuy.module.scss";
-import { useDispatch } from "react-redux";
-import { addProduct } from "../../store/cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addProduct,
+  removeProduct,
+  selectCart,
+} from "../../store/cart/cartSlice";
+import { ruble } from "../../constants/currency";
+import ButtonAddRemove from "../ButtonAddRemove/ButtonAddRemove";
 
-const GameBuy = ({ games }) => {
+const GameBuy = ({ game }) => {
   const dispatch = useDispatch();
-  const addProductInCart = () => {
-    dispatch(addProduct(games));
+  const cart = useSelector(selectCart);
+
+  const addProductInCart = (e) => {
+    e.stopPropagation();
+    dispatch(addProduct(game));
   };
+
+  const delProductInCart = (e) => {
+    e.stopPropagation();
+    dispatch(removeProduct(game.id));
+  };
+
+  const isIncludes = cart.some((item) => item.id === game.id);
+
   return (
     <div className={cn.purchase}>
-      <span className="price">{games.price} руб.</span>
-      <Button onClick={addProductInCart}>
-        В корзину
-        {/*  type={isItemInCart ? "secondary" : "primary" }*/}
-        {/*  onClick={handleClick}*/}
-        {/*>*/}
-        {/*  {isItemInCart ? "Убрать из корзины" : "В Корзину"}*/}
-      </Button>
+      <span>
+        {game.price} {ruble}
+      </span>
+      {!isIncludes ? (
+        <Button onClick={addProductInCart}>В корзину</Button>
+      ) : (
+        <ButtonAddRemove
+          gameId={game.id}
+          addProductInCart={addProductInCart}
+          delProductInCart={delProductInCart}
+        />
+      )}
     </div>
   );
 };

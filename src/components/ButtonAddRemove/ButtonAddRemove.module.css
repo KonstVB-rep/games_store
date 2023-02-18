@@ -50,29 +50,55 @@ ul {
   text-decoration-thickness: 3px;
 }
 
-.btn {
-  position: relative;
-  padding: 10px 25px;
-  background-color: #3d55a1;
-  color: var(--clr-white);
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wrapper .action {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  font-size: 40px;
   border: none;
-  border-radius: 25px;
-  text-transform: uppercase;
-  transition: all 0.3s, outline 0.1s;
+  line-height: 0;
 }
-.btn:hover, .btn:focus {
+.wrapper .action:hover, .wrapper .action:focus-visible {
+  transform: scale(1.2);
+}
+.wrapper .action_del {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: indianred;
+}
+.wrapper .action_del:active {
+  animation: pulseDel 0.3s;
+  box-shadow: 0 0 0 0.5em rgba(255, 255, 255, 0);
+}
+@keyframes pulseDel {
+  0% {
+    box-shadow: 0 0 0 0 indianred;
+  }
+}
+.wrapper .action_del span {
+  display: inline-block;
+  width: 20px;
+  height: 4px;
+  background-color: var(--clr-white);
+}
+.wrapper .action_add {
   background-color: #5b955b;
-  box-shadow: inset 150px 0 0 0 #5b955b;
-  transform: scale(1.1);
+  color: var(--clr-white);
 }
-.btn:active {
-  animation: pulse 0.3s;
-  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+.wrapper .action_add:active {
+  animation: pulseAdd 0.3s;
+  box-shadow: 0 0 0 0.5em rgba(255, 255, 255, 0);
 }
-@keyframes pulse {
+@keyframes pulseAdd {
   0% {
     box-shadow: 0 0 0 0 #5b955b;
   }
 }
 
-/*# sourceMappingURL=Button.module.css.map */
+/*# sourceMappingURL=ButtonAddRemove.module.css.map */

@@ -1,0 +1,71 @@
+@import '../../index';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .action {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    font-size: 40px;
+    border: none;
+    line-height: 0;
+    &:hover,
+    &:focus-visible{
+      transform: scale(1.2);
+    }
+
+    &_del {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: indianred;
+
+      &:active {
+        animation: pulseDel 0.3s;
+        box-shadow: 0 0 0 0.5em rgba(#fff, 0);
+      }
+      @keyframes pulseDel {
+        0% {
+          box-shadow: 0 0 0 0 indianred;
+        }
+      }
+
+      & span {
+        display: inline-block;
+        width: 20px;
+        height: 4px;
+        background-color: var(--clr-white);
+      }
+    }
+
+    &_add {
+      background-color: $effect-color;
+      color: var(--clr-white);
+
+      &:active {
+        animation: pulseAdd 0.3s;
+        box-shadow: 0 0 0 0.5em rgba(#fff, 0);
+      }
+      @keyframes pulseAdd {
+        0% {
+          box-shadow: 0 0 0 0 $effect-color;
+        }
+      }
+    }
+  }
+}
+//
+//@keyframes pulseDel {
+//  0% {
+//    box-shadow: 0 0 0 0 indianred;
+//  }
+//}
+//
+//@keyframes pulseAdd {
+//  0% {
+//    box-shadow: 0 0 0 0 $effect-color;
+//  }
+//}

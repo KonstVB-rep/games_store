@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { transformData } from "../../utils/transformData";
-import { useSelector } from "react-redux";
-import { GAMES_URL } from "../../api";
+import { GAMES_URL } from "../../constants/api";
 
 const initialState = {
   gamesList: [],

@@ -1,11 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { GAMES_URL } from "../../api";
+import React, { useEffect } from "react";
 import { GameCard } from "../../components/GameCard";
-import {
-  fetchGames,
-  loadGames,
-  selectAllGames,
-} from "../../store/games/gamesSlice";
+import { fetchGames, selectAllGames } from "../../store/games/gamesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import cn from "./HomePage.module.scss";
 

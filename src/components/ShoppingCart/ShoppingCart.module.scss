@@ -1,12 +1,11 @@
 
 .cart{
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 10px;
   &__icon{
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     padding: 10px;
     box-shadow: white 0 0 0 2px;
     border-radius: 50%;
