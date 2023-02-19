@@ -1,10 +1,11 @@
+@import '../../index';
 .game-card {
   display: flex;
   flex-direction: column;
   width: 320px;
   height: auto;
   background-color: rgb(36, 37, 41);
-  border-radius: 15px;
+  border-radius: $border-radius-m;
   overflow: hidden;
   cursor: pointer;
   box-shadow: #252323 0 0 10px 2px;
@@ -17,27 +18,12 @@
     gap: 5px;
 
     .title {
-      font-size: 18px;
+      font-size: 1.125rem;
       padding: 5px 0;
       font-weight: bold;
     }
-
-    .genres__list {
-      display: flex;
-      flex-wrap: wrap;
-      flex-grow: 1;
-      align-items: start;
-      gap: 5px;
-
-      .genre {
-        padding: 5px 10px;
-        border-radius: 15px;
-        background-color: #3a3838;
-      }
-    }
-
+    
     &__secondary {
-      font-size: 14px;
       padding: 5px 0;
 
       & p {

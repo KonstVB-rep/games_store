@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1b0c13;
+  background-color: rgba(0, 0, 0, 0.75);
   color: #ffffff;
 }
 
@@ -35,7 +35,7 @@ ul {
 .App {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 40px;
 }
 
 .active {
@@ -60,6 +60,10 @@ ul {
 }
 .purchase *:not(button) {
   color: #000000;
+}
+.purchase .btn_buy {
+  background-color: #3d55a1;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=GameBuy.module.css.map */

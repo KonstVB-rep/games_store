@@ -1,10 +1,10 @@
 import React from "react";
 import cn from "./CartMenu.module.scss";
 import { Button } from "../Button";
-import CartMenuItem from "../CartItem/CartMenuItem/CartMenuItem";
+import CartMenuItem from "./CartMenuItem/CartMenuItem";
 import { useSelector } from "react-redux";
 import { selectAllItems, selectTotalPrice } from "../../store/cart/cartSlice";
-import { ruble } from "../../constants/currency";
+import { currency } from "../../constants/currency";
 
 const CartMenu = () => {
   const totalPriceCart = useSelector(selectTotalPrice);
@@ -24,10 +24,10 @@ const CartMenu = () => {
       <div className={cn.total}>
         <span>Итого:</span>
         <span>
-          {totalPriceCart} {ruble}
+          {totalPriceCart} {currency}
         </span>
       </div>
-      <Button>Оформить заказ</Button>
+      <Button classname={cn.btn_cart}>Оформить заказ</Button>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import { HomePage } from "../pages/HomePage";
 import { AboutPage } from "../pages/AboutPage";
 import { UsersPage } from "../pages/UsersPage";
 import { CartPage } from "../pages/CartPage";
+import { GameSinglePage } from "../pages/SinglePage";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,16 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+        // children: [
+        //   {
+        //     path: "games/:name",
+        //     element: <GameSinglePage />,
+        //   },
+        // ],
+      },
+      {
+        path: "games/:name",
+        element: <GameSinglePage />,
       },
       {
         path: "/about",

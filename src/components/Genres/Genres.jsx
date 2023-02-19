@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "../GameCard/GameCard.module.scss";
+import cn from "./Genre.module.scss";
 
 const Genres = ({ genres }) => {
   return (

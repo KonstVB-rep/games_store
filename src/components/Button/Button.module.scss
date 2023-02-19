@@ -1,19 +1,16 @@
 @import '../../index';
-
 .btn{
   position: relative;
   padding: 10px 25px;
   max-width: 200px;
-  background-color: $primary-color;
-  color:$color-white;
   border:none;
-  border-radius: 25px;
+  border-radius: $border-radius-l;
   text-transform: uppercase;
   transition: all 0.3s,outline 0.1s;
   &:hover,
   &:focus-visible{
     background-color:$effect-color;
-    box-shadow: inset 150px 0 0 0 $effect-color;
+    box-shadow: inset 200px 0 0 0 $effect-color;
     transform: scale(1.1);
   }
   &:active{
@@ -23,5 +20,4 @@
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 $effect-color; }
   }
-
 }

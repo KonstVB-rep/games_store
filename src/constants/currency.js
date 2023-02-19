@@ -1,3 +1,6 @@
-export const ruble = "₽";
-export const dollar = "$";
-export const euro = "€";
+export const currenciesList = {
+  ruble: "₽",
+  dollar: "$",
+  euro: "€",
+};
+export const currency = currenciesList.ruble;

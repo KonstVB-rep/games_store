@@ -7,7 +7,7 @@ import {
   removeProduct,
   selectAllItems,
 } from "../../store/cart/cartSlice";
-import { ruble } from "../../constants/currency";
+import { currency } from "../../constants/currency";
 import ButtonAddRemove from "../ButtonAddRemove/ButtonAddRemove";
 
 const GameBuy = ({ game }) => {
@@ -29,10 +29,12 @@ const GameBuy = ({ game }) => {
   return (
     <div className={cn.purchase}>
       <span>
-        {game.price} {ruble}
+        {game.price} {currency}
       </span>
       {!isIncludes ? (
-        <Button onClick={addProductInCart}>В корзину</Button>
+        <Button onClick={addProductInCart} classname={cn.btn_buy}>
+          В корзину
+        </Button>
       ) : (
         <ButtonAddRemove
           gameId={game.id}

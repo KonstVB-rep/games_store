@@ -1,19 +1,18 @@
 import React, { useEffect } from "react";
 import { GameCard } from "../../components/GameCard";
-import { fetchGames, selectAllGames } from "../../store/games/gamesSlice";
+import { loadGames, selectAllGames } from "../../store/games/gamesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import cn from "./HomePage.module.scss";
-import { selectAllItems } from "../../store/cart/cartSlice";
 import Spinner from "../../components/Spinner/Spinner";
+import { PATH } from "../../constants/api";
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const games = useSelector(selectAllGames);
-  const { status, error } = useSelector((state) => state.games);
-  const format = useSelector(selectAllItems);
-  console.log(format);
+  const { status } = useSelector((state) => state.games);
+
   useEffect(() => {
-    dispatch(fetchGames());
+    dispatch(loadGames(PATH.GAMES_URL));
   }, []);
 
   if (status === "loading") {
@@ -22,9 +21,6 @@ const HomePage = () => {
         <Spinner />
       </h1>
     );
-  }
-  if (status === "error") {
-    return <h1>Error...</h1>;
   }
 
   return (

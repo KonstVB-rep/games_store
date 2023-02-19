@@ -1,7 +1,7 @@
 const randomNumber = (min, max) => {
-  const number =
-    ((Math.floor(Math.random() * (max - min + 1)) + min) / 100).toFixed() * 100;
-  return number;
+  return (
+    ((Math.floor(Math.random() * (max - min + 1)) + min) / 100).toFixed() * 100
+  );
 };
 
 export const transformData = (data) => {
@@ -13,6 +13,30 @@ export const transformData = (data) => {
     rating: data.rating,
     ratingsCount: data["ratings_count"],
     released: data.released,
+    description: data?.description_raw,
+    slug: data.slug,
     price: randomNumber(1200, 3500),
+  };
+};
+
+export const transformDataItem = (data) => {
+  return {
+    ...transformData(data),
+    preview: data.preview,
+    platforms: data.platforms,
+    reddit: data["reddit_url"],
+    website: data.website,
+  };
+};
+
+export const transformMovies = (obj) => {
+  return {
+    id: obj.id,
+    name: obj.name,
+    movie: obj.data["480"],
+    // preview: obj.preview,
+    // platforms: obj.platforms,
+    // reddit: obj["reddit_url"],
+    // website: obj.website,
   };
 };

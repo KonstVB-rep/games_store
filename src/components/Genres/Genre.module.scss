@@ -1,0 +1,13 @@
+@import '../../index';
+.genres__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: start;
+  gap: 5px;
+  .genre {
+    padding: 5px 10px;
+    border-radius: $border-radius-m;
+    background-color: $details-bg;
+  }
+}

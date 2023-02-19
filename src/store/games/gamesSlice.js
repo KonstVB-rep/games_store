@@ -1,82 +1,42 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { transformData } from "../../utils/transformData";
+import { transformData, transformGame } from "../../utils/transformData";
 import { GAMES_URL } from "../../constants/api";
+import { getData } from "../../utils/getData";
 
 const initialState = {
   gamesList: [],
+  currentGame: {},
   status: null,
   error: null,
 };
 
-// export const loadGames = createAsyncThunk(
-//   "games/loadGames",
-//   async function (_, { rejectWithValue, dispatch }) {
-//     console.log("ok");
-//     try {
-//       console.log("ok");
-//       const response = await fetch(GAMES_URL);
-//       if (!response.ok) {
-//         throw new Error("Fetch request failed");
-//       }
-//       const resJson = await response.json();
-//       console.log(resJson);
-//       return resJson.results;
-//     } catch (err) {
-//       return rejectWithValue(err.message);
-//     }
-//   }
-// );
-
-export const fetchGames = createAsyncThunk(
-  "games/fetchGames",
-  async function (_, { rejectWithValue }) {
-    try {
-      const response = await fetch(GAMES_URL);
-
-      if (!response.ok) {
-        throw new Error("Fetch request failed");
-      }
-      const resJson = await response.json();
-      return resJson.results.map(transformData);
-    } catch (err) {
-      return rejectWithValue(err.message);
-    }
+export const loadGames = createAsyncThunk(
+  "games/loadGames",
+  async function (url, { rejectWithValue }) {
+    return await getData(url, transformData, rejectWithValue);
   }
 );
+
 const gamesSlice = createSlice({
   name: "games",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchGames.pending, (state, action) => {
+    builder.addCase(loadGames.pending, (state, action) => {
       state.status = "loading";
       state.error = null;
     });
-    builder.addCase(fetchGames.rejected, (state, action) => {
+    builder.addCase(loadGames.rejected, (state, action) => {
       state.status = "rejected";
       state.error = action.payload || action.meta.error;
     });
-    builder.addCase(fetchGames.fulfilled, (state, action) => {
+    builder.addCase(loadGames.fulfilled, (state, action) => {
       state.status = "fulfilled";
       state.gamesList = action.payload;
     });
   },
 });
 
-// (builder) => {
-//   builder.addCase(fetchGames.pending, (state, action) => {
-//     state.status = "loading";
-//     state.error = null;
-//   });
-//   builder.addCase(fetchGames.rejected, (state, action) => {
-//     state.status = "rejected";
-//     state.error = action.payload || action.meta.error;
-//   });
-//   builder.addCase(fetchGames.fulfilled, (state, action) => {
-//     state.status = "fulfilled";
-//     state.list = action.payload.data;
-//   });
-// },
 export const selectAllGames = (state) => state.games.gamesList;
 
 const gamesReducer = gamesSlice.reducer;

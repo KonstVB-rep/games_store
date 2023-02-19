@@ -11,9 +11,13 @@
   width: fit-content;
   background-color: #e3e2e2;
   color: $color-black;
-  border-radius: 25px;
+  border-radius: $border-radius-l;
   font-weight: bold;
   & *:not(button){
     color: $color-black;
+  }
+  .btn_buy{
+    background-color: $primary-color;
+    color:$color-white;
   }
 }

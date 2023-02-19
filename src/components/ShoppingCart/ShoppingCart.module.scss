@@ -20,7 +20,7 @@
     background-color:indianred;
     color: $color-white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   &__icon{
     width: 45px;
@@ -35,6 +35,6 @@
   &__total-price{
     padding: 5px 20px;
     box-shadow:  $color-white 0 0 0 2px;
-    border-radius: 30px;
+    border-radius: $border-radius-l;
   }
 }

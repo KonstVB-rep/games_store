@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1b0c13;
+  background-color: rgba(0, 0, 0, 0.75);
   color: #ffffff;
 }
 
@@ -35,7 +35,7 @@ ul {
 .App {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 40px;
 }
 
 .active {
@@ -44,13 +44,17 @@ ul {
   text-decoration-thickness: 3px;
 }
 
-.item {
-  padding: 5px 0;
-  border-top: 1px solid #ffffff;
-}
-.item__title {
+.genres__list {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: start;
+  gap: 5px;
+}
+.genres__list .genre {
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: #3a3838;
 }
 
-/*# sourceMappingURL=CartMenuItem.module.css.map */
+/*# sourceMappingURL=Genre.module.css.map */

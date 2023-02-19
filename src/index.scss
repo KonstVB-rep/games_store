@@ -1,9 +1,24 @@
-
-$color-body: #1b0c13;
+$color-body: rgba(0, 0, 0, 0.75);
 $color-white: #ffffff;
 $color-black: #000000;
 $primary-color: #3d55a1;
 $effect-color: #5b955b;
+$rating-color:gold;
+$details-bg:#3a3838;
+
+
+
+$border-radius-m: 15px;
+$border-radius-l: 25px;
+
+@mixin flex($property_1,$property_2,$property_3) {
+  display: flex;
+  align-items: center;
+  justify-content: $property_1;
+  flex-direction: $property_2;
+  gap:$property_3;
+}
+
 
 
 body {
@@ -46,7 +61,7 @@ ul {
 .App{
   max-width:1180px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 40px;
 }
 .active{
   text-decoration-line: underline;
