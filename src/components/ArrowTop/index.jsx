@@ -1,1 +1,1 @@
-export { default as index } from './';
+export { default as ArrowTop } from "./ArrowTop";
