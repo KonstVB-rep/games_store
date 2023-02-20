@@ -5,7 +5,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 const Header = () => {
   return (
-    <header className={cn.header}>
+    <header className={cn.header} id="header">
       <div className={cn.wrapper}>
         <nav className={cn.nav}>
           <NavLink to="/">GameStore</NavLink>

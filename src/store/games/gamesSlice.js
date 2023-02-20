@@ -1,12 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { transformData, transformGame } from "../../utils/transformData";
-import { GAMES_URL } from "../../constants/api";
+import { transformData } from "../../utils/transformData";
 import { getData } from "../../utils/getData";
 
 const initialState = {
   gamesList: [],
-  currentGame: {},
-  status: null,
+  status: "loading",
   error: null,
 };
 
@@ -23,7 +21,7 @@ const gamesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(loadGames.pending, (state, action) => {
-      state.status = "loading";
+      // state.status = "loading";
       state.error = null;
     });
     builder.addCase(loadGames.rejected, (state, action) => {
@@ -38,6 +36,7 @@ const gamesSlice = createSlice({
 });
 
 export const selectAllGames = (state) => state.games.gamesList;
+export const selectStatus = (state) => state.games.status;
 
 const gamesReducer = gamesSlice.reducer;
 export default gamesReducer;

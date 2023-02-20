@@ -14,5 +14,6 @@
   border-radius: $border-radius-m;
   @media (max-width: 1020px){
     grid-template-columns: 1fr;
+    padding: 0 0 60px;
   }
 }

@@ -35,7 +35,7 @@ ul {
 .App {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px;
 }
 
 .active {
@@ -46,8 +46,8 @@ ul {
 
 .arrow-box {
   position: fixed;
-  top: 80%;
-  right: 20px;
+  top: 85%;
+  right: 10px;
   width: 60px;
   height: 60px;
   display: flex;
@@ -72,7 +72,7 @@ ul {
   box-shadow: #ffffff 0 0 5px 5px;
 }
 .arrow-box:active svg {
-  animation: topBack 0.3s ease-in;
+  animation: topBack 0.3s ease-in backwards;
 }
 @keyframes topBack {
   0% {

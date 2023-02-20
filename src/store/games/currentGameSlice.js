@@ -4,7 +4,7 @@ import { transformData, transformDataItem } from "../../utils/transformData";
 
 const initialState = {
   currentGame: {},
-  status: null,
+  status: "idle",
   error: null,
 };
 

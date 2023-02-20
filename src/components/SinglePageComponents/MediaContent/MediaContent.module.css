@@ -35,7 +35,7 @@ ul {
 .App {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px;
 }
 
 .active {
@@ -58,7 +58,7 @@ ul {
   gap: 20px;
 }
 .media .img-box {
-  width: 500px;
+  width: 100%;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: #ffffff 0 0 5px 2px;

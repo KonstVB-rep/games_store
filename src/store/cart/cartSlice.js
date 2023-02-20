@@ -7,9 +7,6 @@ const cartSlice = createSlice({
     totalPrice: 0,
   },
   reducers: {
-    // addProduct: (state, action) => {
-    //   state.cartItems.push(action.payload);
-    // },
     addProduct: {
       reducer: (state, action) => {
         const findItem = state.cartItems.find(

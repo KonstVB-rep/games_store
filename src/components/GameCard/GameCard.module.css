@@ -35,7 +35,7 @@ ul {
 .App {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px;
 }
 
 .active {
@@ -47,7 +47,7 @@ ul {
 .game-card {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  min-width: 300px;
   height: auto;
   background-color: rgb(36, 37, 41);
   border-radius: 15px;
@@ -63,8 +63,8 @@ ul {
   gap: 5px;
 }
 .game-card .details .title {
-  font-size: 1.125rem;
-  padding: 5px 0;
+  font-size: 1.5rem;
+  padding: 10px 0;
   font-weight: bold;
 }
 .game-card .details__secondary {

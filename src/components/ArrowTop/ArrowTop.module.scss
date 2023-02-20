@@ -2,8 +2,8 @@
 
 .arrow-box {
   position: fixed;
-  top:80%;
-  right: 20px;
+  top:85%;
+  right: 10px;
   width: 60px;
   height: 60px;
   @include flex(center,_,_);
@@ -28,7 +28,7 @@
   }
 
   &:active svg {
-    animation: topBack 0.3s ease-in;
+    animation: topBack 0.3s ease-in backwards;
   }
 
   @keyframes topBack {

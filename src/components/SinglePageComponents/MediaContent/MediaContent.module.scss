@@ -12,7 +12,7 @@
   flex-direction: column;
   gap: 20px;
   .img-box{
-    width: 500px;
+    width: 100%;
     border-radius: $border-radius-m;
     overflow: hidden;
     box-shadow: $color-white 0 0 5px 2px;
@@ -29,14 +29,6 @@
       max-height: 500px;
     }
   }
-  //.movies{
-  //  display: grid;
-  //  grid-template-columns: repeat(2,300px);
-  //  gap: 20px;
-  //  .movies__item{
-  //
-  //  }
-  //}
   .links{
     @extend %inner-size;
     a{

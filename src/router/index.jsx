@@ -17,12 +17,6 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
-        // children: [
-        //   {
-        //     path: "games/:name",
-        //     element: <GameSinglePage />,
-        //   },
-        // ],
       },
       {
         path: "games/:name",
