@@ -4,7 +4,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
+  @media(max-width: 480px) {
+    gap:20px;
+  }
   .action {
     width: 39px;
     height: 39px;
@@ -57,16 +59,9 @@
       }
     }
   }
+  .total{
+    @media(max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
 }
-//
-//@keyframes pulseDel {
-//  0% {
-//    box-shadow: 0 0 0 0 indianred;
-//  }
-//}
-//
-//@keyframes pulseAdd {
-//  0% {
-//    box-shadow: 0 0 0 0 $effect-color;
-//  }
-//}

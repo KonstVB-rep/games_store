@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgb(0, 0, 0);
   color: #ffffff;
 }
 
@@ -21,6 +21,7 @@ code {
 
 button, a {
   cursor: pointer;
+  outline: none;
 }
 
 a {
@@ -33,21 +34,28 @@ ul {
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 100px 20px 0;
+  min-height: 100vh;
 }
 
-.active {
-  text-decoration-line: underline;
-  text-underline-position: under;
-  text-decoration-thickness: 3px;
+.active_link {
+  border-bottom: 4px solid #ffffff;
+  border-radius: 25px;
 }
 
 .wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+@media (max-width: 480px) {
+  .wrapper {
+    gap: 20px;
+  }
 }
 .wrapper .action {
   width: 39px;
@@ -93,6 +101,11 @@ ul {
 @keyframes pulseAdd {
   0% {
     box-shadow: 0 0 0 0 #5b955b;
+  }
+}
+@media (max-width: 480px) {
+  .wrapper .total {
+    font-size: 1.5rem;
   }
 }
 

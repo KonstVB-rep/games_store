@@ -9,4 +9,5 @@ export const store = configureStore({
     cart: cartReducer,
     singleGame: singleGameReducer,
   },
+  devTools: process.env.NODE_ENV !== 'production',
 });

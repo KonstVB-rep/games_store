@@ -9,8 +9,8 @@ import { PATH } from "../../constants/api";
 import cn from "./SinglePage.module.scss";
 import { MediaContent } from "../../components/SinglePageComponents/MediaContent";
 import { TextContent } from "../../components/SinglePageComponents/TextContent";
-import GameBuy from "../../components/GameBuy/GameBuy";
 import Spinner from "../../components/Spinner/Spinner";
+import PlatformsLIst from "../../components/PlatformsLIst/PlatformsLIst";
 
 const SinglePage = () => {
   const { name } = useParams();
@@ -22,31 +22,31 @@ const SinglePage = () => {
   useEffect(() => {
     dispatch(loadCurrentGames(PATH.SINGLE_GAME_URL(name)));
     return () => dispatch(clearCurrentGames());
-  }, []);
+  }, [dispatch,name]);
 
   if (status === "loading") {
     return <Spinner />;
   }
 
   return (
-    <>
+    <section className={cn.game}>
       {status === "loading" ? (
         <Spinner />
       ) : (
         <>
-          <h1 className={cn.title}>{game.name}</h1>
           <div className={cn.wrapper}>
+            <h1 className={cn.title}>{game.name}</h1>
             <MediaContent
               img={game.img}
-              reddit={game.reddit}
-              platforms={game.platforms}
-              website={game.website}
             />
+            <PlatformsLIst reddit={game.reddit}
+                           platforms={game.platforms}
+                           website={game.website}/>
             <TextContent game={game} />
           </div>
         </>
       )}
-    </>
+    </section>
   );
 };
 

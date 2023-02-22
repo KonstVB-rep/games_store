@@ -2,8 +2,8 @@
 .genres__list {
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 1;
-  align-items: start;
+  align-self: flex-start;
+  align-items: end;
   gap: 5px;
   .genre {
     padding: 5px 10px;

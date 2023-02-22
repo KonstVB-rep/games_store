@@ -11,7 +11,7 @@ const initialState = {
 export const loadGames = createAsyncThunk(
   "games/loadGames",
   async function (url, { rejectWithValue }) {
-    return await getData(url, transformData, rejectWithValue);
+    return await getData(url,transformData,rejectWithValue);
   }
 );
 
@@ -20,17 +20,20 @@ const gamesSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(loadGames.pending, (state, action) => {
-      // state.status = "loading";
+    builder.addCase(loadGames.pending, (state) => {
+      state.status = "loading";
       state.error = null;
     });
     builder.addCase(loadGames.rejected, (state, action) => {
+      console.log(action)
       state.status = "rejected";
       state.error = action.payload || action.meta.error;
     });
     builder.addCase(loadGames.fulfilled, (state, action) => {
       state.status = "fulfilled";
-      state.gamesList = action.payload;
+      if(action.payload.length){
+        state.gamesList.push(...action.payload);
+      }
     });
   },
 });

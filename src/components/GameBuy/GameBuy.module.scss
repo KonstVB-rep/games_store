@@ -13,8 +13,19 @@
   color: $color-black;
   border-radius: $border-radius-l;
   font-weight: bold;
+  @media(max-width: 480px){
+    flex-direction: column;
+    height: auto;
+    gap:5px;
+    padding: 5px;
+    width: max-content;
+    align-self: center;
+  }
   & *:not(button){
     color: $color-black;
+  }
+  .price{
+    font-size: 1.5rem;
   }
   .btn_buy{
     background-color: $primary-color;

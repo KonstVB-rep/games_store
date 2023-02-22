@@ -7,15 +7,11 @@ import cn from "./GameCard.module.scss";
 import { useNavigate } from "react-router-dom";
 
 const GameCard = (game) => {
-  const navigate = useNavigate();
-  const { name, genres, slug, img, price, ...fromRating } = game;
-  const handleClick = () => {
-    navigate(`/games/${slug}`);
-  };
 
+  const { name, genres, slug, img, price, ...fromRating } = game;
   return (
-    <div className={cn["game-card"]} onClick={handleClick}>
-      <GamePoster img={img} />
+    <div className={cn["game-card"]}>
+      <GamePoster img={img} slug={slug}/>
       <div className={cn.details}>
         <p className={cn.title}>{name}</p>
         <Genres genres={genres} />

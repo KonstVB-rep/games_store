@@ -28,7 +28,7 @@ const GameBuy = ({ game }) => {
 
   return (
     <div className={cn.purchase}>
-      <span>
+      <span className={cn.price}>
         {game.price} {currency}
       </span>
       {!isIncludes ? (

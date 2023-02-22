@@ -1,0 +1,1 @@
+export {default as PlatformsList} from './PlatformsLIst';

@@ -28,8 +28,9 @@
     padding: 10px;
     box-shadow:  $color-white 0 0 0 2px;
     border-radius: 50%;
+    cursor: pointer;
     &:hover{
-      box-shadow: deeppink 0 0 0 4px ;
+      box-shadow: forestgreen 0 0 0 4px ;
     }
   }
   &__total-price{

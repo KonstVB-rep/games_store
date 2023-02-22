@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgb(0, 0, 0);
   color: #ffffff;
 }
 
@@ -21,6 +21,7 @@ code {
 
 button, a {
   cursor: pointer;
+  outline: none;
 }
 
 a {
@@ -33,27 +34,35 @@ ul {
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 100px 20px 0;
+  min-height: 100vh;
 }
 
-.active {
-  text-decoration-line: underline;
-  text-underline-position: under;
-  text-decoration-thickness: 3px;
+.active_link {
+  border-bottom: 4px solid #ffffff;
+  border-radius: 25px;
 }
 
 .game-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 300px;
+  min-width: 250px;
   height: auto;
   background-color: rgb(36, 37, 41);
   border-radius: 15px;
   overflow: hidden;
-  cursor: pointer;
   box-shadow: #252323 0 0 10px 2px;
+}
+.game-card .skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: dimgrey;
 }
 .game-card .details {
   padding: 10px 20px 20px;

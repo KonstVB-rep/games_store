@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getData } from "../../utils/getData";
-import { transformData, transformDataItem } from "../../utils/transformData";
+import { transformDataItem } from "../../utils/transformData";
 
 const initialState = {
   currentGame: {},

@@ -5,6 +5,8 @@ import CartMenuItem from "./CartMenuItem/CartMenuItem";
 import { useSelector } from "react-redux";
 import { selectAllItems, selectTotalPrice } from "../../store/cart/cartSlice";
 import { currency } from "../../constants/currency";
+import {Link} from "react-router-dom";
+import {FaOpencart} from "react-icons/fa";
 
 const CartMenu = () => {
   const totalPriceCart = useSelector(selectTotalPrice);
@@ -27,7 +29,10 @@ const CartMenu = () => {
           {totalPriceCart} {currency}
         </span>
       </div>
-      <Button classname={cn.btn_cart}>Оформить заказ</Button>
+      <Link to="order" >
+        <Button classname={cn.btn_cart}>Оформить заказ</Button>
+      </Link>
+
     </div>
   );
 };

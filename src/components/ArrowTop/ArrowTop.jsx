@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 import cn from "./ArrowTop.module.scss";
 
 const ArrowTop = () => {
@@ -11,14 +11,6 @@ const ArrowTop = () => {
       setIsVisible(true);
     } else setIsVisible(false);
   };
-  //
-  // const handleClick = () => {
-  //   document.documentElement.scrollTo({
-  //     top: 0,
-  //     left: 0,
-  //     behavior: "smooth",
-  //   });
-  // };
 
   useEffect(() => {
     window.addEventListener("scroll", handleVisibleArrow);
@@ -28,11 +20,9 @@ const ArrowTop = () => {
   return (
     <>
       {isVisible && (
-        <Link
-          to="header"
+        <button
           className={cn["arrow-box"]}
-          smooth={true}
-          duration={1000}
+          onClick={() => scroll.scrollToTop()}
         >
           <div className={cn.image}>
             <svg
@@ -47,7 +37,7 @@ const ArrowTop = () => {
               />
             </svg>
           </div>
-        </Link>
+        </button>
       )}
     </>
   );

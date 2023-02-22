@@ -1,38 +1,45 @@
-import React, { useEffect } from "react";
-import { GameCard } from "../../components/GameCard";
+import React, {useCallback, useEffect, useState} from "react";
 import {
-  loadGames,
-  selectAllGames,
+  loadGames, selectAllGames,
   selectStatus,
 } from "../../store/games/gamesSlice";
-import { useDispatch, useSelector } from "react-redux";
-import cn from "./HomePage.module.scss";
+import {useDispatch, useSelector} from "react-redux";
+import {useInView} from 'react-intersection-observer';
 import Spinner from "../../components/Spinner/Spinner";
-import { PATH } from "../../constants/api";
+import {PATH} from "../../constants/api";
 import GamesList from "../../components/GamesList/GamesList";
+import Skeleton from "../../components/Seleton/Skeleton";
+import cn from "./HomePage.module.scss";
 
 const HomePage = () => {
+  const [currentPage, setCurrentPage] = useState(1)
   const dispatch = useDispatch();
   const status = useSelector(selectStatus);
 
-  useEffect(() => {
-    dispatch(loadGames(PATH.GAMES_URL));
-  }, []);
+  const {ref, inView, entry} = useInView({
+    threshold: 0.1,
+    rootMargin: '20px',
+    triggerOnce: true
+  });
 
-  if (status === "loading") {
-    return (
-      <h1>
-        <Spinner />
-      </h1>
-    );
-  }
+  useEffect(() => {
+    if (inView) {
+      setCurrentPage(p => p + 1)
+    }
+  }, [inView])
+
+  useEffect(() => {
+    dispatch(loadGames(PATH.GAMES_URL(currentPage)));
+  }, [dispatch, currentPage]);
+
 
   return (
-    <main className={cn.content}>
-      {/*{games.map((game) => (*/}
-      {/*  <GameCard key={game.id} {...game} />*/}
-      {/*))}*/}
-      <GamesList />
+    <main>
+      <div className = {cn.content}>
+        {status === "loading" && <Skeleton /> }
+          <GamesList />
+      </div>
+      {status === "fulfilled" ? <button className = {cn.next} ref={ref} >Next games loading</button> : <h1>Loading...</h1>}
     </main>
   );
 };

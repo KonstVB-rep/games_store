@@ -1,4 +1,4 @@
-$color-body: rgba(0, 0, 0, 0.75);
+$color-body: rgba(0, 0, 0);
 $color-white: #ffffff;
 $color-black: #000000;
 $primary-color: #3d55a1;
@@ -45,6 +45,7 @@ code {
 
 button, a{
   cursor: pointer;
+  outline: none;
 }
 
 a {
@@ -56,13 +57,15 @@ ul {
   list-style: none;
 }
 
-.App{
-  max-width:1180px;
+.App {
+  display: flex;
+  flex-direction: column;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 100px 20px 0;
+  min-height: 100vh;;
 }
-.active{
-  text-decoration-line: underline;
-  text-underline-position: under;
-  text-decoration-thickness: 3px;
+.active_link{
+  border-bottom: 4px solid $color-white;
+  border-radius: 25px;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { GameCard } from "../GameCard";
 import { useSelector } from "react-redux";
-import { selectAllGames } from "../../store/games/gamesSlice";
+import {selectAllGames, selectStatus} from "../../store/games/gamesSlice";
 
 const GamesList = () => {
   const games = useSelector(selectAllGames);

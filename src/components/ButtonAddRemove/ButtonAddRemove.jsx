@@ -12,13 +12,15 @@ const ButtonAddRemove = ({ addProductInCart, delProductInCart, gameId }) => {
       <button
         className={`${cn.action} ${cn.action_del}`}
         onClick={delProductInCart}
+        id='btn_1'
       >
         <span></span>
       </button>
-      <span>{countItemInCart.totalCount}</span>
+      <span className={cn.total}>{countItemInCart.totalCount}</span>
       <button
         className={`${cn.action} ${cn.action_add}`}
         onClick={addProductInCart}
+        id='btn_2'
       >
         +
       </button>
