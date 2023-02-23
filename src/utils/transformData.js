@@ -26,17 +26,13 @@ export const transformDataItem = (data) => {
     platforms: data.platforms,
     reddit: data["reddit_url"],
     website: data.website,
+    developers: data.developers,
   };
 };
 
-export const transformMovies = (obj) => {
+export const getName = (obj) => {
   return {
     id: obj.id,
     name: obj.name,
-    movie: obj.data["480"],
-    // preview: obj.preview,
-    // platforms: obj.platforms,
-    // reddit: obj["reddit_url"],
-    // website: obj.website,
   };
 };

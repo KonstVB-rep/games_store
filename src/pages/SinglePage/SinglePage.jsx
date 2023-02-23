@@ -2,50 +2,36 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  clearCurrentGames,
-  loadCurrentGames,
-} from "../../store/games/currentGameSlice";
+  clearSingleGames,
+  loadSingleGames,
+} from "../../store/games/singleGameSlice";
 import { PATH } from "../../constants/api";
-import cn from "./SinglePage.module.scss";
 import { MediaContent } from "../../components/SinglePageComponents/MediaContent";
 import { TextContent } from "../../components/SinglePageComponents/TextContent";
-import Spinner from "../../components/Spinner/Spinner";
-import PlatformsLIst from "../../components/PlatformsLIst/PlatformsLIst";
+import PlatformsLIst from "../../components/SinglePageComponents/PlatformsLIst/PlatformsLIst";
+import SkeletonSinglePage from "../../components/SinglePageComponents/SkeletonSinglePage/SkeletonSinglePage";
+import cn from "./SinglePage.module.scss";
 
 const SinglePage = () => {
   const { name } = useParams();
   const dispatch = useDispatch();
-  const { status, currentGame: game } = useSelector(
-    (state) => state.singleGame
-  );
+  const { singleGame: game } = useSelector(state => state.singleGame);
 
   useEffect(() => {
-    dispatch(loadCurrentGames(PATH.SINGLE_GAME_URL(name)));
-    return () => dispatch(clearCurrentGames());
+    dispatch(loadSingleGames(PATH.SINGLE_GAME_URL(name)));
+    return () => dispatch(clearSingleGames());
   }, [dispatch,name]);
-
-  if (status === "loading") {
-    return <Spinner />;
-  }
 
   return (
     <section className={cn.game}>
-      {status === "loading" ? (
-        <Spinner />
-      ) : (
-        <>
+        <SkeletonSinglePage >
           <div className={cn.wrapper}>
             <h1 className={cn.title}>{game.name}</h1>
-            <MediaContent
-              img={game.img}
-            />
-            <PlatformsLIst reddit={game.reddit}
-                           platforms={game.platforms}
-                           website={game.website}/>
-            <TextContent game={game} />
+            <MediaContent />
+            <PlatformsLIst />
+            <TextContent/>
           </div>
-        </>
-      )}
+        </SkeletonSinglePage>
     </section>
   );
 };

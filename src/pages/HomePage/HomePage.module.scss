@@ -1,30 +1,8 @@
 main{
   text-align: center;
   flex-grow: 1;
-.content {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-flow: row;
-  min-width: 300px;
-  max-width: 100%;
-  flex-wrap: wrap;
   padding: 20px;
-  gap: 20px;
-  text-align: center;
-  @media(max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-  @media(max-width: 4px) {
+  @media(max-width: 400px) {
     padding: 20px 0;
   }
-}
-
-.next {
-  padding: 15px 30px;
-  border-radius: 25px;
-  color: black;
-  margin: 20px auto;
-  grid-column: 1/-1;
-}
-
 }

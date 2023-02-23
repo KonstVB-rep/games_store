@@ -6,6 +6,8 @@ const initialState = {
   gamesList: [],
   status: "loading",
   error: null,
+  currentPage: 1,
+  countPage: 0
 };
 
 export const loadGames = createAsyncThunk(
@@ -18,7 +20,14 @@ export const loadGames = createAsyncThunk(
 const gamesSlice = createSlice({
   name: "games",
   initialState,
-  reducers: {},
+  reducers: {
+    rememberCurrentPage: (state, action) => {
+      state.currentPage = action.payload
+    },
+    rememberCountPage: (state) => {
+      state.countPage = state.currentPage
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(loadGames.pending, (state) => {
       state.status = "loading";
@@ -31,7 +40,7 @@ const gamesSlice = createSlice({
     });
     builder.addCase(loadGames.fulfilled, (state, action) => {
       state.status = "fulfilled";
-      if(action.payload.length){
+        if(action.payload.length && state.currentPage > state.countPage){
         state.gamesList.push(...action.payload);
       }
     });
@@ -40,6 +49,7 @@ const gamesSlice = createSlice({
 
 export const selectAllGames = (state) => state.games.gamesList;
 export const selectStatus = (state) => state.games.status;
+export const {rememberCurrentPage,rememberCountPage} = gamesSlice.actions;
 
 const gamesReducer = gamesSlice.reducer;
 export default gamesReducer;

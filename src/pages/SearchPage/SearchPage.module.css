@@ -52,6 +52,7 @@ main {
 }
 main .form {
   position: relative;
+  margin: auto;
   padding: 20px;
   width: 50%;
   min-width: 280px;
@@ -81,6 +82,33 @@ main .form .btn:active {
   from {
     box-shadow: 0 0 0 0 #ffffff;
   }
+}
+main .games-list {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+main .games-list .games-item {
+  padding: 5px 10px;
+  min-width: max-content;
+  border-color: transparent;
+  border-bottom: 3px solid #808585;
+  transition: 0.3s;
+  overflow: hidden;
+}
+main .games-list .games-item:hover, main .games-list .games-itemfocus-visible {
+  transform: scale(1.4);
+  border-top: 3px solid #808585;
+  border-radius: 25px;
+}
+main .games-list .games-item:active {
+  border-radius: 25px;
+  background-color: #ffffff;
+}
+main .games-list .games-item:active a {
+  color: #000000;
 }
 
 /*# sourceMappingURL=SearchPage.module.css.map */

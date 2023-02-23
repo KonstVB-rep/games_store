@@ -48,11 +48,15 @@ ul {
 }
 
 .game {
+  position: relative;
   padding: 10px 20px;
+  display: block;
+  flex-grow: 1;
   border-radius: 15px;
   background-color: rgba(105, 105, 105, 0.6);
+  overflow: hidden;
 }
-@media (max-width: 840px) {
+@media (max-width: 940px) {
   .game {
     padding: 0;
   }
@@ -60,11 +64,12 @@ ul {
 .game .title {
   font-size: 3rem;
   grid-column: 1/-1;
+  padding: 10px 20px;
 }
-@media (max-width: 840px) {
+@media (max-width: 640px) {
   .game .title {
-    padding: 20px;
     font-size: 2rem;
+    padding: 20px 20px 0;
   }
 }
 @media (max-width: 480px) {
@@ -81,10 +86,10 @@ ul {
   gap: 20px;
   border-radius: 15px;
 }
-@media (max-width: 840px) {
+@media (max-width: 940px) {
   .game .wrapper {
     grid-template-columns: 1fr;
-    padding: 0 0 60px;
+    padding: 0 0 20px;
   }
 }
 

@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 20px;
   grid-column: 1/-1;
-  @media (max-width: 840px){
+  @media (max-width: 900px){
     padding: 0 20px 20px;
   }
   @media (max-width: 480px){
@@ -24,6 +24,20 @@
       border-radius: $border-radius-m;
       background-color: $details-bg;
       opacity: 0.90;
+    }
+  }
+  .develops{
+    font-size: 1.2rem;
+    .develops__list{
+      padding: 5px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: max-content;
+      li{
+        font-style: italic;
+        font-weight: bold;
+      }
     }
   }
 }

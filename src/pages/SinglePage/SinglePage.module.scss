@@ -1,17 +1,22 @@
 @import '../../index';
 .game{
+  position: relative;
   padding: 10px 20px;
+  display: block;
+  flex-grow: 1;
   border-radius: $border-radius-m;
   background-color: rgba(105, 105, 105, 0.6);
-  @media (max-width: 840px){
+  overflow: hidden;
+  @media (max-width: 940px){
     padding: 0 ;
   }
   .title{
     font-size:3rem;
     grid-column: 1/-1;
-    @media (max-width: 840px){
-      padding: 20px;
+    padding: 10px 20px;
+    @media (max-width: 640px){
       font-size:2rem;
+      padding: 20px 20px 0;
     }
     @media(max-width: 480px){
       text-align: center;
@@ -25,9 +30,9 @@
     grid-template-rows: auto;
     gap: 20px;
     border-radius: $border-radius-m;
-    @media (max-width: 840px){
+    @media (max-width: 940px){
       grid-template-columns: 1fr;
-      padding: 0 0 60px;
+      padding: 0 0 20px;
     }
   }
 }

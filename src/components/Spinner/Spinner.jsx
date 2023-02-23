@@ -1,4 +1,5 @@
 import React from "react";
+import Skeleton from "../HomePageComponents/Seleton/Skeleton";
 
 const style = {
   margin: "40px auto",
@@ -6,11 +7,9 @@ const style = {
 };
 
 const Spinner = () => {
-  return (
-    <div style={style}>
-      <img src="/spinner.gif" alt="Загрузка" />
-    </div>
-  );
+  // return <Skeleton/>
+  // (
+  //     {/*<img src="/spinner.gif" alt="Загрузка" />*/});
 };
 
 export default Spinner;

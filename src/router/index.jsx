@@ -3,8 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { ErrorPage } from "../pages/ErrorPage";
 import { HomePage } from "../pages/HomePage";
-import {AboutPage, SearchPage} from "../pages/SearchPage";
-import { UsersPage } from "../pages/UsersPage";
+import { SearchPage} from "../pages/SearchPage";
 import { CartPage } from "../pages/CartPage";
 import { GameSinglePage } from "../pages/SinglePage";
 import {OrdersPage} from "../pages/OrderPage";
@@ -27,10 +26,7 @@ export const router = createBrowserRouter([
       {
         path: "/search",
         element: <SearchPage />,
-      },
-      {
-        path: "/users",
-        element: <UsersPage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/cart",

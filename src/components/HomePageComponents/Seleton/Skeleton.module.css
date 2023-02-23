@@ -1,0 +1,37 @@
+.skeleton {
+  margin: 20px 0px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .skeleton {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 4px) {
+  .skeleton {
+    padding: 20px 0;
+  }
+}
+.skeleton .skeleton__item {
+  position: relative;
+  min-width: 300px;
+  height: 480px;
+  background-color: dimgrey;
+  border-radius: 15px;
+  flex-grow: 1;
+  overflow: hidden;
+  animation: loading 0.5s linear infinite;
+}
+@keyframes loading {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+/*# sourceMappingURL=Skeleton.module.css.map */

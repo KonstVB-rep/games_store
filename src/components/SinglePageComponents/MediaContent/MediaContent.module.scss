@@ -11,12 +11,14 @@
     border-radius: $border-radius-m;
     overflow: hidden;
     box-shadow: $color-white 0 0 5px 2px;
-    height: 400px;
-    @media (max-width: 840px){
+    min-height: 400px;
+    height: 100%;
+    @media (max-width: 940px){
       border-radius: 0;
       box-shadow: none;
     }
     @media (max-width: 500px){
+      min-height: auto;
       height: 250px;
     }
 
@@ -26,6 +28,8 @@
       height: 100%;
       width: 100%;
       inset: 0;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
