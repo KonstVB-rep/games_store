@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "./ButtonAddRemove.module.scss";
 import { useSelector } from "react-redux";
-import { selectAllItems } from "../../store/cart/cartSlice";
+import { selectAllItems } from "../../../store/cart/cartSlice";
 
 const ButtonAddRemove = ({ addProductInCart, delProductInCart, gameId }) => {
   const cartAllItems = useSelector(selectAllItems);

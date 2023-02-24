@@ -4,9 +4,9 @@ import App from "../App";
 import { ErrorPage } from "../pages/ErrorPage";
 import { HomePage } from "../pages/HomePage";
 import { SearchPage} from "../pages/SearchPage";
-import { CartPage } from "../pages/CartPage";
 import { GameSinglePage } from "../pages/SinglePage";
 import {OrdersPage} from "../pages/OrderPage";
+import {singlePageLoader} from "../pages/SinglePage/SinglePage";
 
 export const router = createBrowserRouter([
   {
@@ -22,15 +22,11 @@ export const router = createBrowserRouter([
         path: "games/:name",
         element: <GameSinglePage />,
         errorElement: <ErrorPage />,
+        loader: singlePageLoader
       },
       {
         path: "/search",
         element: <SearchPage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/cart",
-        element: <CartPage />,
         errorElement: <ErrorPage />,
       },
       {

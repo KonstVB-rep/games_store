@@ -1,9 +1,8 @@
 import React from 'react';
 import cn from "../TextContent.module.scss";
-import {useSelector} from "react-redux";
 
-const DevelopersList = () => {
-  const {developers} = useSelector(state => state.singleGame.singleGame);
+const DevelopersList = ({developers}) => {
+
   const renderDevelopers = developers && developers.map((item) =><li key={item.id}>{item.name}</li>);
   return (
     <div className={cn.develops}>

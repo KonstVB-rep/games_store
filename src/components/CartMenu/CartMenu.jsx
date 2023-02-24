@@ -1,12 +1,12 @@
 import React from "react";
-import cn from "./CartMenu.module.scss";
-import { Button } from "../Button";
 import CartMenuItem from "./CartMenuItem/CartMenuItem";
 import { useSelector } from "react-redux";
 import { selectAllItems, selectTotalPrice } from "../../store/cart/cartSlice";
 import { currency } from "../../constants/currency";
 import {Link} from "react-router-dom";
 import {FaOpencart} from "react-icons/fa";
+import {Button} from "../Buttons/Button";
+import cn from "./CartMenu.module.scss";
 
 const CartMenu = () => {
   const totalPriceCart = useSelector(selectTotalPrice);
@@ -32,7 +32,6 @@ const CartMenu = () => {
       <Link to="order" >
         <Button classname={cn.btn_cart}>Оформить заказ</Button>
       </Link>
-
     </div>
   );
 };

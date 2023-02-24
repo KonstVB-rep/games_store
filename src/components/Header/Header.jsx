@@ -21,7 +21,7 @@ const Header = () => {
             Search games
           </NavLink>
           <NavLink
-            to="users"
+            to="order"
             className={({ isActive }) => (isActive ? "active_link" : "")}
           >
             Users

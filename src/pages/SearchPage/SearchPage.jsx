@@ -4,7 +4,7 @@ import cn from "./SearchPage.module.scss";
 import {getData} from "../../utils/getData";
 import {PATH} from "../../constants/api";
 import {getName} from "../../utils/transformData";
-import {Link} from "react-router-dom";
+import {Link, useLoaderData} from "react-router-dom";
 
 const SearchPage = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -22,7 +22,6 @@ const SearchPage = () => {
       setStatus('rejected');
     })
   }, 500),[])
-  console.log(foundGames)
 
   const handleSearch = (e) => {
     setSearchValue(e.target.value)
@@ -56,5 +55,6 @@ const SearchPage = () => {
     </main>
   )
 };
+
 
 export default SearchPage;

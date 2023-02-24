@@ -2,9 +2,7 @@ import React from "react";
 import cn from "./RatingInfo.module.scss";
 import {useSelector} from "react-redux";
 
-const RatingInfo = ({ classname = ""}) => {
-
-  const {rating, ratingsCount, released} = useSelector(state => state.singleGame.singleGame);
+const RatingInfo = ({rating, ratingsCount, released, classname = ""}) => {
 
   return (
     <div className = {`${cn["rating-box"]} ${classname}`}>

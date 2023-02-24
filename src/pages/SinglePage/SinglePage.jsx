@@ -1,39 +1,43 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  clearSingleGames,
-  loadSingleGames,
-} from "../../store/games/singleGameSlice";
-import { PATH } from "../../constants/api";
-import { MediaContent } from "../../components/SinglePageComponents/MediaContent";
-import { TextContent } from "../../components/SinglePageComponents/TextContent";
+import React, {useEffect} from "react";
+import {useLoaderData} from "react-router-dom";
+import {PATH} from "../../constants/api";
+import {MediaContent} from "../../components/SinglePageComponents/MediaContent";
+import {TextContent} from "../../components/SinglePageComponents/TextContent";
 import PlatformsLIst from "../../components/SinglePageComponents/PlatformsLIst/PlatformsLIst";
 import SkeletonSinglePage from "../../components/SinglePageComponents/SkeletonSinglePage/SkeletonSinglePage";
 import cn from "./SinglePage.module.scss";
+import {getData} from "../../utils/getData";
+import {transformDataItem} from "../../utils/transformData";
 
 const SinglePage = () => {
-  const { name } = useParams();
-  const dispatch = useDispatch();
-  const { singleGame: game } = useSelector(state => state.singleGame);
+  const game = useLoaderData()
 
   useEffect(() => {
-    dispatch(loadSingleGames(PATH.SINGLE_GAME_URL(name)));
-    return () => dispatch(clearSingleGames());
-  }, [dispatch,name]);
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  },[]);
 
   return (
     <section className={cn.game}>
-        <SkeletonSinglePage >
+        {/*<SkeletonSinglePage >*/}
           <div className={cn.wrapper}>
             <h1 className={cn.title}>{game.name}</h1>
-            <MediaContent />
-            <PlatformsLIst />
-            <TextContent/>
+            <MediaContent img ={game.img}/>
+            <PlatformsLIst platforms={game.platforms} reddit={game.reddit} website={game.website}/>
+            <TextContent game={game}/>
           </div>
-        </SkeletonSinglePage>
+        {/*</SkeletonSinglePage>*/}
     </section>
   );
 };
+
+
+export const singlePageLoader = async ({request, params}) => {
+  const {name} = params;
+  return await getData(PATH.SINGLE_GAME_URL(name), transformDataItem);
+}
 
 export default SinglePage;

@@ -1,10 +1,7 @@
 import React from 'react';
 import cn from "./PlatfomsLIst.module.scss";
-import {useSelector} from "react-redux";
 
-const PlatformsLIst = () => {
-
-  const {platforms,reddit,website} = useSelector(state => state.singleGame.singleGame);
+const PlatformsLIst = ({platforms,reddit,website}) => {
 
   const renderPlatforms =
     platforms &&
