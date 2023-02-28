@@ -7,6 +7,7 @@ import { SearchPage} from "../pages/SearchPage";
 import { GameSinglePage } from "../pages/SinglePage";
 import {OrdersPage} from "../pages/OrderPage";
 import {singlePageLoader} from "../pages/SinglePage/SinglePage";
+import {Favorites} from "../pages/Favorites";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ export const router = createBrowserRouter([
       {
         path: "/order",
         element: <OrdersPage/>,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites/>,
         errorElement: <ErrorPage />,
       },
     ],

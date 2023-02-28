@@ -1,0 +1,21 @@
+@import '../../index';
+
+.wrapper {
+  width: 80%;
+  height: 40%;
+  background-color: $color-white;
+  font-size: 24px;
+  margin: 20px auto;
+  padding: 20px 10px;
+  border-radius: 15px;
+  & *{
+    text-align: center;
+    color: $color-black;
+  }
+  strong{
+    color:$error-color;
+    .status{
+      font-size: 36px;
+    }
+  }
+}

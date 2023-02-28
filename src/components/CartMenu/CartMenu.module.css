@@ -38,8 +38,14 @@ ul {
   flex-direction: column;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 100px 20px 0;
+  padding: 0 20px 0;
   min-height: 100vh;
+}
+@media (max-width: 840px) {
+  .App {
+    position: relative;
+    padding-top: 110px;
+  }
 }
 
 .active_link {
@@ -48,18 +54,35 @@ ul {
 }
 
 .menu {
-  width: max-content;
-  height: auto;
   position: absolute;
-  top: 60px;
-  right: 0;
+  width: max-content;
+  top: 70px;
+  right: -70px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 15px 0 0 15px;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 1;
+  transform: translateX(100%);
+  transition: 0.3s;
+  z-index: 2;
+}
+.menu.menu_visible {
+  transform: translateX(0);
+}
+@media (max-width: 640px) {
+  .menu {
+    width: fit-content;
+  }
+}
+@media (max-width: 840px) {
+  .menu {
+    top: -40px;
+    right: 0;
+    padding-top: 150px;
+    border-radius: 15px 0 0 15px;
+  }
 }
 .menu .orders {
   flex-grow: 1;
@@ -77,6 +100,9 @@ ul {
 .menu .total {
   display: flex;
   justify-content: space-between;
+}
+.menu a {
+  width: max-content;
 }
 .menu .btn_cart {
   font-weight: bold;

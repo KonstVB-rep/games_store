@@ -1,18 +1,30 @@
 @import '../../index';
 .menu {
-  width: max-content;
-  height: auto;
   position: absolute;
-  top: 60px;
-  right: 0;
+  width: max-content;
+  top: 70px;
+  right: -70px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 20px;
-  border-radius: $border-radius-m
-;
+  border-radius: $border-radius-m 0 0 $border-radius-m;
   background-color: rgba(0, 0, 0, 0.90);
-  z-index: 1;
+  transform: translateX(100%);
+  transition: 0.3s;
+  &.menu_visible{
+    transform: translateX(0);
+  }
+  @media (max-width: 640px){
+    width: fit-content;
+  }
+  @media (max-width: 840px){
+    top: -40px;
+    right: 0;
+    padding-top: 150px;
+    border-radius: $border-radius-m 0 0 $border-radius-m;
+  }
+  z-index: 2;
   .orders{
     flex-grow: 1;
     padding: 5px 0;
@@ -30,9 +42,12 @@
     display: flex;
     justify-content: space-between;
   }
+  a{
+    width: max-content;
+  }
   .btn_cart{
     font-weight: bold;
-    background-color: #e18418;;
+    background-color: #e18418;
   }
 
 }

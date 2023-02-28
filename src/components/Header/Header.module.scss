@@ -1,13 +1,11 @@
 @import '../../index';
 
 .header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  padding: 20px 10px;
+  padding: 30px 10px;
   background-color: $color-body;
+  @media (max-width: 840px){
+    padding: 0;
+  }
   .wrapper{
     max-width:1180px;
     margin: auto;
@@ -15,10 +13,57 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
+    @media (max-width: 840px){
+      padding: 0;
+    }
+    .burger{
+      display: none;
+      width: 70px;
+      height: 70px;
+      transition: 0.3s;
+      outline: none;
+      &:hover,
+      &:focus-visible{
+        transform: scale(1.4);
+      }
+      &:active{
+        fill: indianred;
+      }
+      @media (max-width: 840px){
+        position: fixed;
+        left:0;
+        top: 20px;
+        display: block;
+        background-color: $color-black;
+        padding: 10px 15px;
+        border-radius: 0 $border-radius-l $border-radius-l 0;
+        cursor: pointer;
+        z-index: 3;
+      }
+    }
     .nav{
       display: flex;
       align-items: center;
       gap: 30px;
+      transition: 0.5s;
+      @media (max-width: 840px){
+        position: absolute;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 10px 30px;
+        width: 100%;
+        transform: translateY(-90%);
+        z-index: 2;
+        background: $color-black;
+        opacity: 0;
+        &.nav_mobile{
+          transform: translateY(15%);
+          opacity: 1;
+          border: 2px solid transparent;
+          border-bottom-color: $color-white;
+        }
+      }
       a{
         font-size: 1.5rem;
         font-weight: bold;

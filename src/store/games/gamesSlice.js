@@ -7,7 +7,8 @@ const initialState = {
   status: "loading",
   error: null,
   currentPage: 1,
-  countPage: 0
+  countPage: 0,
+  favorites: []
 };
 
 export const loadGames = createAsyncThunk(
@@ -26,6 +27,12 @@ const gamesSlice = createSlice({
     },
     rememberCountPage: (state) => {
       state.countPage = state.currentPage
+    },
+    addFavorite: (state,action) => {
+      state.favorites.push(action.payload)
+    },
+    removeFavorite: (state,action) => {
+      state.favorites = state.favorites.filter(item => item.id !== action.payload)
     }
   },
   extraReducers: (builder) => {
@@ -34,7 +41,6 @@ const gamesSlice = createSlice({
       state.error = null;
     });
     builder.addCase(loadGames.rejected, (state, action) => {
-      console.log(action)
       state.status = "rejected";
       state.error = action.payload || action.meta.error;
     });
@@ -49,7 +55,8 @@ const gamesSlice = createSlice({
 
 export const selectAllGames = (state) => state.games.gamesList;
 export const selectStatus = (state) => state.games.status;
-export const {rememberCurrentPage,rememberCountPage} = gamesSlice.actions;
+export const selectFavorites = (state) => state.games.favorites;
+export const {rememberCurrentPage,rememberCountPage,addFavorite,removeFavorite} = gamesSlice.actions;
 
 const gamesReducer = gamesSlice.reducer;
 export default gamesReducer;

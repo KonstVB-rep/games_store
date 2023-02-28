@@ -1,39 +1,56 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import CartMenuItem from "./CartMenuItem/CartMenuItem";
-import { useSelector } from "react-redux";
-import { selectAllItems, selectTotalPrice } from "../../store/cart/cartSlice";
-import { currency } from "../../constants/currency";
+import {useSelector} from "react-redux";
+import {selectAllItemsCart, selectTotalPrice} from "../../store/cart/cartSlice";
+import {currency} from "../../constants/currency";
 import {Link} from "react-router-dom";
-import {FaOpencart} from "react-icons/fa";
 import {Button} from "../Buttons/Button";
-import cn from "./CartMenu.module.scss";
+import cl from "./CartMenu.module.scss";
+import cn from "../ShoppingCart/ShoppingCart.module.scss";
 
 const CartMenu = () => {
   const totalPriceCart = useSelector(selectTotalPrice);
-  const allItemsInCart = useSelector(selectAllItems);
-  return (
-    <div className={cn.menu}>
-      <div className={cn.orders}>
-        <div className={cn.grid}>
+  const allItemsInCart = useSelector(selectAllItemsCart);
+  const ref = useRef(null)
+
+  const [showCart, setShowCart] = useState(false);
+
+  useEffect(() => {
+    const isShowCart = (e) => {
+      if (e.target.matches(`.${cn.cart__icon}`)) {
+        setShowCart(p => !p)
+      } else if (!ref.current?.contains(e.target) || e.target.textContent === 'Оформить заказ') {
+        setShowCart(false)
+      }
+    }
+    document.addEventListener('click', isShowCart)
+    return () => document.removeEventListener('click', isShowCart)
+  }, [])
+
+
+  return(
+    <div className = {`${cl.menu} ${showCart && cl.menu_visible}`} ref = {ref}>
+      <div className = {cl.orders}>
+        <div className = {cl.grid}>
           <span>Наименование</span>
           <span>Шт</span>
           <span>Стоимость</span>
         </div>
         {allItemsInCart.map((item) => (
-          <CartMenuItem key={item.id} {...item} classname={cn.grid} />
+          <CartMenuItem key = {item.id} {...item} classname = {cl.grid} />
         ))}
       </div>
-      <div className={cn.total}>
+      <div className = {cl.total}>
         <span>Итого:</span>
         <span>
           {totalPriceCart} {currency}
         </span>
       </div>
-      <Link to="order" >
-        <Button classname={cn.btn_cart}>Оформить заказ</Button>
+      <Link to = "order">
+        <Button classname = {cl.btn_cart}>Оформить заказ</Button>
       </Link>
     </div>
-  );
+  )
 };
 
 export default CartMenu;

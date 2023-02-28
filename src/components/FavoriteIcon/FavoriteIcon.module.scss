@@ -1,0 +1,29 @@
+@import '../../index';
+.favorite-sign{
+  position: absolute;
+  top:10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+  cursor:pointer;
+  user-select: none;
+  transition: 0.2s;
+  background-color: indianred;
+  path{
+    fill:$color-white;
+  }
+  &:hover path{
+    fill:gold;
+  }
+  &:active{
+    transform: scale(1.3);
+  }
+}
+.favorite-sign_in {
+  path {
+    fill: gold;
+  }
+}

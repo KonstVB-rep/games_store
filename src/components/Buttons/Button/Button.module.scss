@@ -3,6 +3,7 @@
   position: relative;
   padding: 10px 25px;
   max-width: 200px;
+  min-width: max-content;
   border:none;
   border-radius: $border-radius-l;
   text-transform: uppercase;
@@ -21,8 +22,6 @@
     0% { box-shadow: 0 0 0 0 $effect-color; }
   }
   @media(max-width: 480px) {
-    font-size: 1.1rem;
     width: 90%;
-    padding: 15px;
   }
 }

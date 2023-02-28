@@ -18,7 +18,7 @@
     height: auto;
     gap:5px;
     padding: 5px;
-    width: max-content;
+    width: 100%;
     align-self: center;
   }
   & *:not(button){
@@ -26,9 +26,5 @@
   }
   .price{
     font-size: 1.5rem;
-  }
-  .btn_buy{
-    background-color: $primary-color;
-    color:$color-white;
   }
 }

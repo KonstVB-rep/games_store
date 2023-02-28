@@ -3,7 +3,7 @@ import GameBuy from "../../HomePageComponents/GameBuy/GameBuy";
 import Genres from "../../Genres/Genres";
 import RatingInfo from "../../RatingInfo/RatingInfo";
 import cn from "./TextContent.module.scss";
-import {DevelopersList} from "./DevelopersList";
+import {DevelopersList} from "../DevelopersList";
 
 const TextContent = ({game}) => {
 

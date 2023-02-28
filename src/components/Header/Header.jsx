@@ -1,32 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import cn from "./Header.module.scss";
-import { NavLink } from "react-router-dom";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import NavBar from "../NavBar/NavBar";
 
 const Header = () => {
+
   return (
-    <header className={cn.header}>
+    <header className={cn.header} id='header'>
       <div className={cn.wrapper}>
-        <nav className={cn.nav}>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? "active_link" : "")}
-          >
-            GameStore
-          </NavLink>
-          <NavLink
-            to="search"
-            className={({ isActive }) => (isActive ? "active_link" : "")}
-          >
-            Search games
-          </NavLink>
-          <NavLink
-            to="order"
-            className={({ isActive }) => (isActive ? "active_link" : "")}
-          >
-            Users
-          </NavLink>
-        </nav>
+        <NavBar/>
         <ShoppingCart />
       </div>
     </header>

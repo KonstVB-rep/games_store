@@ -1,5 +1,5 @@
 .skeleton{
-  margin: 20px -0px 0;
+  margin: 0px 0px 0;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -7,7 +7,7 @@
   @media(max-width: 768px){
     grid-template-columns: 1fr;
   }
-  @media(max-width: 4px){
+  @media(max-width: 400px){
     padding: 20px 0;
   }
   .skeleton__item{

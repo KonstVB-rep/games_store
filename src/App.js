@@ -3,13 +3,16 @@ import { Outlet } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { ArrowTop } from "./components/ArrowTop";
 import {Footer} from "./components/Footer";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   return (
     <>
       <div className="App">
         <Header />
-        <Outlet />
+        <ScrollToTop>
+          <Outlet />
+        </ScrollToTop>
         <PortalArrowTop>
           <ArrowTop />
         </PortalArrowTop>

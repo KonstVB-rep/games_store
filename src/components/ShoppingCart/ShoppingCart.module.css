@@ -38,8 +38,14 @@ ul {
   flex-direction: column;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 100px 20px 0;
+  padding: 0 20px 0;
   min-height: 100vh;
+}
+@media (max-width: 840px) {
+  .App {
+    position: relative;
+    padding-top: 110px;
+  }
 }
 
 .active_link {
@@ -52,6 +58,21 @@ ul {
   align-items: center;
   gap: 10px;
   position: relative;
+}
+@media (max-width: 840px) {
+  .cart {
+    position: fixed;
+    right: 0;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+    padding: 10px 20px;
+    border-radius: 25px 0 0 25px;
+    border-right: none;
+    background-color: #000000;
+  }
 }
 .cart::before {
   content: attr(data-count);
@@ -70,6 +91,13 @@ ul {
   color: #ffffff;
   font-weight: bold;
   font-size: 1.125rem;
+  z-index: 3;
+}
+@media (max-width: 840px) {
+  .cart::before {
+    left: 0;
+    top: 0;
+  }
 }
 .cart__icon {
   width: 45px;
@@ -78,6 +106,7 @@ ul {
   box-shadow: #ffffff 0 0 0 2px;
   border-radius: 50%;
   cursor: pointer;
+  z-index: 3;
 }
 .cart__icon:hover {
   box-shadow: forestgreen 0 0 0 4px;
@@ -86,6 +115,7 @@ ul {
   padding: 5px 20px;
   box-shadow: #ffffff 0 0 0 2px;
   border-radius: 25px;
+  z-index: 3;
 }
 
 /*# sourceMappingURL=ShoppingCart.module.css.map */

@@ -1,9 +1,21 @@
 import React from 'react';
-import cn from "../../HomePageComponents/GameBuy/GameBuy.module.scss";
 import ButtonAddRemove from "../ButtonAddRemove/ButtonAddRemove";
 import {Button} from "../Button";
+import {useDispatch, useSelector} from "react-redux";
+import {addProduct, selectAllItemsCart} from "../../../store/cart/cartSlice";
+import cn from "./ButtonBuy.module.scss";
 
-const ButtonBuy = ({isIncludes,addProductInCart,delProductInCart,gameId}) => {
+const ButtonBuy = ({game}) => {
+  const dispatch = useDispatch()
+  const cart = useSelector(selectAllItemsCart);
+
+  const addProductInCart = (e) => {
+    e.stopPropagation();
+    dispatch(addProduct(game));
+  };
+
+  const isIncludes = cart.some((item) => item.id === game.id);
+
   return (
     <>
       {!isIncludes ? (
@@ -12,9 +24,7 @@ const ButtonBuy = ({isIncludes,addProductInCart,delProductInCart,gameId}) => {
         </Button>
       ) : (
         <ButtonAddRemove
-          gameId={gameId}
-          addProductInCart={addProductInCart}
-          delProductInCart={delProductInCart}
+          game={game}
         />
       )}
 

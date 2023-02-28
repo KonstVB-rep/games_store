@@ -1,0 +1,9 @@
+main {
+  flex-grow: 1;
+}
+main .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/*# sourceMappingURL=Favorites.module.css.map */
