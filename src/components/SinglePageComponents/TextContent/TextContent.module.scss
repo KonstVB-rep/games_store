@@ -1,7 +1,6 @@
 @import '../../../index';
 .content{
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: 20px;
   grid-column: 1/-1;
   @media (max-width: 900px){
@@ -11,11 +10,10 @@
     padding: 0 10px 20px;
   }
   .rating_info{
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 10px;
     max-width: 500px;
+    font-weight: bold;
     p{
       display: flex;
       justify-content: space-between;
@@ -29,9 +27,8 @@
   .develops{
     font-size: 1.2rem;
     .develops__list{
+      @include flex-column;
       padding: 5px 0;
-      display: flex;
-      flex-direction: column;
       gap: 5px;
       width: max-content;
       li{

@@ -1,8 +1,7 @@
 @import '../../../index';
 
 .media{
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: 20px;
   grid-column: 1;
   .img-box{

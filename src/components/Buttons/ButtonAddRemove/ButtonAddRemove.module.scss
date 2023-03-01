@@ -1,15 +1,15 @@
 @import '../../../index';
 
 .wrapper {
-  display: flex;
-  align-items: center;
+  @include flex-al-jc-center;
+  min-width: 150px;
   gap: 10px;
   @media(max-width: 480px) {
     gap:20px;
   }
   .action {
-    width: 39px;
-    height: 39px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     font-size: 2.5rem;
     border: none;
@@ -21,9 +21,7 @@
     }
 
     &_del {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex-al-jc-center;
       background-color: indianred;
 
       &:active {
@@ -60,6 +58,8 @@
     }
   }
   .total{
+    font-size: 1.2rem;
+    padding: 0 5px;
     @media(max-width: 480px) {
       font-size: 1.5rem;
     }

@@ -1,4 +1,4 @@
-import React, {useEffect, Suspense} from "react";
+import React, {Suspense} from "react";
 import {Await, useLoaderData} from "react-router-dom";
 import {PATH} from "../../constants/api";
 import SkeletonSinglePage from "../../components/SinglePageComponents/SkeletonSinglePage/SkeletonSinglePage";

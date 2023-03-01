@@ -12,13 +12,20 @@ $error-color: #9f0e0e;
 $border-radius-m: 15px;
 $border-radius-l: 25px;
 
-@mixin flex($property_1,$property_2,$property_3) {
+@mixin flex-al-center {
   display: flex;
   align-items: center;
-  justify-content: $property_1;
-  flex-direction: $property_2;
-  gap:$property_3;
 }
+@mixin flex-al-jc-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 
 body {
   margin: 0;
@@ -72,5 +79,5 @@ ul {
 }
 .active_link{
   border-bottom: 4px solid $color-white;
-  border-radius: 25px;
+  border-radius:$border-radius-l;
 }

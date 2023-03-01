@@ -1,10 +1,8 @@
 @import '../../../index';
 
-
 %inner-size {
-  display: flex;
+  @include flex-al-center;
   flex-wrap: wrap;
-  align-items: center;
   gap: 20px;
   padding: 20px
 }
@@ -12,7 +10,7 @@
 .platforms-box {
   @media(max-width: 940px) {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: baseline;
   }
   @media(max-width: 680px) {

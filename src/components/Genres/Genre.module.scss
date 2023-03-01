@@ -1,9 +1,10 @@
 @import '../../index';
+
 .genres__list {
   display: flex;
   flex-wrap: wrap;
   align-self: flex-start;
-  align-items: end;
+  align-items: flex-end;
   gap: 5px;
   .genre {
     padding: 5px 10px;

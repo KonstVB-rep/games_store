@@ -1,0 +1,66 @@
+@import '../../../index';
+.cart{
+  @include flex-al-center;
+  gap: 10px;
+  position: relative;
+  @media (max-width: 840px){
+      position: fixed;
+      right: 0;
+      top:20px;
+      @include flex-al-center;
+      gap: 10px;
+      z-index: 2;
+      padding: 10px 20px;
+      border-radius: $border-radius-l 0 0 $border-radius-l;
+      border-right: none;
+      background-color: $color-black;
+  }
+  &::before{
+    content: attr(data-count);
+    @include flex-al-jc-center;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: -15px;
+    top:-10px;
+    bottom: 0;
+    border-radius: 50%;
+    border:none;
+    background-color:indianred;
+    color: $color-white;
+    font-weight: bold;
+    font-size: 1.125rem;
+    z-index: 4;
+    @media (max-width: 840px){
+      left: 0;
+      top:0;
+    }
+  }
+
+  &__icon{
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    box-shadow:  $color-white 0 0 0 2px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    transition: 0.3s;
+    outline: none;
+    &:hover,
+    &:focus-visible {
+      background-color: #2a89c7;
+      box-shadow: #2a89c7 0 0 0 2px;
+    }
+    &:active{
+      padding: 5px;
+    }
+  }
+
+  &__total-price{
+    padding: 5px 20px;
+    box-shadow:  $color-white 0 0 0 2px;
+    border-radius: $border-radius-l;
+    z-index: 3;
+  }
+}

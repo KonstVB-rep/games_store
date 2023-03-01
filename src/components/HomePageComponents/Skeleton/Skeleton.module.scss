@@ -1,9 +1,10 @@
+@import '../../../index';
+
 .skeleton{
-  margin: 0px 0px 0;
-  display: flex;
+  margin: 0 0 0;
+  @include flex-al-center;
   flex-wrap: wrap;
   gap: 20px;
-  text-align: center;
   @media(max-width: 768px){
     grid-template-columns: 1fr;
   }

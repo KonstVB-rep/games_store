@@ -2,15 +2,15 @@
 
 .footer{
   .wrapper{
+    @include flex-al-center;
+    justify-content: space-between;
     max-width:1180px;
     margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 40px;
     @media (max-width: 600px){
       flex-direction: column;
       gap:20px;
+      text-align: center;
     }
     a{
       font-size: 1.5rem;

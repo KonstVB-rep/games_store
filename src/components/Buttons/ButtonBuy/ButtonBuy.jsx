@@ -20,7 +20,7 @@ const ButtonBuy = ({game}) => {
     <>
       {!isIncludes ? (
         <Button onClick={addProductInCart} classname={cn.btn_buy}>
-          В корзину
+          Add to Cart
         </Button>
       ) : (
         <ButtonAddRemove

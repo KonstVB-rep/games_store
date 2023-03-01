@@ -1,0 +1,46 @@
+@import '../../../index';
+
+.card{
+  display: grid;
+  grid-template-columns: minmax(250px,1.5fr) minmax(100px,200px) 0.5fr;
+  gap:20px;
+  border-bottom: 2px solid $color-white;
+  border-radius: $border-radius-l;
+  background-color: $color-black;
+  overflow: hidden;
+  @media (max-width: 680px){
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+  }
+  .title{
+    flex-grow: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    a{
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: $border-radius-l;
+      transition: 0.3s;
+      &:hover,
+      &:focus-visible{
+        background-color: $details-bg;
+        letter-spacing: 1px;
+      }
+      &:active{
+        box-shadow: $effect-color 0 0 2px 4px;
+        background-color: $color-black;
+        letter-spacing: 1px;
+        transition: 0.2s;
+      }
+    }
+  }
+  .price{
+    min-width: 150px;
+    width: max-content;
+    padding: 20px 20px;
+    font-size: 1.5rem;
+  }
+}

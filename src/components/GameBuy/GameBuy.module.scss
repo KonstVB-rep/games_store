@@ -1,0 +1,28 @@
+@import '../../index';
+
+.purchase{
+  @include flex-al-center;
+  min-width: 210px;
+  max-height: 45px;
+  align-self: end;
+  padding: 2px 2px 2px 15px;
+  gap: 15px;
+  width: fit-content;
+  background-color: #e3e2e2;
+  color: $color-black;
+  border-radius: $border-radius-l;
+  font-weight: bold;
+  @media(max-width: 480px){
+    flex-direction: column;
+    height: auto;
+    gap:5px;
+    padding: 5px;
+    width: 100%;
+  }
+  & *:not(button){
+    color: $color-black;
+  }
+  .price{
+    font-size: 1.5rem;
+  }
+}

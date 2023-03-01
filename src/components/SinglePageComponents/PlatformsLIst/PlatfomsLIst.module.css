@@ -55,8 +55,8 @@ ul {
 
 .platforms-box .platforms .platforms-list, .platforms-box .links {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
 }
@@ -64,7 +64,7 @@ ul {
 @media (max-width: 940px) {
   .platforms-box {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: baseline;
   }
 }

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {RiMenu5Fill} from "react-icons/ri";
+import {IoClose} from "react-icons/io5";
 import cn from "../Header/Header.module.scss";
 
 const pathLink = [
@@ -11,7 +12,6 @@ const pathLink = [
 
 
 const NavBar = () => {
-
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const handleMobileMenu = () => {
     setOpenMobileMenu(p => !p)
@@ -31,7 +31,8 @@ const NavBar = () => {
 
   return (
     <>
-      <RiMenu5Fill className = {cn.burger} tabIndex = "0" onClick = {handleMobileMenu} />
+      {!openMobileMenu ? <RiMenu5Fill className = {cn.burger} tabIndex = "0" onClick = {handleMobileMenu} />
+        : <IoClose className = {cn.burger} tabIndex = "0" onClick = {handleMobileMenu}/>}
       <nav className = {`${cn.nav} ${mobileClassName}`}>
         {pathNavLink}
       </nav>

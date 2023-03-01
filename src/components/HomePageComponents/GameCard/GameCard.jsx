@@ -1,10 +1,10 @@
 import React, {forwardRef} from "react";
 import {GamePoster} from "../GamePoster";
-import {GameBuy} from "../GameBuy";
 import {Genres} from "../../Genres";
-import RatingInfo from "../../RatingInfo/RatingInfo";
+import {RatingInfo} from "../../RatingInfo";
+import {FavoriteIcon} from "../../FavoriteIcon";
+import GameBuy from "../../GameBuy";
 import cn from "./GameCard.module.scss";
-import FavoriteIcon from "../../FavoriteIcon/FavoriteIcon";
 
 
 

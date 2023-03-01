@@ -1,7 +1,5 @@
-import React, {useState} from 'react';
-import {getData} from "../../../utils/getData";
+import {useState} from 'react';
 import {PATH} from "../../../constants/api";
-import {getName} from "../../../utils/transformData";
 import {useDispatch} from "react-redux";
 import {loadSearchGames} from "../../../store/search/searchSlice";
 
@@ -30,9 +28,6 @@ const useSearchGame = () => {
     handleSearch,
     handleSubmit,
     searchValue,
-    // foundGames,
-    // status,
-    // error
   };
 };
 

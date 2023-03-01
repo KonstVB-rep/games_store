@@ -60,11 +60,10 @@ ul {
   width: 60px;
   height: 60px;
   border-color: transparent;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: _;
-  gap: _;
   border-radius: 15px;
   background-color: deepskyblue;
 }

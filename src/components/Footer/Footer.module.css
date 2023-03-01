@@ -54,17 +54,18 @@ ul {
 }
 
 .footer .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1180px;
   margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 40px;
 }
 @media (max-width: 600px) {
   .footer .wrapper {
     flex-direction: column;
     gap: 20px;
+    text-align: center;
   }
 }
 .footer .wrapper a {

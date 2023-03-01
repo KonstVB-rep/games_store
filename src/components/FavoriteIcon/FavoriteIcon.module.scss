@@ -11,11 +11,19 @@
   cursor:pointer;
   user-select: none;
   transition: 0.2s;
-  background-color: indianred;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  &:hover,
+  &:focus-visible{
+    background-color: indianred;
+    box-shadow: $color-white 0 0 5px 5px;
+  }
   path{
     fill:$color-white;
   }
-  &:hover path{
+  &:hover path,
+  &:focus-visible path{
     fill:gold;
   }
   &:active{

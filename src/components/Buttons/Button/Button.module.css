@@ -58,6 +58,7 @@ ul {
   padding: 10px 25px;
   max-width: 200px;
   min-width: max-content;
+  min-height: 40px;
   border: none;
   border-radius: 25px;
   text-transform: uppercase;
@@ -65,7 +66,7 @@ ul {
 }
 .btn:hover, .btn:focus-visible {
   background-color: #5b955b;
-  box-shadow: inset 200px 0 0 0 #5b955b;
+  box-shadow: inset 250px 0 0 0 #5b955b;
   transform: scale(1.1);
 }
 .btn:active {

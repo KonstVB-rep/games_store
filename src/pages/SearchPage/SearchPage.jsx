@@ -1,5 +1,5 @@
 import useSearchGame from "./useSearchGame/useSearchGame";
-import {SearchItem} from "../../components/SearchPageComponents/SearchItem";
+import {ListFoundGames} from "../../components/SearchPageComponents/ListFoundGames";
 import SearchField from "../../components/SearchPageComponents/SearchField/SearchField";
 import cn from "./SearchPage.module.scss";
 
@@ -12,7 +12,7 @@ const SearchPage = () => {
       <form className = {cn.form} onSubmit = {handleSubmit}>
         <SearchField searchValue={searchValue} handleSearch={handleSearch}/>
       </form>
-      <SearchItem />
+      <ListFoundGames />
     </main>
   )
 };

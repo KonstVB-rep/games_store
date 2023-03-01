@@ -4,6 +4,7 @@
   padding: 10px 25px;
   max-width: 200px;
   min-width: max-content;
+  min-height: 40px;
   border:none;
   border-radius: $border-radius-l;
   text-transform: uppercase;
@@ -11,7 +12,7 @@
   &:hover,
   &:focus-visible{
     background-color:$effect-color;
-    box-shadow: inset 200px 0 0 0 $effect-color;
+    box-shadow: inset 250px 0 0 0 $effect-color;
     transform: scale(1.1);
   }
   &:active{

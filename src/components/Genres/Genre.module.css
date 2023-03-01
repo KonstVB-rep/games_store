@@ -57,7 +57,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   align-self: flex-start;
-  align-items: end;
+  align-items: flex-end;
   gap: 5px;
 }
 .genres__list .genre {

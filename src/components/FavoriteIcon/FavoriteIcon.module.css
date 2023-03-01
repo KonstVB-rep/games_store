@@ -65,12 +65,18 @@ ul {
   cursor: pointer;
   user-select: none;
   transition: 0.2s;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.favorite-sign:hover, .favorite-sign:focus-visible {
   background-color: indianred;
+  box-shadow: #ffffff 0 0 5px 5px;
 }
 .favorite-sign path {
   fill: #ffffff;
 }
-.favorite-sign:hover path {
+.favorite-sign:hover path, .favorite-sign:focus-visible path {
   fill: gold;
 }
 .favorite-sign:active {

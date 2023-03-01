@@ -1,0 +1,1 @@
+export {default as HeaderCartTable} from './HeaderCartTable';

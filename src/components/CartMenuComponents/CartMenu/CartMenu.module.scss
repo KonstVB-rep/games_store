@@ -1,0 +1,56 @@
+@import '../../../index';
+.menu {
+  position: absolute;
+  width: max-content;
+  top: 70px;
+  right: -50px;
+  @include flex-column;
+  gap: 15px;
+  padding: 20px;
+  border-radius: $border-radius-m 0 0 $border-radius-m;
+  background-color: rgba(0, 0, 0, 0.90);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  &.menu_visible{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  @media (max-width: 640px){
+    width: fit-content;
+  }
+  @media (max-width: 840px){
+    top: -40px;
+    right: 0;
+    padding-top: 120px;
+    border-radius: $border-radius-m 0 0 $border-radius-m;
+  }
+  z-index: 2;
+  .orders{
+    flex-grow: 1;
+    padding: 5px 0;
+    border-bottom: 1px solid $color-white;
+    .grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr 2fr;;
+      gap: 20px;
+      & span:not(:first-child){
+        text-align: end;
+      }
+    }
+  }
+  .total{
+    display: flex;
+    justify-content: space-between;
+  }
+  a{
+    width: max-content;
+  }
+  .btn_cart{
+    font-weight: bold;
+    background-color: #e18418;
+  }
+
+}
