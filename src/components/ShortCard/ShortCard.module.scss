@@ -17,6 +17,8 @@
   .card__img{
     width: 200px;
     height: 200px;
+    max-width: 400px;
+    position: relative;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid $color-white;
@@ -24,14 +26,31 @@
     transition: 0.3s;
     &:hover,
     &:focus-visible{
+      filter: blur(0);
       border-radius: $border-radius-m;
-      width: 90%;
+      width:90%;
+    }
+    &:hover img,
+    &:focus-visible img{
+      transform: scale(1.1);
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color:$color-black;
+      opacity: 0.3;
+    }
+    &:hover::before,
+    &:focus-visible::before{
+      opacity: 0;
     }
     img{
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top;
+      transition: 0.3s;
     }
   }
 }

@@ -32,6 +32,9 @@
     flex-grow: 1;
     padding: 5px 0;
     border-bottom: 1px solid $color-white;
+    span{
+      text-transform: uppercase;
+    }
     .grid {
       display: grid;
       grid-template-columns: 3fr 1fr 2fr;;
@@ -44,6 +47,9 @@
   .total{
     display: flex;
     justify-content: space-between;
+    span {
+      text-transform: uppercase;
+    }
   }
   a{
     width: max-content;

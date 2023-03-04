@@ -21,18 +21,20 @@ const NavBar = () => {
 
 
   const pathNavLink = pathLink.map((item => <NavLink
-    key={item.path}
+    key = {item.path}
     to = {item.path}
-    className = {({isActive}) => (isActive ? "active_link" : "")}
-    onClick={() => setOpenMobileMenu(false)}
+    className = {({isActive}) => (isActive ? `${cn.link} ${cn.active_link}` : `${cn.link}`)}
+    onClick = {() => setOpenMobileMenu(false)}
   >
     {item.title}
   </NavLink>))
 
   return (
     <>
-      {!openMobileMenu ? <RiMenu5Fill className = {cn.burger} tabIndex = "0" onClick = {handleMobileMenu} />
-        : <IoClose className = {cn.burger} tabIndex = "0" onClick = {handleMobileMenu}/>}
+      <div className={cn['wrapper-burger']}>
+        {!openMobileMenu ? <RiMenu5Fill className = {cn.burger} tabIndex = "0" onClick = {handleMobileMenu} />
+          : <IoClose className = {cn.burger} tabIndex = "0" onClick = {handleMobileMenu} />}
+      </div>
       <nav className = {`${cn.nav} ${mobileClassName}`}>
         {pathNavLink}
       </nav>

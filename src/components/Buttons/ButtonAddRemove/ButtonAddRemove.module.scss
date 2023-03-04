@@ -2,7 +2,7 @@
 
 .wrapper {
   @include flex-al-jc-center;
-  min-width: 150px;
+  min-width: 100px;
   gap: 10px;
   @media(max-width: 480px) {
     gap:20px;
@@ -22,7 +22,8 @@
 
     &_del {
       @include flex-al-jc-center;
-      background-color: indianred;
+      background-image: linear-gradient( indianred 20% , #9f3535 80%);
+      box-shadow: inset #813232 0 0 2px 4px;
 
       &:active {
         animation: pulseDel 0.3s;
@@ -43,7 +44,8 @@
     }
 
     &_add {
-      background-color: $effect-color;
+      background-image: linear-gradient( #68b668 20% , #467946 80%);
+      box-shadow: inset #386a38 0 0 2px 4px;
       color: $color-white;
 
       &:active {

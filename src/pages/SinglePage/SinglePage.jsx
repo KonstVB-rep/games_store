@@ -11,13 +11,13 @@ const SinglePage = () => {
   const {game} = useLoaderData()
 
   return (
-    <section className = {cn.game}>
+    <main className = {cn.game}>
       <Suspense fallback = {<SkeletonSinglePage />}>
         <Await resolve={game}>
           <GameInfo/>
         </Await>
       </Suspense>
-    </section>
+    </main>
   );
 };
 
@@ -30,3 +30,4 @@ export const singlePageLoader = async ({_, params}) => {
 }
 
 export default SinglePage;
+

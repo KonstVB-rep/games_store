@@ -1,19 +1,16 @@
-import {isRouteErrorResponse, useRouteError} from "react-router-dom";
+import {useRouteError} from "react-router-dom";
+import cn from './ErrorPage.module.scss'
 
 export default function ErrorPage() {
   const error = useRouteError();
-  console.log(error)
-  if (isRouteErrorResponse(error)) {
-    return (
-      <div>
+  return (
+    <section className={cn.main}>
+      <div className = {cn.wrapper}>
         <h1>Oops!</h1>
         <p>Sorry, an unexpected error has occurred.</p>
-        <h2>{error.status}</h2>
-        <p>{error.statusText}</p>
-        {error.data?.message && <p>{error.data.message}</p>}
+        {error.statusText ? <p>{error.statusText}</p> : null}
+        <p>Try again later.</p>
       </div>
-    );
-  } else {
-    return <div>Something went wrong</div>;
-  }
+    </section>
+  );
 }

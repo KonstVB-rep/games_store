@@ -1,6 +1,8 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import {OrderItem} from "../OrderItem";
+import TitleEmptyPage from "../../TitleEmptyPage/TitleEmptyPage";
+import {MakingOrder} from "../MakingOrder";
 import cn from "../../../pages/OrderPage/OrderPage.module.scss";
 
 const OrderList = () => {
@@ -11,7 +13,15 @@ const OrderList = () => {
 
   return (
     <div className={cn['card-list']}>
-      {renderCardsList}
+        {renderCardsList.length ?
+          <>
+            <div className={cn.wrapper}>
+              {renderCardsList}
+            </div>
+            <MakingOrder/>
+          </>
+            :
+          <TitleEmptyPage text ='The shopping cart is empty'/>}
     </div>
   );
 };

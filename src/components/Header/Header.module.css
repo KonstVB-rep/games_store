@@ -1,10 +1,15 @@
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(0, 0, 0);
+  background-color: #2a2929;
   color: #ffffff;
 }
 
@@ -44,18 +49,57 @@ ul {
 @media (max-width: 840px) {
   .App {
     position: relative;
-    padding-top: 110px;
+    padding-top: 90px;
   }
 }
 
-.active_link {
-  border-bottom: 4px solid #ffffff;
-  border-radius: 25px;
+main {
+  position: relative;
+  flex-grow: 1;
+  padding: 20px 0 20px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #010100 #7B8182;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #7B8182;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #A4AAAC;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #A4AAAC;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #010100;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #010100;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #2a2929;
 }
 
 .header {
   padding: 30px 10px;
-  background-color: rgb(0, 0, 0);
+  background-color: #2a2929;
 }
 @media (max-width: 840px) {
   .header {
@@ -65,15 +109,25 @@ ul {
 .header .wrapper {
   max-width: 1180px;
   margin: auto;
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 10px;
 }
 @media (max-width: 840px) {
   .header .wrapper {
     padding: 0;
   }
+}
+.header .wrapper .wrapper-burger {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  overflow: hidden;
+  border-radius: 0 25px 25px 0;
 }
 .header .wrapper .burger {
   display: none;
@@ -82,7 +136,7 @@ ul {
   transition: 0.3s;
   outline: none;
 }
-.header .wrapper .burger:hover, .header .wrapper .burger:focus-visible {
+.header .wrapper .burger:hover, .header .wrapper .burger:focus-visible path {
   transform: scale(1.4);
 }
 .header .wrapper .burger:active {
@@ -92,11 +146,10 @@ ul {
   .header .wrapper .burger {
     position: absolute;
     left: 0;
-    top: 20px;
+    top: 0;
     display: block;
-    background-color: #000000;
+    background-color: #2a2929;
     padding: 10px 15px;
-    border-radius: 0 25px 25px 0;
     cursor: pointer;
     z-index: 3;
   }
@@ -117,7 +170,7 @@ ul {
     width: 100%;
     transform: translateY(-90%);
     z-index: 2;
-    background: #000000;
+    background: #2a2929;
     opacity: 0;
     visibility: hidden;
   }
@@ -125,29 +178,37 @@ ul {
     transform: translateY(15%);
     opacity: 1;
     border: 2px solid transparent;
-    border-bottom-color: #ffffff;
     visibility: visible;
   }
 }
-.header .wrapper .nav a {
+.header .wrapper .nav .link {
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 2px 10px;
-}
-.header .wrapper .nav a:hover {
-  background-color: #ffffff;
-  color: #000000;
+  padding: 4px 15px;
+  background-image: linear-gradient(#464545 33%, #3a3939 60%, #383737 100%);
   border-radius: 25px;
+  box-shadow: #000000 0 0 10px 4px;
+  color: lightgrey;
 }
-.header .wrapper .nav a:active {
-  background-color: #000000;
-  color: #ffffff;
-  border-radius: 25px;
-}
-.header .wrapper .nav a:focus-visible {
-  outline: none;
+.header .wrapper .nav .link:hover, .header .wrapper .nav .link:focus-visible {
+  background-image: linear-gradient(#464545 33%, #3a3939 60%, #383737 100%);
+  text-shadow: #1d6bcc 2px 2px 5px, #1d6bcc -2px -2px 5px;
   border-radius: 25px;
   box-shadow: #ffffff 0 0 2px 2px;
+  color: white;
+}
+.header .wrapper .nav .link:active {
+  box-shadow: #525050 0 0 4px 2px, #525050 0 0 4px 2px;
+}
+.header .wrapper .nav .link.active_link {
+  background-image: none;
+  text-shadow: #2a89c7 2px 2px 3px, #2a89c7 -2px -2px 3px;
+  border-radius: 25px;
+  box-shadow: #000000 0 0 0 4px;
+  color: white;
+}
+.header .wrapper .nav .link.active_link:focus-visible {
+  box-shadow: white 0 0 0 4px;
 }
 
 /*# sourceMappingURL=Header.module.css.map */

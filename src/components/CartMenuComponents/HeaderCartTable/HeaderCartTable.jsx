@@ -3,9 +3,9 @@ import React from 'react';
 const HeaderCartTable = ({classname}) => {
   return (
     <div className = {classname}>
-      <span>Наименование</span>
-      <span>Шт</span>
-      <span>Стоимость</span>
+      <span>name</span>
+      <span>quantity</span>
+      <span>amount</span>
     </div>
   );
 };

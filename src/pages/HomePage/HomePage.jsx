@@ -1,12 +1,12 @@
 import React from "react";
-import GamesList from "../../components/HomePageComponents/GamesList/GamesList";
+import {GamesList} from "../../components/HomePageComponents/GamesList";
 import {LoadNext} from "../../components/HomePageComponents/LoadNext";
-import HomePageContainer from "../../components/HomePageComponents/HomePageContainer/HomePageContainer";
+import {HomePageContainer} from "../../components/HomePageComponents/HomePageContainer";
 
 const HomePage = () => {
 
   return (
-    <HomePageContainer>
+    <HomePageContainer >
       <GamesList />
       <LoadNext />
     </HomePageContainer>

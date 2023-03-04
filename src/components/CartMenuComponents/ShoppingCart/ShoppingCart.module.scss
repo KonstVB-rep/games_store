@@ -1,65 +1,96 @@
 @import '../../../index';
-.cart{
+
+.cart {
   @include flex-al-center;
-  gap: 10px;
+  gap: 15px;
   position: relative;
-  @media (max-width: 840px){
-      position: fixed;
-      right: 0;
-      top:20px;
-      @include flex-al-center;
-      gap: 10px;
-      z-index: 2;
-      padding: 10px 20px;
-      border-radius: $border-radius-l 0 0 $border-radius-l;
-      border-right: none;
-      background-color: $color-black;
+  @media (max-width: 840px) {
+    position: fixed;
+    right: 0;
+    top: 20px;
+    @include flex-al-center;
+    gap: 10px;
+    z-index: 2;
+    padding: 8px 20px;
+    border-radius: 50px 0 0 50px;
+    border-right: none;
+    background-color: $color-body;
+    box-shadow:inset #000000 0px -2px 2px 2px, inset #636060 0px 2px 2px 2px;
   }
-  &::before{
+
+  &::before {
     content: attr(data-count);
     @include flex-al-jc-center;
     position: absolute;
     height: 30px;
     width: 30px;
     left: -15px;
-    top:-10px;
+    top: -5px;
     bottom: 0;
     border-radius: 50%;
-    border:none;
-    background-color:indianred;
+    border: none;
+    background-image: linear-gradient( indianred 20% , #9f3535 80%);
     color: $color-white;
     font-weight: bold;
     font-size: 1.125rem;
     z-index: 4;
-    @media (max-width: 840px){
-      left: 0;
-      top:0;
+    @media (max-width: 840px) {
+      left: 5px;
+      top: 5px;
     }
   }
-
-  &__icon{
-    width: 45px;
-    height: 45px;
-    padding: 10px;
-    box-shadow:  $color-white 0 0 0 2px;
-    border-radius: 50%;
+  .btn {
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
     cursor: pointer;
     z-index: 3;
-    transition: 0.3s;
     outline: none;
-    &:hover,
-    &:focus-visible {
-      background-color: #2a89c7;
-      box-shadow: #2a89c7 0 0 0 2px;
-    }
+    background: rgb(66, 64, 64);
+    background: linear-gradient(0deg, rgba(66, 64, 64, 1) 11%, rgba(51, 50, 50, 1) 50%, rgba(74, 73, 73, 1) 90%);
+    box-shadow: inset rgb(0 0 0) 0 0 1px 1px;
     &:active{
-      padding: 5px;
+      box-shadow: inset rgb(0 0 0) 0 0 2px 4px;
+    }
+    &:hover:not(:active),
+    &:focus-visible:not(:active){
+      box-shadow: inset rgb(99, 181, 243) 0 0 2px 4px;
+    }
+    &:active .btn__icon{
+      width: 50px;
+      height: 50px;
+    }
+    &__icon {
+      width: 55px;
+      height: 55px;
+      padding: 10px;
+      //box-shadow:  $color-white 0 0 0 2px;
+      border-radius: 50%;
+      //cursor: pointer;
+      //z-index: 3;
+      outline: none;
+      transition: 0.1s;
+      //background: rgb(66, 64, 64);
+      //background: linear-gradient(0deg, rgba(66, 64, 64, 1) 11%, rgba(51, 50, 50, 1) 50%, rgba(74, 73, 73, 1) 90%);
+      //box-shadow: inset rgb(0 0 0) 0 0 2px 2px;
+
+      &:hover,
+      &:focus-visible {
+        //background-color: #7e7b7b;
+        ////box-shadow: inset #41637a 0 0 0 2px;
+        //box-shadow:  inset #7e7b7b 0 0 0 3px;
+      }
+
+      //&:active {
+      //  background: rgb(66,64,64);
+      //  background: linear-gradient(0deg, rgba(66,64,64,1) 11%, rgba(51,50,50,1) 50%, rgba(74,73,73,1) 90%);
+      //  box-shadow:inset rgb(31 29 29) 0 0 5px 5px;
+      //}
     }
   }
-
-  &__total-price{
+  &__total-price {
     padding: 5px 20px;
-    box-shadow:  $color-white 0 0 0 2px;
+    box-shadow: $color-white 0 0 0 2px;
     border-radius: $border-radius-l;
     z-index: 3;
   }

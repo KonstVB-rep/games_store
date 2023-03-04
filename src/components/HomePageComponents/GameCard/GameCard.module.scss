@@ -7,7 +7,15 @@
   background-color: rgb(36, 37, 41);
   border-radius: $border-radius-m;
   overflow: hidden;
-  box-shadow: #252323 0 0 10px 2px;
+  animation: shadow 0.5s ease-in-out forwards;
+  @keyframes shadow {
+    from {
+      box-shadow: $color-black 0 0 0 0px;
+    }
+    to{
+      box-shadow: $color-black 0px -5px 10px 4px;
+    }
+  }
   .skeleton{
     position: absolute;
     inset:0;
@@ -23,10 +31,11 @@
       font-size: 1.5rem;
       padding: 10px 0;
       font-weight: bold;
+      flex-grow: 1;
     }
     
     &__secondary {
-      padding: 5px 0;
+      padding: 10px 0;
 
       & p {
         padding: 5px 0;

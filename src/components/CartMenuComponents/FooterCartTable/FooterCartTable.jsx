@@ -9,7 +9,7 @@ const FooterCartTable = ({classname}) => {
 
   return (
     <div className = {classname}>
-      <span>Итого:</span>
+      <span>Total price:</span>
       <span>
           {totalPriceCart} {currency}
         </span>

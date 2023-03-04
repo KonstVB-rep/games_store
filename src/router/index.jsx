@@ -11,7 +11,6 @@ import {Favorites} from "../pages/Favorites";
 
 export const router = createBrowserRouter([
   {
-    // path: "/",
     element: <App />,
     children: [
       {
@@ -33,12 +32,10 @@ export const router = createBrowserRouter([
       {
         path: "/order",
         element: <OrdersPage/>,
-        errorElement: <ErrorPage />,
       },
       {
         path: "/favorites",
         element: <Favorites/>,
-        errorElement: <ErrorPage />,
       },
     ],
   },

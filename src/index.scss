@@ -1,4 +1,4 @@
-$color-body: rgba(0, 0, 0);
+$color-body: #2a2929;
 $color-white: #ffffff;
 $color-black: #000000;
 $primary-color: #3d55a1;
@@ -11,6 +11,13 @@ $error-color: #9f0e0e;
 
 $border-radius-m: 15px;
 $border-radius-l: 25px;
+$border-radius-xl: 35px;
+
+@mixin main-style{
+  position: relative;
+  flex-grow: 1;
+  padding: 60px 0 20px;
+}
 
 @mixin flex-al-center {
   display: flex;
@@ -26,7 +33,10 @@ $border-radius-l: 25px;
   flex-direction: column;
 }
 
-
+html{
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
 body {
   margin: 0;
   min-height: 100vh;
@@ -37,6 +47,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: $color-body ;
   color:$color-white;
+  //overflow-y: scroll;
 }
 
 code {
@@ -74,10 +85,49 @@ ul {
   min-height: 100vh;
   @media (max-width: 840px){
     position: relative;
-    padding-top: 110px;
+    padding-top: 90px;
   }
 }
-.active_link{
-  border-bottom: 4px solid $color-white;
-  border-radius:$border-radius-l;
+
+main{
+  position: relative;
+  flex-grow: 1;
+  padding: 20px 0 20px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #010100 #7B8182;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #7B8182;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #A4AAAC;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #A4AAAC;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #010100;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #010100;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: $color-body;
 }

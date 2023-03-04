@@ -1,21 +1,21 @@
 @import '../../index';
 
 main {
-  flex-grow: 1;
   text-align: center;
+
   .form {
     position: relative;
     margin: auto;
     padding: 20px;
     width: 50%;
     min-width: 250px;
-    @media (max-width:800px ){
+    @media (max-width: 800px) {
       width: 80%;
     }
-    @media (max-width:600px ){
+    @media (max-width: 600px) {
       width: 100%;
     }
-    @media (max-width:480px ){
+    @media (max-width: 480px) {
       padding: 20px 0;
     }
 
@@ -36,9 +36,10 @@ main {
       right: 20px;
       border: none;
       background: url("../../../public/search.png") center center/cover no-repeat;
-      @media (max-width:480px ){
+      @media (max-width: 480px) {
         right: 0;
       }
+
       &:active {
         animation: pulse 0.3s;
         box-shadow: 0 0 0 2em rgba(#fff, 0.5);
@@ -55,7 +56,7 @@ main {
   .games-list {
     @include flex-al-center;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
     margin: 20px;
 
     .games-item {
@@ -65,18 +66,21 @@ main {
       border-bottom: 3px solid #808585;
       transition: 0.3s;
       overflow: hidden;
+
       &:hover,
       &focus-visible {
         transform: scale(1.2);
         border-top: 3px solid #808585;
         border-radius: $border-radius-l;
       }
+
       &:active {
         border-radius: $border-radius-l;
         background-color: $color-white;
-       & a{
-         color:$color-black;
-       }
+
+        & a {
+          color: $color-black;
+        }
       }
     }
   }

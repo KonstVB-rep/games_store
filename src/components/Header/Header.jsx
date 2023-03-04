@@ -1,7 +1,7 @@
 import React from "react";
-import cn from "./Header.module.scss";
 import ShoppingCart from "../CartMenuComponents/ShoppingCart/ShoppingCart";
 import NavBar from "../NavBar/NavBar";
+import cn from "./Header.module.scss";
 
 const Header = () => {
 

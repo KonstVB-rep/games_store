@@ -14,7 +14,7 @@ const CartMenu = forwardRef(function CartMenu({classname}, ref) {
         <HeaderCartTable classname = {cl.grid}/>
       </CartMenuList>
       <FooterCartTable classname = {cl.total}/>
-      <Link to = "order" tabindex='-1'>
+      <Link to = "order" >
         <Button classname = {cl.btn_cart} >Go to the shopping cart</Button>
       </Link>
     </div>

@@ -1,6 +1,8 @@
-main{
-  flex-grow: 1;
-  .content{
+@import '../../index';
+
+
+.favorites {
+  &__content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }

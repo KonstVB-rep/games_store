@@ -9,11 +9,21 @@
   .wrapper{
     max-width:1180px;
     margin: auto;
+    min-height: 60px;
     @include flex-al-center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 10px;
     @media (max-width: 840px){
       padding: 0;
+    }
+    .wrapper-burger{
+      height: 70px;
+      width: 70px;
+      position: absolute;
+      left: 0;
+      top: 20px;
+      overflow: hidden;
+      border-radius: 0 25px 25px 0;
     }
     .burger{
       display: none;
@@ -22,7 +32,7 @@
       transition: 0.3s;
       outline: none;
       &:hover,
-      &:focus-visible{
+      &:focus-visible path{
         transform: scale(1.4);
       }
       &:active{
@@ -31,11 +41,10 @@
       @media (max-width: 840px){
         position: absolute;
         left:0;
-        top: 20px;
+        top: 0;
         display: block;
-        background-color: $color-black;
+        background-color: $color-body;
         padding: 10px 15px;
-        border-radius: 0 $border-radius-l $border-radius-l 0;
         cursor: pointer;
         z-index: 3;
       }
@@ -53,37 +62,48 @@
         width: 100%;
         transform: translateY(-90%);
         z-index: 2;
-        background: $color-black;
+        background: $color-body;
         opacity: 0;
         visibility: hidden;
         &.nav_mobile{
           transform: translateY(15%);
           opacity: 1;
           border: 2px solid transparent;
-          border-bottom-color: $color-white;
           visibility: visible;
         }
       }
-      a{
+      .link{
         font-size: 1.5rem;
         font-weight: bold;
-        padding: 2px 10px;
-        &:hover{
-          background-color: $color-white;
-          color: $color-black;
+        padding: 4px 15px;
+        background-image: linear-gradient(#464545 33%, #3a3939 60%, #383737 100%);
+        border-radius:$border-radius-l;
+        box-shadow: $color-black 0 0 10px 4px;
+        color: lightgrey;
+        &:hover,
+        &:focus-visible{
+          background-image: linear-gradient(#464545 33%, #3a3939 60%, #383737 100%);
+          text-shadow: #1d6bcc 2px 2px 5px, #1d6bcc -2px -2px 5px;
           border-radius:$border-radius-l;
+          box-shadow: $color-white 0 0 2px 2px;
+          color: white;
         }
         &:active{
-          background-color: $color-black;
-          color: $color-white;
-          border-radius:$border-radius-l;
+          box-shadow: #525050 0 0 4px 2px,#525050 0 0 4px 2px;
         }
-        &:focus-visible{
-          outline: none;
-          border-radius: $border-radius-l;
-          box-shadow: $color-white 0 0 2px 2px;
+        &.active_link{
+          background-image: none;
+          text-shadow: #2a89c7 2px 2px 3px, #2a89c7 -2px -2px 3px;
+          border-radius:$border-radius-l;
+          box-shadow: #000000 0 0 0 4px;
+          color: white;
+          &:focus-visible{
+            box-shadow: white 0 0 0 4px;
+          }
         }
       }
     }
   }
 }
+
+

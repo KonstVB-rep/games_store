@@ -1,0 +1,26 @@
+@import '../../../index';
+.wrapper{
+  width: 100%;
+  display: flex;
+  padding: 20px 20px;
+  align-items: center;
+  gap: 50px;
+  justify-content: space-between;
+  text-transform: uppercase;
+  box-shadow: #000000 0px -7px 7px 0px;
+  border-radius: $border-radius-xl $border-radius-xl 0 0;
+  .total-price{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    span{
+      font-size: 1.5rem;
+      padding-left: 10px;
+    }
+  }
+  .order-button{
+    background: -webkit-linear-gradient(to right, #5fa3a6, #83a4d4);
+    background: linear-gradient(to right, #5fa3a6, #83a4d4);
+  }
+}

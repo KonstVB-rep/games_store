@@ -1,10 +1,15 @@
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(0, 0, 0);
+  background-color: #2a2929;
   color: #ffffff;
 }
 
@@ -44,13 +49,52 @@ ul {
 @media (max-width: 840px) {
   .App {
     position: relative;
-    padding-top: 110px;
+    padding-top: 90px;
   }
 }
 
-.active_link {
-  border-bottom: 4px solid #ffffff;
-  border-radius: 25px;
+main {
+  position: relative;
+  flex-grow: 1;
+  padding: 20px 0 20px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #010100 #7B8182;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #7B8182;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #A4AAAC;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #A4AAAC;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #010100;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #010100;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #2a2929;
 }
 
 .card {
@@ -72,6 +116,8 @@ ul {
 .card .card__img {
   width: 200px;
   height: 200px;
+  max-width: 400px;
+  position: relative;
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid #ffffff;
@@ -79,14 +125,29 @@ ul {
   transition: 0.3s;
 }
 .card .card__img:hover, .card .card__img:focus-visible {
+  filter: blur(0);
   border-radius: 15px;
   width: 90%;
+}
+.card .card__img:hover img, .card .card__img:focus-visible img {
+  transform: scale(1.1);
+}
+.card .card__img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #000000;
+  opacity: 0.3;
+}
+.card .card__img:hover::before, .card .card__img:focus-visible::before {
+  opacity: 0;
 }
 .card .card__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
+  transition: 0.3s;
 }
 
 /*# sourceMappingURL=ShortCard.module.css.map */

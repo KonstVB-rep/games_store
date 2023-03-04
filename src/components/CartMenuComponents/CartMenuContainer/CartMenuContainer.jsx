@@ -11,7 +11,7 @@ const CartMenuContainer = () => {
 
   useEffect(() => {
     const isShowCart = (e) => {
-      if (e.target.matches(`.${cn.cart__icon}`)) {
+      if (e.target.parentElement.className === cn.btn || e.target.className === cn.btn ) {
         setShowCart(p => !p)
       } else if (!ref.current?.contains(e.target) || e.target.textContent === 'Go to the shopping cart') {
         setShowCart(false)

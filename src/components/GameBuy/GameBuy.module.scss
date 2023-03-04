@@ -12,6 +12,7 @@
   color: $color-black;
   border-radius: $border-radius-l;
   font-weight: bold;
+  box-shadow: black 0px 0px 2px 1px inset;
   @media(max-width: 480px){
     flex-direction: column;
     height: auto;

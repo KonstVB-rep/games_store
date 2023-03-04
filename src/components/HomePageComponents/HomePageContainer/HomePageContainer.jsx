@@ -2,11 +2,15 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {loadGames, rememberCountPage} from "../../../store/games/gamesSlice";
 import {PATH} from "../../../constants/api";
+import {ErrorContainer} from "../../ErrorContainer";
+import {BackButton} from "../../Buttons/BackButton";
+
+
 
 const HomePageContainer = ({children}) => {
 
   const dispatch = useDispatch();
-  const {currentPage} = useSelector(state => state.games);
+  const {currentPage,status} = useSelector(state => state.games);
 
   console.log('render')
 
@@ -15,9 +19,12 @@ const HomePageContainer = ({children}) => {
     return () => dispatch(rememberCountPage())
   }, [dispatch]);
 
+
   return (
     <main>
-      {children}
+      <ErrorContainer status={status}>
+        {children}
+      </ErrorContainer>
     </main>
   );
 };

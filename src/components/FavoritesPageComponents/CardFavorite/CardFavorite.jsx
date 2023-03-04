@@ -12,7 +12,6 @@ const CardFavorite = ({game}) => {
         <ButtonBuy game={game}/>
       </ShortCard>
       <FavoriteIcon game={game}/>
-
     </div>
   );
 };
