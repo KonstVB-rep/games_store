@@ -10,9 +10,12 @@ const MakingOrder = () => {
 
   const totalPrice = useSelector(selectTotalPrice)
   return (
-    <div className={cn.wrapper}>
-      <p className={cn['total-price']}>Total price: <span>{totalPrice} {currency}</span></p>
-      <Button classname={cn['order-button']}>place on order</Button>
+    <div className = {cn.wrapper}>
+      <p className = {cn['total-price']}>
+        <span>Total price: </span>
+        <span className = {cn.price}>{totalPrice} {currency}</span>
+      </p>
+      <Button classname = {cn['order-button']}>place on order</Button>
     </div>
   );
 };

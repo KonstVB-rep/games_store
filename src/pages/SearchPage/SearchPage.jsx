@@ -12,7 +12,7 @@ const SearchPage = () => {
   const status = useSelector(state => state.search.status)
   const {handleSearch, handleSubmit, searchValue} = useSearchGame();
   return (
-    <main >
+    <main className = {cn.main}>
       <BackButton/>
       <ErrorContainer status = {status}>
       <form className = {cn.form} onSubmit = {handleSubmit}>

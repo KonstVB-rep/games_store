@@ -12,13 +12,15 @@
   color: $color-black;
   border-radius: $border-radius-l;
   font-weight: bold;
-  box-shadow: black 0px 0px 2px 1px inset;
+  box-shadow: black 0 0 2px 1px inset;
   @media(max-width: 480px){
     flex-direction: column;
+    max-height: none;
     height: auto;
-    gap:5px;
+    gap:0px;
     padding: 5px;
     width: 100%;
+    border-radius: 50px;
   }
   & *:not(button){
     color: $color-black;

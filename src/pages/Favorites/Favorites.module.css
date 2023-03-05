@@ -97,6 +97,9 @@ main {
   background-color: #2a2929;
 }
 
+.favorites {
+  text-align: center;
+}
 .favorites__content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

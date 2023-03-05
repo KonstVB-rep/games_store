@@ -114,7 +114,8 @@ main {
   .card {
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 10px;
+    text-align: center;
+    gap: 5px;
   }
 }
 .card .title {
@@ -124,11 +125,17 @@ main {
   padding: 10px 0;
   cursor: pointer;
 }
+@media (max-width: 680px) {
+  .card .title {
+    padding: 10px 0 0;
+  }
+}
 .card .title a {
   display: inline-block;
   padding: 5px 15px;
   border-radius: 25px;
   transition: 0.3s;
+  text-align: center;
 }
 .card .title a:hover, .card .title a:focus-visible {
   background-color: #827056;
@@ -145,6 +152,11 @@ main {
   width: max-content;
   padding: 20px 20px;
   font-size: 1.5rem;
+}
+@media (max-width: 680px) {
+  .card .price {
+    padding: 10px 0;
+  }
 }
 
 /*# sourceMappingURL=OrderItem.module.css.map */

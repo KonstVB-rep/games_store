@@ -15,7 +15,8 @@
   @media (max-width: 680px){
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 10px;
+    text-align: center;
+    gap: 5px;
   }
   .title{
     flex-grow: 1;
@@ -23,11 +24,15 @@
     font-weight: bold;
     padding: 10px 0;
     cursor: pointer;
+    @media (max-width: 680px){
+      padding: 10px 0 0;
+    }
     a{
       display: inline-block;
       padding: 5px 15px;
       border-radius: $border-radius-l;
       transition: 0.3s;
+      text-align: center;
       &:hover,
       &:focus-visible{
         background-color: $details-bg;
@@ -46,5 +51,8 @@
     width: max-content;
     padding: 20px 20px;
     font-size: 1.5rem;
+    @media (max-width: 680px){
+      padding: 10px 0;
+    }
   }
 }

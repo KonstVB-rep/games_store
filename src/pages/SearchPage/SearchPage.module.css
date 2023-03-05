@@ -97,10 +97,10 @@ main {
   background-color: #2a2929;
 }
 
-main {
+.main {
   text-align: center;
 }
-main .form {
+.main .form {
   position: relative;
   margin: auto;
   padding: 20px;
@@ -108,28 +108,28 @@ main .form {
   min-width: 250px;
 }
 @media (max-width: 800px) {
-  main .form {
+  .main .form {
     width: 80%;
   }
 }
 @media (max-width: 600px) {
-  main .form {
+  .main .form {
     width: 100%;
   }
 }
 @media (max-width: 480px) {
-  main .form {
+  .main .form {
     padding: 20px 0;
   }
 }
-main .form .input {
+.main .form .input {
   width: 100%;
   font-size: 1.5rem;
   padding: 10px 60px 10px 15px;
   border-radius: 25px;
   color: #000000;
 }
-main .form .btn {
+.main .form .btn {
   position: absolute;
   width: 48px;
   height: 51px;
@@ -140,11 +140,11 @@ main .form .btn {
   background: url("../../../public/search.png") center center/cover no-repeat;
 }
 @media (max-width: 480px) {
-  main .form .btn {
+  .main .form .btn {
     right: 0;
   }
 }
-main .form .btn:active {
+.main .form .btn:active {
   animation: pulse 0.3s;
   box-shadow: 0 0 0 2em rgba(255, 255, 255, 0.5);
 }
@@ -153,14 +153,14 @@ main .form .btn:active {
     box-shadow: 0 0 0 0 #ffffff;
   }
 }
-main .games-list {
+.main .games-list {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 10px;
   margin: 20px;
 }
-main .games-list .games-item {
+.main .games-list .games-item {
   padding: 5px 10px;
   min-width: fit-content;
   border-color: transparent;
@@ -168,16 +168,16 @@ main .games-list .games-item {
   transition: 0.3s;
   overflow: hidden;
 }
-main .games-list .games-item:hover, main .games-list .games-itemfocus-visible {
+.main .games-list .games-item:hover, .main .games-list .games-itemfocus-visible {
   transform: scale(1.2);
   border-top: 3px solid #808585;
   border-radius: 25px;
 }
-main .games-list .games-item:active {
+.main .games-list .games-item:active {
   border-radius: 25px;
   background-color: #ffffff;
 }
-main .games-list .games-item:active a {
+.main .games-list .games-item:active a {
   color: #000000;
 }
 

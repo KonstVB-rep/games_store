@@ -97,24 +97,27 @@ main {
   background-color: #2a2929;
 }
 
-.button {
+.wrapper {
+  padding: 10px 15px 20px;
+  text-align: left;
+}
+.wrapper .button {
   position: relative;
   top: 0;
   left: 0;
-  padding: 10px 50px;
-  background-image: linear-gradient(#3f3d3d 30%, #2f2f2f 65%, #1f1f1f 100%);
+  padding: 10px 30px;
+  background: linear-gradient(0deg, rgb(70, 68, 68) 10%, rgb(148, 145, 145) 30%, rgb(126, 125, 125) 50%, rgb(148, 145, 145) 70%, rgb(70, 68, 68) 90%);
   border: 4px solid #222;
   border-radius: 25px;
   overflow: hidden;
-  margin: 10px 0 20px;
 }
-.button__text {
+.wrapper .button__text {
   display: inline-block;
   font-size: 1.1rem;
   text-transform: uppercase;
   transition: 0.5s;
 }
-.button:before {
+.wrapper .button:before {
   content: "";
   position: absolute;
   display: flex;
@@ -128,17 +131,18 @@ main {
   transform: translateX(-200%);
   transition: 0.5s;
 }
-.button:hover:before, .button:focus-visible:before {
+.wrapper .button:hover:before, .wrapper .button:focus-visible:before {
   transform: translateX(0);
 }
-.button:hover .button__text, .button:focus-visible .button__text {
+.wrapper .button:hover .button__text, .wrapper .button:focus-visible .button__text {
   transform: translateX(200%);
 }
-.button:active {
-  box-shadow: inset 0 0 8px 2px #000000;
+.wrapper .button:active {
+  box-shadow: inset 0 0 0px 4px #000000;
+  background: linear-gradient(0deg, rgb(70, 68, 68) 10%, rgb(122, 116, 116) 40%, rgb(99, 95, 95) 50%, rgb(148, 145, 145) 60%, rgb(70, 68, 68) 90%);
 }
-.button:active:before {
-  transform: translateX(-200%);
+.wrapper .button:active:before {
+  transform: translateX(-20%);
 }
 
 /*# sourceMappingURL=BackButton.module.css.map */

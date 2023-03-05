@@ -6,17 +6,19 @@ import {getData} from "../../utils/getData";
 import {transformDataItem} from "../../utils/transformData";
 import {GameInfo} from "../../components/SinglePageComponents/GameInfo";
 import cn from "./SinglePage.module.scss";
+import {BackButton} from "../../components/Buttons/BackButton";
 
 const SinglePage = () => {
   const {game} = useLoaderData()
 
   return (
     <main className = {cn.game}>
-      <Suspense fallback = {<SkeletonSinglePage />}>
-        <Await resolve={game}>
-          <GameInfo/>
-        </Await>
-      </Suspense>
+      <BackButton/>
+        <Suspense fallback = {<SkeletonSinglePage />}>
+          <Await resolve={game}>
+            <GameInfo/>
+          </Await>
+        </Suspense>
     </main>
   );
 };

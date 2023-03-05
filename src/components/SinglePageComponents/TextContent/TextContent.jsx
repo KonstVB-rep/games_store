@@ -9,7 +9,7 @@ const TextContent = ({game}) => {
 
   return (
     <div className = {cn.content}>
-      <p>{game.description ? game.description : 'The description of the game has not been published'}</p>
+      <p className = {cn.description}>{game.description ? game.description : 'The description of the game has not been published'}</p>
       <DevelopersList developers={game.developers}/>
       <Genres genres = {game.genres} />
       <RatingInfo classname = {cn.rating_info} rating={game.rating} ratingsCount={game.ratingsCount} released={game.released}/>

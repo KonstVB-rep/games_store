@@ -105,6 +105,9 @@ main {
   padding: 20px;
 }
 
+.platforms-box {
+  text-align: left;
+}
 @media (max-width: 940px) {
   .platforms-box {
     display: flex;

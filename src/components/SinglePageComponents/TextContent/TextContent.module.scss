@@ -1,9 +1,10 @@
 @import '../../../index';
 .content{
+  text-align: left;
   @include flex-column;
   gap: 20px;
   grid-column: 1/-1;
-  @media (max-width: 900px){
+  @media (max-width: 940px){
     padding: 0 20px 20px;
   }
   @media (max-width: 480px){

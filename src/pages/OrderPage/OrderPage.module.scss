@@ -1,24 +1,26 @@
 @import '../../index';
-section{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  .card-list {
+.main{
+  @include flex-column;
+  .section{
     @include flex-column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    gap: 20px;
-    .wrapper{
+    flex-grow:1;
+    .card-list {
       @include flex-column;
       align-items: center;
+      justify-content: space-between;
+      flex-grow:1;
       height: 100%;
       width: 100%;
-      padding: 0 10px;
-      gap: 20px;
-      overflow-y: auto;
+      gap: 50px;
+      .wrapper{
+        @include flex-column;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0 10px;
+        gap: 20px;
+        overflow-y: auto;
+      }
     }
   }
 }

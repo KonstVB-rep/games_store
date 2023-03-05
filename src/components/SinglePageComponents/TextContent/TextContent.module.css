@@ -98,12 +98,13 @@ main {
 }
 
 .content {
+  text-align: left;
   display: flex;
   flex-direction: column;
   gap: 20px;
   grid-column: 1/-1;
 }
-@media (max-width: 900px) {
+@media (max-width: 940px) {
   .content {
     padding: 0 20px 20px;
   }
