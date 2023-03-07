@@ -1,7 +1,9 @@
 @import '../../index.scss';
 
 main{
-  @include main-style;
+  position: relative;
+  flex-grow: 1;
+  padding: 60px 0 20px;
   @media(max-width: 400px) {
     padding: 20px 0;
   }

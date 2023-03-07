@@ -1,9 +1,9 @@
 import Header from "./components/Header/Header";
 import { Outlet } from "react-router-dom";
-import { createPortal } from "react-dom";
 import { ArrowTop } from "./components/ArrowTop";
 import {Footer} from "./components/Footer";
 import ScrollToTop from "./hooks/ScrollToTop";
+import {PortalCreator} from "./components/PortalCreator";
 
 function App() {
   return (
@@ -13,17 +13,13 @@ function App() {
         <ScrollToTop>
           <Outlet />
         </ScrollToTop>
-        <PortalArrowTop>
+        <PortalCreator>
           <ArrowTop />
-        </PortalArrowTop>
+        </PortalCreator>
         <Footer/>
       </div>
     </>
   );
 }
-const PortalArrowTop = (props) => {
-  const portal = document.getElementById("portal");
-  return createPortal(props.children, portal);
-};
 
 export default App;

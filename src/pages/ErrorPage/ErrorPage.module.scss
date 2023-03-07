@@ -1,7 +1,9 @@
 @import '../../index';
 
 .main {
-  @include main-style;
+  position: relative;
+  flex-grow: 1;
+  padding: 20px 0 20px;
   .wrapper {
     width: 80%;
     height: 40%;

@@ -95,70 +95,79 @@ body::-webkit-scrollbar-thumb:active {
   background-color: #2a2929;
 }
 
-.menu {
-  position: absolute;
-  width: max-content;
-  top: 70px;
-  right: -50px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  border-radius: 15px 0 0 15px;
-  background-color: rgba(0, 0, 0, 0.9);
-  transform: translateY(-100%);
+.modal-order {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(173, 216, 218, 0.42);
   opacity: 0;
+  transform: scale(0);
   visibility: hidden;
-  transition: 0.3s;
-  z-index: 2;
+  transition: all 0.3s linear;
+  border-radius: 15px;
 }
-.menu.menu_visible {
-  transform: translateY(0);
+.modal-order.active {
   opacity: 1;
+  transform: scale(1);
   visibility: visible;
 }
-@media (max-width: 640px) {
-  .menu {
-    width: fit-content;
-  }
+.modal-order.active .content {
+  opacity: 1;
 }
-@media (max-width: 840px) {
-  .menu {
-    top: -40px;
-    right: 0;
-    padding-top: 120px;
-    border-radius: 15px 0 0 15px;
-  }
-}
-.menu .orders {
-  flex-grow: 1;
-  padding: 5px 0;
-  border-bottom: 1px solid #ffffff;
-}
-.menu .orders span {
-  text-transform: uppercase;
-}
-.menu .orders .grid {
-  display: grid;
-  grid-template-columns: 3fr 1fr 2fr;
-  gap: 20px;
-}
-.menu .orders .grid span:not(:first-child) {
-  text-align: end;
-}
-.menu .total {
+.modal-order .content {
+  position: absolute;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  gap: 10px;
+  padding: 15px;
+  width: 80%;
+  max-width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  aspect-ratio: 4/3;
+  background-color: #add0ad;
+  opacity: 0;
+  transition: opacity 0.3s linear;
 }
-.menu .total span {
+.modal-order .content .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+}
+.modal-order .content > * {
+  color: black;
+  text-align: center;
+}
+.modal-order .content .title.text {
+  font-size: 2rem;
+}
+.modal-order .content .text {
+  font-size: 1.2rem;
+}
+.modal-order .content .text__span {
+  color: inherit;
+}
+.modal-order .content .text::first-letter {
   text-transform: uppercase;
 }
-.menu a {
-  width: max-content;
+.modal-order .content .icon-wrapper {
+  width: 50%;
+  aspect-ratio: 1/1;
 }
-.menu .btn_cart {
-  font-weight: bold;
-  background-color: #e18418;
+.modal-order .content .icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/*# sourceMappingURL=CartMenu.module.css.map */
+/*# sourceMappingURL=OrderModal.module.css.map */
