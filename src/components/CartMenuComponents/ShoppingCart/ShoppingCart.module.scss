@@ -39,7 +39,8 @@
       top: 5px;
     }
   }
-  .btn {
+  .btn-toggle {
+    position: relative;
     width: 60px;
     height: 60px;
     border-radius:50%;
@@ -49,6 +50,11 @@
     background: rgb(66, 64, 64);
     background: linear-gradient(0deg, rgba(66, 64, 64, 1) 11%, rgba(51, 50, 50, 1) 50%, rgba(74, 73, 73, 1) 90%);
     box-shadow: inset rgb(0 0 0) 0 0 1px 1px;
+    &:before{
+      content: '';
+      position: absolute;
+      inset:0;
+    }
     &:active{
       box-shadow: inset rgb(0 0 0) 0 0 2px 4px;
     }
@@ -56,7 +62,7 @@
     &:focus-visible:not(:active){
       box-shadow: inset rgb(99, 181, 243) 0 0 2px 4px;
     }
-    &:active .btn__icon{
+    &:active .btn-toggle__icon{
       width: 50px;
       height: 50px;
     }

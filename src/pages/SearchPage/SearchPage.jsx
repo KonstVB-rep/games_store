@@ -1,11 +1,10 @@
 import useSearchGame from "./useSearchGame/useSearchGame";
 import {ListFoundGames} from "../../components/SearchPageComponents/ListFoundGames";
 import SearchField from "../../components/SearchPageComponents/SearchField/SearchField";
-import cn from "./SearchPage.module.scss";
 import React from "react";
 import {useSelector} from "react-redux";
 import {ErrorContainer} from "../../components/ErrorContainer";
-import {BackButton} from "../../components/Buttons/BackButton";
+import cn from "./SearchPage.module.scss";
 
 
 const SearchPage = () => {
@@ -13,7 +12,7 @@ const SearchPage = () => {
   const {handleSearch, handleSubmit, searchValue} = useSearchGame();
   return (
     <main className = {cn.main}>
-      <BackButton/>
+      {/*<ButtonSilver/>*/}
       <ErrorContainer status = {status}>
       <form className = {cn.form} onSubmit = {handleSubmit}>
         <SearchField

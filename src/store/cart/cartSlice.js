@@ -7,6 +7,9 @@ const cartSlice = createSlice({
     totalPrice: 0,
   },
   reducers: {
+    clearCartList: (state) => {
+      state.cartList = []
+    },
     addProduct: {
       reducer: (state, action) => {
         const findItem = state.cartList.find(
@@ -47,7 +50,7 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addProduct, removeProduct } = cartSlice.actions;
+export const { addProduct, removeProduct,clearCartList } = cartSlice.actions;
 export const selectAllItemsCart = (state) => state.cart.cartList;
 export const selectTotalPrice = (state) => state.cart.totalPrice;
 

@@ -60,43 +60,42 @@ main {
 /* Firefox */
 body {
   scrollbar-width: thin;
-  scrollbar-color: #010100 #7B8182;
+  scrollbar-color: steelblue #7B8182;
 }
 
 /* Chrome, Edge and Safari */
-body::-webkit-scrollbar {
-  width: 8px;
+*::-webkit-scrollbar {
   width: 8px;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   border-radius: 4px;
   background-color: #7B8182;
 }
 
-body::-webkit-scrollbar-track:hover {
+*::-webkit-scrollbar-track:hover {
   background-color: #A4AAAC;
 }
 
-body::-webkit-scrollbar-track:active {
+*::-webkit-scrollbar-track:active {
   background-color: #A4AAAC;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #010100;
+  background-color: steelblue;
 }
 
-body::-webkit-scrollbar-thumb:hover {
-  background-color: #010100;
+*::-webkit-scrollbar-thumb:hover {
+  background-color: steelblue;
 }
 
-body::-webkit-scrollbar-thumb:active {
+*::-webkit-scrollbar-thumb:active {
   background-color: #2a2929;
 }
 
 .wrapper {
-  padding: 10px 15px 20px;
+  padding: 20px 15px 20px 0;
   text-align: left;
 }
 .wrapper .button {
@@ -115,32 +114,12 @@ body::-webkit-scrollbar-thumb:active {
   text-transform: uppercase;
   transition: 0.5s;
 }
-.wrapper .button:before {
-  content: "";
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background: url("../../../../public/back_previous_arrow_left.png") center center/contain no-repeat;
-  color: white;
-  inset: 0;
-  transform: translateX(-200%);
-  transition: 0.5s;
-}
-.wrapper .button:hover:before, .wrapper .button:focus-visible:before {
-  transform: translateX(0);
-}
-.wrapper .button:hover .button__text, .wrapper .button:focus-visible .button__text {
-  transform: translateX(200%);
+.wrapper .button:hover, .wrapper .button:focus-visible {
+  box-shadow: inset 0 0 0 3px #3374f5;
 }
 .wrapper .button:active {
-  box-shadow: inset 0 0 0px 4px #000000;
-  background: linear-gradient(0deg, rgb(70, 68, 68) 10%, rgb(122, 116, 116) 40%, rgb(99, 95, 95) 50%, rgb(148, 145, 145) 60%, rgb(70, 68, 68) 90%);
-}
-.wrapper .button:active:before {
-  transform: translateX(-20%);
+  box-shadow: inset 0 0 0 4px #000000;
+  background: linear-gradient(0deg, rgb(70, 68, 68) 10%, rgb(96, 94, 94) 40%, rgb(99, 95, 95) 50%, rgb(96, 94, 94) 60%, rgb(70, 68, 68) 90%);
 }
 
-/*# sourceMappingURL=BackButton.module.css.map */
+/*# sourceMappingURL=ButtonSilver.module.css.map */

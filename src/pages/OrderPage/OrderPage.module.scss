@@ -1,10 +1,14 @@
 @import '../../index';
 .main{
   @include flex-column;
+  @media (max-width: 420px){
+    padding-top: 0;
+  }
   .section{
     @include flex-column;
     flex-grow:1;
     .card-list {
+      position: relative;
       @include flex-column;
       align-items: center;
       justify-content: space-between;
@@ -12,6 +16,24 @@
       height: 100%;
       width: 100%;
       gap: 50px;
+      @media (max-width: 420px){
+        position: static;
+      }
+      .button_clear{
+        position: absolute;
+        top: -140px;
+        right: 0;
+        @media (max-width: 840px){
+          top: -110px;
+        }
+        @media (max-width: 420px){
+          position: static;
+          align-self: flex-start;
+          top: -110px;
+          padding: 0;
+          right: 0;
+        }
+      }
       .wrapper{
         @include flex-column;
         align-items: center;

@@ -1,14 +1,12 @@
-import {useLocation, useRouteError} from "react-router-dom";
+import {useRouteError} from "react-router-dom";
 import cn from './ErrorPage.module.scss'
-import {BackButton} from "../../components/Buttons/BackButton";
+import {ButtonSilver} from "../../components/Buttons/ButtonSilver";
 
 export default function ErrorPage() {
   const error = useRouteError();
-  const {pathname} = useLocation();
 
   return (
     <section className={cn.main}>
-      {pathname !== '/' ? <BackButton /> : null}
       <div className = {cn.wrapper}>
         <h1>Oops!</h1>
         <p>Sorry, an unexpected error has occurred.</p>

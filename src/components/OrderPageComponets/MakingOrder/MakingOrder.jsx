@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import {currency} from "../../../constants/currency";
 import {PortalCreator} from "../../PortalCreator";
 import cn from './MakingOrder.module.scss'
-import {OrderModal} from "../OrderСonfirmationModal";
+import {OrderModal} from "../OrderModal";
 import { animateScroll as scroll } from "react-scroll";
 
 
@@ -27,8 +27,8 @@ const MakingOrder = () => {
     }
   }
 
-
   const totalPrice = useSelector(selectTotalPrice);
+
   return (
     <>
       <div className = {cn.wrapper}>

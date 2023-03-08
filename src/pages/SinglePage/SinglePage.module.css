@@ -60,38 +60,37 @@ main {
 /* Firefox */
 body {
   scrollbar-width: thin;
-  scrollbar-color: #010100 #7B8182;
+  scrollbar-color: steelblue #7B8182;
 }
 
 /* Chrome, Edge and Safari */
-body::-webkit-scrollbar {
-  width: 8px;
+*::-webkit-scrollbar {
   width: 8px;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   border-radius: 4px;
   background-color: #7B8182;
 }
 
-body::-webkit-scrollbar-track:hover {
+*::-webkit-scrollbar-track:hover {
   background-color: #A4AAAC;
 }
 
-body::-webkit-scrollbar-track:active {
+*::-webkit-scrollbar-track:active {
   background-color: #A4AAAC;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #010100;
+  background-color: steelblue;
 }
 
-body::-webkit-scrollbar-thumb:hover {
-  background-color: #010100;
+*::-webkit-scrollbar-thumb:hover {
+  background-color: steelblue;
 }
 
-body::-webkit-scrollbar-thumb:active {
+*::-webkit-scrollbar-thumb:active {
   background-color: #2a2929;
 }
 
@@ -127,7 +126,7 @@ body::-webkit-scrollbar-thumb:active {
   position: relative;
   width: 100%;
   display: grid;
-  padding: 40px 0 40px;
+  padding: 40px 20px 40px;
   background-color: rgba(105, 105, 105, 0.6);
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;

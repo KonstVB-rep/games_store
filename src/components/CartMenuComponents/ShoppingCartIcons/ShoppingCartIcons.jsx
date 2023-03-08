@@ -14,8 +14,8 @@ const ShoppingCartIcons = () => {
       <span className = {cn["cart__total-price"]}>
         {totalPrice} {currency}
       </span>
-     <button className={cn.btn}>
-       <FaOpencart className = {cn.btn__icon} />
+     <button className={cn['btn-toggle']}>
+       <FaOpencart className = {cn['btn-toggle__icon']} />
      </button>
     </>
   );

@@ -80,7 +80,6 @@
         font-weight: bold;
         padding: 4px 15px;
         text-transform: uppercase;
-        //background-image: linear-gradient(#464545 33%, #3a3939 60%, #383737 100%);
         background: linear-gradient(0deg, rgba(70,68,68,1) 10%, rgba(148,145,145,1) 30%, rgb(126, 125, 125) 50%, rgba(148,145,145,1) 70%, rgba(70,68,68,1) 90%);
         border-radius:$border-radius-l;
         box-shadow: $color-black 0 0 10px 4px;
@@ -90,25 +89,26 @@
           background-image: linear-gradient(#464545 33%, #3a3939 60%, #383737 100%);
           text-shadow: #1d6bcc 2px 2px 5px, #1d6bcc -2px -2px 5px;
           border-radius:$border-radius-l;
-          //box-shadow: $color-white 0 0 2px 2px;
+          box-shadow: inset 0 0 0 3px #3374f5;
           color: $color-white;
         }
         &:active{
-          box-shadow: #525050 0 0 4px 2px,#525050 0 0 4px 2px;
+          box-shadow: #000000 0 0 0 4px;
         }
         &.active_link{
           background-image: none;
           text-shadow: #2a89c7 2px 2px 3px, #2a89c7 -2px -2px 3px;
           border-radius:$border-radius-l;
-          box-shadow: #000000 0 0 0 4px;
+          box-shadow: #000000 0 0 0 4px,inset 0 0 0px 3px #3374f5;
           color: white;
           &:focus-visible{
-            box-shadow: white 0 0 0 4px;
+            box-shadow: inset 0 0 0 3px #3374f5;
           }
         }
       }
     }
   }
 }
+
 
 

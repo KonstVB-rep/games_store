@@ -4,18 +4,18 @@ import {Button} from "../../Buttons/Button";
 import FooterCartTable from "../FooterCartTable/FooterCartTable";
 import {HeaderCartTable} from "../HeaderCartTable";
 import {CartMenuList} from "../CartMenuList";
-import cl from "./CartMenu.module.scss";
+import cn from "./CartMenu.module.scss";
 
 const CartMenu = forwardRef(function CartMenu({classname}, ref) {
 
   return(
     <div className = {classname} ref = {ref}>
-      <CartMenuList classname = {cl.orders}>
-        <HeaderCartTable classname = {cl.grid}/>
+      <CartMenuList classname = {cn.orders}>
+        <HeaderCartTable classname = {cn.grid}/>
       </CartMenuList>
-      <FooterCartTable classname = {cl.total}/>
+      <FooterCartTable classname = {cn.total}/>
       <Link to = "order" >
-        <Button classname = {cl.btn_cart} >Go to the shopping cart</Button>
+        <Button classname = {cn.btn_cart} >Go to the shopping cart</Button>
       </Link>
     </div>
   )

@@ -39,9 +39,6 @@
       display: grid;
       grid-template-columns: 3fr 1fr 2fr;;
       gap: 20px;
-      & span:not(:first-child){
-        text-align: end;
-      }
     }
   }
   .total{
