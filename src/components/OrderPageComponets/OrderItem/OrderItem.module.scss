@@ -22,26 +22,26 @@
     flex-grow: 1;
     font-size: 1.5rem;
     font-weight: bold;
-    padding: 10px 0;
+    padding: 10px 5px;
     cursor: pointer;
     @media (max-width: 680px){
       padding: 10px 0 0;
     }
     a{
       display: inline-block;
-      padding: 5px 15px;
+      text-shadow: 0 0 2px black;
+      width: 100%;
+      padding: 5px 10px;
       border-radius: $border-radius-l;
       transition: 0.3s;
       text-align: center;
       &:hover,
       &:focus-visible{
         background-color: $details-bg;
-        letter-spacing: 1px;
       }
       &:active{
         box-shadow: $effect-color 0 0 2px 4px;
         background-color: $color-black;
-        letter-spacing: 1px;
         transition: 0.2s;
       }
     }

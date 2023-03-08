@@ -13,17 +13,17 @@ const CartMenuContainer = () => {
     const isShowCart = (e) => {
       if (e.target.className === cn['btn-toggle']) {
         setShowCart(p => !p)
-      } else if (!ref.current?.contains(e.target) || e.target.textContent === 'Go to the shopping cart') {
+      } else if (!ref.current?.contains(e.target)) {
         setShowCart(false)
       }
     }
-    document.addEventListener('click', isShowCart)
-    return () => document.removeEventListener('click', isShowCart)
+    window.addEventListener('click', isShowCart)
+    return () => window.removeEventListener('click', isShowCart)
   }, [])
 
 
   return (
-    <CartMenu classname = {`${cl.menu} ${showCart && cl.menu_visible}`} ref = {ref}/>
+    <CartMenu classname = {`${cl.menu} ${showCart ?  cl.menu_visible : ''}`} ref = {ref} setShowCart={setShowCart}/>
   );
 };
 

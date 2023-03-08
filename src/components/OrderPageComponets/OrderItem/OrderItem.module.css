@@ -119,7 +119,7 @@ body {
   flex-grow: 1;
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 10px 0;
+  padding: 10px 5px;
   cursor: pointer;
 }
 @media (max-width: 680px) {
@@ -129,19 +129,19 @@ body {
 }
 .card .title a {
   display: inline-block;
-  padding: 5px 15px;
+  text-shadow: 0 0 2px black;
+  width: 100%;
+  padding: 5px 10px;
   border-radius: 25px;
   transition: 0.3s;
   text-align: center;
 }
 .card .title a:hover, .card .title a:focus-visible {
   background-color: #827056;
-  letter-spacing: 1px;
 }
 .card .title a:active {
   box-shadow: #5b955b 0 0 2px 4px;
   background-color: #000000;
-  letter-spacing: 1px;
   transition: 0.2s;
 }
 .card .price {

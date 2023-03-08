@@ -121,30 +121,40 @@ body {
     padding: 0;
   }
 }
-.header .wrapper .wrapper-burger {
+.header .wrapper .button-burger {
+  position: absolute;
   height: 70px;
   width: 70px;
-  position: absolute;
   left: 0;
   top: 0;
   overflow: hidden;
   border-radius: 0 25px 25px 0;
+  background-color: transparent;
+  border: none;
+  transition: 0.2s;
+  z-index: 3;
 }
-.header .wrapper .burger {
+.header .wrapper .button-burger:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+.header .wrapper .button-burger:hover .burger, .header .wrapper .button-burger:focus-visible .burger {
+  transform: scale(1.4);
+}
+.header .wrapper .button-burger:active .burger {
+  transform: rotateY(180deg);
+}
+.header .wrapper .button-burger .burger {
   display: none;
   width: 70px;
   height: 70px;
   transition: 0.3s;
   outline: none;
 }
-.header .wrapper .burger:hover, .header .wrapper .burger:focus-visible path {
-  transform: scale(1.4);
-}
-.header .wrapper .burger:active {
-  fill: indianred;
-}
 @media (max-width: 840px) {
-  .header .wrapper .burger {
+  .header .wrapper .button-burger .burger {
     position: absolute;
     left: 0;
     top: 0;

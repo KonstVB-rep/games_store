@@ -20,36 +20,50 @@
       width: 100%;
       padding: 0;
     }
-    .wrapper-burger{
+    .button-burger{
+      position: absolute;
       height: 70px;
       width: 70px;
-      position: absolute;
       left: 0;
       top: 0;
       overflow: hidden;
       border-radius: 0 25px 25px 0;
-    }
-    .burger{
-      display: none;
-      width: 70px;
-      height: 70px;
-      transition: 0.3s;
-      outline: none;
+      background-color: transparent;
+      border: none;
+      transition: 0.2s;
+      z-index: 3;
+      &:before{
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+      }
       &:hover,
-      &:focus-visible path{
-        transform: scale(1.4);
+      &:focus-visible {
+        .burger{
+          transform: scale(1.4);
+        }
       }
       &:active{
-        fill: indianred;
+       .burger{
+         transform: rotateY(180deg);
+       }
       }
-      @media (max-width: 840px){
-        position: absolute;
-        left:0;
-        top: 0;
-        display: block;
-        padding: 10px 15px;
-        cursor: pointer;
-        z-index: 3;
+      .burger{
+        display: none;
+        width: 70px;
+        height: 70px;
+        transition: 0.3s;
+        outline: none;
+        @media (max-width: 840px){
+          position: absolute;
+          left:0;
+          top: 0;
+          display: block;
+          padding: 10px 15px;
+          cursor: pointer;
+          z-index: 3;
+        }
       }
     }
     .nav{

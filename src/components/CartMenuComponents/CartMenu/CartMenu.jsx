@@ -1,24 +1,32 @@
 import React, {forwardRef} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Button} from "../../Buttons/Button";
-import FooterCartTable from "../FooterCartTable/FooterCartTable";
-import {HeaderCartTable} from "../HeaderCartTable";
 import {CartMenuList} from "../CartMenuList";
+import {CartTableFooter} from "../CartTableFooter";
+import {CartTableHeader} from "../CartTableHeader";
 import cn from "./CartMenu.module.scss";
 
-const CartMenu = forwardRef(function CartMenu({classname}, ref) {
+const CartMenu = forwardRef(function CartMenu({classname,setShowCart}, ref) {
+  const navigate = useNavigate()
 
-  return(
+  const handleClick = () =>{
+    setShowCart(false)
+    navigate('order')
+  }
+
+  return (
     <div className = {classname} ref = {ref}>
       <CartMenuList classname = {cn.orders}>
-        <HeaderCartTable classname = {cn.grid}/>
+        <CartTableHeader classname = {cn.grid} />
       </CartMenuList>
-      <FooterCartTable classname = {cn.total}/>
-      <Link to = "order" >
-        <Button classname = {cn.btn_cart} >Go to the shopping cart</Button>
-      </Link>
+      <CartTableFooter classname = {cn.total} />
+        <Button classname = {cn['go-cart']} onClick={handleClick}>
+          {/*<Link to = "order" onClick={() => setShowCart(false)}>*/}
+            Go to the shopping cart
+          {/*</Link>*/}
+        </Button>
     </div>
-  )
+)
 });
 
 export default CartMenu;

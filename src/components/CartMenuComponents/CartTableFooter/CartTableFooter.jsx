@@ -3,7 +3,7 @@ import {currency} from "../../../constants/currency";
 import {useSelector} from "react-redux";
 import {selectTotalPrice} from "../../../store/cart/cartSlice";
 
-const FooterCartTable = ({classname}) => {
+const CartTableFooter = ({classname}) => {
 
   const totalPriceCart = useSelector(selectTotalPrice);
 
@@ -17,4 +17,4 @@ const FooterCartTable = ({classname}) => {
   );
 };
 
-export default FooterCartTable;
+export default CartTableFooter;

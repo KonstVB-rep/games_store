@@ -12,7 +12,6 @@ const SearchPage = () => {
   const {handleSearch, handleSubmit, searchValue} = useSearchGame();
   return (
     <main className = {cn.main}>
-      {/*<ButtonSilver/>*/}
       <ErrorContainer status = {status}>
       <form className = {cn.form} onSubmit = {handleSubmit}>
         <SearchField

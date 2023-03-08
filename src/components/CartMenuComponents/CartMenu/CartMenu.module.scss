@@ -39,6 +39,12 @@
       display: grid;
       grid-template-columns: 3fr 1fr 2fr;;
       gap: 20px;
+      span {
+        text-transform: uppercase;
+        &:last-child{
+          text-align: end;
+        }
+      }
     }
   }
   .total{
@@ -48,12 +54,11 @@
       text-transform: uppercase;
     }
   }
-  a{
-    width: max-content;
-  }
-  .btn_cart{
+  .go-cart{
     font-weight: bold;
     background-color: #e18418;
+    a{
+      width: max-content;
+    }
   }
-
 }

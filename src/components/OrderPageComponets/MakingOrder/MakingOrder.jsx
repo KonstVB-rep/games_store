@@ -1,20 +1,25 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button} from "../../Buttons/Button";
-import {selectTotalPrice} from "../../../store/cart/cartSlice";
-import {useSelector} from "react-redux";
+import {clearCartList, selectTotalPrice} from "../../../store/cart/cartSlice";
+import {useDispatch, useSelector} from "react-redux";
 import {currency} from "../../../constants/currency";
 import {PortalCreator} from "../../PortalCreator";
 import cn from './MakingOrder.module.scss'
 import {OrderModal} from "../OrderModal";
 import { animateScroll as scroll } from "react-scroll";
+import useVisible from "../../../hooks/useVisible";
 
 
 const MakingOrder = () => {
 
-  const [showModal, setShowModal] = useState(false)
+  const dispatch = useDispatch();
+
+  const [isShow, setIsShow] = useVisible(() => dispatch(clearCartList()));
+
+
   const handleClick = () => {
-    setShowModal(!showModal)
-    if(showModal){
+    setIsShow(!isShow)
+    if(isShow){
       document.body.style.overflow = "visible";
       document.body.style.overflowX = "hidden";
       scroll.scrollToTop({
@@ -41,7 +46,7 @@ const MakingOrder = () => {
         <Button classname = {cn["order-button"]} onClick = {handleClick}>place on order</Button>
       </div>
       <PortalCreator>
-        <OrderModal showModal = {showModal} setShowModal = {handleClick} />
+        <OrderModal showModal = {isShow} setShowModal = {handleClick} />
       </PortalCreator>
     </>
   );

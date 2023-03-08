@@ -142,6 +142,12 @@ body {
   grid-template-columns: 3fr 1fr 2fr;
   gap: 20px;
 }
+.menu .orders .grid span {
+  text-transform: uppercase;
+}
+.menu .orders .grid span:last-child {
+  text-align: end;
+}
 .menu .total {
   display: flex;
   justify-content: space-between;
@@ -149,12 +155,12 @@ body {
 .menu .total span {
   text-transform: uppercase;
 }
-.menu a {
-  width: max-content;
-}
-.menu .btn_cart {
+.menu .go-cart {
   font-weight: bold;
   background-color: #e18418;
+}
+.menu .go-cart a {
+  width: max-content;
 }
 
 /*# sourceMappingURL=CartMenu.module.css.map */

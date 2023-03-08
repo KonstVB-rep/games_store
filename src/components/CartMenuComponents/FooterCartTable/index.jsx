@@ -1,1 +1,0 @@
-export {default as FooterCartTable} from './FooterCartTable';
