@@ -91,7 +91,7 @@ body {
 }
 
 *::-webkit-scrollbar-thumb:active {
-  background-color: #2a2929;
+  background-color: darkred;
 }
 
 .footer .wrapper {
@@ -111,8 +111,8 @@ body {
 }
 .footer .wrapper a {
   font-size: 1.5rem;
+  padding: 5px 10px;
   font-weight: bold;
-  padding: 2px 0;
 }
 .footer .wrapper a:hover, .footer .wrapper a:focus-visible {
   outline: none;

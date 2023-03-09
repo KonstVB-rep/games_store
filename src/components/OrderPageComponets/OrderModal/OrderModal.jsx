@@ -1,16 +1,15 @@
 import React from 'react';
 import {randomNumber} from "../../../utils/randomNumber";
-import cn from './OrderModal.module.scss';
 import {useDispatch} from "react-redux";
 import {clearCartList} from "../../../store/cart/cartSlice";
+import {Dialog} from '@headlessui/react'
+import cn from './OrderModal.module.scss';
 
 const orderNumber = randomNumber(1000, 10000000)
 
 const OrderModal = ({showModal, setShowModal}) => {
 
   const dispatch = useDispatch();
-
-  const classHide = showModal ? cn['active'] : null;
 
   const handleClickHide = (e) => {
     if([...e.target.classList].includes(cn['modal-order']) || e.target.className ===cn['icon-close']){
@@ -20,17 +19,22 @@ const OrderModal = ({showModal, setShowModal}) => {
   }
 
   return (
-    <div className={`${cn['modal-order']} ${classHide}`} onClick={handleClickHide}>
-      <div className= {cn.content}>
-        <h2  className={`${cn.title} ${cn.text}`}>thanks for the purchase</h2>
-        <p  className={cn.text}>your order number: <span className={cn.text__span}>№{orderNumber}</span></p>
-        <p  className={cn.text}>the manager will contact you soon.</p>
-        <button  className={cn['icon-wrapper']}>
-          <img src = "/icons8-ок-96.svg" alt = "" className={cn['icon-close']} />
-        </button>
+    <Dialog open = {showModal} onClose = {() => setShowModal(false)}>
+      <div className = {cn.bg}>
+        <Dialog.Panel className = {cn.popup}>
+          <Dialog.Title className={cn.content}>
+            <h2 className={cn.title}>thanks for the purchase</h2>
+            <p className={cn.text}>your order number: <span className = {cn.text__span}>№{orderNumber}</span></p>
+            <p className={cn.text}>the manager will contact you soon.</p>
+            <button  className={cn['icon-wrapper']} onClick={handleClickHide} title='Close window'>
+              <img src = "/icons8-ок-96.svg" className={cn['icon-close']} alt="close modal window"/>
+            </button>
+          </Dialog.Title>
+        </Dialog.Panel>
       </div>
-    </div>
+    </Dialog>
   );
 };
 
 export default OrderModal;
+

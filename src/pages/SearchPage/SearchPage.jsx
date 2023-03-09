@@ -6,7 +6,6 @@ import {useSelector} from "react-redux";
 import {ErrorContainer} from "../../components/ErrorContainer";
 import cn from "./SearchPage.module.scss";
 
-
 const SearchPage = () => {
   const status = useSelector(state => state.search.status)
   const {handleSearch, handleSubmit, searchValue} = useSearchGame();

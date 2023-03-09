@@ -91,7 +91,7 @@ body {
 }
 
 *::-webkit-scrollbar-thumb:active {
-  background-color: #2a2929;
+  background-color: darkred;
 }
 
 main {
