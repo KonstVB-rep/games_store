@@ -107,26 +107,28 @@ body {
   width: 80%;
   padding: 15px;
   max-width: 500px;
-  box-shadow: inset 0px 0px 14px 2px black;
+  box-shadow: inset 0 0 14px 2px black;
   border-radius: 20px;
   background: linear-gradient(180deg, rgb(103, 163, 115) 6%, rgb(132, 182, 143) 38%, rgb(115, 172, 127) 65%, rgb(103, 163, 115) 85%);
 }
 .bg .popup * {
-  color: black;
+  color: white;
   text-align: center;
+  text-shadow: #0e0e0e 0 2px 2px;
+}
+.bg .popup .title {
+  font-size: 2rem;
+  padding: 10px 0;
+}
+.bg .popup .title::first-letter {
+  text-transform: uppercase;
 }
 .bg .popup .content {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   gap: 15px;
-}
-.bg .popup .content .title {
-  font-size: 2rem;
-}
-.bg .popup .content .title::first-letter {
-  text-transform: uppercase;
 }
 .bg .popup .content .text {
   font-size: 1.4rem;
@@ -135,9 +137,8 @@ body {
   text-transform: uppercase;
 }
 .bg .popup .content .text__span {
-  color: #ffffff;
   font-weight: bold;
-  text-shadow: #520b0b 0 0 2px;
+  color: #8dbef1;
 }
 .bg .popup .content .icon-wrapper {
   width: 40%;

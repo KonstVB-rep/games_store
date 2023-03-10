@@ -9,7 +9,7 @@
   gap: 15px;
   width: fit-content;
   background-color: #e3e2e2;
-  color: $color-black;
+  color: $color-secondary;
   border-radius: $border-radius-l;
   font-weight: bold;
   box-shadow: black 0 0 2px 1px inset;
@@ -17,13 +17,13 @@
     flex-direction: column;
     max-height: none;
     height: auto;
-    gap:0px;
+    gap:0;
     padding: 5px;
     width: 100%;
     border-radius: 50px;
   }
   & *:not(button){
-    color: $color-black;
+    color: $color-secondary;
   }
   .price{
     font-size: 1.5rem;

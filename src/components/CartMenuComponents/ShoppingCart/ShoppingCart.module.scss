@@ -30,7 +30,7 @@
     border-radius: 50%;
     border: none;
     background-image: linear-gradient( indianred 20% , #9f3535 80%);
-    color: $color-white;
+    color: $color-main;
     font-weight: bold;
     font-size: 1.125rem;
     z-index: 4;
@@ -70,16 +70,9 @@
       width: 55px;
       height: 55px;
       padding: 10px;
-      //box-shadow:  $color-white 0 0 0 2px;
       border-radius: 50%;
-      //cursor: pointer;
-      //z-index: 3;
       outline: none;
       transition: 0.1s;
-      //background: rgb(66, 64, 64);
-      //background: linear-gradient(0deg, rgba(66, 64, 64, 1) 11%, rgba(51, 50, 50, 1) 50%, rgba(74, 73, 73, 1) 90%);
-      //box-shadow: inset rgb(0 0 0) 0 0 2px 2px;
-
       &:hover,
       &:focus-visible {
         //background-color: #7e7b7b;
@@ -96,7 +89,7 @@
   }
   &__total-price {
     padding: 5px 20px;
-    box-shadow: $color-white 0 0 0 2px;
+    box-shadow: $color-main 0 0 0 2px;
     border-radius: $border-radius-l;
     z-index: 3;
   }

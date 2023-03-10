@@ -7,7 +7,7 @@
   .wrapper {
     width: 80%;
     height: 40%;
-    background-color: $color-white;
+    background-color: $color-main;
     font-size: 24px;
     margin: 20px auto;
     padding: 20px 10px;
@@ -15,7 +15,7 @@
 
     & * {
       text-align: center;
-      color: $color-black;
+      color: $color-secondary;
     }
 
     strong {

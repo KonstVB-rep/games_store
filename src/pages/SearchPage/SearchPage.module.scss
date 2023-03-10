@@ -23,7 +23,7 @@
       font-size: 1.5rem;
       padding: 10px 60px 10px 15px;
       border-radius: $border-radius-l;
-      color: $color-black;
+      color: $color-secondary;
     }
 
     .btn {
@@ -46,15 +46,14 @@
 
       @keyframes pulse {
         from {
-          box-shadow: 0 0 0 0 $color-white;
+          box-shadow: 0 0 0 0 $color-main;
         }
       }
     }
   }
 
   .games-list {
-    @include flex-al-center;
-    flex-direction: column;
+    @include flex-al-center-column;
     gap: 10px;
     margin: 20px;
 
@@ -75,10 +74,10 @@
 
       &:active {
         border-radius: $border-radius-l;
-        background-color: $color-white;
+        background-color: $color-main;
 
         & a {
-          color: $color-black;
+          color: $color-secondary;
         }
       }
     }

@@ -8,9 +8,9 @@
   min-height: 72px;
   gap:20px;
   width: 100%;
-  border-bottom: 2px solid $color-white;
+  border-bottom: 2px solid $color-main;
   border-radius: $border-radius-xl;
-  background-color: $color-black;
+  background-color: $color-secondary;
   overflow: hidden;
   @media (max-width: 680px){
     grid-template-columns: 1fr;
@@ -41,7 +41,7 @@
       }
       &:active{
         box-shadow: $effect-color 0 0 2px 4px;
-        background-color: $color-black;
+        background-color: $color-secondary;
         transition: 0.2s;
       }
     }

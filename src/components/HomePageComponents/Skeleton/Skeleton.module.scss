@@ -1,25 +1,25 @@
 @import '../../../index';
 
 .skeleton{
-  margin: 0 0 0;
-  @include flex-al-center;
-  flex-wrap: wrap;
-  gap: 20px;
-  @media(max-width: 768px){
-    grid-template-columns: 1fr;
-  }
-  @media(max-width: 400px){
-    padding: 20px 0;
-  }
+  @extend %games-list_grid;
   .skeleton__item{
     position: relative;
-    min-width: 300px;
-    height: 480px;
+    min-width: 250px;
+    height: 556px;
     background-color: dimgrey;
     border-radius: 15px;
     flex-grow: 1;
     overflow: hidden;
     animation: loading 0.5s linear infinite;
+    @media(max-width: 768px){
+      height: 656px;
+    }
+    @media(max-width: 480px){
+      height: 594px;
+    }
+    @media(max-width: 380px){
+      height: 544px;
+    }
     @keyframes loading {
       from{
         opacity: 1;

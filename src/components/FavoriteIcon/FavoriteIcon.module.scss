@@ -17,10 +17,10 @@
   &:hover,
   &:focus-visible{
     background-color: indianred;
-    box-shadow: $color-white 0 0 5px 5px;
+    box-shadow: $color-main 0 0 5px 5px;
   }
   path{
-    fill:$color-white;
+    fill:$color-main;
   }
   &:hover path,
   &:focus-visible path{

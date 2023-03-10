@@ -22,8 +22,8 @@ const OrderModal = ({showModal, setShowModal}) => {
     <Dialog open = {showModal} onClose = {() => setShowModal(false)}>
       <div className = {cn.bg}>
         <Dialog.Panel className = {cn.popup}>
+          <h2 className={cn.title}>thanks for the purchase</h2>
           <Dialog.Title className={cn.content}>
-            <h2 className={cn.title}>thanks for the purchase</h2>
             <p className={cn.text}>your order number: <span className = {cn.text__span}>№{orderNumber}</span></p>
             <p className={cn.text}>the manager will contact you soon.</p>
             <button  className={cn['icon-wrapper']} onClick={handleClickHide} title='Close window'>

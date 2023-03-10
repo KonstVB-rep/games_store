@@ -1,14 +1,13 @@
 @import '../../index';
 
 .card{
-  @include flex-al-center;
-  flex-direction: column;
+  @include flex-al-center-column;
   height: 100%;
   width: 100%;
   gap:10px;
   padding: 10px 10px 15px;
-  border: 1px solid $color-white;
-  background-color: $color-black;
+  border: 1px solid $color-main;
+  background-color: $color-secondary;
   .card__title{
     font-size: 1.5rem;
     font-weight: bold;
@@ -21,7 +20,7 @@
     position: relative;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid $color-white;
+    border: 4px solid $color-main;
     cursor: pointer;
     transition: 0.3s;
     &:hover,
@@ -38,7 +37,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-color:$color-black;
+      background-color:$color-secondary;
       opacity: 0.3;
     }
     &:hover::before,

@@ -10,10 +10,10 @@
   animation: shadow 0.5s ease-in-out forwards;
   @keyframes shadow {
     from {
-      box-shadow: $color-black 0 0 0 0px;
+      box-shadow: $color-secondary 0 0 0 0px;
     }
     to{
-      box-shadow: $color-black 0px -5px 10px 4px;
+      box-shadow: $color-secondary 0px -5px 10px 4px;
     }
   }
   .skeleton{

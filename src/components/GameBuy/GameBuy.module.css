@@ -114,7 +114,7 @@ body {
     flex-direction: column;
     max-height: none;
     height: auto;
-    gap: 0px;
+    gap: 0;
     padding: 5px;
     width: 100%;
     border-radius: 50px;
