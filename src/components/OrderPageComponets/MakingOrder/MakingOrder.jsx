@@ -4,10 +4,10 @@ import {clearCartList, selectTotalPrice} from "../../../store/cart/cartSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {currency} from "../../../constants/currency";
 import {PortalCreator} from "../../PortalCreator";
-import cn from './MakingOrder.module.scss'
 import {OrderModal} from "../OrderModal";
 import { animateScroll as scroll } from "react-scroll";
 import useVisible from "../../../hooks/useVisible";
+import cn from './MakingOrder.module.scss'
 
 
 const MakingOrder = () => {

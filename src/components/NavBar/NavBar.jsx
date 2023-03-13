@@ -2,15 +2,9 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { RiMenu5Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
-import cn from "../Header/Header.module.scss";
-import { clearCartList } from "../../store/cart/cartSlice";
 import useVisible from "../../hooks/useVisible";
-
-const pathLink = [
-  { path: "/", title: "GameStore" },
-  { path: "search", title: "Search games" },
-  { path: "favorites", title: "Favorites" },
-];
+import {pathLink} from "../../utils/pathLinks";
+import cn from "../Header/Header.module.scss";
 
 const NavBar = () => {
   const [isShow, setIsShow] = useVisible();

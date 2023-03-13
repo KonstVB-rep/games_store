@@ -3,7 +3,7 @@ import ShoppingCart from "../CartMenuComponents/ShoppingCart/ShoppingCart";
 import NavBar from "../NavBar/NavBar";
 import {ButtonSilver} from "../Buttons/ButtonSilver";
 import {useLocation, useNavigate} from "react-router-dom";
-import cn from "./Header.module.scss";
+import cn from "./Header.module.scss";;
 
 const Header = () => {
   const {pathname} = useLocation();
