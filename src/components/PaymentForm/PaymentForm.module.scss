@@ -3,43 +3,46 @@
   position: fixed;
   inset: 0;
   @include flex-al-jc-center;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(86, 84, 84, 0.8);
   font-weight: normal;
   .popup {
     width: 90%;
-    padding: 15px;
+    padding: 30px 15px 15px;
     max-width: 500px;
-    background-color: #83a4d4;
+    background-color: rgb(3, 26, 58);
     border-radius: $border-radius-l;
     .title {
       font-weight: normal;
     }
     .content {
-      display: flex;
+      @include flex-al-jc-center;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       min-height: 500px;
       font-weight: normal;
       .card {
+        @include flex-column;
+        gap:10px;
         width: 70%;
         min-width: 200px;
         max-width: 400px;
         height: 200px;
         background-color: indianred;
         border-radius: $border-radius-l;
-        .card-number{
+        padding: 20px;
+        .card__info{
           display: flex;
           gap:10px;
         }
       }
       form{
         width: 100%;
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         align-items: flex-start;
         gap: 10px;
+        margin-top: 20px;
         text-transform: uppercase;
+        .number{
+        }
         .valid-wrapper{
           width: 100%;
           display: flex;
@@ -49,11 +52,13 @@
             .select{
               border: none;
               height: 40px;
+              width: 80px;
               color: dimgrey;
               text-align: center;
-              border-radius:10px;
-              font-size: 1.5rem;
+              border-radius: 10px;
+              font-size: 1rem;
               text-transform: uppercase;
+              padding: 0 5px;
               option{
                 color: black;
               }
@@ -67,19 +72,55 @@
             padding: 5px;
           }
         }
+        .ccv{
+          width: 80px;
+        }
         label{
-          width: 100%;
+          display: contents;
           input{
+            appearance: none;
+            height: 40px;
+            text-align: start;
             width: 100%;
             color: black;
             padding: 0 10px;
             border-radius:10px;
+            outline: none;
             border: none;
-            font-size: 1.5rem;
-            height: 50px;
+            font-size: 1rem;
             &::placeholder{
               text-transform: uppercase;
             }
+          }
+        }
+        .btn-submit{
+          display: flex;
+          align-self: center;
+          justify-content: center;
+          padding: 10px 15px;
+          background-color: #0f59f3;
+          border: none;
+          outline: none;
+          text-transform: uppercase;
+          border-radius: $border-radius-l;
+          font-size: 1.2rem;
+          min-width: 80px;
+          transition: all 0.2s linear;
+          &:hover,
+          &:focus-visible{
+            transform: scale(1.2);
+            outline: 2px solid white;
+          }
+          &:active{
+            background-color: $effect-color;
+            animation: pulse 0.3s;
+            box-shadow: 0 0 0 2em rgba(#fff,0);
+          }
+          @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 $effect-color; }
+          }
+          @media(max-width: 480px) {
+            width: 90%;
           }
         }
       }

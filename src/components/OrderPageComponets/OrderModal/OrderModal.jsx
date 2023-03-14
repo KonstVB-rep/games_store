@@ -4,7 +4,6 @@ import {useDispatch} from "react-redux";
 import {clearCartList} from "../../../store/cart/cartSlice";
 import {Dialog} from '@headlessui/react'
 import cn from './OrderModal.module.scss';
-import Payment from "../../Payment/Payment";
 
 const orderNumber = randomNumber(1000, 10000000)
 

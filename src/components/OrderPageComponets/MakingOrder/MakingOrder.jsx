@@ -8,6 +8,7 @@ import {OrderModal} from "../OrderModal";
 import { animateScroll as scroll } from "react-scroll";
 import useVisible from "../../../hooks/useVisible";
 import cn from './MakingOrder.module.scss'
+import {PaymentForm} from "../../PaymentForm";
 
 
 const MakingOrder = () => {
@@ -46,7 +47,7 @@ const MakingOrder = () => {
         <Button classname = {cn["order-button"]} onClick = {handleClick}>place on order</Button>
       </div>
       <PortalCreator>
-        <OrderModal showModal = {isShow} setShowModal = {handleClick} />
+        <PaymentForm showModal = {isShow} setShowModal = {handleClick} />
       </PortalCreator>
     </>
   );
