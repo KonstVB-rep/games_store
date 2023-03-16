@@ -2,9 +2,13 @@
 
 .header{
   padding: 30px 10px;
-  background-color: $color-body;
+  background-color: var(--bg-body);
+  border-radius: $border-radius-m;
+  margin-top: 10px;
+  box-shadow: black 0 0 4px 2px;
   @media (max-width: 840px){
     padding: 0;
+    box-shadow: none;
   }
   .wrapper{
     max-width:1180px;
@@ -31,12 +35,12 @@
       background-color: transparent;
       border: none;
       transition: 0.2s;
-      z-index: 3;
+      z-index: 4;
       &:before{
         content: '';
         position: absolute;
         inset: 0;
-        z-index: 3;
+        z-index: 4;
       }
       &:hover,
       &:focus-visible {
@@ -79,7 +83,7 @@
         width: 100%;
         transform: translateY(-90%);
         z-index: 2;
-        background: $color-body;
+        background: var(--bg-body);
         opacity: 0;
         visibility: hidden;
         &.nav_mobile{
@@ -87,6 +91,7 @@
           opacity: 1;
           border: 2px solid transparent;
           visibility: visible;
+          z-index: 3;
         }
       }
       .link{
@@ -94,26 +99,25 @@
         font-weight: bold;
         padding: 4px 15px;
         text-transform: uppercase;
-        background: linear-gradient(0deg, rgba(70,68,68,1) 10%, rgba(148,145,145,1) 30%, rgb(126, 125, 125) 50%, rgba(148,145,145,1) 70%, rgba(70,68,68,1) 90%);
+        background: linear-gradient(0deg, rgb(70, 68, 68) 10%, rgb(59 58 58) 30%, rgb(2 1 1) 50%, rgb(112 111 111) 70%, rgb(70, 68, 68) 90%);
         border-radius:$border-radius-l;
-        box-shadow: $color-secondary 0 0 10px 4px;
-        color: $color-main;
+        box-shadow: var(--color-secondary) 0 0 2px 4px;
+        color:white;
         &:hover,
         &:focus-visible{
           background-image: linear-gradient(#464545 33%, #3a3939 60%, #383737 100%);
           text-shadow: #1d6bcc 2px 2px 5px, #1d6bcc -2px -2px 5px;
           border-radius:$border-radius-l;
-          box-shadow: inset 0 0 0 3px #3374f5;
-          color: $color-main;
+          box-shadow: 0 0 2px 4px #3374f5;
+          color: white;
         }
         &:active{
           box-shadow: #000000 0 0 0 4px;
         }
         &.active_link{
-          background-image: none;
           text-shadow: #2a89c7 2px 2px 3px, #2a89c7 -2px -2px 3px;
           border-radius:$border-radius-l;
-          box-shadow: #000000 0 0 0 4px,inset 0 0 0px 3px #3374f5;
+          box-shadow: 0 0 0 4px #3374f5;
           color: white;
           &:focus-visible{
             box-shadow: inset 0 0 0 3px #3374f5;

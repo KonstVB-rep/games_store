@@ -1,0 +1,32 @@
+import React, {useLayoutEffect, useState} from 'react';
+import {RiMoonFill} from "react-icons/ri";
+import {CgSun} from "react-icons/cg";
+import cn from './ThemeSwitcher.module.scss'
+
+const ThemeSwitcher = () => {
+
+  const [theme, setTheme] = useState('dark');
+
+  const ThemeIcon = theme === 'dark' ? CgSun : RiMoonFill;
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+
+  useLayoutEffect(() => {
+    const bgBody = `var(--bg-body-${theme}`
+    const colorMain = `var(--color-main-${theme}`
+    const colorSecondary = `var(--color-secondary-${theme}`;
+    document.body.style.setProperty('--bg-body',bgBody)
+    document.body.style.setProperty('--color-main',colorMain)
+    document.body.style.setProperty('--color-secondary',colorSecondary)
+  }, [theme]);
+
+  return (
+    <div className={cn.switcher} onClick={toggleTheme}>
+      <ThemeIcon className={cn.icon} />
+    </div>
+  );
+};
+
+export default ThemeSwitcher;
+

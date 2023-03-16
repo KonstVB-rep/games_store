@@ -3,9 +3,9 @@ import ButtonAddRemove from "../ButtonAddRemove/ButtonAddRemove";
 import {Button} from "../Button";
 import {useDispatch, useSelector} from "react-redux";
 import {addProduct, selectAllItemsCart} from "../../../store/cart/cartSlice";
-import cn from "./ButtonBuy.module.scss";
+import cn from "./ButtonAddToCart.module.scss";
 
-const ButtonBuy = ({game}) => {
+const ButtonAddToCart = ({game}) => {
   const dispatch = useDispatch()
   const cart = useSelector(selectAllItemsCart);
 
@@ -32,4 +32,4 @@ const ButtonBuy = ({game}) => {
   );
 };
 
-export default ButtonBuy;
+export default ButtonAddToCart;

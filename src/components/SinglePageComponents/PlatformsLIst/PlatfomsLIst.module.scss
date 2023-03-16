@@ -34,15 +34,19 @@
     }
 
     a {
-      background-color: $details-bg;
+      background-color: $bg-gold;
       padding: 5px 15px;
       border-radius: $border-radius-m;
       min-width: max-content;
+      color:white;
+      @include text-shadow;
 
       &:hover,
       &:focus-visible {
-        background-color: $color-main;
-        color: $color-secondary;
+        background-color: var(--color-main);
+        color: var(--color-secondary);
+        text-shadow: none;
+        font-weight: bold;
       }
     }
   }
@@ -72,6 +76,8 @@
         border-radius: $border-radius-m;
         background-color: $primary-color;
         font-size: 1.125rem;
+        color:white;
+        @include text-shadow;
       }
     }
   }

@@ -1,8 +1,11 @@
 @import '../../index';
+
 .rating-box{
   flex: 1.125rem;
   font-size: 1.2rem;
-  .rating-info{
+  .rating{
     color: $rating-color;
+    font-size: 1.4rem;
+    @include text-shadow;
   }
 }

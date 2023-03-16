@@ -9,6 +9,8 @@
   .genre {
     padding: 5px 10px;
     border-radius: $border-radius-m;
-    background-color: $details-bg;
+    background-color: $bg-gold;
+    color:white;
+    @include text-shadow;
   }
 }

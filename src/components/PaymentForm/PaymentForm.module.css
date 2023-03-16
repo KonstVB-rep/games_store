@@ -1,25 +1,32 @@
+:root {
+  --bg-body-light: rgb(204,204,204);
+  --color-main-light: #000000 ;
+  --color-secondary-light: #ffffff;
+  --bg-body-dark: #2a2929;
+  --color-main-dark: #ffffff;
+  --color-secondary-dark: #000000;
+  --bg-body: var(--bg-body-dark);
+  --color-main: var(--color-main-dark);
+  --color-secondary: var(--color-secondary-dark);
+}
+
 body {
   position: relative;
-  margin: 0;
   overflow-x: hidden;
-  margin-right: calc(-1 * (100vw - 100%));
+  margin: 0 calc(-1 * (100vw - 100%)) 0 0;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #2a2929;
-  color: #ffffff;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  background-color: var(--bg-body);
+  color: var(--color-main);
 }
 
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #ffffff;
+  color: var(--color-main);
 }
 
 button, a {
@@ -29,7 +36,7 @@ button, a {
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--color-main);
 }
 
 ul {
@@ -102,18 +109,25 @@ body {
   justify-content: center;
   background: rgba(86, 84, 84, 0.8);
   font-weight: normal;
+  z-index: 5;
 }
-.bg .popup {
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 90%;
   padding: 30px 15px 15px;
   max-width: 500px;
   background-color: rgb(3, 26, 58);
   border-radius: 25px;
+  z-index: 6;
 }
-.bg .popup .title {
+.popup .title {
   font-weight: normal;
 }
-.bg .popup .content {
+.popup .content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,7 +135,7 @@ body {
   min-height: 500px;
   font-weight: normal;
 }
-.bg .popup .content .card {
+.popup .content .card {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -133,11 +147,11 @@ body {
   border-radius: 25px;
   padding: 20px;
 }
-.bg .popup .content .card .card__info {
+.popup .content .card .card__info {
   display: flex;
   gap: 10px;
 }
-.bg .popup .content form {
+.popup .content form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -146,15 +160,15 @@ body {
   margin-top: 20px;
   text-transform: uppercase;
 }
-.bg .popup .content form .valid-wrapper {
+.popup .content form .valid-wrapper {
   width: 100%;
   display: flex;
 }
-.bg .popup .content form .valid-wrapper .selects-wrapper {
+.popup .content form .valid-wrapper .selects-wrapper {
   display: flex;
   gap: 10px;
 }
-.bg .popup .content form .valid-wrapper .selects-wrapper .select {
+.popup .content form .valid-wrapper .selects-wrapper .select {
   border: none;
   height: 40px;
   width: 80px;
@@ -165,23 +179,27 @@ body {
   text-transform: uppercase;
   padding: 0 5px;
 }
-.bg .popup .content form .valid-wrapper .selects-wrapper .select option {
+.popup .content form .valid-wrapper .selects-wrapper .select option {
   color: black;
 }
-.bg .popup .content form .valid-wrapper .selects-wrapper .select option:disabled {
+.popup .content form .valid-wrapper .selects-wrapper .select option:disabled {
   color: dimgrey;
 }
-.bg .popup .content form .valid-wrapper input {
+.popup .content form .valid-wrapper input {
   width: 100%;
   padding: 5px;
 }
-.bg .popup .content form .ccv {
+.popup .content form .valid-title {
+  color: white;
+}
+.popup .content form .ccv {
   width: 80px;
 }
-.bg .popup .content form label {
+.popup .content form label {
   display: contents;
+  color: white;
 }
-.bg .popup .content form label input {
+.popup .content form label input {
   appearance: none;
   height: 40px;
   text-align: start;
@@ -193,15 +211,16 @@ body {
   border: none;
   font-size: 1rem;
 }
-.bg .popup .content form label input::placeholder {
+.popup .content form label input::placeholder {
   text-transform: uppercase;
 }
-.bg .popup .content form .btn-submit {
+.popup .content form .btn-submit {
   display: flex;
   align-self: center;
   justify-content: center;
   padding: 10px 15px;
   background-color: #0f59f3;
+  color: white;
   border: none;
   outline: none;
   text-transform: uppercase;
@@ -210,11 +229,11 @@ body {
   min-width: 80px;
   transition: all 0.2s linear;
 }
-.bg .popup .content form .btn-submit:hover, .bg .popup .content form .btn-submit:focus-visible {
+.popup .content form .btn-submit:hover, .popup .content form .btn-submit:focus-visible {
   transform: scale(1.2);
   outline: 2px solid white;
 }
-.bg .popup .content form .btn-submit:active {
+.popup .content form .btn-submit:active {
   background-color: #5b955b;
   animation: pulse 0.3s;
   box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
@@ -225,7 +244,7 @@ body {
   }
 }
 @media (max-width: 480px) {
-  .bg .popup .content form .btn-submit {
+  .popup .content form .btn-submit {
     width: 90%;
   }
 }

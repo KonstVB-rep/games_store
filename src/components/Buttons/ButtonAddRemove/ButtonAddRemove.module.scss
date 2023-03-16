@@ -39,14 +39,14 @@
         display: inline-block;
         width: 20px;
         height: 4px;
-        background-color: $color-main;
+        background-color: white;
       }
     }
 
     &_add {
       background-image: linear-gradient( #68b668 20% , #467946 80%);
       box-shadow: inset #386a38 0 0 2px 4px;
-      color: $color-main;
+      color:white;
 
       &:active {
         animation: pulseAdd 0.3s;

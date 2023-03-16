@@ -7,7 +7,7 @@
   .wrapper {
     width: 80%;
     height: 40%;
-    background-color: $color-main;
+    background-color: var(--color-main);
     font-size: 24px;
     margin: 20px auto;
     padding: 20px 10px;
@@ -15,7 +15,7 @@
 
     & * {
       text-align: center;
-      color: $color-secondary;
+      color: var(--color-secondary);
     }
 
     strong {

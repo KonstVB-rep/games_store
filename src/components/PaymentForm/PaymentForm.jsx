@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
-import {Dialog} from '@headlessui/react'
+import React, {Fragment} from 'react';
+import {Dialog,Transition } from '@headlessui/react'
 import {Card} from "./Card";
 import {Form} from "./Form";
 import usePayment from "./hook/usePayment";
-import cn from './PaymentForm.module.scss'
-import {Button} from "../Buttons/Button";
 import OrderModal from "../OrderPageComponets/OrderModal/OrderModal";
+import cn from './PaymentForm.module.scss'
 
 const PaymentForm = ({showModal, setShowModal}) => {
 
@@ -48,8 +47,10 @@ const PaymentForm = ({showModal, setShowModal}) => {
 
   return (
     <>
-      <Dialog open = {showModal} onClose = {() => setShowModal(false)}>
-        <div className = {cn.bg}>
+        <Dialog
+          open = {showModal}
+          onClose = {() => setShowModal(false)}>
+          <div className = {cn.bg} />
           <Dialog.Panel className = {cn.popup}>
             <Dialog.Title className = {cn.content}>
               <Card numberCard = {numberCard} month = {month} year = {year} name = {name} ccv = {ccv}
@@ -60,9 +61,8 @@ const PaymentForm = ({showModal, setShowModal}) => {
               />
             </Dialog.Title>
           </Dialog.Panel>
-        </div>
-      </Dialog>
-      <OrderModal showModal={showConfirmModal} setShowModal={setShowConfirmModal}/>
+        </Dialog>
+      <OrderModal showModal = {showConfirmModal} setShowModal = {setShowConfirmModal} />
     </>
   );
 };

@@ -1,25 +1,32 @@
+:root {
+  --bg-body-light: rgb(204,204,204);
+  --color-main-light: #000000 ;
+  --color-secondary-light: #ffffff;
+  --bg-body-dark: #2a2929;
+  --color-main-dark: #ffffff;
+  --color-secondary-dark: #000000;
+  --bg-body: var(--bg-body-dark);
+  --color-main: var(--color-main-dark);
+  --color-secondary: var(--color-secondary-dark);
+}
+
 body {
   position: relative;
-  margin: 0;
   overflow-x: hidden;
-  margin-right: calc(-1 * (100vw - 100%));
+  margin: 0 calc(-1 * (100vw - 100%)) 0 0;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #2a2929;
-  color: #ffffff;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  background-color: var(--bg-body);
+  color: var(--color-main);
 }
 
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #ffffff;
+  color: var(--color-main);
 }
 
 button, a {
@@ -29,7 +36,7 @@ button, a {
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--color-main);
 }
 
 ul {
@@ -109,7 +116,7 @@ body {
   max-width: 500px;
   box-shadow: inset 0 0 14px 2px black;
   border-radius: 20px;
-  background: linear-gradient(180deg, rgb(103, 163, 115) 6%, rgb(134, 168, 142) 38%, rgb(136, 169, 143) 65%, rgb(103, 163, 115) 85%);
+  background: linear-gradient(180deg, rgb(103, 163, 115) 6%, rgb(114, 183, 130) 38%, rgb(114, 183, 130) 65%, rgb(103, 163, 115) 85%);
 }
 .bg .popup * {
   color: white;
@@ -141,7 +148,7 @@ body {
   color: #8dbef1;
 }
 .bg .popup .content .icon-wrapper {
-  width: 40%;
+  width: 20%;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: white;
@@ -152,14 +159,14 @@ body {
   transition: 0.3s;
 }
 .bg .popup .content .icon-wrapper:hover, .bg .popup .content .icon-wrapper:focus-visible {
-  background: rgb(0, 60, 255);
+  background: rgb(33, 7, 199);
 }
 .bg .popup .content .icon-wrapper:active {
   background-color: white;
 }
 .bg .popup .content .icon-wrapper:active .icon-close {
-  filter: drop-shadow(0px 1px 3px black);
   transform: scale(0.95);
+  filter: grayscale(0.5);
 }
 .bg .popup .content .icon-wrapper .icon-close {
   width: 100%;

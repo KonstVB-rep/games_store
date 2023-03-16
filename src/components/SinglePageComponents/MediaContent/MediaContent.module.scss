@@ -9,7 +9,7 @@
     position: relative;
     border-radius: $border-radius-m;
     overflow: hidden;
-    box-shadow: $color-main 0 0 5px 2px;
+    box-shadow: var(--color-main) 0 0 5px 2px;
     min-height: 400px;
     height: 100%;
     @media (max-width: 940px){

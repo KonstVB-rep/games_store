@@ -11,12 +11,10 @@ const ShoppingCart = () => {
 
   const {pathname} = useLocation();
 
-  const {cartList} = useSelector((state) => state.cart);
-
   if(pathname === '/order') return null;
 
   return (
-    <div className = {cn.cart} data-count = {cartList.length}>
+    <div className = {cn.cart}>
       <ShoppingCartIcons/>
       <CartMenuContainer/>
     </div>

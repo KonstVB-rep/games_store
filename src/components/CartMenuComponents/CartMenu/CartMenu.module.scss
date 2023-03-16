@@ -3,11 +3,11 @@
   position: absolute;
   width: max-content;
   top: 70px;
-  right: -50px;
+  right: -23px;
   @include flex-column;
   gap: 15px;
   padding: 20px;
-  border-radius: $border-radius-m 0 0 $border-radius-m;
+  border-radius: $border-radius-m;
   background-color: rgba(0, 0, 0, 0.90);
   transform: translateY(-100%);
   opacity: 0;
@@ -17,9 +17,11 @@
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+    z-index: 3;
   }
   @media (max-width: 640px){
     width: fit-content;
+    border-radius: $border-radius-m 0 0 $border-radius-m;
   }
   @media (max-width: 840px){
     top: -40px;
@@ -31,7 +33,7 @@
   .orders{
     flex-grow: 1;
     padding: 5px 0;
-    border-bottom: 1px solid $color-main;
+    border-bottom: 1px solid white;
     span{
       text-transform: uppercase;
     }
@@ -40,6 +42,7 @@
       grid-template-columns: 3fr 1fr 2fr;;
       gap: 20px;
       span {
+        color: white;
         text-transform: uppercase;
         &:last-child{
           text-align: end;
@@ -51,6 +54,7 @@
     display: flex;
     justify-content: space-between;
     span {
+      color: white;
       text-transform: uppercase;
     }
   }

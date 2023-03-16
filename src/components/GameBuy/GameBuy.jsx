@@ -1,5 +1,5 @@
 import React from "react";
-import {ButtonBuy} from "../Buttons/ButtonBuy";
+import {ButtonAddToCart} from "../Buttons/ButtonAddToCart";
 import {currency} from "../../constants/currency";
 import cn from "./GameBuy.module.scss";
 
@@ -10,7 +10,7 @@ const GameBuy = ({game}) => {
       <span className = {cn.price}>
         {game.price} {currency}
       </span>
-      <ButtonBuy game = {game} />
+      <ButtonAddToCart game = {game} />
     </div>
   );
 };

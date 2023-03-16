@@ -3,7 +3,7 @@
 .next {
   padding: 15px 30px;
   border-radius: 25px;
-  color: $color-secondary;
+  color: var(--color-secondary);
   margin: 20px auto;
   grid-column: 1/-1;
 }

@@ -18,9 +18,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-color:$color-secondary;
+    background-color:black;
     opacity: 0.3;
-    box-shadow: inset rgb(71 133 255 / 77%) 0 0 50px 20px
+    box-shadow: inset rgba(174, 196, 238, 0.77) 0 0 50px 20px
   }
   &:hover::before,
   &:focus-visible::before{

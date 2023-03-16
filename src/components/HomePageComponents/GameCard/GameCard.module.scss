@@ -4,16 +4,16 @@
   @include flex-column;
   min-width: 250px;
   height: auto;
-  background-color: rgb(36, 37, 41);
+  background-color: var(--bg-body);
   border-radius: $border-radius-m;
   overflow: hidden;
   animation: shadow 0.5s ease-in-out forwards;
   @keyframes shadow {
     from {
-      box-shadow: $color-secondary 0 0 0 0px;
+      box-shadow: black 0 0 0 0;
     }
     to{
-      box-shadow: $color-secondary 0px -5px 10px 4px;
+      box-shadow: black 0 2px 10px 4px;
     }
   }
   .skeleton{
