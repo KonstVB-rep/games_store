@@ -10,6 +10,14 @@
   --color-secondary: var(--color-secondary-dark);
 }
 
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--color-main);
+  transition: background-color 0.3s linear, color 0.5s linear;
+}
+
 body {
   position: relative;
   overflow-x: hidden;
@@ -19,13 +27,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-body);
-  color: var(--color-main);
-}
-
-*, *::after, *::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
   color: var(--color-main);
 }
 
@@ -133,21 +134,20 @@ body {
 }
 .main .section .card-list .button_clear {
   position: absolute;
-  top: -140px;
+  top: -120px;
   right: 0;
 }
 @media (max-width: 840px) {
   .main .section .card-list .button_clear {
-    top: -110px;
+    padding: 0 15px;
+    top: -70px;
   }
 }
 @media (max-width: 420px) {
   .main .section .card-list .button_clear {
     position: static;
     align-self: flex-start;
-    top: -110px;
-    padding: 0;
-    right: 0;
+    padding: 20px 0;
   }
 }
 .main .section .card-list .wrapper {

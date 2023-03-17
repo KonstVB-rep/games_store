@@ -5,24 +5,24 @@ import {loadSearchGames} from "../../../store/search/searchSlice";
 
 
 const useSearchGame = () => {
-    const dispatch = useDispatch()
-  const [searchValue, setSearchValue] = useState('');
+  const dispatch = useDispatch();
+  const [searchValue, setSearchValue] = useState("");
 
   const makeRequest = (query) => {
-    dispatch(loadSearchGames(PATH.SEARCH_GAMES(query)))
-  }
+    dispatch(loadSearchGames(PATH.SEARCH_GAMES(query)));
+  };
 
   const handleSearch = (e) => {
-    setSearchValue(e.target.value)
-  }
+    setSearchValue(e.target.value);
+  };
 
-  const handleSubmit =(e) => {
-    e.preventDefault()
-    if(searchValue.trim().length){
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchValue.trim().length) {
       makeRequest(searchValue);
-      setSearchValue('')
+      setSearchValue("");
     }
-  }
+  };
 
   return {
     handleSearch,

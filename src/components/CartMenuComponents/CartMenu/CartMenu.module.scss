@@ -59,10 +59,28 @@
     }
   }
   .go-cart{
-    font-weight: bold;
+    width: max-content;
+    max-width: 200px;
+    padding: 10px 15px;
     background-color: #e18418;
-    a{
-      width: max-content;
+    text-transform: uppercase;
+    border-radius: $border-radius-l;
+    transition: 0.2s linear;
+    &:hover,
+    &:focus-visible{
+      background-image: linear-gradient(#1c4d1c 0%, $effect-color 55%,#1c4d1c 95%);
+      box-shadow: $effect-color 0 0 2px 2px inset;
+      transform: scale(1.1);
+    }
+    &:active{
+      animation: pulse 0.3s;
+      box-shadow: 0 0 0 2em rgba(#fff,0);
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 $effect-color; }
+    }
+    @media(max-width: 480px) {
+      width: 90%;
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, {forwardRef} from "react";
+import React, {forwardRef, memo} from "react";
 import {GamePoster} from "../GamePoster";
 import {Genres} from "../../Genres";
 import {RatingInfo} from "../../RatingInfo";
@@ -8,14 +8,14 @@ import cn from "./GameCard.module.scss";
 
 
 
-const GameCard = forwardRef(function GameCard({isLast, ...game}, ref) {
+const GameCard = memo(forwardRef(function GameCard({isLast, ...game}, ref) {
 
-  const {name, genres, slug, img, price, ...fromRating} = game;
+  const {name,id, genres, slug, img, price, ...fromRating} = game;
 
 
   return (
     <article className = {cn["game-card"]} ref = {isLast ? ref : null}>
-      <FavoriteIcon game={game}/>
+      <FavoriteIcon id={id}/>
       <GamePoster img = {img} slug = {slug} />
       <div className = {cn.details}>
         <p className = {cn.title}>{name}</p>
@@ -25,6 +25,6 @@ const GameCard = forwardRef(function GameCard({isLast, ...game}, ref) {
       </div>
     </article>
   );
-});
+}));
 
 export default GameCard;

@@ -29,11 +29,18 @@ const gamesSlice = createSlice({
       state.countPage = state.currentPage
     },
     addFavorite: (state,action) => {
-      state.favorites.push(action.payload)
+      const findFavorite = state.favorites.some(item => item?.id === action.payload);
+      if(!findFavorite){
+        const favoriteGame = state.gamesList.find(item => item.id === action.payload)
+        state.favorites.push(favoriteGame)
+      }
+      else{
+        state.favorites = state.favorites.filter(item => item.id !== action.payload)
+      }
     },
-    removeFavorite: (state,action) => {
-      state.favorites = state.favorites.filter(item => item.id !== action.payload)
-    }
+    // removeFavorite: (state,action) => {
+    //   state.favorites = state.favorites.filter(item => item.id !== action.payload)
+    // }
   },
   extraReducers: (builder) => {
     builder.addCase(loadGames.pending, (state) => {
@@ -54,9 +61,9 @@ const gamesSlice = createSlice({
 });
 
 export const selectAllGames = (state) => state.games.gamesList;
-export const selectStatus = (state) => state.games.status;
 export const selectFavorites = (state) => state.games.favorites;
-export const {rememberCurrentPage,rememberCountPage,addFavorite,removeFavorite} = gamesSlice.actions;
+export const selectSingleFavorite = (id) => (state) => state.games.favorites.find(item => item.id === id);
+export const {rememberCurrentPage,rememberCountPage,addFavorite} = gamesSlice.actions;
 
 const gamesReducer = gamesSlice.reducer;
 export default gamesReducer;

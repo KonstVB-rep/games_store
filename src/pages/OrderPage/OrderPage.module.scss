@@ -21,17 +21,16 @@
       }
       .button_clear{
         position: absolute;
-        top: -140px;
+        top: -120px;
         right: 0;
         @media (max-width: 840px){
-          top: -110px;
+          padding: 0 15px;
+          top: -70px;
         }
         @media (max-width: 420px){
           position: static;
           align-self: flex-start;
-          top: -110px;
-          padding: 0;
-          right: 0;
+          padding: 20px 0;
         }
       }
       .wrapper{

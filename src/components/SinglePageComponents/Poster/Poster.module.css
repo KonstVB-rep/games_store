@@ -10,6 +10,14 @@
   --color-secondary: var(--color-secondary-dark);
 }
 
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--color-main);
+  transition: background-color 0.3s linear, color 0.5s linear;
+}
+
 body {
   position: relative;
   overflow-x: hidden;
@@ -19,13 +27,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-body);
-  color: var(--color-main);
-}
-
-*, *::after, *::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
   color: var(--color-main);
 }
 
@@ -101,13 +102,13 @@ body {
   background-color: darkred;
 }
 
-.media {
+.poster {
   display: flex;
   flex-direction: column;
   gap: 20px;
   grid-column: 1;
 }
-.media .img-box {
+.poster .img-box {
   width: 100%;
   position: relative;
   border-radius: 15px;
@@ -117,18 +118,18 @@ body {
   height: 100%;
 }
 @media (max-width: 940px) {
-  .media .img-box {
+  .poster .img-box {
     border-radius: 0;
     box-shadow: none;
   }
 }
 @media (max-width: 500px) {
-  .media .img-box {
+  .poster .img-box {
     min-height: auto;
     height: 250px;
   }
 }
-.media .img-box img {
+.poster .img-box img {
   display: block;
   position: absolute;
   height: 100%;
@@ -138,4 +139,4 @@ body {
   object-position: top;
 }
 
-/*# sourceMappingURL=MediaContent.module.css.map */
+/*# sourceMappingURL=Poster.module.css.map */

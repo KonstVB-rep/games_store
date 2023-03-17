@@ -1,32 +1,34 @@
-import React, {forwardRef} from "react";
-import {Link, useNavigate} from "react-router-dom";
-import {Button} from "../../Buttons/Button";
+import React, {useEffect, useState} from "react";
+import {Link,} from "react-router-dom";
 import {CartMenuList} from "../CartMenuList";
 import {CartTableFooter} from "../CartTableFooter";
-import {CartTableHeader} from "../CartTableHeader";
+import s from "../ShoppingCart/ShoppingCart.module.scss";
 import cn from "./CartMenu.module.scss";
 
-const CartMenu = forwardRef(function CartMenu({classname,setShowCart}, ref) {
-  const navigate = useNavigate()
+const CartMenu = ({classname}) => {
+  const [showCart, setShowCart] = useState(false);
 
-  const handleClick = () =>{
-    setShowCart(false)
-    navigate('order')
-  }
+  useEffect(() => {
+    const isShowCart = (e) => {
+      if (e.target.className === s['btn-toggle']) {
+        setShowCart(p => !p)
+      } else if(!e.target.closest(`.${cn.menu}`)){
+        setShowCart(false)
+      }
+    }
+    window.addEventListener('click', isShowCart)
+    return () => window.removeEventListener('click', isShowCart)
+  }, [])
 
   return (
-    <div className = {classname} ref = {ref}>
-      <CartMenuList classname = {cn.orders}>
-        <CartTableHeader classname = {cn.grid} />
-      </CartMenuList>
+    <div className = {`${cn.menu} ${showCart ?  cn.menu_visible : ''}`}>
+      <CartMenuList classname = {cn.orders}/>
       <CartTableFooter classname = {cn.total} />
-        <Button classname = {cn['go-cart']} onClick={handleClick}>
-          {/*<Link to = "order" onClick={() => setShowCart(false)}>*/}
-            Go to the shopping cart
-          {/*</Link>*/}
-        </Button>
+      <Link to = "order" className = {cn['go-cart']}>
+        Go to the cart
+      </Link>
     </div>
-)
-});
+  )
+};
 
 export default CartMenu;

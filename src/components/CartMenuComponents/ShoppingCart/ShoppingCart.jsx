@@ -1,9 +1,9 @@
 import React from "react";
-import {useSelector} from "react-redux";
-import {CartMenuContainer} from "../CartMenuContainer";
+import {CartMenu} from "../CartMenu";
 import ShoppingCartIcons from "../ShoppingCartIcons/ShoppingCartIcons";
 import {useLocation} from "react-router-dom";
 import cn from "./ShoppingCart.module.scss";
+
 
 
 
@@ -16,7 +16,7 @@ const ShoppingCart = () => {
   return (
     <div className = {cn.cart}>
       <ShoppingCartIcons/>
-      <CartMenuContainer/>
+      <CartMenu/>
     </div>
   );
 };

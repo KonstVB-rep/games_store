@@ -3,13 +3,16 @@ import {RiMoonFill} from "react-icons/ri";
 import {CgSun} from "react-icons/cg";
 import cn from './ThemeSwitcher.module.scss'
 
+
+const themeFromLs = localStorage.getItem('theme') || 'dark'
+
 const ThemeSwitcher = () => {
 
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(themeFromLs);
 
   const ThemeIcon = theme === 'dark' ? CgSun : RiMoonFill;
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   }
 
   useLayoutEffect(() => {
@@ -19,6 +22,7 @@ const ThemeSwitcher = () => {
     document.body.style.setProperty('--bg-body',bgBody)
     document.body.style.setProperty('--color-main',colorMain)
     document.body.style.setProperty('--color-secondary',colorSecondary)
+    localStorage.setItem('theme', theme)
   }, [theme]);
 
   return (

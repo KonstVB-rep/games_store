@@ -5,19 +5,26 @@ import {useSelector} from "react-redux";
 import ThemeSwitcher from "../../ThemeSwitcher/ThemeSwitcher";
 import cn from "../ShoppingCart/ShoppingCart.module.scss";
 
-const ShoppingCartIcons = () => {
+
+const TotalPrice = () => {
 
   const {totalPrice} = useSelector((state) => state.cart);
-
   const {cartList} = useSelector((state) => state.cart);
 
+  return (
+    <span className={cn["total-price"]} data-count={cartList.length}>
+      {totalPrice} {currency}
+    </span>
+  );
+}
+
+
+const ShoppingCartIcons = () => {
 
   return (
     <>
-      <div className ={cn["cart__info"]}>
-        <span className = {cn["total-price"]} data-count = {cartList.length}>
-        {totalPrice} {currency}
-        </span>
+      <div className = {cn["cart__info"]}>
+        <TotalPrice/>
         <button className = {cn['btn-toggle']}>
           <FaOpencart className = {cn['btn-toggle__icon']} />
         </button>

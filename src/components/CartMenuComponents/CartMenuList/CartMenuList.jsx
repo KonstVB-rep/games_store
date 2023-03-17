@@ -3,8 +3,11 @@ import CartMenuItem from "../CartMenuItem/CartMenuItem";
 import {useSelector} from "react-redux";
 import {selectAllItemsCart} from "../../../store/cart/cartSlice";
 import cl from "../CartMenu/CartMenu.module.scss";
+import cn from "../CartMenu/CartMenu.module.scss";
 
-const CartMenuList = ({classname, children}) => {
+const columns = ['name', 'quantity','amount'];
+
+const CartMenuList = () => {
 
   const allItemsInCart = useSelector(selectAllItemsCart);
 
@@ -13,8 +16,10 @@ const CartMenuList = ({classname, children}) => {
   ))
 
   return (
-    <div className = {classname}>
-      {children}
+    <div className = {cn.orders}>
+      <div className = {cn.grid}>
+        {columns.map(col => <span key={col}>{col}</span>)}
+      </div>
       {renderCartItems}
     </div>
   );

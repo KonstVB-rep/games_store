@@ -12,14 +12,12 @@
   --color-secondary: var(--color-secondary-dark);
 }
 
-//var(--color-main): null;
-//var(--color-secondary): null;
+
 $primary-color: #3d55a1;
 $effect-color: #5b955b;
 $rating-color:gold;
 $error-color: #9f0e0e;
 $bg-gold:#827056;
-//var(--bg-body): null;
 
 $border-radius-m: 15px;
 $border-radius-l: 25px;
@@ -62,19 +60,14 @@ $border-radius-xl: 35px;
     grid-template-columns: 1fr;
   }
 }
-//:root {
-//  --bg-body-light: rgb(204,204,204);
-//  --color-main-light: #000000 ;
-//  --color-secondary-light: #ffffff;
 
-//  --bg-body-dark: #2a2929;
-//  --color-main-dark: #ffffff;
-//  --color-secondary-dark: #000000;
-
-//  --bg-body: var(--bg-body-dark);
-//  --color-main: var(--color-main-dark;
-//  --color-secondary: var(--color-secondary-dark);
-//}
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color:var(--color-main);
+  transition: background-color 0.3s linear, color 0.5s linear;
+}
 
 
 body {
@@ -91,19 +84,6 @@ body {
   color:var(--color-main);
 }
 
-body[data-theme='dark'] {
-  //var(--bg-body): #2a2929 !global;
-  //var(--color-main): #ffffff !global;
-  //var(--color-secondary): #000000 !global;
-}
-
-
-*, *::after, *::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  color:var(--color-main);
-}
 
 button, a{
   cursor: pointer;

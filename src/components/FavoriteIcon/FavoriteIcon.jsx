@@ -1,23 +1,19 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {addFavorite, removeFavorite, selectFavorites} from "../../store/games/gamesSlice";
+import {addFavorite, selectSingleFavorite} from "../../store/games/gamesSlice";
 import cn from "./FavoriteIcon.module.scss";
 
-const FavoriteIcon = ({game}) => {
+
+const FavoriteIcon = ({id}) => {
 
   const dispatch = useDispatch();
-  const favoritesList = useSelector(selectFavorites)
 
-  const isFavorites = (id) => favoritesList.some(item => item.id === id)
+  const favorite = !!useSelector(selectSingleFavorite(id))
 
-  const actionFavorites = () => {
-    !isFavorites(game.id) ? dispatch(addFavorite(game)) : dispatch(removeFavorite(game.id))
-  }
-
-  const classFavorite = isFavorites(game.id) ? `${cn["favorite-sign"]} ${cn["favorite-sign_in"]}` : cn["favorite-sign"];
+  const classFavorite = favorite ? `${cn["favorite-sign"]} ${cn["favorite-sign_add"]}` : cn["favorite-sign"];
 
   return (
-    <button className = {classFavorite} onClick = {actionFavorites} aria-roledescription='add to favorites' tabIndex='0'>
+    <button className = {classFavorite} onClick = {() => dispatch(addFavorite(id))} aria-roledescription='add to favorites' tabIndex='0'>
       <svg xmlns = "http://www.w3.org/2000/svg" viewBox = "0 0 256 256">
         <rect width = "256" height = "256" fill = "none"></rect>
         <path

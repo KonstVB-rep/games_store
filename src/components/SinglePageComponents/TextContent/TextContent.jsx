@@ -1,9 +1,9 @@
 import React from "react";
 import {Genres} from "../../Genres";
 import {RatingInfo} from "../../RatingInfo";
-import cn from "./TextContent.module.scss";
 import {DevelopersList} from "../DevelopersList";
 import GameBuy from "../../GameBuy";
+import cn from "./TextContent.module.scss";
 
 const TextContent = ({game}) => {
 

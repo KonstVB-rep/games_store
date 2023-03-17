@@ -8,11 +8,11 @@ const CartTableFooter = ({classname}) => {
   const totalPriceCart = useSelector(selectTotalPrice);
 
   return (
-    <div className = {classname}>
+    <div className={classname}>
       <span>Total price:</span>
       <span>
-          {totalPriceCart} {currency}
-        </span>
+        {totalPriceCart} {currency}
+      </span>
     </div>
   );
 };

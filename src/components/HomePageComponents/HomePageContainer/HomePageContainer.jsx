@@ -9,12 +9,14 @@ import {ErrorContainer} from "../../ErrorContainer";
 const HomePageContainer = ({children}) => {
 
   const dispatch = useDispatch();
-  const {currentPage,status} = useSelector(state => state.games);
+  const {currentPage, countPage,status} = useSelector(state => state.games);
 
-  console.log('render')
+  console.log('render',currentPage, countPage)
 
   useEffect(() => {
-    dispatch(loadGames(PATH.GAMES_URL(currentPage)));
+    if(currentPage !== countPage){
+      dispatch(loadGames(PATH.GAMES_URL(currentPage)));
+    }
     return () => dispatch(rememberCountPage())
   }, [dispatch]);
 
