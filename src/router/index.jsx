@@ -1,13 +1,15 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import App from "../App";
-import { ErrorPage } from "../pages/ErrorPage";
-import { HomePage } from "../pages/HomePage";
-import { SearchPage} from "../pages/SearchPage";
-import { GameSinglePage } from "../pages/SinglePage";
-import {OrdersPage} from "../pages/OrderPage";
+import {HomePage} from "../pages/HomePage";
 import {singlePageLoader} from "../pages/SinglePage/SinglePage";
-import {Favorites} from "../pages/Favorites";
+
+
+const SearchPage = React.lazy(() => import("../pages/SearchPage"))
+const ErrorPage = React.lazy(() => import("../pages/ErrorPage"))
+const SinglePage = React.lazy(() => import("../pages/SinglePage"))
+const Favorites = React.lazy(() => import("../pages/Favorites"))
+const OrdersPage = React.lazy(() => import("../pages/OrderPage"))
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +22,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "games/:name",
-        element: <GameSinglePage />,
+        element: <SinglePage />,
         errorElement: <ErrorPage />,
         loader: singlePageLoader
       },
@@ -31,11 +33,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/order",
-        element: <OrdersPage/>,
+        element: <OrdersPage />,
       },
       {
         path: "/favorites",
-        element: <Favorites/>,
+        element: <Favorites />,
       },
     ],
   },

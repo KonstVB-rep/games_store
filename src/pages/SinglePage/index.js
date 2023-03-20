@@ -1,1 +1,1 @@
-export { default as GameSinglePage } from "./SinglePage";
+export { default } from "./SinglePage";

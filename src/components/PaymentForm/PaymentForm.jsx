@@ -1,12 +1,16 @@
-import React, {Fragment} from 'react';
-import {Dialog,Transition } from '@headlessui/react'
+import React, {useTransition} from 'react';
+import {Dialog } from '@headlessui/react'
 import {Card} from "./Card";
 import {Form} from "./Form";
 import usePayment from "./hook/usePayment";
-import OrderModal from "../OrderPageComponets/OrderModal/OrderModal";
 import cn from './PaymentForm.module.scss'
 
+const OrderModal = React.lazy(() => import("../OrderPageComponents/OrderModal").then((module) => ({
+  default: module.OrderModal
+})))
+
 const PaymentForm = ({showModal, setShowModal}) => {
+
 
   const {
     numberCard,
@@ -44,6 +48,8 @@ const PaymentForm = ({showModal, setShowModal}) => {
     handleBlur,
   }
 
+  const [, startTransition] = useTransition()
+
 
   return (
     <>
@@ -62,7 +68,7 @@ const PaymentForm = ({showModal, setShowModal}) => {
             </Dialog.Title>
           </Dialog.Panel>
         </Dialog>
-      <OrderModal showModal = {showConfirmModal} setShowModal = {setShowConfirmModal} />
+       <OrderModal showModal = {showConfirmModal} setShowModal = {() => startTransition(setShowConfirmModal)} />
     </>
   );
 };

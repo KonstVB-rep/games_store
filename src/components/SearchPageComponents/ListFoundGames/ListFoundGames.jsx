@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import {useSelector} from "react-redux";
 import ItemFoundGames from "../ItemFoundGames/ItemFoundGames";
-import Spinner from "../../Spinner/Spinner";
 import cn from "../../../pages/SearchPage/SearchPage.module.scss";
+import Spinner from "../../Spinner";
 
 const ListFoundGames = memo(() => {
 

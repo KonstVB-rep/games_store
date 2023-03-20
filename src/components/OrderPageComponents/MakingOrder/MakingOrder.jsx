@@ -1,22 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, {useTransition} from 'react';
 import {Button} from "../../Buttons/Button";
 import {clearCartList, selectTotalPrice} from "../../../store/cart/cartSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {currency} from "../../../constants/currency";
 import {PortalCreator} from "../../PortalCreator";
-import {OrderModal} from "../OrderModal";
 import { animateScroll as scroll } from "react-scroll";
 import useVisible from "../../../hooks/useVisible";
 import cn from './MakingOrder.module.scss'
-import {PaymentForm} from "../../PaymentForm";
+
+const PaymentForm = React.lazy(() => import('../../PaymentForm').then(module => ({default: module.PaymentForm})))
 
 
 const MakingOrder = () => {
 
   const dispatch = useDispatch();
+  const [, startTransition] = useTransition()
 
   const [isShow, setIsShow] = useVisible(() => dispatch(clearCartList()));
-
 
   const handleClick = () => {
     setIsShow(!isShow)
@@ -47,7 +47,7 @@ const MakingOrder = () => {
         <Button classname = {cn["order-button"]} onClick = {handleClick}>place on order</Button>
       </div>
       <PortalCreator>
-        <PaymentForm showModal = {isShow} setShowModal = {handleClick} />
+          <PaymentForm showModal = {isShow} setShowModal = {() => startTransition(handleClick)} />
       </PortalCreator>
     </>
   );

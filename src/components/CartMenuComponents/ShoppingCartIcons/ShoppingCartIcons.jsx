@@ -2,7 +2,6 @@ import React from 'react';
 import {currency} from "../../../constants/currency";
 import {FaOpencart} from "react-icons/fa";
 import {useSelector} from "react-redux";
-import ThemeSwitcher from "../../ThemeSwitcher/ThemeSwitcher";
 import cn from "../ShoppingCart/ShoppingCart.module.scss";
 
 
@@ -29,7 +28,6 @@ const ShoppingCartIcons = () => {
           <FaOpencart className = {cn['btn-toggle__icon']} />
         </button>
       </div>
-      <ThemeSwitcher />
     </>
   );
 };

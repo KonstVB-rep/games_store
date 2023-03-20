@@ -1,5 +1,5 @@
 import React, {useLayoutEffect, useState} from 'react';
-import {RiMoonFill} from "react-icons/ri";
+import {BiMoon} from "react-icons/bi";
 import {CgSun} from "react-icons/cg";
 import cn from './ThemeSwitcher.module.scss'
 
@@ -10,7 +10,7 @@ const ThemeSwitcher = () => {
 
   const [theme, setTheme] = useState(themeFromLs);
 
-  const ThemeIcon = theme === 'dark' ? CgSun : RiMoonFill;
+  const ThemeIcon = theme === 'dark' ? CgSun : BiMoon;
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   }

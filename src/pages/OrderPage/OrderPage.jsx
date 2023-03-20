@@ -1,5 +1,5 @@
 import React from 'react';
-import OrderList from "../../components/OrderPageComponets/OrderList/OrderList";
+import {OrderList} from "../../components/OrderPageComponents/OrderList";
 import cn from './OrderPage.module.scss';
 
 

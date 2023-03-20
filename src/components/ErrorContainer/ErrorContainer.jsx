@@ -1,5 +1,5 @@
 import React from 'react';
-import {ErrorPage} from "../../pages/ErrorPage";
+import ErrorPage from "../../pages/ErrorPage";
 
 const ErrorContainer = ({status, children}) => {
   return (
