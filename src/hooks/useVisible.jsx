@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 const useVisible = (handler = null) => {
 
@@ -16,8 +16,6 @@ const useVisible = (handler = null) => {
     window.addEventListener('keydown', close)
     return () => window.removeEventListener('keydown', close)
   },[])
-
-
 
   return [isShow,setIsShow]
 };

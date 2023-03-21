@@ -10,6 +10,18 @@ import cn from './MakingOrder.module.scss'
 
 const PaymentForm = React.lazy(() => import('../../PaymentForm').then(module => ({default: module.PaymentForm})))
 
+const TotalPrice = () => {
+
+  const totalPrice = useSelector(selectTotalPrice);
+  return(
+    <p className = {cn["total-price"]}>
+      <span>Total price: </span>
+      <span className = {cn.price}>
+            {totalPrice} {currency}
+      </span>
+    </p>
+  )
+}
 
 const MakingOrder = () => {
 
@@ -20,35 +32,27 @@ const MakingOrder = () => {
 
   const handleClick = () => {
     setIsShow(!isShow)
-    if(isShow){
-      document.body.style.overflow = "visible";
-      document.body.style.overflowX = "hidden";
-      scroll.scrollToTop({
-        duration: 500,
-        smooth: true,
-      })
-    }
-    else {
-      document.body.style.overflow = "hidden";
-    }
+    // if(isShow){
+    //   document.body.style.overflow = "visible";
+    //   document.body.style.overflowX = "hidden";
+    //   scroll.scrollToTop({
+    //     duration: 500,
+    //     smooth: true,
+    //   })
+    // }
+    // else {
+    //   document.body.style.overflow = "hidden";
+    // }
   }
 
-  const totalPrice = useSelector(selectTotalPrice);
 
   return (
     <>
       <div className = {cn.wrapper}>
-        <p className = {cn["total-price"]}>
-          <span>Total price: </span>
-          <span className = {cn.price}>
-            {totalPrice} {currency}
-          </span>
-        </p>
+        <TotalPrice/>
         <Button classname = {cn["order-button"]} onClick = {handleClick}>place on order</Button>
       </div>
-      <PortalCreator>
-          <PaymentForm showModal = {isShow} setShowModal = {() => startTransition(handleClick)} />
-      </PortalCreator>
+      <PaymentForm showModal = {isShow} setShowModal = {() => startTransition(handleClick)} />
     </>
   );
 };

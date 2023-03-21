@@ -2,7 +2,6 @@ import React from 'react';
 import {Input} from '../Input';
 import {Select} from "../Select";
 import cn from "../PaymentForm.module.scss";
-import {Button} from "../../Buttons/Button";
 
 const Form = ({
                 numberCard,
@@ -28,11 +27,14 @@ const Form = ({
     setShowConfirmModal(true)
   }
 
-  const renderOptionMonths = Array(12).fill(0).map((item, index) => <option key = {index}
-                                                                            value = {`${index + 1}`.padStart(2, '0')}>{`${index + 1}`.padStart(2, '0')}</option>)
+  const renderOptionMonths = Array(12)
+    .fill(0)
+    .map((item, index) => <option key = {index} value = {`${index + 1}`.padStart(2, '0')}>{`${index + 1}`.padStart(2, '0')}</option>)
 
-  const renderOptionYears = Array(10).fill(new Date().getFullYear()).map((item, index) => <option key = {index}
-                                                                                                  value = {`${item + index}`}>{`${item + index}`}</option>)
+  const renderOptionYears = Array(10)
+    .fill(new Date()
+    .getFullYear())
+    .map((item, index) => <option key = {index} value = {`${item + index}`}>{`${item + index}`}</option>)
 
 
   return (

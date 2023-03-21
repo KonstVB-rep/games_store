@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {FavoriteIcon} from "../../FavoriteIcon";
 import {ShortCard} from "../../ShortCard";
 import {ButtonAddToCart} from "../../Buttons/ButtonAddToCart";
 import cn from './CardFavorite.module.scss'
 
-const CardFavorite = ({game}) => {
+const CardFavorite = memo(({game}) => {
+
   const {img,name,id, slug} = game;
+
   return (
     <div className={cn['favorite-card']}>
       <ShortCard img={img} name={name} slug={slug}>
@@ -14,6 +16,6 @@ const CardFavorite = ({game}) => {
       <FavoriteIcon id={id}/>
     </div>
   );
-};
+});
 
 export default CardFavorite;

@@ -19,7 +19,7 @@ const OrderModal = ({showModal, setShowModal}) => {
   }
 
   return (
-    <Dialog open = {showModal} onClose = {() => setShowModal(false)}>
+    <Dialog open = {!!showModal} onClose = {() => setShowModal(false)}>
       <div className = {cn.bg}>
         <Dialog.Panel className = {cn.popup}>
           <h2 className={cn.title}>thanks for the purchase</h2>

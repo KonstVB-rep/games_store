@@ -56,7 +56,7 @@ const PaymentForm = ({showModal, setShowModal}) => {
         <Dialog
           open = {showModal}
           onClose = {() => setShowModal(false)}>
-          <div className = {cn.bg} />
+          <div className = {cn.bg} >
           <Dialog.Panel className = {cn.popup}>
             <Dialog.Title className = {cn.content}>
               <Card numberCard = {numberCard} month = {month} year = {year} name = {name} ccv = {ccv}
@@ -67,6 +67,7 @@ const PaymentForm = ({showModal, setShowModal}) => {
               />
             </Dialog.Title>
           </Dialog.Panel>
+          </div>
         </Dialog>
        <OrderModal showModal = {showConfirmModal} setShowModal = {() => startTransition(setShowConfirmModal)} />
     </>

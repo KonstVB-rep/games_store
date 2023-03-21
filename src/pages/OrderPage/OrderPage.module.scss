@@ -5,10 +5,24 @@
     padding-top: 0;
   }
   .section{
+    position: relative;
     @include flex-column;
     flex-grow:1;
+    .button_clear{
+      position: absolute;
+      top: -120px;
+      right: 0;
+      @media (max-width: 840px){
+        padding: 0 15px;
+        top: -70px;
+      }
+      @media (max-width: 420px){
+        position: static;
+        align-self: flex-start;
+        padding: 20px 0;
+      }
+    }
     .card-list {
-      position: relative;
       @include flex-column;
       align-items: center;
       justify-content: space-between;
@@ -18,20 +32,6 @@
       gap: 50px;
       @media (max-width: 420px){
         position: static;
-      }
-      .button_clear{
-        position: absolute;
-        top: -120px;
-        right: 0;
-        @media (max-width: 840px){
-          padding: 0 15px;
-          top: -70px;
-        }
-        @media (max-width: 420px){
-          position: static;
-          align-self: flex-start;
-          padding: 20px 0;
-        }
       }
       .wrapper{
         @include flex-column;

@@ -1,7 +1,8 @@
-import React, {memo} from 'react';
+import React from 'react';
 import cn from "../PaymentForm.module.scss";
 
-const Select = memo(({period, onChange, renderItems, name}) => {
+const Select = ({period, onChange, renderItems, name}) => {
+
   return (
     <select name = {name} className = {cn.select} value = {period}
             onChange = {(e) => onChange(e.target.value)}>
@@ -9,6 +10,6 @@ const Select = memo(({period, onChange, renderItems, name}) => {
       {renderItems}
     </select>
   );
-});
+};
 
 export default Select;

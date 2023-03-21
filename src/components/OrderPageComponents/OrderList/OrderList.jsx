@@ -1,30 +1,21 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {OrderItem} from "../OrderItem";
 import TitleEmptyPage from "../../TitleEmptyPage/TitleEmptyPage";
-import {MakingOrder} from "../MakingOrder";
-import {ButtonSilver} from "../../Buttons/ButtonSilver";
 import cn from "../../../pages/OrderPage/OrderPage.module.scss";
-import {clearCartList} from "../../../store/cart/cartSlice";
+import {MakingOrder} from "../MakingOrder";
 
 const OrderList = () => {
 
-  const dispatch = useDispatch()
+  const {cartList} = useSelector(state => state.cart)
 
-  const {cartList} = useSelector(state =>state.cart)
-
-  const clearCart = () =>{
-    dispatch(clearCartList())
-  }
-
-  const renderCardsList = cartList.map(item => <OrderItem key={item.id} game={item}/>)
+  const renderCardsList = cartList.map(item => <OrderItem key={item.id} id={item.id}/>)
 
 
   return (
     <div className={cn['card-list']}>
-        {renderCardsList.length ?
+        {cartList.length ?
           <>
-            <ButtonSilver title="clear cart" classname={cn.button_clear} click={clearCart}/>
             <div className={cn.wrapper}>
               {renderCardsList}
             </div>

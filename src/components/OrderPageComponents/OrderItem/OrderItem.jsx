@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {ButtonAddRemove} from "../../Buttons/ButtonAddRemove";
 import {currency} from "../../../constants/currency";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {selectCurrentItem} from "../../../store/cart/cartSlice";
 import cn from './OrderItem.module.scss'
 
-const OrderItem = ({game}) => {
+const OrderItem = memo(({id}) => {
+
+  const game = useSelector(selectCurrentItem(id))
 
   const price = game.totalCount * game.price;
 
@@ -19,6 +23,6 @@ const OrderItem = ({game}) => {
       <div className = {cn.price}>{price}{currency}</div>
     </div>
   );
-};
+});
 
 export default OrderItem;
