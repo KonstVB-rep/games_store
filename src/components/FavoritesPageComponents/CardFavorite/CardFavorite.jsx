@@ -13,7 +13,7 @@ const CardFavorite = memo(({game}) => {
       <ShortCard img={img} name={name} slug={slug}>
         <ButtonAddToCart game={game}/>
       </ShortCard>
-      <FavoriteIcon id={id}/>
+      <FavoriteIcon game={game}/>
     </div>
   );
 });

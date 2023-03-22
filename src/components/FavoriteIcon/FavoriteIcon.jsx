@@ -4,16 +4,17 @@ import {addFavorite, selectSingleFavorite} from "../../store/games/gamesSlice";
 import cn from "./FavoriteIcon.module.scss";
 
 
-const FavoriteIcon = ({id}) => {
+const FavoriteIcon = ({game}) => {
 
   const dispatch = useDispatch();
 
-  const favorite = !!useSelector(selectSingleFavorite(id))
+  const favorite = !!useSelector(selectSingleFavorite(game.id))
+
 
   const classFavorite = favorite ? `${cn["favorite-sign"]} ${cn["favorite-sign_add"]}` : cn["favorite-sign"];
 
   return (
-    <button className = {classFavorite} onClick = {() => dispatch(addFavorite(id))} aria-roledescription='add to favorites' tabIndex='0'>
+    <button className = {classFavorite} onClick = {() => dispatch(addFavorite(game))} aria-label='add to favorites' tabIndex='0'>
       <svg xmlns = "http://www.w3.org/2000/svg" viewBox = "0 0 256 256">
         <rect width = "256" height = "256" fill = "none"></rect>
         <path

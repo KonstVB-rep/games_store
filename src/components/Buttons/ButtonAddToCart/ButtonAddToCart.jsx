@@ -6,6 +6,7 @@ import {addProduct, selectAllItemsCart, selectCurrentItem, selectItemCart} from 
 import cn from "./ButtonAddToCart.module.scss";
 
 const ButtonAddToCart = ({game}) => {
+
   const dispatch = useDispatch()
   const currentItem = useSelector(selectCurrentItem(game.id));
 

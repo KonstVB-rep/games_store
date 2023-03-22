@@ -5,11 +5,12 @@ import {CartTableFooter} from "../CartTableFooter";
 import s from "../ShoppingCart/ShoppingCart.module.scss";
 import cn from "./CartMenu.module.scss";
 
-const CartMenu = ({classname}) => {
+const CartMenu = () => {
   const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     const isShowCart = (e) => {
+      console.log(e.target)
       if (e.target.className === s['btn-toggle']) {
         setShowCart(p => !p)
       } else if(!e.target.closest(`.${cn.menu}`)){

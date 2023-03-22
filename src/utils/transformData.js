@@ -12,6 +12,7 @@ export const transformData = (data) => {
     description: data?.description_raw,
     slug: data.slug,
     price: randomNumber(1200, 3500),
+    totalCount: 0
   };
 };
 

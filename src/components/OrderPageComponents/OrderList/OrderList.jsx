@@ -3,7 +3,6 @@ import {useSelector} from "react-redux";
 import {OrderItem} from "../OrderItem";
 import TitleEmptyPage from "../../TitleEmptyPage/TitleEmptyPage";
 import cn from "../../../pages/OrderPage/OrderPage.module.scss";
-import {MakingOrder} from "../MakingOrder";
 
 const OrderList = () => {
 
@@ -19,7 +18,6 @@ const OrderList = () => {
             <div className={cn.wrapper}>
               {renderCardsList}
             </div>
-            <MakingOrder/>
           </>
             :
           <TitleEmptyPage text ='The shopping cart is empty'/>}

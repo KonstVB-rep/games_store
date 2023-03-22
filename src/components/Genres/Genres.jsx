@@ -3,7 +3,7 @@ import cn from "./Genre.module.scss";
 
 const Genres = ({ genres = [] }) => {
   return (
-    <div className={cn.genres__list}>
+    <div className={cn.genres}>
       {genres.length ?
         genres.map((genre) => (
           <span className={cn.genre} key={genre.id}>

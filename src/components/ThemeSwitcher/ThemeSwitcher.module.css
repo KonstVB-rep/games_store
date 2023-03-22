@@ -103,9 +103,6 @@ body {
 }
 
 .switcher {
-  position: fixed;
-  top: 83%;
-  right: 10px;
   width: 60px;
   height: 60px;
   padding: 5px;
@@ -113,22 +110,19 @@ body {
   border: 2px solid #7e7d7d;
   border-radius: 15px;
   cursor: pointer;
-  z-index: 2;
 }
 .switcher:hover, .switcher:focus-visible {
   border: 2px solid white;
 }
-.switcher:hover .icon path, .switcher:focus-visible .icon path {
-  fill: white;
+.switcher:hover .icon, .switcher:focus-visible .icon {
+  filter: brightness(1);
 }
 .switcher .icon {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.switcher .icon path {
-  fill: #7e7d7d;
+  filter: brightness(0.51);
 }
 
 /*# sourceMappingURL=ThemeSwitcher.module.css.map */

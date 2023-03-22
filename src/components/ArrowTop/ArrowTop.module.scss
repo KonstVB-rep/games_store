@@ -1,13 +1,9 @@
 @import '../../index';
 
 .arrow-box {
-  position: fixed;
-  top:75%;
-  right: 10px;
   width: 60px;
   height: 60px;
   border-color:transparent;
-  z-index: 3;
   @include flex-al-jc-center;
   border-radius: $border-radius-m;
   background-color: deepskyblue;
@@ -16,6 +12,7 @@
   .image {
     width: 45px;
     height: 45px;
+    transform: rotate(90deg);
 
     & svg {
       display: block;
@@ -36,15 +33,16 @@
 
   @keyframes topBack {
     0% {
-      transform: translateY(0px);
+      transform: translateX(0px);
     }
     50%{
-      transform: translateY(-50px);
+      transform: translateX(-50px);
       opacity: 0.5;
     }
     100% {
-      transform: translateY(-100px);
+      transform: translateX(-100px);
       opacity: 0
     }
   }
+
 }

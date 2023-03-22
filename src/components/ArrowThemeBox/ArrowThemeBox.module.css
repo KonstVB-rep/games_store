@@ -102,19 +102,21 @@ body {
   background-color: darkred;
 }
 
-.genres {
+.wrapper {
+  position: fixed;
+  top: 80%;
+  right: 10px;
   display: flex;
-  flex-wrap: wrap;
-  align-self: flex-start;
-  align-items: flex-end;
-  gap: 5px;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+  transition: 0.3s;
 }
-.genres .genre {
-  padding: 5px 10px;
-  border-radius: 15px;
-  background-color: #827056;
-  color: white;
-  text-shadow: 2px 2px 2px black;
+@media (orientation: landscape) {
+  .wrapper {
+    top: 55%;
+  }
 }
 
-/*# sourceMappingURL=Genre.module.css.map */
+/*# sourceMappingURL=ArrowThemeBox.module.css.map */

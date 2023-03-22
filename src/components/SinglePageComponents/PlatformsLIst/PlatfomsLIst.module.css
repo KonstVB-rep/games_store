@@ -150,13 +150,14 @@ body {
   border-radius: 15px;
   min-width: max-content;
   color: white;
+  font-weight: bold;
+  transition: 0.1s;
   text-shadow: 2px 2px 2px black;
 }
 .platforms-box .links a:hover, .platforms-box .links a:focus-visible {
   background-color: var(--color-main);
   color: var(--color-secondary);
   text-shadow: none;
-  font-weight: bold;
 }
 .platforms-box .platforms .platforms-title {
   padding: 0 20px;

@@ -11,7 +11,7 @@ const GameInfo =() => {
 
   return(
     <div className = {cn.wrapper}>
-      <FavoriteIcon id={game.id}/>
+      <FavoriteIcon game={game}/>
       <h1 className = {cn.title}>{game.name}</h1>
       <Poster img = {game.img} />
       <PlatformsLIst platforms = {game.platforms} reddit = {game.reddit} website = {game.website} />

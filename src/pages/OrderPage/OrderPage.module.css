@@ -116,16 +116,17 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  gap: 20px;
 }
 .main .section .button_clear {
   position: absolute;
-  top: -120px;
+  top: -115px;
   right: 0;
 }
 @media (max-width: 840px) {
   .main .section .button_clear {
     padding: 0 15px;
-    top: -70px;
+    top: -65px;
   }
 }
 @media (max-width: 420px) {
@@ -150,7 +151,7 @@ body {
     position: static;
   }
 }
-.main .section .card-list .wrapper {
+.main .section .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;

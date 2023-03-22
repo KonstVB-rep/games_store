@@ -10,7 +10,7 @@ const ThemeSwitcher = () => {
 
   const [theme, setTheme] = useState(themeFromLs);
 
-  const ThemeIcon = theme === 'dark' ? CgSun : BiMoon;
+  const ThemeIcon = theme === 'dark' ? '/sun_icon.svg' : '/moon_icon.svg';
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   }
@@ -27,7 +27,7 @@ const ThemeSwitcher = () => {
 
   return (
     <div className={cn.switcher} onClick={toggleTheme}>
-      <ThemeIcon className={cn.icon} />
+      <img src={ThemeIcon} className={cn.icon} alt='Switch Theme'/>
     </div>
   );
 };

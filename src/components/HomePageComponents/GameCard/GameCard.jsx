@@ -15,7 +15,7 @@ const GameCard = memo(forwardRef(function GameCard({isLast, ...game}, ref) {
 
   return (
     <article className = {cn["game-card"]} ref = {isLast ? ref : null}>
-      <FavoriteIcon id={id}/>
+      <FavoriteIcon game={game}/>
       <GamePoster img = {img} slug = {slug} />
       <div className = {cn.details}>
         <p className = {cn.title}>{name}</p>

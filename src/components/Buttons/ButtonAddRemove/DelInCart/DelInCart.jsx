@@ -5,7 +5,7 @@ import cn from "../ButtonAddRemove.module.scss";
 
 
 const DelInCart = ({id}) => {
-  console.log(id)
+
   const dispatch = useDispatch()
 
   const delProductInCart = (e) => {

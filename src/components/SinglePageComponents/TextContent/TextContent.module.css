@@ -119,6 +119,9 @@ body {
     padding: 0 10px 20px;
   }
 }
+.content .description {
+  font-size: 1.2rem;
+}
 .content .rating_info {
   display: flex;
   flex-direction: column;

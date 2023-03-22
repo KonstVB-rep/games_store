@@ -8,13 +8,14 @@
     position: relative;
     @include flex-column;
     flex-grow:1;
+    gap:20px;
     .button_clear{
       position: absolute;
-      top: -120px;
+      top: -115px;
       right: 0;
       @media (max-width: 840px){
         padding: 0 15px;
-        top: -70px;
+        top: -65px;
       }
       @media (max-width: 420px){
         position: static;
@@ -33,15 +34,15 @@
       @media (max-width: 420px){
         position: static;
       }
-      .wrapper{
-        @include flex-column;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        padding: 0 10px;
-        gap: 20px;
-        overflow-y: auto;
-      }
+    }
+    .wrapper{
+      @include flex-column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      padding: 0 10px;
+      gap: 20px;
+      overflow-y: auto;
     }
   }
 }

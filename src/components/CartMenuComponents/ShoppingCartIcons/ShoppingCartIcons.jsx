@@ -1,6 +1,5 @@
 import React from 'react';
 import {currency} from "../../../constants/currency";
-import {FaOpencart} from "react-icons/fa";
 import {useSelector} from "react-redux";
 import cn from "../ShoppingCart/ShoppingCart.module.scss";
 
@@ -25,7 +24,7 @@ const ShoppingCartIcons = () => {
       <div className = {cn["cart__info"]}>
         <TotalPrice/>
         <button className = {cn['btn-toggle']}>
-          <FaOpencart className = {cn['btn-toggle__icon']} />
+          <img src='/shopping-cart.svg' className = {cn['btn-toggle__icon']} alt='Show/hide the contents of the cart'/>
         </button>
       </div>
     </>
