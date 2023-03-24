@@ -1,9 +1,10 @@
 import React from "react";
 import ShoppingCart from "../CartMenuComponents/ShoppingCart/ShoppingCart";
 import NavBar from "../NavBar/NavBar";
-import {ButtonSilver} from "../Buttons/ButtonSilver";
 import {useLocation, useNavigate} from "react-router-dom";
+import {Button} from "../Buttons/Button";
 import cn from "./Header.module.scss";
+
 
 const Header = () => {
   const {pathname} = useLocation();
@@ -19,7 +20,7 @@ const Header = () => {
           <NavBar />
           <ShoppingCart />
         </div>
-        {pathname !== '/' ? <ButtonSilver title='go back' onClick={goBack} ariaLabel={'return back'}/> : null}
+        {pathname !== '/' ? <Button title='go back' classname= 'silver' onClick={goBack} ariaLabel={'return back'}>go back</Button> : null}
       </header>
     </>
   );

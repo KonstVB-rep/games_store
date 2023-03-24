@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {normalizeCardNumber} from "../../../utils/normalizeCardNumber";
+import {normalizeCardNumber} from "../../../../utils/normalizeCardNumber";
 
 const usePayment = () => {
 

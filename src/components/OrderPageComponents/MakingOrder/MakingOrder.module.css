@@ -141,29 +141,5 @@ body {
   box-shadow: inset 0 0 8px 2px var(--color-secondary);
   border-radius: 25px;
 }
-.wrapper .order-button {
-  background: linear-gradient(to right, #5fa3a6, #83a4d4);
-}
-.wrapper .order-button:hover, .wrapper .order-button:focus-visible {
-  background: linear-gradient(to right, #577e80, #556f94);
-}
-
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-enter-active {
-  opacity: 1;
-  transition: opacity 500ms;
-}
-
-.modal-exit {
-  opacity: 1;
-}
-
-.modal-exit-active {
-  opacity: 0;
-  transition: opacity 500ms;
-}
 
 /*# sourceMappingURL=MakingOrder.module.css.map */

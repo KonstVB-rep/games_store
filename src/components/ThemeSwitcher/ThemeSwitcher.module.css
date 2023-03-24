@@ -106,15 +106,22 @@ body {
   width: 60px;
   height: 60px;
   padding: 5px;
-  background-color: #2a2929;
+  background-color: var(--color-main);
   border: 2px solid #7e7d7d;
   border-radius: 15px;
   cursor: pointer;
+  transition: 0.2s;
 }
 .switcher:hover, .switcher:focus-visible {
-  border: 2px solid white;
+  transform: scale(1.1);
 }
 .switcher:hover .icon, .switcher:focus-visible .icon {
+  transform: scale(1.1);
+}
+.switcher:hover .icon.light, .switcher:focus-visible .icon.light {
+  filter: brightness(0);
+}
+.switcher:hover .icon.dark, .switcher:focus-visible .icon.dark {
   filter: brightness(1);
 }
 .switcher .icon {

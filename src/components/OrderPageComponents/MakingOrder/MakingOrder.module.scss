@@ -32,26 +32,5 @@
       border-radius: $border-radius-l;
     }
   }
-  .order-button{
-    background: linear-gradient(to right, #5fa3a6, #83a4d4);
-    &:hover,
-    &:focus-visible{
-      background: linear-gradient(to right,  #577e80, #556f94);
-    }
-  }
 }
 
-.modal-enter {
-  opacity: 0;
-}
-.modal-enter-active {
-  opacity: 1;
-  transition: opacity 500ms;
-}
-.modal-exit {
-  opacity: 1;
-}
-.modal-exit-active {
-  opacity: 0;
-  transition: opacity 500ms;
-}

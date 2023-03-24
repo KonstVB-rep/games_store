@@ -161,5 +161,24 @@ body {
   gap: 20px;
   overflow-y: auto;
 }
+.main .section .btn-wrapper {
+  position: absolute;
+  top: -115px;
+  right: 10px;
+}
+@media (max-width: 840px) {
+  .main .section .btn-wrapper {
+    padding: 0 15px;
+    top: -85px;
+  }
+}
+@media (max-width: 420px) {
+  .main .section .btn-wrapper {
+    position: static;
+    top: -65px;
+    align-self: flex-start;
+    padding: 0;
+  }
+}
 
 /*# sourceMappingURL=OrderPage.module.css.map */

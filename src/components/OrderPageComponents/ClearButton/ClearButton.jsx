@@ -1,8 +1,8 @@
-import {useDispatch, useSelector} from "react-redux";
-import {clearCartList, selectAllItemsCart} from "../../../store/cart/cartSlice";
-import {ButtonSilver} from "../../Buttons/ButtonSilver";
-import cn from "../../../pages/OrderPage/OrderPage.module.scss";
 import React from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Button} from "../../Buttons/Button";
+import {clearCartList, selectAllItemsCart} from "../../../store/cart/cartSlice";
+import cn from "../../../pages/OrderPage/OrderPage.module.scss";
 
 const ClearButton = () => {
 
@@ -10,13 +10,16 @@ const ClearButton = () => {
 
   const allGames = useSelector(selectAllItemsCart)
 
-  const clearCart = () =>{
+  const clearCart = () => {
     dispatch(clearCartList())
   }
 
-  return(
+  return (
     <>
-      {allGames.length ? <ButtonSilver title = "clear cart" classname = {cn.button_clear} click = {clearCart} /> : null}
+      {allGames.length ? <div className = {cn['btn-wrapper']}>
+        <Button title = "clear cart" classname = "silver" onClick = {clearCart} ariaLabel = "clear cart">
+          clear cart</Button>
+      </div> : null}
     </>
   )
 }

@@ -4,15 +4,22 @@
   width: 60px;
   height: 60px;
   padding: 5px;
-  background-color: #2a2929;
+  background-color: var(--color-main);
   border: 2px solid #7e7d7d;
   border-radius:$border-radius-m;
   cursor: pointer;
+  transition: 0.2s;
   &:hover,
   &:focus-visible{
-    border: 2px solid white;
+    transform: scale(1.1);
     .icon{
-      filter: brightness(1);
+      transform: scale(1.1);
+      &.light{
+        filter: brightness(0);
+      }
+      &.dark{
+        filter: brightness(1);
+      }
     }
   }
   .icon{

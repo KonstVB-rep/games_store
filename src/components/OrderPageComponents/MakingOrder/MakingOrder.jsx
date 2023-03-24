@@ -31,7 +31,7 @@ const MakingOrder = ({isShow, setIsShow}) => {
         <>
           <div className = {cn.wrapper}>
             <TotalPrice />
-            <Button classname = {cn["order-button"]} onClick = {() => setIsShow(!isShow)}>place on order</Button>
+            <Button classname = "order-button" onClick = {() => setIsShow(!isShow)} ariaLabel='place an order'>place on order</Button>
           </div>
         </> : null
       }
