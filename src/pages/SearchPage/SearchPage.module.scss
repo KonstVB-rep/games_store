@@ -61,29 +61,29 @@
 
   .games-list {
     @include flex-al-center-column;
-    gap: 10px;
+    gap: 15px;
     margin: 20px;
 
-    .games-item {
-      padding: 5px 10px;
+    .game-item {
       min-width: fit-content;
-      border-color: transparent;
-      border-bottom: 3px solid var(--color-main);
-      transition: 0.3s;
-      overflow: hidden;
+      @include flex-al-center;
+      .game-link{
+        padding: 2px 10px 5px;
+        font-size: 1.2rem;
+        transition: 0.2s;
+        border-bottom: 3px solid var(--color-main);
+        &:hover,
+        &:focus-visible {
+          transform: scale(1.2);
+          border: 3px solid var(--color-main);
+          border-radius: $border-radius-l;
+          font-weight: bold;
+        }
 
-      &:hover,
-      &focus-visible {
-        transform: scale(1.2);
-        border-top: 3px solid var(--color-main);
-        border-radius: $border-radius-l;
-      }
-
-      &:active {
-        border-radius: $border-radius-l;
-        background-color: var(--color-main);
-
-        & a {
+        &:active {
+          padding: 2px 10px 5px;
+          border-radius: $border-radius-l;
+          background-color: var(--color-main);
           color: var(--color-secondary);
         }
       }

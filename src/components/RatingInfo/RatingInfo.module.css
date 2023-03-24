@@ -107,9 +107,9 @@ body {
   font-size: 1.2rem;
 }
 .rating-box .rating {
-  color: gold;
+  color: var(--color-main);
   font-size: 1.4rem;
-  text-shadow: 2px 2px 2px black;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=RatingInfo.module.css.map */

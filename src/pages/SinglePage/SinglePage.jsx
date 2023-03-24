@@ -1,10 +1,10 @@
-import React, {Suspense} from "react";
+import React from "react";
 import {Await, useLoaderData} from "react-router-dom";
 import {PATH} from "../../constants/api";
-import SkeletonSinglePage from "../../components/SinglePageComponents/SkeletonSinglePage/SkeletonSinglePage";
 import {getData} from "../../utils/getData";
 import {transformDataItem} from "../../utils/transformData";
 import {GameInfo} from "../../components/SinglePageComponents/GameInfo";
+import {MotionMain} from "../../components/MotionMain";
 import cn from "./SinglePage.module.scss";
 
 
@@ -12,13 +12,11 @@ const SinglePage = () => {
   const {game} = useLoaderData()
 
   return (
-    <main className = {cn.game}>
-        <Suspense fallback = {<SkeletonSinglePage />}>
+    <MotionMain classname = {cn.game}>
           <Await resolve={game}>
             <GameInfo/>
           </Await>
-        </Suspense>
-    </main>
+    </MotionMain>
   );
 };
 

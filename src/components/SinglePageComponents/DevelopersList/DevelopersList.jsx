@@ -1,9 +1,10 @@
 import React from 'react';
-import cn from "../TextContent/TextContent.module.scss";
+import cn from "../Content/Content.module.scss";
 
 const DevelopersList = ({developers}) => {
 
   const renderDevelopers = developers && developers.map((item) => <li key = {item.id}>{item.name}</li>);
+
   return (
     <div className = {cn.develops}>
       {developers.length ?

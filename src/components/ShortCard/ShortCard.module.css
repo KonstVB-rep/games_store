@@ -131,22 +131,11 @@ body {
   transition: 0.3s;
 }
 .card .card__img:hover, .card .card__img:focus-visible {
-  filter: blur(0);
   border-radius: 15px;
   width: 90%;
 }
 .card .card__img:hover img, .card .card__img:focus-visible img {
   transform: scale(1.1);
-}
-.card .card__img::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-secondary);
-  opacity: 0.3;
-}
-.card .card__img:hover::before, .card .card__img:focus-visible::before {
-  opacity: 0;
 }
 .card .card__img img {
   width: 100%;

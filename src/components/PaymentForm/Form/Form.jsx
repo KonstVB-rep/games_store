@@ -20,7 +20,6 @@ const Form = ({
                 setShowConfirmModal
               }) => {
 
-
   const handlerSubmit = (event) => {
     event.preventDefault();
     setShowModal(false)

@@ -1,6 +1,6 @@
 import React from 'react';
-import cn from './ShortCard.module.scss'
 import {Link} from "react-router-dom";
+import cn from './ShortCard.module.scss'
 
 const ShortCard = ({name,slug, img, children}) => {
   return (

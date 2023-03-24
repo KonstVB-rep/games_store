@@ -102,13 +102,13 @@ body {
   background-color: darkred;
 }
 
-main {
+.main {
   position: relative;
   flex-grow: 1;
   padding: 60px 0 20px;
 }
 @media (max-width: 400px) {
-  main {
+  .main {
     padding: 20px 0;
   }
 }

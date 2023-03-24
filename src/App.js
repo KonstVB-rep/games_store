@@ -1,4 +1,4 @@
-import React,{Suspense} from 'react';
+import React, {Suspense} from 'react';
 import Header from "./components/Header/Header";
 import {Outlet} from "react-router-dom";
 import {Footer} from "./components/Footer";
@@ -14,13 +14,13 @@ function App() {
     <>
       <div className = "App">
         <Header />
-            <ScrollToTop>
-              <Suspense fallback={<Spinner />}>
-                <Outlet />
-              </Suspense>
-            </ScrollToTop>
+        <ScrollToTop>
+          <Suspense fallback = {<Spinner />}>
+            <Outlet />
+          </Suspense>
+        </ScrollToTop>
         <PortalCreator>
-          <ArrowThemeBox/>
+          <ArrowThemeBox />
         </PortalCreator>
         <Footer />
       </div>

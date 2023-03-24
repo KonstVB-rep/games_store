@@ -26,24 +26,12 @@
     transition: 0.3s;
     &:hover,
     &:focus-visible{
-      filter: blur(0);
       border-radius: $border-radius-m;
       width:90%;
     }
     &:hover img,
     &:focus-visible img{
       transform: scale(1.1);
-    }
-    &::before{
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color:var(--color-secondary);
-      opacity: 0.3;
-    }
-    &:hover::before,
-    &:focus-visible::before{
-      opacity: 0;
     }
     img{
       width: 100%;

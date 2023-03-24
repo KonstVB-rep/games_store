@@ -102,7 +102,7 @@ body {
   background-color: darkred;
 }
 
-.bg {
+.wrapper .bg {
   position: fixed;
   inset: 0;
   display: flex;
@@ -111,7 +111,7 @@ body {
   background: rgba(86, 84, 84, 0.8);
   z-index: 5;
 }
-.bg .popup {
+.wrapper .bg .popup {
   width: 80%;
   padding: 15px;
   max-width: 500px;
@@ -119,62 +119,48 @@ body {
   border-radius: 20px;
   background: linear-gradient(180deg, rgb(103, 163, 115) 6%, rgb(114, 183, 130) 38%, rgb(114, 183, 130) 65%, rgb(103, 163, 115) 85%);
 }
-.bg .popup * {
-  color: white;
+.wrapper .bg .popup * {
+  color: black;
   text-align: center;
-  text-shadow: #0e0e0e 0 2px 2px;
 }
-.bg .popup .title {
-  font-size: 2rem;
-  padding: 10px 0;
-}
-.bg .popup .title::first-letter {
-  text-transform: uppercase;
-}
-.bg .popup .content {
+.wrapper .bg .popup .content {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
   gap: 15px;
 }
-.bg .popup .content .text {
-  font-size: 1.4rem;
+.wrapper .bg .popup .content .title {
+  font-size: 2rem;
+  padding: 10px 0;
 }
-.bg .popup .content .text::first-letter {
+.wrapper .bg .popup .content .title::first-letter {
   text-transform: uppercase;
 }
-.bg .popup .content .text__span {
+.wrapper .bg .popup .content .text {
+  font-size: 1.4rem;
+}
+.wrapper .bg .popup .content .text::first-letter {
+  text-transform: uppercase;
+}
+.wrapper .bg .popup .content .text__span {
   font-weight: bold;
   color: #8dbef1;
+  text-shadow: #0e0e0e 0 1px 1px, #0e0e0e 0 -1px 1px;
 }
-.bg .popup .content .icon-wrapper {
+.wrapper .bg .popup .content .icon-wrapper {
+  position: relative;
   width: 20%;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: white;
   overflow: hidden;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: 0.3s;
 }
-.bg .popup .content .icon-wrapper:hover, .bg .popup .content .icon-wrapper:focus-visible {
-  background: rgb(33, 7, 199);
-}
-.bg .popup .content .icon-wrapper:active {
-  background-color: white;
-}
-.bg .popup .content .icon-wrapper:active .icon-close {
-  transform: scale(0.95);
-  filter: grayscale(0.5);
-}
-.bg .popup .content .icon-wrapper .icon-close {
+.wrapper .bg .popup .content .icon-wrapper .icon {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: drop-shadow(2px 4px 6px black);
-  transition: 0.2s;
+  filter: drop-shadow(4px 4px 5px black);
 }
 
 /*# sourceMappingURL=OrderModal.module.css.map */

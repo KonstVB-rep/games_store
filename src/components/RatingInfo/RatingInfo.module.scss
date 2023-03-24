@@ -4,8 +4,8 @@
   flex: 1.125rem;
   font-size: 1.2rem;
   .rating{
-    color: $rating-color;
+    color: var(--color-main);
     font-size: 1.4rem;
-    @include text-shadow;
+    font-weight: 700;
   }
 }

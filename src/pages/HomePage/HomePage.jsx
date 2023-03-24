@@ -1,15 +1,17 @@
 import React from "react";
 import {GamesList} from "../../components/HomePageComponents/GamesList";
-import {LoadNext} from "../../components/HomePageComponents/LoadNext";
 import {HomePageContainer} from "../../components/HomePageComponents/HomePageContainer";
+import Skeleton from "../../components/HomePageComponents/Skeleton/Skeleton";
 
 const HomePage = () => {
 
   return (
-    <HomePageContainer >
-      <GamesList />
-      <LoadNext />
-    </HomePageContainer>
+    <>
+      <HomePageContainer>
+        <GamesList />
+        <Skeleton />
+      </HomePageContainer>
+    </>
   );
 };
 

@@ -4,9 +4,6 @@ import ShoppingCartIcons from "../ShoppingCartIcons/ShoppingCartIcons";
 import {useLocation} from "react-router-dom";
 import cn from "./ShoppingCart.module.scss";
 
-
-
-
 const ShoppingCart = () => {
 
   const {pathname} = useLocation();

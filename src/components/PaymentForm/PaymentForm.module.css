@@ -102,7 +102,7 @@ body {
   background-color: darkred;
 }
 
-.bg {
+.wrapper .bg {
   position: fixed;
   inset: 0;
   display: flex;
@@ -112,8 +112,7 @@ body {
   font-weight: normal;
   z-index: 5;
 }
-
-.popup {
+.wrapper .popup {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -125,10 +124,10 @@ body {
   border-radius: 25px;
   z-index: 6;
 }
-.popup .title {
+.wrapper .popup .title {
   font-weight: normal;
 }
-.popup .content {
+.wrapper .popup .content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,7 +135,7 @@ body {
   min-height: 500px;
   font-weight: normal;
 }
-.popup .content .card {
+.wrapper .popup .content .card {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -148,11 +147,11 @@ body {
   border-radius: 25px;
   padding: 20px;
 }
-.popup .content .card .card__info {
+.wrapper .popup .content .card .card__info {
   display: flex;
   gap: 10px;
 }
-.popup .content form {
+.wrapper .popup .content form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -161,15 +160,15 @@ body {
   margin-top: 20px;
   text-transform: uppercase;
 }
-.popup .content form .valid-wrapper {
+.wrapper .popup .content form .valid-wrapper {
   width: 100%;
   display: flex;
 }
-.popup .content form .valid-wrapper .selects-wrapper {
+.wrapper .popup .content form .valid-wrapper .selects-wrapper {
   display: flex;
   gap: 10px;
 }
-.popup .content form .valid-wrapper .selects-wrapper .select {
+.wrapper .popup .content form .valid-wrapper .selects-wrapper .select {
   border: none;
   height: 40px;
   width: 80px;
@@ -180,27 +179,27 @@ body {
   text-transform: uppercase;
   padding: 0 5px;
 }
-.popup .content form .valid-wrapper .selects-wrapper .select option {
+.wrapper .popup .content form .valid-wrapper .selects-wrapper .select option {
   color: black;
 }
-.popup .content form .valid-wrapper .selects-wrapper .select option:disabled {
+.wrapper .popup .content form .valid-wrapper .selects-wrapper .select option:disabled {
   color: dimgrey;
 }
-.popup .content form .valid-wrapper input {
+.wrapper .popup .content form .valid-wrapper input {
   width: 100%;
   padding: 5px;
 }
-.popup .content form .valid-title {
+.wrapper .popup .content form .valid-title {
   color: white;
 }
-.popup .content form .ccv {
+.wrapper .popup .content form .ccv {
   width: 80px;
 }
-.popup .content form label {
+.wrapper .popup .content form label {
   display: contents;
   color: white;
 }
-.popup .content form label input {
+.wrapper .popup .content form label input {
   appearance: none;
   height: 40px;
   text-align: start;
@@ -212,10 +211,10 @@ body {
   border: none;
   font-size: 1rem;
 }
-.popup .content form label input::placeholder {
+.wrapper .popup .content form label input::placeholder {
   text-transform: uppercase;
 }
-.popup .content form .btn-submit {
+.wrapper .popup .content form .btn-submit {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -230,11 +229,11 @@ body {
   min-width: 80px;
   transition: all 0.2s linear;
 }
-.popup .content form .btn-submit:hover, .popup .content form .btn-submit:focus-visible {
+.wrapper .popup .content form .btn-submit:hover, .wrapper .popup .content form .btn-submit:focus-visible {
   transform: scale(1.2);
   outline: 2px solid white;
 }
-.popup .content form .btn-submit:active {
+.wrapper .popup .content form .btn-submit:active {
   background-color: #5b955b;
   animation: pulse 0.3s;
   box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
@@ -245,7 +244,7 @@ body {
   }
 }
 @media (max-width: 480px) {
-  .popup .content form .btn-submit {
+  .wrapper .popup .content form .btn-submit {
     width: 90%;
   }
 }

@@ -11,8 +11,8 @@ const GamesList = () => {
 
   return (
     <div className = {cn.content}>
-      {games.map((game, index) => (
-        <GameCard key={game.id} {...game} isLast={index === games.length - 1} ref={ref}/>
+      {games.map(({id}, index) => (
+        <GameCard key={id} id={id} isLast={index === games.length - 1} ref={ref}/>
       ))}
     </div>
   );

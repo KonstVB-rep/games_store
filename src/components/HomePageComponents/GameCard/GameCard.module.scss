@@ -1,5 +1,5 @@
 @import '../../../index';
-.game-card {
+.card {
   position: relative;
   @include flex-column;
   min-width: 250px;

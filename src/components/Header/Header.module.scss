@@ -16,7 +16,7 @@
     min-height: 60px;
     @include flex-al-center;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 5px;
     @media (max-width: 840px){
       position: absolute;
       top: 25px;
@@ -105,7 +105,7 @@
         text-transform: uppercase;
         background: linear-gradient(0deg, rgb(70, 68, 68) 10%, rgb(59 58 58) 30%, rgb(2 1 1) 50%, rgb(112 111 111) 70%, rgb(70, 68, 68) 90%);
         border-radius:$border-radius-l;
-        box-shadow: var(--color-secondary) 0 0 2px 4px;
+        box-shadow: black 0 0 2px 4px;
         color:white;
         &:hover,
         &:focus-visible{

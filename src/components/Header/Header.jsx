@@ -19,7 +19,7 @@ const Header = () => {
           <NavBar />
           <ShoppingCart />
         </div>
-        {pathname !== '/' ? <ButtonSilver title='go back' click={goBack}/> : null}
+        {pathname !== '/' ? <ButtonSilver title='go back' onClick={goBack} ariaLabel={'return back'}/> : null}
       </header>
     </>
   );

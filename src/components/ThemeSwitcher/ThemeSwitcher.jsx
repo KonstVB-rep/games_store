@@ -1,6 +1,4 @@
 import React, {useLayoutEffect, useState} from 'react';
-import {BiMoon} from "react-icons/bi";
-import {CgSun} from "react-icons/cg";
 import cn from './ThemeSwitcher.module.scss'
 
 

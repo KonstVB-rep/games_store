@@ -25,7 +25,6 @@ const usePayment = () => {
     setNumberCard(event.target.value)
   }
 
-
   return {
     numberCard,
     setNumberCard,

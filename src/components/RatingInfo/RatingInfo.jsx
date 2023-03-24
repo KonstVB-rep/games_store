@@ -14,8 +14,8 @@ const RatingInfo = ({rating, ratingsCount, released, classname = ""}) => {
         <span className = {cn.rating}>{ratingsCount}</span>
       </p>
       <p>
-        <span>Release date</span>
-        <span>{released}</span>
+        <span >Release date</span>
+        <span >{released}</span>
       </p>
     </div>
   );

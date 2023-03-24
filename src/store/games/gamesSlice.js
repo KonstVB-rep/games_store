@@ -59,6 +59,7 @@ const gamesSlice = createSlice({
 export const selectAllGames = (state) => state.games.gamesList;
 export const selectFavorites = (state) => state.games.favorites;
 export const selectSingleFavorite = (id) => (state) => state.games.favorites.find(item => item?.id === id);
+export const selectGame = (id) => (state) => state.games.gamesList.find(item => item.id === id);
 export const {rememberCurrentPage,rememberCountPage,addFavorite} = gamesSlice.actions;
 
 const gamesReducer = gamesSlice.reducer;

@@ -6,7 +6,9 @@ import {ThemeSwitcher} from "../ThemeSwitcher";
 const ArrowThemeBox = () => {
   return (
     <div className={cn.wrapper}>
-      <ArrowTop/>
+     <div className={cn.wrapper__arrow}>
+       <ArrowTop/>
+     </div>
       <ThemeSwitcher/>
     </div>
   );
