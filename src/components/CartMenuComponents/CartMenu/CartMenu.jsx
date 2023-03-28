@@ -17,8 +17,8 @@ const CartMenu = () => {
         setShowCart(false)
       }
     }
-    window.addEventListener('click', isShowCart)
-    return () => window.removeEventListener('click', isShowCart)
+    document.documentElement.addEventListener('click', isShowCart, true)
+    return () => document.documentElement.removeEventListener('click', isShowCart, true)
   }, [])
 
   return (

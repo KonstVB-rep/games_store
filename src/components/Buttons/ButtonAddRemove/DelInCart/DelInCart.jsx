@@ -17,6 +17,7 @@ const DelInCart = ({id}) => {
     <button
       className={`${cn.action} ${cn.action_del}`}
       onClick={delProductInCart}
+      aria-label='delete one piece'
     >
       <span></span>
     </button>

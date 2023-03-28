@@ -3,7 +3,7 @@ import cn from "./Button.module.scss";
 
 const Button = (props) => {
   const { children, classname='',ariaLabel, ...restProps} = props;
-  console.log(classname)
+
   return (
     <button className={`${cn.btn} ${cn[`${classname}`]}`} aria-label={ariaLabel} {...restProps}>
       {children}

@@ -3,7 +3,6 @@ import ButtonAddRemove from "../ButtonAddRemove/ButtonAddRemove";
 import {Button} from "../Button";
 import {useDispatch, useSelector} from "react-redux";
 import {addProduct, selectCurrentItem} from "../../../store/cart/cartSlice";
-import cn from "./ButtonAddToCart.module.scss";
 
 const ButtonAddToCart = ({game}) => {
 
@@ -19,7 +18,7 @@ const ButtonAddToCart = ({game}) => {
   return (
     <>
       {!!!currentItem ? (
-        <Button onClick={addProductInCart} classname={cn.btn_buy}>
+        <Button onClick={addProductInCart} classname='primary' ariaLabel='Add to cart'>
           Add to Cart
         </Button>
       ) : (

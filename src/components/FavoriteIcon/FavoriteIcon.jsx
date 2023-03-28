@@ -14,7 +14,7 @@ const FavoriteIcon = ({game}) => {
   const classFavorite = favorite ? `${cn["favorite-sign"]} ${cn["favorite-sign_add"]}` : cn["favorite-sign"];
 
   return (
-    <button className = {classFavorite} onClick = {() => dispatch(addFavorite(game))} aria-label='add to favorites' tabIndex='0'>
+    <button className = {classFavorite} onClick = {() => dispatch(addFavorite(game))} aria-label='add to favorites'>
       <svg xmlns = "http://www.w3.org/2000/svg" viewBox = "0 0 256 256">
         <rect width = "256" height = "256" fill = "none"></rect>
         <path

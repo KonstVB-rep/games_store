@@ -245,10 +245,13 @@ body {
   position: absolute;
   left: 25px;
   bottom: 65px;
+  width: 216px;
+  display: flex;
+  justify-content: stretch;
   color: white;
-  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.2em;
+  font-size: 1rem;
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
 }
 .card-valid {

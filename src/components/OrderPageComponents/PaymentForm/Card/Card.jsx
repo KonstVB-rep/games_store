@@ -1,6 +1,6 @@
 import React from 'react';
+import {replaceStarsOnNumbersCard} from "../../../../utils/replaceStarsOnNumbersCard";
 import cn from './Card.module.scss'
-import usePayment from "../hook/usePayment";
 
 
 const Card = ({numberCard, month, year, name, ccv, turnClass}) => {
@@ -29,12 +29,12 @@ const Card = ({numberCard, month, year, name, ccv, turnClass}) => {
           </div>
           <div className = {cn["card-chip"]}></div>
           <div className = {cn["card-holder"]}>{defaultProp(name,'john dow')}</div>
-          <div className = {cn["card-number"]}> {defaultProp(numberCard,'1234 5678 9101 1121')}</div>
+          <div className = {cn["card-number"]}>{replaceStarsOnNumbersCard(numberCard)}</div>
           <div className = {cn["card-valid"]}>{defaultProp(month,'month')}/{defaultProp(year,'year')}</div>
         </div>
         <div className = {cn["card-back"]}>
           <div className = {cn["card-signature"]}>{defaultProp(name,'john dow')}</div>
-          <div className = {cn["card-seccode"]}>{defaultProp(ccv,'123')}</div>
+          <div className = {cn["card-seccode"]}>{defaultProp(ccv,'***')}</div>
         </div>
       </div>
     </div>

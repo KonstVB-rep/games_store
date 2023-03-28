@@ -32,9 +32,12 @@ const PaymentGroup = () => {
 
   return (
     <>
-      {isShow && <Suspense fallback = {null}><PaymentForm showModal = {isShow}
-                                                          setShowModal = {() => startTransition(handleClick)}
-                                                          setShowConfirmModal = {setShowConfirmModal} {...restProps} /></Suspense>}
+      {isShow &&
+        <Suspense fallback = {null}>
+          <PaymentForm showModal = {isShow}
+                       setShowModal = {() => startTransition(handleClick)}
+                       setShowConfirmModal = {setShowConfirmModal} {...restProps} />
+        </Suspense>}
       <MakingOrder isShow = {isShow} setIsShow = {setIsShow} />
       {showConfirmModal &&
         <Suspense fallback = {null}>

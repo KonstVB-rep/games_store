@@ -10,17 +10,20 @@
   border-radius: $border-radius-l;
   text-transform: uppercase;
   transition: all 0.3s linear,outline 0.1s linear;
-  background-color: $primary-color;
-  &:hover,
-  &:focus-visible{
-    background-image: linear-gradient(#1c4d1c 0%, $effect-color 55%,#1c4d1c 95%);
-    box-shadow: $effect-color 0 0 2px 2px inset;
-    transform: scale(1.1);
-  }
-  &:active{
-    animation: pulse 0.3s;
-    box-shadow: 0 0 0 2em rgba(#fff,0);
-  }
+ &.primary{
+   background: linear-gradient(275deg, $primary-color 6%, rgb(29, 105, 190) 40%, rgb(24, 98, 169) 71%, rgb(67, 99, 222) 97%);
+   color: white;
+   &:hover,
+   &:focus-visible{
+     background-image: linear-gradient(#1c4d1c 0%, $effect-color 55%,#1c4d1c 95%);
+     box-shadow: $effect-color 0 0 2px 2px inset;
+     transform: scale(1.1);
+   }
+   &:active{
+     animation: pulse 0.3s;
+     box-shadow: 0 0 0 2em rgba(#fff,0);
+   }
+ }
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 $effect-color; }
   }
@@ -54,9 +57,21 @@
   }
   &.order-button{
     background: linear-gradient(to right, #5fa3a6, #83a4d4);
+    box-shadow: var(--bg-body-dark) 0px 0px 4px 2px;
     &:hover,
     &:focus-visible{
-      background: linear-gradient(to right,  #577e80, #556f94);
+      background: linear-gradient(to right,  $primary-color, #0d55bb);
+      color:white;
+    }
+    &:active{
+      animation: pulse 0.3s;
+      box-shadow: 0 0 0 2em rgba(#fff,0);
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 $primary-color; }
+    }
+    @media(max-width: 480px) {
+      width: 90%;
     }
   }
 }

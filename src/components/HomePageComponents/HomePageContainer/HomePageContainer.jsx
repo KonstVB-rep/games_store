@@ -6,14 +6,14 @@ import {ErrorContainer} from "../../ErrorContainer";
 import {MotionMain} from "../../MotionMain";
 import cn from "../../../pages/SearchPage/SearchPage.module.scss";
 
+
 const HomePageContainer = ({children}) => {
 
   const dispatch = useDispatch();
   const {currentPage, countPage} = useSelector(state => state.games);
 
-  console.log('render',currentPage,countPage)
-
   useEffect(() => {
+
     if(currentPage !== countPage){
       dispatch(loadGames(PATH.GAMES_URL(currentPage)));
     }

@@ -19,6 +19,9 @@ const usePayment = () => {
     setTurnCLass('')
   }
 
+
+
+
   const handleSetCardNumber = (event) => {
     const {value} = event.target
     event.target.value = normalizeCardNumber(value)

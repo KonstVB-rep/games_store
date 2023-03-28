@@ -1,6 +1,7 @@
 @import '../../index';
 .main{
   @include flex-column;
+  flex-grow: 1;
   @media (max-width: 420px){
     padding-top: 0;
   }

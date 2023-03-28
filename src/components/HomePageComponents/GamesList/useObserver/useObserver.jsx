@@ -4,7 +4,6 @@ import {loadGames, rememberCurrentPage} from "../../../../store/games/gamesSlice
 import {PATH} from "../../../../constants/api";
 import {useDispatch, useSelector} from "react-redux";
 
-
 const option = {
   threshold: 0.9,
   rootMargin: '50px',
@@ -20,8 +19,8 @@ const useObserver = () => {
 
   useEffect(() => {
     if (inView) {
-      dispatch(rememberCurrentPage(currentPage + 1))
       dispatch(loadGames(PATH.GAMES_URL(currentPage + 1)));
+      dispatch(rememberCurrentPage(currentPage + 1))
     }
   }, [inView])
 

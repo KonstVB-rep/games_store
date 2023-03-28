@@ -15,6 +15,7 @@ const AddInCart = ({game}) => {
     <button
       className={`${cn.action} ${cn.action_add}`}
       onClick={addProductInCart}
+      aria-label='Add one piece'
     >
       +
     </button>

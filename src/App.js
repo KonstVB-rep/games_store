@@ -6,6 +6,7 @@ import ScrollToTop from "./hooks/ScrollToTop";
 import {PortalCreator} from "./components/PortalCreator";
 import Spinner from "./components/Spinner";
 import ArrowThemeBox from "./components/ArrowThemeBox/ArrowThemeBox";
+import MotionMain from "./components/MotionMain/MotionMain";
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
         <Header />
         <ScrollToTop>
           <Suspense fallback = {<Spinner />}>
-            <Outlet />
+              <Outlet />
           </Suspense>
         </ScrollToTop>
         <PortalCreator>

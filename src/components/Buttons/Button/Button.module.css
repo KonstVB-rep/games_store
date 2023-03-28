@@ -112,14 +112,17 @@ body {
   border-radius: 25px;
   text-transform: uppercase;
   transition: all 0.3s linear, outline 0.1s linear;
-  background-color: #3d55a1;
 }
-.btn:hover, .btn:focus-visible {
+.btn.primary {
+  background: linear-gradient(275deg, #3d55a1 6%, rgb(29, 105, 190) 40%, rgb(24, 98, 169) 71%, rgb(67, 99, 222) 97%);
+  color: white;
+}
+.btn.primary:hover, .btn.primary:focus-visible {
   background-image: linear-gradient(#1c4d1c 0%, #5b955b 55%, #1c4d1c 95%);
   box-shadow: #5b955b 0 0 2px 2px inset;
   transform: scale(1.1);
 }
-.btn:active {
+.btn.primary:active {
   animation: pulse 0.3s;
   box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
 }
@@ -159,9 +162,25 @@ body {
 }
 .btn.order-button {
   background: linear-gradient(to right, #5fa3a6, #83a4d4);
+  box-shadow: var(--bg-body-dark) 0px 0px 4px 2px;
 }
 .btn.order-button:hover, .btn.order-button:focus-visible {
-  background: linear-gradient(to right, #577e80, #556f94);
+  background: linear-gradient(to right, #3d55a1, #0d55bb);
+  color: white;
+}
+.btn.order-button:active {
+  animation: pulse 0.3s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #3d55a1;
+  }
+}
+@media (max-width: 480px) {
+  .btn.order-button {
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=Button.module.css.map */
