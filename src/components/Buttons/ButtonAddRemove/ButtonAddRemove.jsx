@@ -6,15 +6,15 @@ import {AddInCart} from "./AddInCart";
 import cn from "./ButtonAddRemove.module.scss";
 
 
-const ButtonAddRemove = ({game}) => {
+const ButtonAddRemove = ({id}) => {
 
-  const currentGame = useSelector(selectCurrentItem(game.id))
+  const currentGame = useSelector(selectCurrentItem(id))
 
   return (
     <div className = {cn.wrapper}>
-      <DelInCart id={game.id}/>
+      <DelInCart id={id}/>
       <span className = {cn.total}>{currentGame.totalCount}</span>
-      <AddInCart game={game}/>
+      <AddInCart id={id}/>
     </div>
   );
 };

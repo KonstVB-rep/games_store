@@ -102,6 +102,19 @@ body {
   background-color: darkred;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .game {
   position: relative;
   padding: 10px 0;
@@ -118,6 +131,7 @@ body {
   font-size: 3rem;
   grid-column: 1/-1;
   padding: 10px 20px;
+  text-align: center;
 }
 @media (max-width: 640px) {
   .game .title {
@@ -130,7 +144,7 @@ body {
     text-align: center;
   }
 }
-.game .wrapper {
+.game .section {
   position: relative;
   width: 100%;
   display: grid;
@@ -143,7 +157,7 @@ body {
   border-radius: 15px;
 }
 @media (max-width: 940px) {
-  .game .wrapper {
+  .game .section {
     grid-template-columns: 1fr;
     padding: 40px 0 20px;
   }

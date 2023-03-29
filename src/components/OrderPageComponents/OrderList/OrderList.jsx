@@ -14,16 +14,17 @@ const OrderList = () => {
 
 
   return (
-    <div className={cn['card-list']}>
+    <section className={cn['card-list']}>
         {cartList.length ?
           <>
+            <h1 className='visually-hidden'>List of game orders</h1>
             <div className={cn.wrapper}>
               {renderCardsList}
             </div>
           </>
             :
           <TitleEmptyPage text ='The shopping cart is empty'/>}
-    </div>
+    </section>
   );
 };
 

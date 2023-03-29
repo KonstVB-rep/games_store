@@ -1,15 +1,17 @@
-import {useDispatch} from "react-redux";
-import {addProduct} from "../../../../store/cart/cartSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {addProduct, selectCurrentItem} from "../../../../store/cart/cartSlice";
 import cn from "../ButtonAddRemove.module.scss";
 import React from "react";
 
-const AddInCart = ({game}) => {
+const AddInCart = ({id}) => {
 
   const dispatch = useDispatch()
 
+  const currentGame = useSelector(selectCurrentItem(id))
+
   const addProductInCart = (e) => {
     e.stopPropagation();
-    dispatch(addProduct(game));
+    dispatch(addProduct(currentGame));
   };
   return (
     <button

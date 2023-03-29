@@ -12,11 +12,11 @@ const SinglePage = () => {
   const {game} = useLoaderData()
 
   return (
-    <main classname = {cn.game}>
+    <MotionMain classname = {cn.game}>
           <Await resolve={game}>
             <GameInfo/>
           </Await>
-    </main>
+    </MotionMain>
   );
 };
 

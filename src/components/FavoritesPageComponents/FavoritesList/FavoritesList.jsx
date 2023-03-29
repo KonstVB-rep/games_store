@@ -17,7 +17,11 @@ const FavoritesList = () => {
   return (
     <>
       {renderFavoritesList.length ?
-        <div className = {cn.favorites__content}>{renderFavoritesList}</div> :
+     <>
+       <h1 className='visually-hidden'>list of favorites games</h1>
+       <div className = {cn.favorites__content}>{renderFavoritesList}</div>
+     </>
+        :
         <TitleEmptyPage text='The favorites list is empty'/>}
     </>
   );

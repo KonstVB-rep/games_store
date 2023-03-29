@@ -3,7 +3,7 @@
   position: absolute;
   width: max-content;
   top: 70px;
-  right: -23px;
+  right: -16px;
   @include flex-column;
   gap: 15px;
   padding: 20px;
@@ -26,6 +26,7 @@
   @media (max-width: 840px){
     top: -40px;
     right: 0;
+    width: 100vw;
     padding-top: 120px;
     border-radius: $border-radius-m 0 0 $border-radius-m;
   }
@@ -44,6 +45,9 @@
       span {
         color: white;
         text-transform: uppercase;
+        &:nth-child(2){
+          text-align: center;
+        }
         &:last-child{
           text-align: end;
         }

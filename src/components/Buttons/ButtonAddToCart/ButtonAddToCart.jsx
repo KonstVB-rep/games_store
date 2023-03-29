@@ -3,17 +3,19 @@ import ButtonAddRemove from "../ButtonAddRemove/ButtonAddRemove";
 import {Button} from "../Button";
 import {useDispatch, useSelector} from "react-redux";
 import {addProduct, selectCurrentItem} from "../../../store/cart/cartSlice";
+import {selectGame} from "../../../store/games/gamesSlice";
 
-const ButtonAddToCart = ({game}) => {
+const ButtonAddToCart = ({id}) => {
+
+  const game = useSelector(selectGame(id))
 
   const dispatch = useDispatch()
-  const currentItem = useSelector(selectCurrentItem(game.id));
+  const currentItem = useSelector(selectCurrentItem(game?.id));
 
   const addProductInCart = (e) => {
     e.stopPropagation();
     dispatch(addProduct(game));
   };
-
 
   return (
     <>
@@ -23,7 +25,7 @@ const ButtonAddToCart = ({game}) => {
         </Button>
       ) : (
         <ButtonAddRemove
-          game={game}
+          id={game.id}
         />
       )}
 

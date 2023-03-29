@@ -14,9 +14,10 @@ const GamesList = memo(() => {
     return <h1>No results found for your query</h1>
   }
   return (
-    <div>
+    <section>
+      <h1 className='visually-hidden'>List of game titles</h1>
       {status === 'loading' ? <Spinner/> : <ul className = {cn['games-list']}>{renderFoundGames}</ul>}
-    </div>
+    </section>
   );
 });
 

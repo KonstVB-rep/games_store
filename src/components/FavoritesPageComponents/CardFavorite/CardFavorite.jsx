@@ -11,12 +11,13 @@ const CardFavorite = memo(({id}) => {
   const game = useSelector(selectSingleFavorite(id))
 
   return (
-    <div className={cn['favorite-card']}>
+    <article className={cn['favorite-card']}>
+      <h2 className='visually-hidden'>{game.name}</h2>
       <ShortCard img={game.img} name={game.name} slug={game.slug}>
-        <ButtonAddToCart game={game}/>
+        <ButtonAddToCart id={game.id}/>
       </ShortCard>
       <FavoriteIcon game={game}/>
-    </div>
+    </article>
   );
 });
 

@@ -10,11 +10,12 @@ const GamesList = () => {
   const ref = useObserver()
 
   return (
-    <div className = {cn.content}>
+    <section className = {cn.content}>
+      <h1 className='visually-hidden'>list of game cards</h1>
       {games.map(({id}, index) => (
         <GameCard key={id} id={id} isLast={index === games.length - 1} ref={ref}/>
       ))}
-    </div>
+    </section>
   );
 };
 

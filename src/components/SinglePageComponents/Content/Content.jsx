@@ -13,7 +13,7 @@ const Content = ({game}) => {
       <DevelopersList developers={game.developers}/>
       <Genres genres = {game.genres} />
       <RatingInfo classname = {cn.rating_info} rating={game.rating} ratingsCount={game.ratingsCount} released={game.released}/>
-      <PriceGameBox game={game}/>
+      <PriceGameBox id={game.id} price={game.price}/>
     </div>
   );
 };

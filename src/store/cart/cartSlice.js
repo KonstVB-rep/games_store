@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {useSelector} from "react-redux";
-import {selectAllGames} from "../games/gamesSlice";
 
 
 const cartSlice = createSlice({
@@ -15,7 +13,7 @@ const cartSlice = createSlice({
       state.totalPrice = 0;
     },
     addProduct: {
-      reducer: (state, action) => {;
+      reducer: (state, action) => {
         const findItem = state.cartList.find(
           (obj) => obj.id === action.payload.id
         );

@@ -102,6 +102,19 @@ body {
   background-color: darkred;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .btn_buy {
   background-image: linear-gradient(#0c0f57, #7194cf);
   box-shadow: #3d55a1 0 0 2px 2px inset;

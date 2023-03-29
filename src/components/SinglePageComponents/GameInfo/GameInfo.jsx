@@ -11,13 +11,13 @@ const GameInfo =() => {
   const game = useAsyncValue();
 
   return(
-    <div className = {cn.wrapper}>
-      <FavoriteIcon game={game}/>
+    <article className = {cn.section}>
       <h1 className = {cn.title}>{game.name}</h1>
+      <FavoriteIcon game={game}/>
       <Poster img = {game.img} />
       <PlatformsLIst platforms = {game.platforms} reddit = {game.reddit} website = {game.website} />
       <Content game = {game} />
-    </div>
+    </article>
   )
 }
 

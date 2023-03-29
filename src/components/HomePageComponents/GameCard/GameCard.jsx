@@ -20,10 +20,11 @@ const GameCard = memo(forwardRef(function GameCard({isLast, id}, ref) {
       <FavoriteIcon game={game}/>
       <GamePoster img = {img} slug = {slug} />
       <div className = {cn.details}>
-        <p className = {cn.title}>{name}</p>
+        <h2 className = {cn.title}>{name}</h2>
         <Genres genres = {genres} />
         <RatingInfo classname = {cn.details__secondary} {...fromRating} />
-        <PriceGameBox game = {game} />
+        {/*<PriceGameBox game = {game} />*/}
+        <PriceGameBox id = {id} price={price}/>
       </div>
     </article>
   );

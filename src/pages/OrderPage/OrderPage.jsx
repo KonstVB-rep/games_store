@@ -9,11 +9,11 @@ const OrderPage = () => {
 
   return (
     <MotionMain classname={cn.main}>
-      <section className={cn.section}>
+      <div className={cn.section}>
         <ClearButton/>
         <OrderList/>
         <PaymentGroup/>
-      </section>
+      </div>
     </MotionMain>
   );
 };
