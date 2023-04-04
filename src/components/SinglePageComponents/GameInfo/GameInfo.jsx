@@ -5,22 +5,12 @@ import {Content} from "../Content";
 import FavoriteIcon from "../../FavoriteIcon/FavoriteIcon";
 import {Poster} from "../Poster";
 import cn from "../../../pages/SinglePage/SinglePage.module.scss";
-import {useDispatch} from "react-redux";
-import {setCurrentGame} from "../../../store/cart/cartSlice";
 
 
 const GameInfo =() => {
 
   const game = useAsyncValue();
 
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    console.log('useEffect')
-    if(game){
-      dispatch(setCurrentGame(game))
-    }
-  },[])
 
   return(
     <article className = {cn.section}>

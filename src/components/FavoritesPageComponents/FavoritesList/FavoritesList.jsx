@@ -13,7 +13,6 @@ const FavoritesList = () => {
     <CardFavorite
       key={item.id}
       id={item.id}
-      // game={item}
     />
   ));
 

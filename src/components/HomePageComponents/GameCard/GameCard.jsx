@@ -9,7 +9,6 @@ import {selectGame} from "../../../store/games/gamesSlice";
 import cn from "./GameCard.module.scss";
 
 
-
 const GameCard = memo(forwardRef(function GameCard({isLast, id}, ref) {
 
   const game = useSelector(selectGame(id))
@@ -23,7 +22,7 @@ const GameCard = memo(forwardRef(function GameCard({isLast, id}, ref) {
         <h2 className = {cn.title}>{name}</h2>
         <Genres genres = {genres} />
         <RatingInfo classname = {cn.details__secondary} {...fromRating} />
-        <PriceGameBox id = {id} price={price} game={game}/>
+        <PriceGameBox game={game}/>
       </div>
     </article>
   );

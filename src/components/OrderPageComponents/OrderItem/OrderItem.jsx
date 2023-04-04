@@ -6,7 +6,6 @@ import {useSelector} from "react-redux";
 import {selectCurrentItem} from "../../../store/cart/cartSlice";
 import cn from './OrderItem.module.scss'
 
-
 const OrderItem = memo(({id}) => {
 
   const game = useSelector(selectCurrentItem(id))
@@ -19,8 +18,7 @@ const OrderItem = memo(({id}) => {
         </Link>
       </div>
       <ButtonAddRemove
-        id={game.id}
-        // game={game}
+        game={game}
       />
       <div className = {cn.price}>{game.totalCount * game.price} {currency}</div>
     </div>

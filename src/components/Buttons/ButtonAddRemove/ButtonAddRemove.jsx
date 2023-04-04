@@ -5,15 +5,16 @@ import {DelInCart} from "./DelInCart";
 import {AddInCart} from "./AddInCart";
 import cn from "./ButtonAddRemove.module.scss";
 
-const ButtonAddRemove = ({id}) => {
+const ButtonAddRemove = ({game}) => {
 
-  const currentGame = useSelector(selectCurrentItem(id))
+  const currentGame = useSelector(selectCurrentItem(game.id))
 
   return (
     <div className = {cn.wrapper}>
-      <DelInCart id={id}/>
+      <DelInCart id={game.id}/>
       <span className = {cn.total}>{currentGame.totalCount}</span>
-      <AddInCart id={id}/>
+      <AddInCart
+        game={game}/>
     </div>
   );
 };

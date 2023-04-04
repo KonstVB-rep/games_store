@@ -3,11 +3,9 @@ import ButtonAddRemove from "../ButtonAddRemove/ButtonAddRemove";
 import {Button} from "../Button";
 import {useDispatch, useSelector} from "react-redux";
 import {addProduct, selectCurrentItem} from "../../../store/cart/cartSlice";
-import {selectGame} from "../../../store/games/gamesSlice";
 
-const ButtonAddToCart = ({id}) => {
 
-  const game = useSelector(selectGame(id))
+const ButtonAddToCart = ({game}) => {
 
   const dispatch = useDispatch()
   const currentItem = useSelector(selectCurrentItem(game?.id));
@@ -25,7 +23,7 @@ const ButtonAddToCart = ({id}) => {
         </Button>
       ) : (
         <ButtonAddRemove
-          id={game.id}
+          game={game}
         />
       )}
 
