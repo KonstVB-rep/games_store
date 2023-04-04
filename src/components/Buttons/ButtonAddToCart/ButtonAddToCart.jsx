@@ -4,7 +4,6 @@ import {Button} from "../Button";
 import {useDispatch, useSelector} from "react-redux";
 import {addProduct, selectCurrentItem} from "../../../store/cart/cartSlice";
 
-
 const ButtonAddToCart = ({game}) => {
 
   const dispatch = useDispatch()
