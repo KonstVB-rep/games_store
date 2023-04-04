@@ -23,8 +23,7 @@ const GameCard = memo(forwardRef(function GameCard({isLast, id}, ref) {
         <h2 className = {cn.title}>{name}</h2>
         <Genres genres = {genres} />
         <RatingInfo classname = {cn.details__secondary} {...fromRating} />
-        {/*<PriceGameBox game = {game} />*/}
-        <PriceGameBox id = {id} price={price}/>
+        <PriceGameBox id = {id} price={price} game={game}/>
       </div>
     </article>
   );

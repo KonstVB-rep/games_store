@@ -8,6 +8,7 @@
   --bg-body: var(--bg-body-dark);
   --color-main: var(--color-main-dark);
   --color-secondary: var(--color-secondary-dark);
+  --transition: all 0.2s ease;
 }
 
 *, *::after, *::before {
@@ -134,7 +135,7 @@ body {
   font-size: 2.5rem;
   border: none;
   line-height: 0;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 .wrapper .action:hover, .wrapper .action:focus-visible {
   transform: scale(1.2);

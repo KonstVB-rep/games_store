@@ -10,7 +10,11 @@ const FavoritesList = () => {
   const favoritesList = useSelector(selectFavorites);
 
   const renderFavoritesList = favoritesList.map((item) => (
-    <CardFavorite key={item.id} id={item.id}/>
+    <CardFavorite
+      key={item.id}
+      id={item.id}
+      // game={item}
+    />
   ));
 
 

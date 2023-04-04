@@ -2,6 +2,7 @@ import React, {memo} from 'react';
 import {useSelector} from "react-redux";
 import {Game} from "../Game";
 import Spinner from "../../Spinner";
+import {motion} from "framer-motion";
 import cn from "../../../pages/SearchPage/SearchPage.module.scss";
 
 const GamesList = memo(() => {
@@ -16,7 +17,15 @@ const GamesList = memo(() => {
   return (
     <section>
       <h1 className='visually-hidden'>List of game titles</h1>
-      {status === 'loading' ? <Spinner/> : <ul className = {cn['games-list']}>{renderFoundGames}</ul>}
+      {status === 'loading' ? <Spinner/>
+        :
+        <motion.ul className = {cn['games-list']}
+                   initial = {{opacity: 0, height:0, y: 300}}
+                   animate = {{opacity: 1, height:'auto', y: 0}}
+                   transition = {{duration: 0.5, ease: 'easeInOut'}}
+        >
+          {renderFoundGames}
+        </motion.ul>}
     </section>
   );
 });

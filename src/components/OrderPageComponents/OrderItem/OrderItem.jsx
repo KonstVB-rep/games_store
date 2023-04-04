@@ -18,7 +18,10 @@ const OrderItem = memo(({id}) => {
         {game.name}
         </Link>
       </div>
-      <ButtonAddRemove id={game.id}/>
+      <ButtonAddRemove
+        id={game.id}
+        // game={game}
+      />
       <div className = {cn.price}>{game.totalCount * game.price} {currency}</div>
     </div>
   );

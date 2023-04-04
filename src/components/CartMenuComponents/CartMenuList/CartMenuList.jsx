@@ -9,7 +9,6 @@ const columns = ['name', 'quantity','amount'];
 const CartMenuList = () => {
 
   const allItemsInCart = useSelector(state => state.cart.cartList);
-
   const renderCartItems = allItemsInCart.map((item) => (
     <CartMenuItem key = {item.id} {...item} classname = {cl.grid} />
   ))

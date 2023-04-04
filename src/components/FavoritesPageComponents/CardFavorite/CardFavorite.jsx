@@ -9,12 +9,13 @@ import cn from './CardFavorite.module.scss'
 const CardFavorite = memo(({id}) => {
 
   const game = useSelector(selectSingleFavorite(id))
+  console.log(game)
 
   return (
     <article className={cn['favorite-card']}>
       <h2 className='visually-hidden'>{game.name}</h2>
       <ShortCard img={game.img} name={game.name} slug={game.slug}>
-        <ButtonAddToCart id={game.id}/>
+        <ButtonAddToCart id={game.id} game={game}/>
       </ShortCard>
       <FavoriteIcon game={game}/>
     </article>

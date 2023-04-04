@@ -8,6 +8,7 @@
   --bg-body: var(--bg-body-dark);
   --color-main: var(--color-main-dark);
   --color-secondary: var(--color-secondary-dark);
+  --transition: all 0.2s ease;
 }
 
 *, *::after, *::before {
@@ -124,7 +125,7 @@ body {
   border: none;
   border-radius: 25px;
   text-transform: uppercase;
-  transition: all 0.3s linear, outline 0.1s linear;
+  transition: var(--transition);
 }
 .btn.primary {
   background: linear-gradient(275deg, #3d55a1 6%, rgb(29, 105, 190) 40%, rgb(24, 98, 169) 71%, rgb(67, 99, 222) 97%);
@@ -161,7 +162,7 @@ body {
   border-radius: 25px;
   font-size: 1.1rem;
   text-transform: uppercase;
-  transition: 0.3s;
+  transition: var(--transition);
   color: white;
   overflow: hidden;
 }

@@ -8,6 +8,7 @@
   --bg-body: var(--bg-body-dark);
   --color-main: var(--color-main-dark);
   --color-secondary: var(--color-secondary-dark);
+  --transition: all 0.2s ease;
 }
 
 *, *::after, *::before {
@@ -153,7 +154,7 @@ body {
   width: 100%;
   padding: 5px 10px;
   border-radius: 25px;
-  transition: 0.3s;
+  transition: var(--transition);
   text-align: center;
 }
 .card .title a:hover, .card .title a:focus-visible {
@@ -162,7 +163,7 @@ body {
 .card .title a:active {
   box-shadow: #5b955b 0 0 2px 4px;
   background-color: var(--color-secondary);
-  transition: 0.2s;
+  transition: var(--transition);
 }
 .card .price {
   min-width: 150px;

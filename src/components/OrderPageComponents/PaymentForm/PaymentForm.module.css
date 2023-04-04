@@ -8,6 +8,7 @@
   --bg-body: var(--bg-body-dark);
   --color-main: var(--color-main-dark);
   --color-secondary: var(--color-secondary-dark);
+  --transition: all 0.2s ease;
 }
 
 *, *::after, *::before {
@@ -240,7 +241,7 @@ body {
   border-radius: 25px;
   font-size: 1.2rem;
   min-width: 80px;
-  transition: all 0.2s linear;
+  transition: var(--transition);
 }
 .wrapper .popup .content form .btn-submit:hover, .wrapper .popup .content form .btn-submit:focus-visible {
   transform: scale(1.2);

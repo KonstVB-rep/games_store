@@ -8,6 +8,7 @@
   --bg-body: var(--bg-body-dark);
   --color-main: var(--color-main-dark);
   --color-secondary: var(--color-secondary-dark);
+  --transition: all 0.2s ease;
 }
 
 *, *::after, *::before {
@@ -129,7 +130,7 @@ body {
   transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s;
+  transition: var(--transition);
   z-index: 2;
 }
 .menu.menu_visible {
@@ -192,7 +193,7 @@ body {
   background-color: #e18418;
   text-transform: uppercase;
   border-radius: 25px;
-  transition: 0.2s linear;
+  transition: var(--transition);
 }
 .menu .go-cart:hover, .menu .go-cart:focus-visible {
   background-image: linear-gradient(#1c4d1c 0%, #5b955b 55%, #1c4d1c 95%);

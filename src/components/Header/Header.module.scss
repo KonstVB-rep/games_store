@@ -34,7 +34,7 @@
       border-radius: 50%;
       background-color: transparent;
       border: none;
-      transition: 0.2s;
+      transition: var(--transition);
       z-index: 4;
       &:before{
         content: '';
@@ -58,7 +58,7 @@
         width: 70px;
         height: 70px;
         padding: 10px;
-        transition: 0.3s;
+        transition: var(--transition);
         outline: none;
         @media (max-width: 840px){
           display: block;
@@ -76,7 +76,7 @@
     .nav{
       @include flex-al-center;
       gap: 30px;
-      transition: 0.5s;
+      transition: var(--transition);
       @media (max-width: 840px){
         position: absolute;
         left: 0;

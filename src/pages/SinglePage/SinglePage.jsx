@@ -9,7 +9,7 @@ import cn from "./SinglePage.module.scss";
 
 
 const SinglePage = () => {
-  const {game} = useLoaderData()
+  const {game} = useLoaderData();
 
   return (
     <MotionMain classname = {cn.game}>

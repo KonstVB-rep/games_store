@@ -9,7 +9,7 @@
   border:none;
   border-radius: $border-radius-l;
   text-transform: uppercase;
-  transition: all 0.3s linear,outline 0.1s linear;
+  transition: var(--transition);
  &.primary{
    background: linear-gradient(275deg, $primary-color 6%, rgb(29, 105, 190) 40%, rgb(24, 98, 169) 71%, rgb(67, 99, 222) 97%);
    color: white;
@@ -42,7 +42,7 @@
     border-radius: 25px;
     font-size: 1.1rem;
     text-transform: uppercase;
-    transition: 0.3s;
+    transition: var(--transition);
     color:white;
     overflow: hidden;
     &:hover,

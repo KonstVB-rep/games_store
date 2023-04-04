@@ -3,6 +3,7 @@ import cn from "../../../pages/SearchPage/SearchPage.module.scss";
 import {Link} from "react-router-dom";
 
 const Game = ({id, name}) => {
+
   return (
     <>
       <li className = {cn['game-item']}>

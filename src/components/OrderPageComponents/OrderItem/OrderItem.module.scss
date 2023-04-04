@@ -32,7 +32,7 @@
       width: 100%;
       padding: 5px 10px;
       border-radius: $border-radius-l;
-      transition: 0.3s;
+      transition: var(--transition);
       text-align: center;
       &:hover,
       &:focus-visible{
@@ -41,7 +41,7 @@
       &:active{
         box-shadow: $effect-color 0 0 2px 4px;
         background-color: var(--color-secondary);
-        transition: 0.2s;
+        transition: var(--transition);
       }
     }
   }

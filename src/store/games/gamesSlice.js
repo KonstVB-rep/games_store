@@ -8,7 +8,7 @@ const initialState = {
   error: null,
   currentPage: 1,
   countPage: 0,
-  favorites: []
+  favorites: [],
 };
 
 export const loadGames = createAsyncThunk(
@@ -18,7 +18,7 @@ export const loadGames = createAsyncThunk(
   }
 );
 
-const gamesSlice = createSlice({
+export const gamesSlice = createSlice({
   name: "games",
   initialState,
   reducers: {

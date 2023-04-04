@@ -8,6 +8,7 @@
   --bg-body: var(--bg-body-dark);
   --color-main: var(--color-main-dark);
   --color-secondary: var(--color-secondary-dark);
+  --transition: all 0.2s ease;
 }
 
 *, *::after, *::before {
@@ -183,7 +184,7 @@ body {
   height: 100%;
   border-radius: 50%;
   outline: none;
-  transition: 0.1s;
+  transition: var(--transition);
 }
 .cart__info .total-price {
   position: relative;

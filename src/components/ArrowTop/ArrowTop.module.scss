@@ -7,7 +7,7 @@
   @include flex-al-jc-center;
   border-radius: $border-radius-m;
   background-color: deepskyblue;
-  transition: 0.2s linear;
+  transition: var(--transition);
 
   .image {
     width: 45px;

@@ -5,7 +5,6 @@ import {DelInCart} from "./DelInCart";
 import {AddInCart} from "./AddInCart";
 import cn from "./ButtonAddRemove.module.scss";
 
-
 const ButtonAddRemove = ({id}) => {
 
   const currentGame = useSelector(selectCurrentItem(id))

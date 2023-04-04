@@ -40,7 +40,7 @@
       min-width: max-content;
       color:white;
       font-weight: bold;
-      transition: 0.1s;
+      transition: var(--transition);
       @include text-shadow;
 
       &:hover,

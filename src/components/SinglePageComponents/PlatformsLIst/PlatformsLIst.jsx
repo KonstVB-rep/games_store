@@ -19,7 +19,6 @@ const PlatformsLIst = ({platforms,reddit,website}) => {
           {reddit && <a
             href = {reddit}
             title = {reddit}
-            rel = "noopener noreferrer"
             target = "_blank"
             tabIndex = '0'
           >
@@ -28,7 +27,6 @@ const PlatformsLIst = ({platforms,reddit,website}) => {
           {website && <a
             href = {website}
             title = {website}
-            rel = "noopener noreferrer"
             target = "_blank"
             tabIndex = "0"
           >

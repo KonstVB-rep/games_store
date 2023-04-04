@@ -1,15 +1,17 @@
 import React from 'react';
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
-const MotionMain = ( {classname ='',children}) => {
+const MotionMain = ({classname = '', children}) => {
+
   return (
-    <motion.main className={classname}
-                 initial={{ opacity: 0, x: 300}}
-                 transition = {{opacity: {delay:0.2,duration: 0.3, ease: 'linear'}, x:{duration: 0.3, ease: 'linear'}}}
-                 animate={{ opacity: 1, x :0  }}
+      <motion.main
+        className = {classname}
+        initial = {{opacity: 0}}
+        animate = {{opacity: 1}}
+        transition = {{duration: 0.75, ease: 'linear'}}
       >
-      {children}
-    </motion.main>
+        {children}
+      </motion.main>
   );
 };
 

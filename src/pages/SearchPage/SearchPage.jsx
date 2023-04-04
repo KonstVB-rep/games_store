@@ -12,7 +12,7 @@ const SearchPage = () => {
   const status = useSelector(state => state.search.status)
 
   return (
-    <MotionMain classname = {cn.main}>
+    <MotionMain classname = {cn.main} >
       <ErrorContainer status = {status}>
         <FormSearch/>
         <GamesList />

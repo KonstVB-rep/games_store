@@ -8,6 +8,7 @@
   --bg-body: var(--bg-body-dark);
   --color-main: var(--color-main-dark);
   --color-secondary: var(--color-secondary-dark);
+  --transition: all 0.2s ease;
 }
 
 *, *::after, *::before {
@@ -156,7 +157,7 @@ body {
   border-radius: 50%;
   background-color: transparent;
   border: none;
-  transition: 0.2s;
+  transition: var(--transition);
   z-index: 4;
 }
 .header .wrapper .button-burger:before {
@@ -176,7 +177,7 @@ body {
   width: 70px;
   height: 70px;
   padding: 10px;
-  transition: 0.3s;
+  transition: var(--transition);
   outline: none;
 }
 @media (max-width: 840px) {
@@ -196,7 +197,7 @@ body {
   display: flex;
   align-items: center;
   gap: 30px;
-  transition: 0.5s;
+  transition: var(--transition);
 }
 @media (max-width: 840px) {
   .header .wrapper .nav {

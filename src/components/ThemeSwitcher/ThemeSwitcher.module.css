@@ -8,6 +8,7 @@
   --bg-body: var(--bg-body-dark);
   --color-main: var(--color-main-dark);
   --color-secondary: var(--color-secondary-dark);
+  --transition: all 0.2s ease;
 }
 
 *, *::after, *::before {
@@ -123,7 +124,7 @@ body {
   border: 2px solid #7e7d7d;
   border-radius: 15px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: var(--transition);
 }
 .switcher:hover, .switcher:focus-visible {
   transform: scale(1.1);

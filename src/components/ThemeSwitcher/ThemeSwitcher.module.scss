@@ -8,7 +8,7 @@
   border: 2px solid #7e7d7d;
   border-radius:$border-radius-m;
   cursor: pointer;
-  transition: 0.2s;
+  transition: var(--transition);
   &:hover,
   &:focus-visible{
     transform: scale(1.1);
