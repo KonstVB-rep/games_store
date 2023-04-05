@@ -1,5 +1,4 @@
-import React, {useTransition, Suspense} from 'react';
-import usePayment from "../PaymentForm/hook/usePayment";
+import React, {useTransition, Suspense, useState} from 'react';
 import {useDispatch} from "react-redux";
 import useVisible from "../../../hooks/useVisible";
 import {clearCartList} from "../../../store/cart/cartSlice";
@@ -15,16 +14,11 @@ const PaymentForm = React.lazy(() => import("../PaymentForm").then((module) => (
 
 const PaymentGroup = () => {
 
-  const {
-    showConfirmModal,
-    setShowConfirmModal,
-    ...restProps
-  } = usePayment()
-
   const dispatch = useDispatch();
   const [, startTransition] = useTransition();
 
   const [isShow, setIsShow] = useVisible(() => dispatch(clearCartList()))
+  const [showConfirmModal, setShowConfirmModal] = useState(false)
 
   const handleClick = () => {
     setIsShow(!isShow)
@@ -34,15 +28,12 @@ const PaymentGroup = () => {
     <>
       {isShow &&
         <Suspense fallback = {null}>
-          <PaymentForm showModal = {isShow}
-                       setShowModal = {() => startTransition(handleClick)}
-                       setShowConfirmModal = {setShowConfirmModal} {...restProps} />
+          <PaymentForm showModal = {isShow} setShowModal = {() => startTransition(handleClick)} setShowConfirmModal={setShowConfirmModal}/>
         </Suspense>}
       <MakingOrder isShow = {isShow} setIsShow = {setIsShow} />
-      {showConfirmModal &&
-        <Suspense fallback = {null}>
-          <OrderModal showModal = {showConfirmModal} setShowModal = {() => startTransition(setShowConfirmModal)} />
-        </Suspense>}
+      <Suspense fallback = {null}>
+        <OrderModal showModal = {showConfirmModal} setShowModal = {() => startTransition(setShowConfirmModal)} />
+      </Suspense>
     </>
   );
 };

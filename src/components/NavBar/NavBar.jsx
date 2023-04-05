@@ -1,7 +1,7 @@
 import React from "react";
 import useVisible from "../../hooks/useVisible";
 import {NavList} from "../NavList";
-import {BurgerButton} from "../BurgerButton";
+import {BurgerButton} from "../Buttons/BurgerButton";
 
 const NavBar = () => {
   const [isShow, setIsShow] = useVisible();

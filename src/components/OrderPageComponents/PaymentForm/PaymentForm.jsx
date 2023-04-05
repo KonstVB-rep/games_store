@@ -4,19 +4,13 @@ import {Card} from "./Card";
 import {Form} from "./Form";
 
 import cn from './PaymentForm.module.scss'
+import usePayment from "./hook/usePayment";
 
 
-const PaymentForm = ({showModal, setShowModal, setShowConfirmModal,...restProps}) => {
+const PaymentForm = ({showModal, setShowModal, setShowConfirmModal}) => {
 
-  const {
-    numberCard,
-    month,
-    year,
-    ccv,
-    name,
-    turnClass
-    } = restProps
-
+  const {turnClass,...restProps} = usePayment();
+  const {numberCard,month, year, name, ccv} = restProps;
 
   const formProps = {
     setShowModal,
@@ -25,9 +19,9 @@ const PaymentForm = ({showModal, setShowModal, setShowConfirmModal,...restProps}
   }
 
   return (
-    <div className={cn.wrapper}>
-      <ModalLayout bg = {cn.bg} popup = {cn.popup} content = {cn.content} show = {showModal}
-                   setShow = {() => setShowModal(false)} modal={cn.wrapper}>
+    <div className = {cn.wrapper}>
+      <ModalLayout bg = {cn.bg} content = {cn.content} show = {showModal}
+                   setShow = {() => setShowModal(false)} modal = {cn.wrapper}>
         <Card numberCard = {numberCard} month = {month} year = {year} name = {name} ccv = {ccv}
               turnClass = {turnClass} />
         <Form {...formProps} />

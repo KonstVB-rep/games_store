@@ -2,7 +2,7 @@ import React from 'react';
 import {Dialog} from '@headlessui/react'
 import {MotionMain} from "../MotionMain";
 
-const ModalLayout = ({show, setShow, children, bg, popup, content, modal}) => {
+const ModalLayout = ({show, setShow, children, bg, content, modal}) => {
   return (
       <Dialog
         open = {show}
@@ -12,11 +12,9 @@ const ModalLayout = ({show, setShow, children, bg, popup, content, modal}) => {
               transition = {{ duration: 0.5, ease: 'linear' }}
               animate={{ opacity: 1,scale: 1 }}
                classname = {bg}>
-          <Dialog.Panel className = {popup}>
-            <Dialog.Title className = {content}>
+            <Dialog.Panel className = {content}>
               {children}
-            </Dialog.Title>
-          </Dialog.Panel>
+            </Dialog.Panel>
         </MotionMain>
       </Dialog>
   );

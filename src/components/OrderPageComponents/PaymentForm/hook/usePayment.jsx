@@ -9,7 +9,6 @@ const usePayment = () => {
   const [name, setName] = useState('');
   const [ccv, setCcv] = useState('');
   const [turnClass, setTurnCLass] = useState('');
-  const [showConfirmModal, setShowConfirmModal] = useState(false)
 
   const handleFocus = () => {
     setTurnCLass('turned')
@@ -19,9 +18,6 @@ const usePayment = () => {
     setTurnCLass('')
   }
 
-
-
-
   const handleSetCardNumber = (event) => {
     const {value} = event.target
     event.target.value = normalizeCardNumber(value)
@@ -30,19 +26,16 @@ const usePayment = () => {
 
   return {
     numberCard,
-    setNumberCard,
     month,
-    setMonth,
     year,
-    setYear,
     name,
-    setName,
     ccv,
-    setCcv,
     turnClass,
-    setTurnCLass,
-    showConfirmModal,
-    setShowConfirmModal,
+    setNumberCard,
+    setMonth,
+    setCcv,
+    setYear,
+    setName,
     handleSetCardNumber,
     handleFocus,
     handleBlur,

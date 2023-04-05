@@ -5,8 +5,7 @@ import {Footer} from "./components/Footer";
 import ScrollToTop from "./hooks/ScrollToTop";
 import {PortalCreator} from "./components/PortalCreator";
 import Spinner from "./components/Spinner";
-import ArrowThemeBox from "./components/ArrowThemeBox/ArrowThemeBox";
-import MotionMain from "./components/MotionMain/MotionMain";
+import ArrowThemeBox from "./components/Buttons/ArrowThemeBox/ArrowThemeBox";
 
 function App() {
 

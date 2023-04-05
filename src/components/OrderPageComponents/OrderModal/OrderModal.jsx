@@ -20,6 +20,7 @@ const OrderModal = ({showModal, setShowModal}) => {
     navigate('/');
   }
 
+
   useEffect(() => {
     let timer;
     if (showModal) {
@@ -32,16 +33,24 @@ const OrderModal = ({showModal, setShowModal}) => {
 
 
   return (
-    <ModalLayout bg = {cn.bg} popup = {cn.popup} content = {cn.content} show = {!!showModal}
-                 setShow = {clearCart} modal = {cn.wrapper}>
-      <p className = {cn.title}>thanks for the purchase!</p>
-      <p className = {cn.text}>your order number: <span className = {cn.text__span}>№{orderNumber}</span></p>
-      <p className = {cn.text}>the manager will contact you soon.</p>
-      <div className = {cn['icon-wrapper']}>
-        <img src = "/done.svg" className = {cn.icon} alt = "Done" />
-      </div>
-    </ModalLayout>
-  );
+    <>
+      {showModal &&
+        <ModalLayout bg = {cn.bg} content = {cn.content} show = {!!showModal}
+                     setShow = {clearCart} modal = {cn.wrapper}>
+          <h2 className = {cn.title}>thanks for the purchase!</h2>
+          <p className = {cn.text}>your order number: <span className = {cn.text__span}>№{orderNumber}</span></p>
+          <p className = {cn.text}>the manager will contact you soon.</p>
+          <p className = {cn.text}>After 3 seconds you will be redirected to the main page</p>
+          <div className = {cn['icon-wrapper']}>
+            <img src = "/done.svg" className = {cn.icon} alt = "Done" />
+          </div>
+        </ModalLayout>
+      }
+    </>
+
+
+  )
+    ;
 };
 
 export default OrderModal;
