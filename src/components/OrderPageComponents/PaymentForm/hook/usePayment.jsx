@@ -7,7 +7,7 @@ const usePayment = () => {
   const [month, setMonth] = useState('month');
   const [year, setYear] = useState('year');
   const [name, setName] = useState('');
-  const [ccv, setCcv] = useState('');
+  const [ccv, setValueCcv] = useState('');
   const [turnClass, setTurnCLass] = useState('');
 
   const handleFocus = () => {
@@ -18,10 +18,15 @@ const usePayment = () => {
     setTurnCLass('')
   }
 
-  const handleSetCardNumber = (event) => {
-    const {value} = event.target
-    event.target.value = normalizeCardNumber(value)
-    setNumberCard(event.target.value)
+  const handleSetCardNumber = (e) => {
+    const {value} = e.target
+    e.target.value = normalizeCardNumber(value);
+    setNumberCard(e.target.value)
+  }
+
+  const setCcv = (e) => {
+    let value = e.target?.value.replace(/[^\d]/g,'').slice(0,3)
+    setValueCcv(value)
   }
 
   return {

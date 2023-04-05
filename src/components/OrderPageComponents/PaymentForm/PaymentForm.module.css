@@ -140,7 +140,7 @@ body {
   width: 90%;
   padding: 30px;
   max-width: 500px;
-  background-color: rgb(3, 26, 58);
+  background-color: rgb(12, 39, 77);
   border-radius: 25px;
   z-index: 6;
 }
@@ -169,6 +169,17 @@ body {
   margin-top: 20px;
   text-transform: uppercase;
 }
+.wrapper .content form .error {
+  width: 100%;
+}
+.wrapper .content form .error > p {
+  font-size: 1rem;
+  color: white;
+  padding: 5px;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: #c51a1a;
+}
 .wrapper .content form .selects-wrapper {
   display: flex;
   gap: 10px;
@@ -196,7 +207,7 @@ body {
 }
 .wrapper .content form .valid-title {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .wrapper .content form .ccv {
   width: 80px;
@@ -224,7 +235,7 @@ body {
   display: flex;
   align-self: center;
   justify-content: center;
-  padding: 10px 15px;
+  padding: 10px 45px;
   background-color: #0f59f3;
   color: white;
   border: none;
@@ -235,11 +246,15 @@ body {
   min-width: 80px;
   transition: var(--transition);
 }
-.wrapper .content form .btn-submit:hover, .wrapper .content form .btn-submit:focus-visible {
+.wrapper .content form .btn-submit[disabled] {
+  background-color: darkgrey;
+  cursor: default;
+}
+.wrapper .content form .btn-submit:not([disabled]):hover, .wrapper .content form .btn-submit:not([disabled]):focus-visible {
   transform: scale(1.2);
   outline: 2px solid white;
 }
-.wrapper .content form .btn-submit:active {
+.wrapper .content form .btn-submit:not([disabled]):active {
   background-color: #5b955b;
   animation: pulse 0.3s;
   box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);

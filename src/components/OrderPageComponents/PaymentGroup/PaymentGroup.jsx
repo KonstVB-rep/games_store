@@ -23,7 +23,6 @@ const PaymentGroup = () => {
   const handleClick = () => {
     setIsShow(!isShow)
   }
-
   return (
     <>
       {isShow &&

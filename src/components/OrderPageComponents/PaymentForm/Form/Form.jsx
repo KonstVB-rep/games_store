@@ -1,28 +1,38 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
-import {Select} from "../Select";
 import {renderOptionMonths, renderOptionYears} from "./renderOptions";
 import cn from "../PaymentForm.module.scss";
+
 
 const Form = (props) => {
   const {
     register,
     formState: {
-      errors,
+      errors, isValid
     },
-    handleSubmit
-  } =useForm();
+    handleSubmit,
+    reset,
+  } = useForm({
+      mode: 'onBlur',
+      defaultValues: {
+        cardNumber: '',
+        name: '',
+        ccv: '',
+        month: '',
+        year: ''
+      }
+    }
+  );
 
   const {
     numberCard,
-    month,
-    setMonth,
-    year,
-    setYear,
     name,
-    setName,
+    month,
     ccv,
     setCcv,
+    setMonth,
+    setYear,
+    setName,
     handleSetCardNumber,
     handleFocus,
     handleBlur,
@@ -31,44 +41,128 @@ const Form = (props) => {
   } = props
 
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-    // console.log(JSON.stringify(data))
-    setShowModal(false)
-    setShowConfirmModal(true)
+  const onSubmit = () => {
+    setShowModal(false);
+    setShowConfirmModal(true);
+    reset();
   }
 
+  const setNameField = (e) => {
+    let value = e.target.value.replace(/[^a-zA-Z]+/g, '')
+    setName(value)
+  }
 
   return (
-    <form onSubmit = {onSubmit}>
+    <form onSubmit = {handleSubmit(onSubmit)}>
       <label htmlFor = "">
-        <input type = "tel" inputMode = "numeric" pattern = "[\d| ]{19}"
+        <input type = "tel"
+               inputMode = "numeric"
                autoComplete = "cc-number"
-               maxLength = "19"
                value = {numberCard}
-               onChange = {handleSetCardNumber}
                placeholder = {'xxxx xxxx xxxx xxxx'}
+               {...register('cardNumber', {
+                 required: "The field is required",
+                 onChange: handleSetCardNumber,
+                 maxLength: {
+                   value: 19,
+                   message: 'The card number must contain 16 digits'
+                 },
+                 minLength: {
+                   value: 19,
+                   message: 'The card number must contain 16 digits'
+                 },
+                 pattern: {
+                   value: /[\d| ]{19}/,
+                   message: 'Only numbers are allowed for this field'
+                 }
+               })}
         />
       </label>
+      <div className = {cn.error}>{errors?.cardNumber &&
+        <p>{errors?.cardNumber?.message || 'you have entered incorrect data'}</p>}</div>
       <p className = {cn['valid-title']}>valid thru</p>
       <div className = {cn['selects-wrapper']}>
-        <Select period = {month} onChange = {setMonth} name = "month">
+        <select
+          className = {cn.select}
+          {...register('month', {
+            required: "The field month is required",
+            onChange: (e) => setMonth(e.target.value),
+            validate: {
+              positive: () => parseInt(month) > new Date().getMonth(),
+            },
+            pattern: {
+              value: /[\d| ]{2}/,
+              message: 'select a month'
+            }
+          })}
+        >
+          <option value = "" disabled>month</option>
           {renderOptionMonths}
-        </Select>
-        <Select period = {year} onChange = {setYear} name = "year">
+        </select>
+        <select
+          className = {cn.select}
+          {...register('year', {
+            required: "The field year is required",
+            onChange: (e) => setYear(e.target.value),
+            pattern: {
+              value: /[\d| ]{4}/,
+              message: 'select a year'
+            }
+          })}
+        >
+          <option value = "" disabled>year</option>
           {renderOptionYears}
-        </Select>
+        </select>
       </div>
+      <div className = {cn.error}>
+        {(errors?.month || errors?.year) && <p>{(errors?.year?.message) || 'you have entered incorrect data'}</p>}</div>
       <label htmlFor = "">
-        <input type = "text" inputMode = "text" placeholder = "name" value = {name}
-               onChange = {(e) => setName(e.target.value)} />
+        <input type = "text"
+               inputMode = "text"
+               value = {name}
+               placeholder = "name"
+               {...register('name', {
+                 required: "The field is required",
+                 onChange: setNameField,
+                 minLength: {
+                   value: 2,
+                   message: 'The name field must contain more than 2 character'
+                 },
+                 pattern: {
+                   value: /[a-zA-Z]/,
+                   message: 'Only Latin characters are allowed'
+                 }
+               })}
+        />
       </label>
+      <div className = {cn.error}>{errors?.name &&
+        <p>{errors?.name?.message || 'you have entered incorrect data'}</p>}</div>
       <label htmlFor = "">
-        <input type = "text" className = {cn.ccv} inputMode = "numeric" maxLength = "3" placeholder = "ccv"
-               value = {ccv} onChange = {(e) => setCcv(e.target.value)} onFocus = {handleFocus}
-               onBlur = {handleBlur} />
+        <input type = "text"
+               className = {cn.ccv}
+               inputMode = "numeric"
+               placeholder = "ccv"
+               value = {ccv}
+               onFocus = {handleFocus}
+               {...register('ccv', {
+                 required: "The field is required",
+                 onChange: setCcv,
+                 onBlur: handleBlur,
+                 maxLength: {
+                   value: 3,
+                   message: 'The card number must contain 3 digits'
+                 },
+                 minLength: {
+                   value: 3,
+                   message: 'The card number must contain 3 digits'
+                 },
+               })}
+        />
       </label>
-      <button title = "Pay" onSubmit = {onSubmit} className = {cn['btn-submit']} type = "submit">
+      <div className = {cn.error}>{errors?.ccv &&
+        <p>{errors?.ccv?.message || 'you have entered incorrect data'}</p>}</div>
+      <button title = "Pay" onSubmit = {handleSubmit(onSubmit)} className = {cn['btn-submit']} type = "submit"
+              disabled = {!isValid}>
         pay
       </button>
     </form>

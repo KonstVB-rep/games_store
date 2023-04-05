@@ -26,11 +26,10 @@ const OrderModal = ({showModal, setShowModal}) => {
     if (showModal) {
       setTimeout(() => {
         clearCart()
-      }, 2000)
+      }, 5000)
     }
     return () => clearTimeout(timer)
   }, [showModal])
-
 
   return (
     <>
@@ -40,7 +39,7 @@ const OrderModal = ({showModal, setShowModal}) => {
           <h2 className = {cn.title}>thanks for the purchase!</h2>
           <p className = {cn.text}>your order number: <span className = {cn.text__span}>№{orderNumber}</span></p>
           <p className = {cn.text}>the manager will contact you soon.</p>
-          <p className = {cn.text}>After 3 seconds you will be redirected to the main page</p>
+          <p className = {cn.text}>after a few seconds you will be redirected to the main page</p>
           <div className = {cn['icon-wrapper']}>
             <img src = "/done.svg" className = {cn.icon} alt = "Done" />
           </div>
