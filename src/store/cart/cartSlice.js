@@ -8,9 +8,6 @@ const cartSlice = createSlice({
     totalPrice: 0,
   },
   reducers: {
-    setCurrentGame: (state, action)=>{
-      state.currentGame = action.payload
-    },
     clearCartList: (state) => {
       state.cartList = [];
       state.totalPrice = 0;
