@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {useInView} from "react-intersection-observer";
+import {useDispatch, useSelector} from "react-redux";
+
 import {loadGames, rememberCurrentPage} from "../../../../store/games/gamesSlice";
 import {PATH} from "../../../../constants/api";
-import {useDispatch, useSelector} from "react-redux";
 
 const option = {
   threshold: 0.9,

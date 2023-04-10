@@ -1,6 +1,7 @@
 import React, {Suspense} from 'react';
-import Header from "./components/Header/Header";
 import {Outlet} from "react-router-dom";
+
+import Header from "./components/Header/Header";
 import {Footer} from "./components/Footer";
 import ScrollToTop from "./hooks/ScrollToTop";
 import {PortalCreator} from "./components/PortalCreator";

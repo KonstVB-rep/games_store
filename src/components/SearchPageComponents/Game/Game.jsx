@@ -1,6 +1,7 @@
 import React from 'react';
-import cn from "../../../pages/SearchPage/SearchPage.module.scss";
 import {Link} from "react-router-dom";
+
+import cn from "../../../pages/SearchPage/SearchPage.module.scss";
 
 const Game = ({id, name}) => {
 

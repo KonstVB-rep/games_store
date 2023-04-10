@@ -1,7 +1,9 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
-import {renderOptionMonths, renderOptionYears} from "./renderOptions";
+
 import cn from "../PaymentForm.module.scss";
+
+import {renderOptionMonths, renderOptionYears} from "./renderOptions";
 
 
 const Form = (props) => {

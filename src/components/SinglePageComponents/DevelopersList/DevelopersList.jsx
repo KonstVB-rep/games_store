@@ -1,4 +1,5 @@
 import React from 'react';
+
 import cn from "../Content/Content.module.scss";
 
 const DevelopersList = ({developers}) => {

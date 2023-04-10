@@ -1,10 +1,12 @@
 import React from "react";
 import {Await, useLoaderData} from "react-router-dom";
+
 import {PATH} from "../../constants/api";
 import {getData} from "../../utils/getData";
 import {transformDataItem} from "../../utils/transformData";
 import {GameInfo} from "../../components/SinglePageComponents/GameInfo";
 import {MotionMain} from "../../components/MotionMain";
+
 import cn from "./SinglePage.module.scss";
 
 

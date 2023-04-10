@@ -1,6 +1,7 @@
 import {useState} from 'react';
-import {PATH} from "../../../constants/api";
 import {useDispatch} from "react-redux";
+
+import {PATH} from "../../../constants/api";
 import {loadSearchGames} from "../../../store/search/searchSlice";
 
 

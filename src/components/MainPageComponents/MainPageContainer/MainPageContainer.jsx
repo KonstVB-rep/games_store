@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+
 import {loadGames, rememberCountPage} from "../../../store/games/gamesSlice";
 import {PATH} from "../../../constants/api";
 import {ErrorContainer} from "../../ErrorContainer";
@@ -7,7 +8,7 @@ import {MotionMain} from "../../MotionMain";
 import cn from "../../../pages/SearchPage/SearchPage.module.scss";
 
 
-const HomePageContainer = ({children}) => {
+const MainPageContainer = ({children}) => {
 
   const dispatch = useDispatch();
   const {currentPage, countPage} = useSelector(state => state.games);
@@ -30,4 +31,4 @@ const HomePageContainer = ({children}) => {
   );
 };
 
-export default HomePageContainer;
+export default MainPageContainer;

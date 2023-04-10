@@ -1,7 +1,9 @@
 import React from "react";
-import { GameCard } from "../GameCard";
 import {useSelector} from "react-redux";
+
+import { GameCard } from "../GameCard";
 import { selectAllGames} from "../../../store/games/gamesSlice";
+
 import useObserver from "./useObserver/useObserver";
 import cn from "./GamesList.module.scss";
 

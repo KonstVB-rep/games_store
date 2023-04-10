@@ -1,9 +1,11 @@
 import React, {memo} from 'react';
-import {ButtonAddRemove} from "../../Buttons/ButtonAddRemove";
-import {currency} from "../../../constants/currency";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
+
+import {ButtonAddRemove} from "../../Buttons/ButtonAddRemove";
+import {currency} from "../../../constants/currency";
 import {selectCurrentItem} from "../../../store/cart/cartSlice";
+
 import cn from './OrderItem.module.scss'
 
 const OrderItem = memo(({id}) => {

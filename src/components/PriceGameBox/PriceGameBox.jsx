@@ -1,6 +1,8 @@
 import React from "react";
+
 import {ButtonAddToCart} from "../Buttons/ButtonAddToCart";
 import {currency} from "../../constants/currency";
+
 import cn from "./PriceGameBox.module.scss";
 
 const PriceGameBox = ({game}) => {

@@ -1,6 +1,8 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
+
 import {addFavorite, selectSingleFavorite} from "../../store/games/gamesSlice";
+
 import cn from "./FavoriteIcon.module.scss";
 
 

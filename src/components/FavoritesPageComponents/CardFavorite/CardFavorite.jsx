@@ -1,9 +1,11 @@
 import React, {memo} from 'react';
+import {useSelector} from "react-redux";
+
 import {FavoriteIcon} from "../../FavoriteIcon";
 import {ShortCard} from "../../ShortCard";
 import {ButtonAddToCart} from "../../Buttons/ButtonAddToCart";
-import {useSelector} from "react-redux";
 import {selectSingleFavorite} from "../../../store/games/gamesSlice";
+
 import cn from './CardFavorite.module.scss'
 
 const CardFavorite = memo(({id}) => {

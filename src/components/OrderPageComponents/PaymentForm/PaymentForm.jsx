@@ -1,8 +1,9 @@
 import React from 'react';
+
 import {ModalLayout} from "../../ModalLayout";
+
 import {Card} from "./Card";
 import {Form} from "./Form";
-
 import cn from './PaymentForm.module.scss'
 import usePayment from "./hook/usePayment";
 

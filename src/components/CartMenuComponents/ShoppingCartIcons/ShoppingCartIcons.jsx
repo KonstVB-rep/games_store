@@ -1,6 +1,7 @@
 import React from 'react';
-import {currency} from "../../../constants/currency";
 import {useSelector} from "react-redux";
+
+import {currency} from "../../../constants/currency";
 import cn from "../ShoppingCart/ShoppingCart.module.scss";
 
 

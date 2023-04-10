@@ -1,4 +1,5 @@
 import React, {forwardRef} from "react";
+
 import cn from './Spinner.module.scss'
 
 const Spinner = forwardRef(function Spinner(props, ref) {

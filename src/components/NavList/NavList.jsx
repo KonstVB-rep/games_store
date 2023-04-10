@@ -1,6 +1,7 @@
 import React from 'react';
-import {pathNavLinks} from "../../utils/pathLinks";
 import {NavLink} from "react-router-dom";
+
+import {pathNavLinks} from "../../utils/pathLinks";
 import cn from "../Header/Header.module.scss";
 
 const NavList = ({isShow, setIsShow}) => {

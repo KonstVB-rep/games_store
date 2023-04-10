@@ -1,6 +1,7 @@
 import React from "react";
-import cn from "./GamePoster.module.scss";
 import {Link} from "react-router-dom";
+
+import cn from "./GamePoster.module.scss";
 
 const GamePoster = ({ img,slug }) => {
   return (

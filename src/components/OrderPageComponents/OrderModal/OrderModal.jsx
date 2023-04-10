@@ -1,9 +1,12 @@
 import React, {useEffect} from 'react';
-import {randomNumber} from "../../../utils/randomNumber";
 import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router-dom";
+
+import {randomNumber} from "../../../utils/randomNumber";
 import {clearCartList} from "../../../store/cart/cartSlice";
 import {ModalLayout} from "../../ModalLayout";
-import {useNavigate} from "react-router-dom";
+
+
 import cn from './OrderModal.module.scss';
 
 const orderNumber = randomNumber(1000, 10000000)

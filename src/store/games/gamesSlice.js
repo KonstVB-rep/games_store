@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
 import { transformData } from "../../utils/transformData";
 import { getData } from "../../utils/getData";
 

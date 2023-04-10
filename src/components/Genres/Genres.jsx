@@ -1,4 +1,5 @@
 import React from "react";
+
 import cn from "./Genre.module.scss";
 
 const Genres = ({ genres = [] }) => {

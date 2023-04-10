@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from "react-redux";
+
 import cn from './Skeleton.module.scss'
 
 const skeletonsCount = Array(6).fill(1);

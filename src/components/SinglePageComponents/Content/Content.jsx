@@ -1,8 +1,10 @@
 import React from "react";
+
 import {Genres} from "../../Genres";
 import {RatingInfo} from "../../RatingInfo";
 import {DevelopersList} from "../DevelopersList";
 import PriceGameBox from "../../PriceGameBox";
+
 import cn from "./Content.module.scss";
 
 const Content = ({game}) => {

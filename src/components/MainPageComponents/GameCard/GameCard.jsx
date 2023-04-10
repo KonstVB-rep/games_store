@@ -1,11 +1,13 @@
 import React, {forwardRef, memo} from "react";
+import {useSelector} from "react-redux";
+
 import {GamePoster} from "../GamePoster";
 import {Genres} from "../../Genres";
 import {RatingInfo} from "../../RatingInfo";
 import {FavoriteIcon} from "../../FavoriteIcon";
 import PriceGameBox from "../../PriceGameBox";
-import {useSelector} from "react-redux";
 import {selectGame} from "../../../store/games/gamesSlice";
+
 import cn from "./GameCard.module.scss";
 
 

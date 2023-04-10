@@ -1,8 +1,10 @@
 import React from "react";
+import {useLocation, useNavigate} from "react-router-dom";
+
 import ShoppingCart from "../CartMenuComponents/ShoppingCart/ShoppingCart";
 import NavBar from "../NavBar/NavBar";
-import {useLocation, useNavigate} from "react-router-dom";
 import {Button} from "../Buttons/Button";
+
 import cn from "./Header.module.scss";
 
 

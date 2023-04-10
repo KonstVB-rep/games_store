@@ -1,7 +1,9 @@
 import React from "react";
+import {useLocation} from "react-router-dom";
+
 import {CartMenu} from "../CartMenu";
 import ShoppingCartIcons from "../ShoppingCartIcons/ShoppingCartIcons";
-import {useLocation} from "react-router-dom";
+
 import cn from "./ShoppingCart.module.scss";
 
 const ShoppingCart = () => {

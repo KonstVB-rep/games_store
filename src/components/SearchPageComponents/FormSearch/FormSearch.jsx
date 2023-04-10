@@ -1,4 +1,5 @@
 import React from "react";
+
 import useSearchGame from "../../../pages/SearchPage/useSearchGame/useSearchGame";
 import cn from "../../../pages/SearchPage/SearchPage.module.scss";
 

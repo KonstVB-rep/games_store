@@ -1,6 +1,7 @@
 import React from 'react';
-import ErrorPage from "../../pages/ErrorPage";
 import {useSelector} from "react-redux";
+
+import ErrorPage from "../../pages/ErrorPage";
 
 const ErrorContainer = ({children}) => {
 

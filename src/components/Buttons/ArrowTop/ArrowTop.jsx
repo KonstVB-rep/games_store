@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {animateScroll as scroll} from "react-scroll";
+
 import cn from "./ArrowTop.module.scss";
 
 const ArrowTop = () => {

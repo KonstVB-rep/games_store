@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from "react-redux";
+
 import {selectFavorites} from "../../../store/games/gamesSlice";
 import CardFavorite from "../CardFavorite/CardFavorite";
 import {TitleEmptyPage} from "../../TitleEmptyPage";

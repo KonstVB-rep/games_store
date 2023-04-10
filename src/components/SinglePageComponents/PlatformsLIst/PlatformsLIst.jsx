@@ -1,4 +1,5 @@
 import React from 'react';
+
 import cn from "./PlatfomsLIst.module.scss";
 
 const PlatformsLIst = ({platforms,reddit,website}) => {
@@ -20,7 +21,7 @@ const PlatformsLIst = ({platforms,reddit,website}) => {
             href = {reddit}
             title = {reddit}
             target = "_blank"
-            tabIndex = '0'
+            tabIndex = '0' rel="noreferrer"
           >
             Reddit
           </a>}
@@ -28,7 +29,7 @@ const PlatformsLIst = ({platforms,reddit,website}) => {
             href = {website}
             title = {website}
             target = "_blank"
-            tabIndex = "0"
+            tabIndex = "0" rel="noreferrer"
           >
             Game website
           </a>

@@ -1,4 +1,5 @@
 import React from "react";
+
 import cn from "./RatingInfo.module.scss";
 
 const RatingInfo = ({rating, ratingsCount, released, classname = ""}) => {

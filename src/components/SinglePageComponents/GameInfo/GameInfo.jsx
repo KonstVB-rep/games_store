@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {useAsyncValue} from "react-router-dom";
+
 import PlatformsLIst from "../PlatformsLIst/PlatformsLIst";
 import {Content} from "../Content";
 import FavoriteIcon from "../../FavoriteIcon/FavoriteIcon";

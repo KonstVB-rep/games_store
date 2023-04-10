@@ -1,5 +1,6 @@
 import React from 'react';
 import {Dialog} from '@headlessui/react'
+
 import {MotionMain} from "../MotionMain";
 
 const ModalLayout = ({show, setShow, children, bg, content, modal}) => {

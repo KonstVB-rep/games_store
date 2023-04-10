@@ -1,6 +1,8 @@
 import {useRouteError} from "react-router-dom";
-import cn from './ErrorPage.module.scss'
+
 import {MotionMain} from "../../components/MotionMain";
+
+import cn from './ErrorPage.module.scss'
 
 export default function ErrorPage() {
   const error = useRouteError();

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import cn from "../../Header/Header.module.scss";
 
 const BurgerButton = ({isShow, setIsShow}) => {

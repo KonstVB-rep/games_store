@@ -1,6 +1,7 @@
 import React from 'react';
-import CartMenuItem from "../CartMenuItem/CartMenuItem";
 import {useSelector} from "react-redux";
+
+import CartMenuItem from "../CartMenuItem/CartMenuItem";
 import cl from "../CartMenu/CartMenu.module.scss";
 import cn from "../CartMenu/CartMenu.module.scss";
 

@@ -1,6 +1,8 @@
 import React from "react";
-import cn from "./CartMenuItem.module.scss";
+
 import { currency } from "../../../constants/currency";
+
+import cn from "./CartMenuItem.module.scss";
 
 const CartMenuItem = ({ name, totalCount, price, classname }) => {
   const totalPriceGame = totalCount * price;

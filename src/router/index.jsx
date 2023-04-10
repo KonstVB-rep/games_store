@@ -1,7 +1,8 @@
 import React from "react";
 import {createBrowserRouter} from "react-router-dom";
+
 import App from "../App";
-import {HomePage} from "../pages/HomePage";
+import {MainPage} from "../pages/MainPage";
 import {singlePageLoader} from "../pages/SinglePage/SinglePage";
 
 
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HomePage />,
+        element: <MainPage />,
         errorElement: <ErrorPage />,
       },
       {
@@ -34,10 +35,12 @@ export const router = createBrowserRouter([
       {
         path: "/order",
         element: <OrdersPage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/favorites",
         element: <Favorites />,
+        errorElement: <ErrorPage />,
       },
     ],
   },

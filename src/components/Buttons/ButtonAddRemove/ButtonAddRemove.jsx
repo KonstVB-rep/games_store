@@ -1,6 +1,8 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
+
 import {addProduct, removeProduct, selectCurrentItem,} from "../../../store/cart/cartSlice";
+
 import cn from "./ButtonAddRemove.module.scss";
 
 const ButtonAddRemove = ({game}) => {
