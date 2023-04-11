@@ -12,7 +12,6 @@ const FavoriteIcon = ({game}) => {
 
   const favorite = !!useSelector(selectSingleFavorite(game.id))
 
-
   const classFavorite = favorite ? `${cn["favorite-sign"]} ${cn["favorite-sign_add"]}` : cn["favorite-sign"];
 
   return (

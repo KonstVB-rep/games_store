@@ -8,7 +8,7 @@ const ShortCard = ({name,slug, img, children}) => {
     <div className={cn.card}>
       <div className={cn.card__img}>
         <Link to= {`/games/${slug}`} title='Go to the game page'>
-          <img src = {img} alt = "" />
+          {img ? <img src = {img} alt = "Poster" className={cn.poster}/> : <img src = '/not-image.jpg' alt = "Not found" />}
         </Link>
       </div>
       <p className={cn.card__title}>{name}</p>

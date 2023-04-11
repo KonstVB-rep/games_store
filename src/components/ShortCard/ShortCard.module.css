@@ -156,6 +156,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.card .card__img .poster {
   object-position: top;
 }
 

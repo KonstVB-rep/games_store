@@ -1,9 +1,10 @@
 @import '../../index.scss';
 
 .main{
-  position: relative;
-  flex-grow: 1;
-  padding: 60px 0 20px;
+  //position: relative;
+  //flex-grow: 1;
+  //padding: 60px 0 20px;
+  @extend %games-list_grid;
   @media(max-width: 400px) {
     padding: 20px 0;
   }

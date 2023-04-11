@@ -166,5 +166,51 @@ body {
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
 }
+.card .wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  cursor: pointer;
+  filter: blur(0.5px) grayscale(0.2);
+  transition: var(--transition);
+}
+.card .wrapper:hover, .card .wrapper:focus-visible {
+  border: none;
+  transform: scale(1.1);
+  filter: blur(0) drop-shadow(2px 4px 6px black) grayscale(0);
+}
+.card .wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0.3;
+  box-shadow: inset rgba(174, 196, 238, 0.77) 0 0 50px 20px;
+}
+.card .wrapper:hover::before, .card .wrapper:focus-visible::before {
+  opacity: 0;
+}
+.card .wrapper .img {
+  width: inherit;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 768px) {
+  .card .wrapper .img {
+    height: 350px;
+  }
+}
+@media (max-width: 480px) {
+  .card .wrapper .img {
+    height: 250px;
+  }
+}
+@media (max-width: 380px) {
+  .card .wrapper .img {
+    height: 200px;
+  }
+}
 
 /*# sourceMappingURL=GameCard.module.css.map */
