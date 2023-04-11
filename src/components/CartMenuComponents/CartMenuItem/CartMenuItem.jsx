@@ -1,6 +1,6 @@
 import React from "react";
 
-import { currency } from "../../../constants/currency";
+import { currency } from "constants/currency";
 
 import cn from "./CartMenuItem.module.scss";
 

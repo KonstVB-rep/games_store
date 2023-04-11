@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useAsyncValue} from "react-router-dom";
 
 import PlatformsLIst from "../PlatformsLIst/PlatformsLIst";
 import {Content} from "../Content";
 import FavoriteIcon from "../../FavoriteIcon/FavoriteIcon";
 import {Poster} from "../Poster";
-import cn from "../../../pages/SinglePage/SinglePage.module.scss";
+import cn from "pages/SinglePage/SinglePage.module.scss";
 
 
 const GameInfo =() => {

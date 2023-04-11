@@ -5,7 +5,7 @@ import {Genres} from "../../Genres";
 import {RatingInfo} from "../../RatingInfo";
 import {FavoriteIcon} from "../../FavoriteIcon";
 import PriceGameBox from "../../PriceGameBox";
-import {selectGame} from "../../../store/games/gamesSlice";
+import {selectGame} from "store/games/gamesSlice";
 
 import cn from "./GameCard.module.scss";
 import {Link} from "react-router-dom";

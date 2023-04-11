@@ -1,8 +1,8 @@
 import React, {useTransition, Suspense, useState} from 'react';
 import {useDispatch} from "react-redux";
 
-import useVisible from "../../../hooks/useVisible";
-import {clearCartList} from "../../../store/cart/cartSlice";
+import useVisible from "hooks/useVisible";
+import {clearCartList} from "store/cart/cartSlice";
 import {MakingOrder} from "../MakingOrder";
 
 const OrderModal = React.lazy(() => import("../OrderModal").then((module) => ({

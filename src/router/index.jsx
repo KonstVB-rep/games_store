@@ -17,12 +17,12 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "/games_store",
         element: <MainPage />,
         errorElement: <ErrorPage />,
       },
       {
-        path: "games/:name",
+        path: "/games/:name",
         element: <SinglePage />,
         errorElement: <ErrorPage />,
         loader: singlePageLoader

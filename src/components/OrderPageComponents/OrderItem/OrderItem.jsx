@@ -3,8 +3,8 @@ import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 
 import {ButtonAddRemove} from "../../Buttons/ButtonAddRemove";
-import {currency} from "../../../constants/currency";
-import {selectCurrentItem} from "../../../store/cart/cartSlice";
+import {currency} from "constants/currency";
+import {selectCurrentItem} from "store/cart/cartSlice";
 
 import cn from './OrderItem.module.scss'
 

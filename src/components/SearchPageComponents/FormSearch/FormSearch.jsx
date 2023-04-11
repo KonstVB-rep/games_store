@@ -1,7 +1,9 @@
 import React from "react";
 
-import useSearchGame from "../../../pages/SearchPage/useSearchGame/useSearchGame";
-import cn from "../../../pages/SearchPage/SearchPage.module.scss";
+import SEARCH_ICON from 'assets/search.png'
+
+import useSearchGame from "pages/SearchPage/useSearchGame/useSearchGame";
+import cn from "pages/SearchPage/SearchPage.module.scss";
 
 const FormSearch = () => {
   const {handleSearch, handleSubmit, searchValue} = useSearchGame();
@@ -15,7 +17,9 @@ const FormSearch = () => {
                value = {searchValue}
                onChange = {handleSearch} />
       </label>
-      <button type = "submit" className = {cn.btn} />
+      <button type = "submit" className = {cn.btn} >
+        <img src = {SEARCH_ICON} alt = "Search" />
+      </button>
     </form>
   )
 }

@@ -1,4 +1,6 @@
 import React, {useLayoutEffect, useState} from 'react';
+import SUN_ICON from '../../assets/sun_icon.svg';
+import MOON_ICON from '../../assets/moon_icon.svg';
 
 import cn from './ThemeSwitcher.module.scss'
 
@@ -9,7 +11,7 @@ const ThemeSwitcher = () => {
 
   const [theme, setTheme] = useState(themeFromLs);
 
-  const ThemeIcon = theme === 'dark' ? '/sun_icon.svg' : '/moon_icon.svg';
+  const ThemeIcon = theme === 'dark' ? SUN_ICON : MOON_ICON;
   const themeClass = theme === 'dark' ? 'light' : 'dark';
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');

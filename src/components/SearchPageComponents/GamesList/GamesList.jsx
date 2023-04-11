@@ -4,7 +4,7 @@ import {motion} from "framer-motion";
 
 import {Game} from "../Game";
 import Spinner from "../../Spinner";
-import cn from "../../../pages/SearchPage/SearchPage.module.scss";
+import cn from "pages/SearchPage/SearchPage.module.scss";
 
 const GamesList = memo(() => {
 

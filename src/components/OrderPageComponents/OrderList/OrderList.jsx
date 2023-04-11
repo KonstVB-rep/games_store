@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 import {OrderItem} from "../OrderItem";
 import TitleEmptyPage from "../../TitleEmptyPage/TitleEmptyPage";
-import cn from "../../../pages/OrderPage/OrderPage.module.scss";
+import cn from "pages/OrderPage/OrderPage.module.scss";
 
 
 

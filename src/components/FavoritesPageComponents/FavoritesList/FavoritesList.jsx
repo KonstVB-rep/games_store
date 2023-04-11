@@ -1,10 +1,10 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 
-import {selectFavorites} from "../../../store/games/gamesSlice";
+import {selectFavorites} from "store/games/gamesSlice";
 import CardFavorite from "../CardFavorite/CardFavorite";
 import {TitleEmptyPage} from "../../TitleEmptyPage";
-import cn from "../../../pages/Favorites/Favorites.module.scss";
+import cn from "pages/Favorites/Favorites.module.scss";
 
 const FavoritesList = () => {
 

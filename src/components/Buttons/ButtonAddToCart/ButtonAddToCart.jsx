@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import ButtonAddRemove from "../ButtonAddRemove/ButtonAddRemove";
 import {Button} from "../Button";
-import {addProduct, selectCurrentItem} from "../../../store/cart/cartSlice";
+import {addProduct, selectCurrentItem} from "store/cart/cartSlice";
 
 const ButtonAddToCart = ({game}) => {
 

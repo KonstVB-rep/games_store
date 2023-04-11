@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector} from "react-redux";
 
 import { GameCard } from "../GameCard";
-import {selectAllGames} from "../../../store/games/gamesSlice";
+import {selectAllGames} from "store/games/gamesSlice";
 
 
 

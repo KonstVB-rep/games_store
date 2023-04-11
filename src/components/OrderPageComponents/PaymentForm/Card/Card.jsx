@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {replaceStarsOnNumbersCard} from "../../../../utils/replaceStarsOnNumbersCard";
+import {replaceStarsOnNumbersCard} from "utils/replaceStarsOnNumbersCard";
 
 import cn from './Card.module.scss'
 

@@ -2,8 +2,8 @@ import React from 'react';
 import {useSelector} from "react-redux";
 
 import {Button} from "../../Buttons/Button";
-import { selectTotalPrice} from "../../../store/cart/cartSlice";
-import {currency} from "../../../constants/currency";
+import { selectTotalPrice} from "store/cart/cartSlice";
+import {currency} from "constants/currency";
 
 import cn from './MakingOrder.module.scss'
 

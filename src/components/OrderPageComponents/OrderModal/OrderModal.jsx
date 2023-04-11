@@ -2,9 +2,10 @@ import React, {useEffect} from 'react';
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
-import {randomNumber} from "../../../utils/randomNumber";
-import {clearCartList} from "../../../store/cart/cartSlice";
+import {randomNumber} from "utils/randomNumber";
+import {clearCartList} from "store/cart/cartSlice";
 import {ModalLayout} from "../../ModalLayout";
+import DONE from 'assets/done.svg'
 
 
 import cn from './OrderModal.module.scss';
@@ -20,7 +21,7 @@ const OrderModal = ({showModal, setShowModal}) => {
   const clearCart = () => {
     setShowModal(false)
     dispatch(clearCartList())
-    navigate('/');
+    navigate('/games_store');
   }
 
 
@@ -44,7 +45,7 @@ const OrderModal = ({showModal, setShowModal}) => {
           <p className = {cn.text}>the manager will contact you soon.</p>
           <p className = {cn.text}>after a few seconds you will be redirected to the main page</p>
           <div className = {cn['icon-wrapper']}>
-            <img src = "/done.svg" className = {cn.icon} alt = "Done" />
+            <img src ={DONE} className = {cn.icon} alt = "Done" />
           </div>
         </ModalLayout>
       }

@@ -4,7 +4,7 @@ import {useSelector} from "react-redux";
 import {FavoriteIcon} from "../../FavoriteIcon";
 import {ShortCard} from "../../ShortCard";
 import {ButtonAddToCart} from "../../Buttons/ButtonAddToCart";
-import {selectSingleFavorite} from "../../../store/games/gamesSlice";
+import {selectSingleFavorite} from "store/games/gamesSlice";
 
 import cn from './CardFavorite.module.scss'
 

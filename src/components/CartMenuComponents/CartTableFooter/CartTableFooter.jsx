@@ -1,8 +1,8 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 
-import {currency} from "../../../constants/currency";
-import {selectTotalPrice} from "../../../store/cart/cartSlice";
+import {currency} from "constants/currency";
+import {selectTotalPrice} from "store/cart/cartSlice";
 
 const CartTableFooter = ({classname}) => {
 
