@@ -1,6 +1,7 @@
 {
   "name": "game_store",
   "version": "0.1.0",
+  "homepage": "https://konst1984.github.io/games_store/",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.13",
