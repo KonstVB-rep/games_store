@@ -7,7 +7,7 @@ const Poster = ({img}) => {
   return (
     <div className={cn.poster}>
       <div className={cn["img-box"]}>
-        <img src={img} alt="Poster" />
+        {img ? <img src = {img} alt = "Poster" className={cn.poster}/> : <img src = '/not-image.jpg' alt = "Not found" />}
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ export default function ErrorPage() {
       <div className = {cn.wrapper}>
         <h1>Oops!</h1>
         <p>Sorry, an unexpected error has occurred.</p>
-        {error.statusText ? <p>{error.statusText}</p> : null}
+        {error?.statusText ? <p>{error.statusText}</p> : null}
         <p>Try again later.</p>
       </div>
     </MotionMain>

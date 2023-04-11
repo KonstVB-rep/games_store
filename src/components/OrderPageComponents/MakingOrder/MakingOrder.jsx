@@ -13,9 +13,8 @@ const TotalPrice = () => {
 
   return (
     <p className = {cn["total-price"]}>
-      <span>Total price: </span>
       <span className = {cn.price}>
-            {totalPrice} {currency}
+           Total price: {totalPrice} {currency}
       </span>
     </p>
   )

@@ -1,32 +1,30 @@
 @import '../../../index';
 
-.skeleton{
-  @extend %games-list_grid;
-  .skeleton__item{
-    position: relative;
-    min-width: 250px;
-    height: 556px;
-    background-color: dimgrey;
-    border-radius: 15px;
-    flex-grow: 1;
-    overflow: hidden;
-    animation: loading 0.5s linear infinite;
-    @media(max-width: 768px){
-      height: 656px;
+
+.skeleton__item {
+  position: relative;
+  min-width: 250px;
+  height: 556px;
+  background-color: dimgrey;
+  border-radius: 15px;
+  flex-grow: 1;
+  overflow: hidden;
+  animation: loading 0.5s linear infinite;
+  @media(max-width: 768px) {
+    height: 656px;
+  }
+  @media(max-width: 480px) {
+    height: 594px;
+  }
+  @media(max-width: 380px) {
+    height: 544px;
+  }
+  @keyframes loading {
+    from {
+      opacity: 1;
     }
-    @media(max-width: 480px){
-      height: 594px;
-    }
-    @media(max-width: 380px){
-      height: 544px;
-    }
-    @keyframes loading {
-      from{
-        opacity: 1;
-      }
-      to{
-        opacity: 0.7;
-      }
+    to {
+      opacity: 0.7;
     }
   }
 }

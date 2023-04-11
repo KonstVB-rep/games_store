@@ -50,8 +50,10 @@ export const gamesSlice = createSlice({
     });
     builder.addCase(loadGames.fulfilled, (state, action) => {
       state.status = "fulfilled";
-        if(action.payload.length && state.currentPage > state.countPage){
-        state.gamesList.push(...action.payload);
+        // if(action.payload.length && (state.currentPage > state.countPage)){
+      if(action.payload.length){
+        // state.gamesList.push(...action.payload);
+        state.gamesList =[...state.gamesList,...action.payload]
       }
     });
   },

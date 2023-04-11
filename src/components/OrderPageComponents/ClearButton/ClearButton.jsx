@@ -17,10 +17,10 @@ const ClearButton = () => {
 
   return (
     <>
-      {allGames.length ? <div className = {cn['btn-wrapper']}>
+      {allGames.length > 0 && <div className = {cn['btn-wrapper']}>
         <Button title = "clear cart" classname = "silver" onClick = {clearCart} ariaLabel = "clear cart">
           clear cart</Button>
-      </div> : null}
+      </div> }
     </>
   )
 }

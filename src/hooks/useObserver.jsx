@@ -1,14 +1,13 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import {useInView} from "react-intersection-observer";
 import {useDispatch, useSelector} from "react-redux";
 
-import {loadGames, rememberCurrentPage} from "../../../../store/games/gamesSlice";
-import {PATH} from "../../../../constants/api";
+import {loadGames, rememberCurrentPage} from "../store/games/gamesSlice";
+import {PATH} from "../constants/api";
 
 const option = {
-  threshold: 0.9,
+  threshold: 0,
   rootMargin: '50px',
-  triggerOnce: true
 }
 
 const useObserver = () => {

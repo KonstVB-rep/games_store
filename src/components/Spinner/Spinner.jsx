@@ -1,9 +1,9 @@
-import React, {forwardRef} from "react";
+import React from "react";
 
 import cn from './Spinner.module.scss'
 
-const Spinner = forwardRef(function Spinner(props, ref) {
-    return <img src="/Spinner.svg" alt="Загрузка" ref={ref} className={cn.spinner}/>
-});
+const Spinner = () => {
+    return <img src="/Spinner.svg" alt="Загрузка"  className={cn.spinner}/>
+};
 
 export default Spinner;
