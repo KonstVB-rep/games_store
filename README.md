@@ -4,7 +4,7 @@ This project [Demo](https://konst1984.github.io/games_store/).
 
 ## Available Scripts
 
-Used API: RAWG Video Games Database APIю
+Used API: [RAWG Video Games Database API](https://api.rawg.io/docs/). 
 
 Used by the library:
 
