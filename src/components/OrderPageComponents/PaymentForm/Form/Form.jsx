@@ -1,11 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useForm} from "react-hook-form";
 
 import cn from "../PaymentForm.module.scss";
 
 import {renderOptionMonths, renderOptionYears} from "./renderOptions";
-
-const currentYear = new Date().getFullYear()
 
 const Form = (props) => {
   const {
