@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 
 import cn from "../PaymentForm.module.scss";
 
 import {renderOptionMonths, renderOptionYears} from "./renderOptions";
 
+const currentYear = new Date().getFullYear()
 
 const Form = (props) => {
   const {
@@ -26,9 +27,11 @@ const Form = (props) => {
     }
   );
 
+
   const {
     numberCard,
     name,
+    year,
     month,
     ccv,
     setCcv,
@@ -53,6 +56,19 @@ const Form = (props) => {
     let value = e.target.value.replace(/[^a-zA-Z]+/g, '')
     setName(value)
   }
+
+  const validDate = () => {
+
+    const nowMonth = new Date().getMonth();
+    const nowYear = new Date().getFullYear();
+    const valid = new Date(year, month).toJSON() >=  new Date(nowYear, nowMonth).toJSON();
+    if(valid){
+      errors.month = undefined;
+      errors.year = undefined
+    }
+    return valid;
+  }
+
 
   return (
     <form onSubmit = {handleSubmit(onSubmit)}>
@@ -90,7 +106,7 @@ const Form = (props) => {
             required: "The field month is required",
             onChange: (e) => setMonth(e.target.value),
             validate: {
-              positive: () => parseInt(month) > new Date().getMonth(),
+              validateNumber: () => validDate(),
             },
             pattern: {
               value: /[\d| ]{2}/,
@@ -109,7 +125,11 @@ const Form = (props) => {
             pattern: {
               value: /[\d| ]{4}/,
               message: 'select a year'
-            }
+            },
+            validate: {
+              validateNumber: () => validDate(),
+            },
+
           })}
         >
           <option value = "" disabled>year</option>
@@ -117,7 +137,7 @@ const Form = (props) => {
         </select>
       </div>
       <div className = {cn.error}>
-        {(errors?.month || errors?.year) && <p>{(errors?.year?.message) || 'you have entered incorrect data'}</p>}</div>
+        {(errors?.month || errors?.year) && <p>{(errors?.month?.message) || 'you have entered incorrect data'}</p>}</div>
       <label htmlFor = "">
         <input type = "text"
                inputMode = "text"

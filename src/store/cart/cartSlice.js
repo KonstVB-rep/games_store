@@ -20,6 +20,7 @@ const cartSlice = createSlice({
         if (findItem) {
           findItem.totalCount++;
         } else {
+          action.payload.totalCount = 1;
           state.cartList.push(action.payload);
         }
         state.totalPrice = state.cartList.reduce(
@@ -31,7 +32,10 @@ const cartSlice = createSlice({
         return {
           payload: {
             ...data,
-            totalCount: 1,
+            size: data.size,
+            color: data.color,
+            amount: 1,
+            totalPrice: data.price,
           },
         };
       },

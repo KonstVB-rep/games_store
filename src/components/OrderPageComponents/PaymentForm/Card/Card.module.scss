@@ -141,13 +141,13 @@
   &-contactless {
     position: absolute;
     right: 15px;
-    top: 55px;
+    top: 45px;
     transform: scale(0.5);
   }
 
   &-chip {
     position: absolute;
-    top: 65px;
+    top: 50px;
     left: 25px;
     width: 45px;
     height: 34px;
@@ -182,7 +182,7 @@
   &-holder {
     position: absolute;
     left: 25px;
-    bottom: 30px;
+    bottom: 50px;
     color: white;
     font-size: 14px;
     letter-spacing: 0.2em;
@@ -193,7 +193,7 @@
   &-number {
     position: absolute;
     left: 25px;
-    bottom: 65px;
+    bottom: 75px;
     width: 216px;
     display: flex;
     justify-content: stretch;
@@ -207,7 +207,7 @@
   &-valid {
     position: absolute;
     right: 25px;
-    bottom: 30px;
+    bottom: 20px;
     color: white;
     font-size: 14px;
     letter-spacing: 0.2em;
