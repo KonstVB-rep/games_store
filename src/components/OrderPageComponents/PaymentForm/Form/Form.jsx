@@ -3,7 +3,8 @@ import {useForm} from "react-hook-form";
 
 import cn from "../PaymentForm.module.scss";
 
-import {renderOptionMonths, renderOptionYears} from "./renderOptions";
+
+const dateNow = `${new Date().getFullYear()}-${(new Date().getMonth() + 1).toString().padStart(2, '0')}`
 
 const Form = (props) => {
   const {
@@ -19,33 +20,31 @@ const Form = (props) => {
         cardNumber: '',
         name: '',
         ccv: '',
-        month: '',
-        year: ''
+        cardValidityPeriod: ''
       }
     }
   );
 
+  console.log(new Date().getMonth())
 
   const {
     numberCard,
     name,
-    year,
-    month,
     ccv,
     setCcv,
-    setMonth,
-    setYear,
     setName,
     handleSetCardNumber,
     handleFocus,
     handleBlur,
-    setShowModal,
+    cardValidityPeriod,
+    setCardValidityPeriod,
+    setShowModalPaymentForm,
     setShowConfirmModal
   } = props
 
 
   const onSubmit = () => {
-    setShowModal(false);
+    setShowModalPaymentForm(false);
     setShowConfirmModal(true);
     reset();
   }
@@ -54,19 +53,6 @@ const Form = (props) => {
     let value = e.target.value.replace(/[^a-zA-Z]+/g, '')
     setName(value)
   }
-
-  const validDate = () => {
-
-    const nowMonth = new Date().getMonth();
-    const nowYear = new Date().getFullYear();
-    const valid = new Date(year, month).toJSON() >=  new Date(nowYear, nowMonth).toJSON();
-    if(valid){
-      errors.month = undefined;
-      errors.year = undefined
-    }
-    return valid;
-  }
-
 
   return (
     <form onSubmit = {handleSubmit(onSubmit)}>
@@ -97,45 +83,24 @@ const Form = (props) => {
       <div className = {cn.error}>{errors?.cardNumber &&
         <p>{errors?.cardNumber?.message || 'you have entered incorrect data'}</p>}</div>
       <p className = {cn['valid-title']}>valid thru</p>
-      <div className = {cn['selects-wrapper']}>
-        <select
-          className = {cn.select}
-          {...register('month', {
-            required: "The field month is required",
-            onChange: (e) => setMonth(e.target.value),
-            validate: {
-              validateNumber: () => validDate(),
-            },
-            pattern: {
-              value: /[\d| ]{2}/,
-              message: 'select a month'
-            }
-          })}
-        >
-          <option value = "" disabled>month</option>
-          {renderOptionMonths}
-        </select>
-        <select
-          className = {cn.select}
-          {...register('year', {
-            required: "The field year is required",
-            onChange: (e) => setYear(e.target.value),
-            pattern: {
-              value: /[\d| ]{4}/,
-              message: 'select a year'
-            },
-            validate: {
-              validateNumber: () => validDate(),
-            },
-
-          })}
-        >
-          <option value = "" disabled>year</option>
-          {renderOptionYears}
-        </select>
-      </div>
+      <label htmlFor = "" className = {cn['card-period']}>
+        <input type = "month"
+               value = {cardValidityPeriod}
+               {...register('cardValidityPeriod', {
+                 required: "The field is required",
+                 onChange: (e) => setCardValidityPeriod(e.target.value),
+                 min: {
+                   value: dateNow,
+                   message: 'You have entered incorrect date'
+                 }
+               })}
+        />
+      </label>
+      <div className = {cn.error}>{errors?.cardValidityPeriod &&
+        <p>{errors?.cardValidityPeriod?.message || 'you have entered incorrect date'}</p>}</div>
       <div className = {cn.error}>
-        {(errors?.month || errors?.year) && <p>{(errors?.month?.message) || 'you have entered incorrect data'}</p>}</div>
+        {(errors?.month || errors?.year) &&
+          <p>{errors?.month?.message || errors?.year?.message || 'check and re-enter the month and year in both fields'}</p>}</div>
       <label htmlFor = "">
         <input type = "text"
                inputMode = "text"

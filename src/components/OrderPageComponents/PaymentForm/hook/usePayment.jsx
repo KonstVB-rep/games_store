@@ -5,11 +5,10 @@ import {normalizeCardNumber} from "utils/normalizeCardNumber";
 const usePayment = () => {
 
   const [numberCard, setNumberCard] = useState('');
-  const [month, setMonth] = useState('month');
-  const [year, setYear] = useState('year');
   const [name, setName] = useState('');
   const [ccv, setValueCcv] = useState('');
   const [turnClass, setTurnCLass] = useState('');
+  const [cardValidityPeriod, setCardValidityPeriod] = useState('');
 
   const handleFocus = () => {
     setTurnCLass('turned')
@@ -32,16 +31,14 @@ const usePayment = () => {
 
   return {
     numberCard,
-    month,
-    year,
     name,
     ccv,
     turnClass,
     setNumberCard,
-    setMonth,
     setCcv,
-    setYear,
     setName,
+    cardValidityPeriod,
+    setCardValidityPeriod,
     handleSetCardNumber,
     handleFocus,
     handleBlur,

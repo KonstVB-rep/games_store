@@ -12,7 +12,7 @@ const Header = () => {
   const {pathname} = useLocation();
   const navigate = useNavigate()
 
-  const goBack =() => navigate(-1)
+  const goBack = () => navigate(-1)
 
 
   return (

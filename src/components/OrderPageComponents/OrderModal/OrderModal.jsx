@@ -16,14 +16,13 @@ const OrderModal = ({showModal, setShowModal}) => {
 
   const dispatch = useDispatch();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const clearCart = () => {
     setShowModal(false)
     dispatch(clearCartList())
     navigate('/games_store');
   }
-
 
   useEffect(() => {
     let timer;

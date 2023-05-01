@@ -21,7 +21,7 @@ const TotalPrice = () => {
 }
 
 
-const MakingOrder = ({isShow, setIsShow}) => {
+const MakingOrder = ({isShowPaymentForm, setIsShowPaymentForm}) => {
 
   const length = useSelector(state => state.cart.cartList.length);
 
@@ -32,7 +32,7 @@ const MakingOrder = ({isShow, setIsShow}) => {
         <>
           <div className = {cn.wrapper}>
             <TotalPrice />
-            <Button classname = "order-button" onClick = {() => setIsShow(!isShow)} ariaLabel='place an order'>place on order</Button>
+            <Button classname = "order-button" onClick = {() => setIsShowPaymentForm(!isShowPaymentForm)} ariaLabel='place an order'>place on order</Button>
           </div>
         </> : null
       }

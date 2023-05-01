@@ -16,3 +16,14 @@ Used by the library:
  - sass
  - react-intersection-observer
  - react-scroll
+
+
+![image](src/assets/MainPage.webp)
+
+![image](src/assets/SearchPage.webp)
+
+![image](src/assets/FavoritesPage.webp)
+
+![image](src/assets/CartPage.webp)
+
+![image](src/assets/Payment.webp)

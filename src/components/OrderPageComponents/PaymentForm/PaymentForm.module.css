@@ -180,26 +180,18 @@ body {
   border-radius: 10px;
   background-color: #c51a1a;
 }
-.wrapper .content form .selects-wrapper {
-  display: flex;
-  gap: 10px;
+.wrapper .content form .card-period {
+  width: 100%;
 }
-.wrapper .content form .selects-wrapper .select {
-  border: none;
-  height: 40px;
-  width: 80px;
-  color: dimgrey;
-  text-align: center;
-  border-radius: 10px;
-  font-size: 1rem;
+.wrapper .content form .card-period input {
+  width: 180px;
+  font-size: 18px;
   text-transform: uppercase;
-  padding: 0 5px;
 }
-.wrapper .content form .selects-wrapper .select option {
-  color: black;
-}
-.wrapper .content form .selects-wrapper .select option:disabled {
-  color: dimgrey;
+.wrapper .content form .card-period input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 .wrapper .content form input {
   width: 100%;

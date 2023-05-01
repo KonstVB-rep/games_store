@@ -61,26 +61,16 @@
           background-color: #c51a1a;
         }
       }
-
-      .selects-wrapper {
-        display: flex;
-        gap: 10px;
-        .select {
-          border: none;
-          height: 40px;
-          width: 80px;
-          color: dimgrey;
-          text-align: center;
-          border-radius: 10px;
-          font-size: 1rem;
+      .card-period{
+        width: 100%;
+        input{
+          width: 180px;
+          font-size: 18px;
           text-transform: uppercase;
-          padding: 0 5px;
-          option {
-            color: black;
-          }
-
-          option:disabled {
-            color: dimgrey;
+          &::-webkit-calendar-picker-indicator{
+            cursor:pointer;
+            width: 30px;
+            height: 30px;
           }
         }
       }
@@ -161,5 +151,4 @@
       }
     }
   }
-
 }

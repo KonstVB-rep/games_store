@@ -5,11 +5,13 @@ import {replaceStarsOnNumbersCard} from "utils/replaceStarsOnNumbersCard";
 import cn from './Card.module.scss'
 
 
-const Card = ({numberCard, month, year, name, ccv, turnClass}) => {
+const Card = ({numberCard, name, ccv, turnClass, cardValidityPeriod}) => {
 
   const defaultProp = (prop, value) => {
     return !!prop ? prop : value
   }
+
+  const [year, month] = cardValidityPeriod.split('-')
 
   return (
     <div className = {cn.card}>
