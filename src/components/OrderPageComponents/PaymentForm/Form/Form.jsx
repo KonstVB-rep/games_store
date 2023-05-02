@@ -2,12 +2,11 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 
 import cn from "../PaymentForm.module.scss";
+import {dateNow, renderOptionMonths, renderOptionYears} from "utils/formattingDate";
 
-
-const dateNow = `${new Date().getFullYear()}-${(new Date().getMonth() + 1).toString().padStart(2, '0')}`
 
 const Form = (props) => {
-  const {
+  let {
     register,
     formState: {
       errors, isValid
@@ -20,12 +19,13 @@ const Form = (props) => {
         cardNumber: '',
         name: '',
         ccv: '',
-        cardValidityPeriod: ''
+        cardValidityPeriod: {
+          month: '',
+          year: ''
+        }
       }
     }
   );
-
-  console.log(new Date().getMonth())
 
   const {
     numberCard,
@@ -54,6 +54,22 @@ const Form = (props) => {
     setName(value)
   }
 
+    const validDate = () => {
+        const {year,month} = cardValidityPeriod;
+        const [currentYear,currentMonth] = dateNow.split('-');
+        if(year && month){
+          return (month && year > currentYear) || (month >= currentMonth && year >= currentYear);
+        }
+    }
+
+   const getErrors = () => {
+     if (validDate()) {
+       const {month, year, ...rest} = errors;
+       errors = {...rest}
+     }
+     return errors
+   }
+
   return (
     <form onSubmit = {handleSubmit(onSubmit)}>
       <label htmlFor = "">
@@ -65,17 +81,9 @@ const Form = (props) => {
                {...register('cardNumber', {
                  required: "The field is required",
                  onChange: handleSetCardNumber,
-                 maxLength: {
-                   value: 19,
-                   message: 'The card number must contain 16 digits'
-                 },
-                 minLength: {
-                   value: 19,
-                   message: 'The card number must contain 16 digits'
-                 },
                  pattern: {
                    value: /[\d| ]{19}/,
-                   message: 'Only numbers are allowed for this field'
+                   message: 'The card number must contain 16 digits'
                  }
                })}
         />
@@ -83,24 +91,39 @@ const Form = (props) => {
       <div className = {cn.error}>{errors?.cardNumber &&
         <p>{errors?.cardNumber?.message || 'you have entered incorrect data'}</p>}</div>
       <p className = {cn['valid-title']}>valid thru</p>
-      <label htmlFor = "" className = {cn['card-period']}>
-        <input type = "month"
-               value = {cardValidityPeriod}
-               {...register('cardValidityPeriod', {
-                 required: "The field is required",
-                 onChange: (e) => setCardValidityPeriod(e.target.value),
-                 min: {
-                   value: dateNow,
-                   message: 'You have entered incorrect date'
-                 }
-               })}
-        />
-      </label>
-      <div className = {cn.error}>{errors?.cardValidityPeriod &&
-        <p>{errors?.cardValidityPeriod?.message || 'you have entered incorrect date'}</p>}</div>
+      <div className = {cn['selects-wrapper']}>
+        <select
+          className = {cn.select}
+          {...register('month', {
+            required: "The fields is required",
+            onChange: (e) => setCardValidityPeriod({...cardValidityPeriod,month: e.target.value}),
+            validate: {
+              validateNumber: () => validDate(),
+            },
+          })}
+        >
+          <option value = "" disabled = "">month</option>
+          {renderOptionMonths}
+        </select>
+        <select
+          className = {cn.select}
+          {...register('year', {
+            required: "The fields is required",
+            onChange: (e) => setCardValidityPeriod({...cardValidityPeriod,year: e.target.value}),
+            validate: {
+              validateNumber: () => validDate(),
+            },
+
+          })}
+        >
+          <option value = "" disabled="">year</option>
+          {renderOptionYears}
+        </select>
+      </div>
       <div className = {cn.error}>
-        {(errors?.month || errors?.year) &&
-          <p>{errors?.month?.message || errors?.year?.message || 'check and re-enter the month and year in both fields'}</p>}</div>
+        {(getErrors()?.month || getErrors()?.year) &&
+        <p>{errors?.month?.message || errors?.year?.message || 'check and re-enter the month and year in both fields'}</p>}
+        </div>
       <label htmlFor = "">
         <input type = "text"
                inputMode = "text"
@@ -147,7 +170,8 @@ const Form = (props) => {
       <div className = {cn.error}>{errors?.ccv &&
         <p>{errors?.ccv?.message || 'you have entered incorrect data'}</p>}</div>
       <button title = "Pay" onSubmit = {handleSubmit(onSubmit)} className = {cn['btn-submit']} type = "submit"
-              disabled = {!isValid}>
+              disabled={!isValid}
+             >
         pay
       </button>
     </form>

@@ -119,6 +119,7 @@ body {
 .purchase {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   min-width: 248px;
   max-height: 45px;
   align-self: end;

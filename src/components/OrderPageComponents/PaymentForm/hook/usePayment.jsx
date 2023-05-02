@@ -8,7 +8,7 @@ const usePayment = () => {
   const [name, setName] = useState('');
   const [ccv, setValueCcv] = useState('');
   const [turnClass, setTurnCLass] = useState('');
-  const [cardValidityPeriod, setCardValidityPeriod] = useState('');
+  const [cardValidityPeriod, setCardValidityPeriod] = useState({month:'', year:''});
 
   const handleFocus = () => {
     setTurnCLass('turned')

@@ -11,7 +11,7 @@ const Card = ({numberCard, name, ccv, turnClass, cardValidityPeriod}) => {
     return !!prop ? prop : value
   }
 
-  const [year, month] = cardValidityPeriod.split('-')
+  const {year, month} = cardValidityPeriod;
 
   return (
     <div className = {cn.card}>

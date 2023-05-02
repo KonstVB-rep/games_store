@@ -166,6 +166,18 @@ body {
   background-image: linear-gradient(#68b668 20%, #467946 80%);
   box-shadow: inset #386a38 0 0 2px 4px;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .action_add .plus {
+  display: block;
+  width: 70%;
+  height: 70%;
+}
+.wrapper .action_add .plus svg {
+  width: 100%;
+  height: 100%;
 }
 .wrapper .action_add:active {
   animation: pulseAdd 0.3s;
