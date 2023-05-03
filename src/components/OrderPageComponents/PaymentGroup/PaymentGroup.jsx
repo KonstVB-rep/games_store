@@ -1,9 +1,6 @@
-import React, {Suspense, useState} from 'react';
-import {useDispatch} from "react-redux";
-
-import useVisible from "hooks/useVisible";
-import {clearCartList} from "store/cart/cartSlice";
+import React, {Suspense} from 'react';
 import {MakingOrder} from "../MakingOrder";
+import usePaymentContext from "../PaymentForm/hooks/usePaymentContext";
 
 const OrderModal = React.lazy(() => import("../OrderModal").then((module) => ({
   default: module.OrderModal
@@ -15,22 +12,18 @@ const PaymentForm = React.lazy(() => import("../PaymentForm").then((module) => (
 
 const PaymentGroup = () => {
 
-  const dispatch = useDispatch();
-
-  const [isShowPaymentForm, setIsShowPaymentForm] = useVisible(() => dispatch(clearCartList()))
-  const [showConfirmModal, setShowConfirmModal] = useState(false)
-
+  const {isShowPaymentForm} = usePaymentContext()
 
   return (
     <>
-      {isShowPaymentForm &&
-        <Suspense fallback = {null}>
-          <PaymentForm showModalPaymentForm = {isShowPaymentForm} setShowModalPaymentForm = {()=>setIsShowPaymentForm(!isShowPaymentForm)}
-                       setShowConfirmModal = {setShowConfirmModal} />
-        </Suspense>}
-      <MakingOrder isShowPaymentForm = {isShowPaymentForm} setIsShowPaymentForm = {setIsShowPaymentForm} />
+        {isShowPaymentForm &&
+          <Suspense fallback = {null}>
+            <PaymentForm />
+          </Suspense>
+         }
+        <MakingOrder />
       <Suspense fallback = {null}>
-        <OrderModal showModal = {showConfirmModal} setShowModal = {setShowConfirmModal} />
+        <OrderModal />
       </Suspense>
     </>
   );

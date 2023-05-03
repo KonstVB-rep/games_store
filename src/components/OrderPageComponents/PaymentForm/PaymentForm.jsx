@@ -5,29 +5,19 @@ import {ModalLayout} from "../../ModalLayout";
 import {Card} from "./Card";
 import {Form} from "./Form";
 import cn from './PaymentForm.module.scss'
-import usePayment from "./hook/usePayment";
+import usePaymentContext from "./hooks/usePaymentContext";
 
 
-const PaymentForm = ({showModalPaymentForm, setShowModalPaymentForm, setShowConfirmModal}) => {
+const PaymentForm = () => {
 
-  const {turnClass,...restProps} = usePayment();
-  const {numberCard,name, ccv,cardValidityPeriod} = restProps;
-
-  const formProps = {
-    setShowModalPaymentForm,
-    setShowConfirmModal,
-    ...restProps
-  }
+  const {isShowPaymentForm,setIsShowPaymentForm} = usePaymentContext()
 
   return (
     <div className = {cn.wrapper}>
-      <ModalLayout bg = {cn.bg} content = {cn.content} show = {showModalPaymentForm}
-                   setShow = {() => setShowModalPaymentForm(false)} modal = {cn.wrapper}>
-        <Card numberCard = {numberCard}
-              cardValidityPeriod={cardValidityPeriod}
-              name = {name} ccv = {ccv}
-              turnClass = {turnClass} />
-        <Form {...formProps} />
+      <ModalLayout bg = {cn.bg} content = {cn.content} show = {isShowPaymentForm}
+                   setShow = {() => setIsShowPaymentForm(false)} modal = {cn.wrapper}>
+        <Card />
+        <Form />
       </ModalLayout>
     </div>
   );

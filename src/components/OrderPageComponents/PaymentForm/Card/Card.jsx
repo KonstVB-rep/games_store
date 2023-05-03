@@ -3,9 +3,12 @@ import React from 'react';
 import {replaceStarsOnNumbersCard} from "utils/replaceStarsOnNumbersCard";
 
 import cn from './Card.module.scss'
+import usePaymentContext from "../hooks/usePaymentContext";
 
 
-const Card = ({numberCard, name, ccv, turnClass, cardValidityPeriod}) => {
+const Card = () => {
+
+  const {numberCard, name, ccv, turnClass, cardValidityPeriod} = usePaymentContext()
 
   const defaultProp = (prop, value) => {
     return !!prop ? prop : value

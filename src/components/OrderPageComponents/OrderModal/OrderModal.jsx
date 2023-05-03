@@ -7,37 +7,39 @@ import {clearCartList} from "store/cart/cartSlice";
 import {ModalLayout} from "../../ModalLayout";
 import DONE from 'assets/done.svg'
 
-
 import cn from './OrderModal.module.scss';
+import usePaymentContext from "../PaymentForm/hooks/usePaymentContext";
 
 const orderNumber = randomNumber(1000, 10000000)
 
-const OrderModal = ({showModal, setShowModal}) => {
+const OrderModal = () => {
+
+  const {showConfirmModal,setShowConfirmModal} = usePaymentContext()
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const clearCart = () => {
-    setShowModal(false)
+    setShowConfirmModal(false)
     dispatch(clearCartList())
     navigate('/games_store');
   }
 
   useEffect(() => {
     let timer;
-    if (showModal) {
+    if (showConfirmModal) {
       setTimeout(() => {
         clearCart()
       }, 5000)
     }
     return () => clearTimeout(timer)
-  }, [showModal])
+  }, [showConfirmModal])
 
   return (
     <>
-      {showModal &&
-        <ModalLayout bg = {cn.bg} content = {cn.content} show = {!!showModal}
+      {showConfirmModal &&
+        <ModalLayout bg = {cn.bg} content = {cn.content} show = {!!showConfirmModal}
                      setShow = {clearCart} modal = {cn.wrapper}>
           <h2 className = {cn.title}>thanks for the purchase!</h2>
           <p className = {cn.text}>your order number: <span className = {cn.text__span}>№{orderNumber}</span></p>

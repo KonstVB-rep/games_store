@@ -3,9 +3,9 @@ import {useForm} from "react-hook-form";
 
 import cn from "../PaymentForm.module.scss";
 import {dateNow, renderOptionMonths, renderOptionYears} from "utils/formattingDate";
+import usePaymentContext from "../hooks/usePaymentContext";
 
-
-const Form = (props) => {
+const Form = () => {
   let {
     register,
     formState: {
@@ -38,13 +38,13 @@ const Form = (props) => {
     handleBlur,
     cardValidityPeriod,
     setCardValidityPeriod,
-    setShowModalPaymentForm,
+    setIsShowPaymentForm,
     setShowConfirmModal
-  } = props
+  } = usePaymentContext()
 
 
   const onSubmit = () => {
-    setShowModalPaymentForm(false);
+    setIsShowPaymentForm(false)
     setShowConfirmModal(true);
     reset();
   }

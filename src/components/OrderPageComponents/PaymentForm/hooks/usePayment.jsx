@@ -1,9 +1,16 @@
 import {useState} from 'react';
 
 import {normalizeCardNumber} from "utils/normalizeCardNumber";
+import {useDispatch} from "react-redux";
+import useVisible from "../../../../hooks/useVisible";
+import {clearCartList} from "../../../../store/cart/cartSlice";
 
 const usePayment = () => {
 
+  const dispatch = useDispatch();
+
+  const [isShowPaymentForm, setIsShowPaymentForm] = useVisible(() => dispatch(clearCartList()))
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [numberCard, setNumberCard] = useState('');
   const [name, setName] = useState('');
   const [ccv, setValueCcv] = useState('');
@@ -42,6 +49,10 @@ const usePayment = () => {
     handleSetCardNumber,
     handleFocus,
     handleBlur,
+    isShowPaymentForm,
+    setIsShowPaymentForm,
+    showConfirmModal,
+    setShowConfirmModal
   };
 };
 

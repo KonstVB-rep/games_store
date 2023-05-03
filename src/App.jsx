@@ -3,7 +3,7 @@ import {Outlet} from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import {Footer} from "./components/Footer";
-import ScrollToTop from "./hooks/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import {PortalCreator} from "./components/PortalCreator";
 import Spinner from "./components/Spinner";
 import ArrowThemeBox from "./components/Buttons/ArrowThemeBox/ArrowThemeBox";

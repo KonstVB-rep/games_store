@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
 import {Button} from "../../Buttons/Button";
@@ -9,15 +9,15 @@ const ClearButton = () => {
 
   const dispatch = useDispatch();
 
-  const allGames = useSelector(selectAllItemsCart)
+  const amountGamesInCart = useSelector(selectAllItemsCart)
 
-  const clearCart = () => {
+  const clearCart = useCallback(() => {
     dispatch(clearCartList())
-  }
+  },[])
 
   return (
     <>
-      {allGames.length > 0 && <div className = {cn['btn-wrapper']}>
+      {amountGamesInCart > 0 && <div className = {cn['btn-wrapper']}>
         <Button title = "clear cart" classname = "silver" onClick = {clearCart} ariaLabel = "clear cart">
           clear cart</Button>
       </div> }

@@ -6,6 +6,8 @@ import { selectTotalPrice} from "store/cart/cartSlice";
 import {currency} from "constants/currency";
 
 import cn from './MakingOrder.module.scss'
+import usePaymentContext from "../PaymentForm/hooks/usePaymentContext";
+
 
 const TotalPrice = () => {
 
@@ -21,7 +23,9 @@ const TotalPrice = () => {
 }
 
 
-const MakingOrder = ({isShowPaymentForm, setIsShowPaymentForm}) => {
+const MakingOrder = () => {
+
+  const {isShowPaymentForm, setIsShowPaymentForm} = usePaymentContext()
 
   const length = useSelector(state => state.cart.cartList.length);
 
