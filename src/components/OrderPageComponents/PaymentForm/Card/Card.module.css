@@ -34,6 +34,7 @@ body {
 button, a {
   cursor: pointer;
   outline: none;
+  user-select: none;
 }
 
 a {

@@ -4,10 +4,10 @@ import {GamesList} from "../../components/MainPageComponents/GamesList";
 import Skeleton from "../../components/MainPageComponents/Skeleton/Skeleton";
 import cn from "./MainPage.module.scss";
 import {useDispatch, useSelector} from "react-redux";
-import {loadGames, rememberCountPage} from "../../store/games/gamesSlice";
-import {PATH} from "../../constants/api";
-import {MotionMain} from "../../components/MotionMain";
-import useObserver from "../../hooks/useObserver";
+import {loadGames, rememberCountPage} from "store/games/gamesSlice";
+import {PATH} from "constants/api";
+import {MotionMain} from "components/MotionMain";
+import useObserver from "hooks/useObserver";
 import ErrorPage from "../ErrorPage";
 
 
