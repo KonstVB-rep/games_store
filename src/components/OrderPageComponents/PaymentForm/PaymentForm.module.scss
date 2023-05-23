@@ -133,7 +133,7 @@
         transition: var(--transition);
         &[disabled]{
           background-color: darkgrey;
-          cursor: default;
+          cursor: pointer;
         }
         &:not([disabled]):hover,
         &:not([disabled]):focus-visible {

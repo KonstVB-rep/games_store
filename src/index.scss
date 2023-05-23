@@ -68,6 +68,7 @@ $border-radius-xl: 35px;
   box-sizing: border-box;
   color:var(--color-main);
   transition: background-color 0.3s linear, color 0.5s linear;
+  -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -87,6 +88,7 @@ body {
 
 
 button, a{
+  cursor: pointer;
   outline: none;
   user-select: none;
 }
@@ -168,10 +170,4 @@ body {
   overflow: hidden;
 }
 
-input,
-textarea,
-button,
-select,
-a {
-  cursor: default;
-}
+

@@ -17,6 +17,7 @@
   box-sizing: border-box;
   color: var(--color-main);
   transition: background-color 0.3s linear, color 0.5s linear;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
 }
 
 button, a {
+  cursor: pointer;
   outline: none;
   user-select: none;
 }
@@ -116,14 +118,6 @@ body {
   overflow: hidden;
 }
 
-input,
-textarea,
-button,
-select,
-a {
-  cursor: default;
-}
-
 .header {
   padding: 30px 10px;
   background-color: var(--bg-body);
@@ -193,7 +187,7 @@ a {
     display: block;
     width: 100%;
     height: 100%;
-    cursor: default;
+    cursor: pointer;
     z-index: 3;
   }
   .header .wrapper .button-burger .burger path {

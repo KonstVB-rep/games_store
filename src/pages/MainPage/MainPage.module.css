@@ -33,6 +33,7 @@
   box-sizing: border-box;
   color: var(--color-main);
   transition: background-color 0.3s linear, color 0.5s linear;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -48,6 +49,7 @@ body {
 }
 
 button, a {
+  cursor: pointer;
   outline: none;
   user-select: none;
 }
@@ -130,14 +132,6 @@ body {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-input,
-textarea,
-button,
-select,
-a {
-  cursor: default;
 }
 
 @media (max-width: 400px) {

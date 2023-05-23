@@ -17,6 +17,7 @@
   box-sizing: border-box;
   color: var(--color-main);
   transition: background-color 0.3s linear, color 0.5s linear;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
 }
 
 button, a {
+  cursor: pointer;
   outline: none;
   user-select: none;
 }
@@ -116,14 +118,6 @@ body {
   overflow: hidden;
 }
 
-input,
-textarea,
-button,
-select,
-a {
-  cursor: default;
-}
-
 .card {
   display: grid;
   grid-template-columns: minmax(250px, 1.5fr) minmax(100px, 200px) 0.5fr;
@@ -150,7 +144,7 @@ a {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 5px;
-  cursor: default;
+  cursor: pointer;
 }
 @media (max-width: 680px) {
   .card .title {

@@ -17,6 +17,7 @@
   box-sizing: border-box;
   color: var(--color-main);
   transition: background-color 0.3s linear, color 0.5s linear;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
 }
 
 button, a {
+  cursor: pointer;
   outline: none;
   user-select: none;
 }
@@ -116,14 +118,6 @@ body {
   overflow: hidden;
 }
 
-input,
-textarea,
-button,
-select,
-a {
-  cursor: default;
-}
-
 .card {
   display: flex;
   align-items: center;
@@ -149,7 +143,7 @@ a {
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid var(--color-main);
-  cursor: default;
+  cursor: pointer;
   transition: var(--transition);
 }
 .card .card__img:hover, .card .card__img:focus-within {

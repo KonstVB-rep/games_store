@@ -53,7 +53,7 @@
     width: 100%;
     height: auto;
     margin: 0;
-    cursor: default;
+    cursor: pointer;
     filter: blur(0.5px) grayscale(0.2);
     transition: var(--transition);
     &:hover,
