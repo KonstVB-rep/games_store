@@ -7,7 +7,7 @@
   background-color: var(--color-main);
   border: 2px solid #7e7d7d;
   border-radius:$border-radius-m;
-  cursor: pointer;
+  cursor: default;
   transition: var(--transition);
   &:hover,
   &:focus-visible{

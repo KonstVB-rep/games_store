@@ -32,7 +32,6 @@ body {
 }
 
 button, a {
-  cursor: pointer;
   outline: none;
   user-select: none;
 }
@@ -117,6 +116,14 @@ body {
   overflow: hidden;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  cursor: default;
+}
+
 .card {
   display: grid;
   grid-template-columns: minmax(250px, 1.5fr) minmax(100px, 200px) 0.5fr;
@@ -143,7 +150,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 5px;
-  cursor: pointer;
+  cursor: default;
 }
 @media (max-width: 680px) {
   .card .title {

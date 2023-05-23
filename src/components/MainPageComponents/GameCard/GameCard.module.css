@@ -32,7 +32,6 @@ body {
 }
 
 button, a {
-  cursor: pointer;
   outline: none;
   user-select: none;
 }
@@ -117,6 +116,14 @@ body {
   overflow: hidden;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  cursor: default;
+}
+
 .card {
   position: relative;
   display: flex;
@@ -172,7 +179,7 @@ body {
   width: 100%;
   height: auto;
   margin: 0;
-  cursor: pointer;
+  cursor: default;
   filter: blur(0.5px) grayscale(0.2);
   transition: var(--transition);
 }

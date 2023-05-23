@@ -14,7 +14,7 @@ import ErrorPage from "../ErrorPage";
 const MainPage = () => {
 
   const dispatch = useDispatch();
-  
+
   const {currentPage, countPage,status} = useSelector(state => state.games);
 
   const ref = useObserver()

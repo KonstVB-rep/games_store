@@ -32,7 +32,6 @@ body {
 }
 
 button, a {
-  cursor: pointer;
   outline: none;
   user-select: none;
 }
@@ -117,6 +116,14 @@ body {
   overflow: hidden;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  cursor: default;
+}
+
 .favorite-sign {
   position: absolute;
   top: 10px;
@@ -126,7 +133,7 @@ body {
   border-radius: 50%;
   overflow: hidden;
   z-index: 1;
-  cursor: pointer;
+  cursor: default;
   user-select: none;
   transition: var(--transition);
   background-color: transparent;

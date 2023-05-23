@@ -32,7 +32,6 @@ body {
 }
 
 button, a {
-  cursor: pointer;
   outline: none;
   user-select: none;
 }
@@ -117,6 +116,14 @@ body {
   overflow: hidden;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  cursor: default;
+}
+
 .switcher {
   width: 60px;
   height: 60px;
@@ -124,7 +131,7 @@ body {
   background-color: var(--color-main);
   border: 2px solid #7e7d7d;
   border-radius: 15px;
-  cursor: pointer;
+  cursor: default;
   transition: var(--transition);
 }
 .switcher:hover, .switcher:focus-visible {
