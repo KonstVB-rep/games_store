@@ -1,0 +1,32 @@
+@use '../../index.scss' as v;
+
+.purchase {
+    @include v.flex-al-center;
+    justify-content: space-between;
+    min-width: 248px;
+    max-height: 45px;
+    align-self: end;
+    padding: 2px 2px 2px 15px;
+    gap: 15px;
+    width: fit-content;
+    background-color: var(--color-secondary);
+    color: var(--color-secondary);
+    border-radius: v.$border-radius-l;
+    font-weight: bold;
+    box-shadow: black 0 0 2px 1px inset;
+    @media (max-width: 480px) {
+        flex-direction: column;
+        max-height: none;
+        height: auto;
+        gap: 5px;
+        padding: 5px;
+        width: 100%;
+        border-radius: 50px;
+    }
+    & *:not(button) {
+        color: var(--color-main);
+    }
+    .price {
+        font-size: 1.5rem;
+    }
+}

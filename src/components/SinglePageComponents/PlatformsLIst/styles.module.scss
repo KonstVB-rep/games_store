@@ -1,0 +1,83 @@
+@use '../../../index.scss' as v;
+
+%inner-size {
+    @include v.flex-al-center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.platforms-box {
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    @media (max-width: 680px) {
+        flex-direction: column;
+    }
+    @media (max-width: 480px) {
+        align-items: stretch;
+    }
+    .links {
+        @extend %inner-size;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 1.125rem;
+        @media (max-width: 480px) {
+            padding: 0 10px 20px;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: stretch;
+            text-align: center;
+        }
+
+        a {
+            background-color: v.$bg-gold;
+            padding: 5px 15px;
+            border-radius: v.$border-radius-m;
+            min-width: max-content;
+            color: white;
+            font-weight: bold;
+            transition: var(--transition);
+            @include v.text-shadow;
+
+            &:hover,
+            &:focus-visible {
+                background-color: var(--color-main);
+                color: var(--color-secondary);
+                text-shadow: none;
+            }
+        }
+    }
+
+    .platforms {
+        .platforms-title {
+            padding: 0 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            @media (max-width: 480px) {
+                text-align: center;
+            }
+        }
+
+        .platforms-list {
+            @extend %inner-size;
+            @media (max-width: 480px) {
+                flex-wrap: nowrap;
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                padding: 20px 10px 10px;
+            }
+
+            .platforms__item {
+                padding: 5px 10px;
+                border-radius: v.$border-radius-m;
+                background-color: v.$primary-color;
+                font-size: 1.125rem;
+                color: white;
+                @include v.text-shadow;
+            }
+        }
+    }
+}

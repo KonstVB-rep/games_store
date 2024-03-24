@@ -1,8 +1,14 @@
 {
-  "compilerOptions": {
-    "baseUrl": "src"
-  },
-  "include": [
-    "src"
-  ]
+    "compilerOptions": {
+        "checkJs": true,
+        "jsx": "react",
+        "baseUrl": "src",
+        "paths": {
+            "@src/*": ["src/*"],
+            "@components/*": ["src/components/*"],
+            "@pages/*": ["src/pages/*"],
+            "@assets/*": ["src/assets/*"]
+        }
+    },
+    "include": ["src", "src/router"]
 }

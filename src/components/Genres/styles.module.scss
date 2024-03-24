@@ -1,0 +1,16 @@
+@use '../../index.scss' as v;
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    align-items: flex-end;
+    gap: 5px;
+    .genre {
+        padding: 5px 10px;
+        border-radius: v.$border-radius-m;
+        background-color: v.$bg-gold;
+        color: white;
+        @include v.text-shadow;
+    }
+}

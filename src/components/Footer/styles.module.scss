@@ -1,0 +1,33 @@
+@use '../../index.scss' as v;
+
+.footer {
+    margin-top: 40px;
+    box-shadow: black 0 0 4px 2px;
+    .wrapper {
+        @include v.flex-al-center;
+        justify-content: space-between;
+        max-width: 1180px;
+        margin: auto;
+        padding: 40px 35px;
+        @media (max-width: 600px) {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+        a {
+            font-size: 1.5rem;
+            padding: 5px 10px;
+            font-weight: bold;
+            color: var(--color-main);
+            &:hover,
+            &:focus-visible {
+                outline: none;
+                border-radius: v.$border-radius-l;
+                box-shadow: var(--color-main) 0 0 2px 2px;
+            }
+            &:active {
+                box-shadow: var(--color-main) 0 0 2px 6px;
+            }
+        }
+    }
+}

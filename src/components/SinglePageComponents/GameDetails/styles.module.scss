@@ -1,0 +1,31 @@
+@use '../../../index.scss' as v;
+
+.section {
+    position: relative;
+    width: 100%;
+    display: grid;
+    padding: 40px 0px 40px;
+    box-shadow: black 0 0 4px 2px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    overflow: hidden;
+    border-radius: v.$border-radius-m;
+    background: linear-gradient(45deg, darkgray, transparent);
+    @media (max-width: 940px) {
+        padding: 40px 0 20px;
+    }
+    .title {
+        font-size: 3rem;
+        grid-column: 1/-1;
+        padding: 10px 20px;
+        text-align: center;
+        @media (max-width: 640px) {
+            font-size: 2rem;
+            padding: 20px 20px 0;
+        }
+        @media (max-width: 480px) {
+            text-align: center;
+        }
+    }
+}

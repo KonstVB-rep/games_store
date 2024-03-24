@@ -1,0 +1,26 @@
+@use '../../index.scss' as v;
+
+.section {
+    @extend %games-list_grid;
+    @media (max-width: 400px) {
+        padding: 20px 0;
+    }
+}
+
+.load-more {
+    padding: 8px 15px;
+    border-radius: v.$border-radius-s;
+    background-color: #fbbb43;
+    color: black;
+    outline: 1px solid var(--color-main);
+    margin: 40px auto 0;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+
+    &:hover,
+    &:focus-visible {
+        background-color: var(--color-main);
+        color: var(--color-secondary);
+    }
+}

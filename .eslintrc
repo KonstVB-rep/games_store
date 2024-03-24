@@ -1,16 +1,14 @@
 {
-  "extends": [
-    "react-app",
-    "react-app/jest"
-  ]
-//  "rules": {
-//    "no-console": "warn",
-//    "import/order": [
-//      2,
-//      {
-//        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
-//        "newlines-between": "always"
-//      }
-//    ]
-//  }
+    "extends": ["react-app", "react-app/jest", "eslint:recommended"],
+    "rules": {
+        "no-console": "warn",
+        //        "import/order": [
+        //            2,
+        //            {
+        //                "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        //                "newlines-between": "always"
+        //            }
+        //        ]
+        "no-unused-vars": "warn"
+    }
 }

@@ -1,0 +1,15 @@
+@use '../../../index.scss' as v;
+
+.develops {
+    font-size: 1.2rem;
+    .develops__list {
+        @include v.flex-column;
+        padding: 5px 0;
+        gap: 5px;
+        width: max-content;
+        li {
+            font-style: italic;
+            font-weight: bold;
+        }
+    }
+}

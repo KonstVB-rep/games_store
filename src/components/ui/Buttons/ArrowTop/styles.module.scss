@@ -1,0 +1,47 @@
+@use '../../../../index.scss' as v;
+
+.arrow-box {
+    width: 60px;
+    height: 60px;
+    border-color: transparent;
+    @include v.flex-al-jc-center;
+    border-radius: 50%;
+    @include v.background-btn;
+    transition: var(--transition);
+
+    .image {
+        width: 45px;
+        height: 45px;
+        transform: rotate(90deg);
+
+        & svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            fill: white;
+        }
+    }
+
+    &:hover,
+    &:focus-visible {
+        box-shadow: var(--color-main) 0 0 0 4px;
+    }
+
+    &:active svg {
+        animation: topBack 0.3s ease-in backwards;
+    }
+
+    @keyframes topBack {
+        0% {
+            transform: translateX(0px);
+        }
+        50% {
+            transform: translateX(-50px);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+ .orders{
+    flex-grow: 1;
+    padding: 5px 0;
+    border-bottom: 1px solid white;
+    span{
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr 2fr;;
+      gap: 20px;
+      span {
+        color: white;
+        text-transform: uppercase;
+        &:nth-child(2){
+          text-align: center;
+        }
+        &:last-child{
+          text-align: end;
+        }
+      }
+    }
+  }

@@ -1,0 +1,78 @@
+@use '../../../index.scss' as v;
+
+.cart__info {
+    @include v.flex-al-center;
+    gap: 10px;
+    .btn-toggle {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        cursor: pointer;
+        outline: none;
+        flex-shrink: 0;
+        background: linear-gradient(
+            0deg,
+            rgb(70, 68, 68) 10%,
+            rgb(59 58 58) 30%,
+            rgb(2 1 1) 50%,
+            rgb(112 111 111) 70%,
+            rgb(70, 68, 68) 90%
+        );
+        box-shadow: inset rgb(0 0 0) 0 0 1px 1px;
+        z-index: 4;
+        &:after {
+            content: '';
+            position: absolute;
+            inset: 0;
+        }
+        &:active {
+            box-shadow: inset rgb(0 0 0) 0 0 2px 4px;
+        }
+        &:hover:not(:active),
+        &:focus-visible:not(:active) {
+            box-shadow: inset rgb(99, 181, 243) 0 0 2px 4px;
+        }
+        &:active .btn-toggle__icon {
+            transform: scale(0.9);
+        }
+        &__icon {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            outline: none;
+            transition: var(--transition);
+        }
+    }
+    .total-price {
+        position: relative;
+        padding: 5px 20px;
+        flex-shrink: 0;
+        box-shadow: var(--color-main) 0 0 0 2px;
+        border-radius: v.$border-radius-s;
+        background-color: var(--color-main);
+        color: var(--color-secondary);
+        font-weight: 700;
+        z-index: 3;
+        &::before {
+            content: attr(data-count);
+            @include v.flex-al-jc-center;
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            left: -15px;
+            top: -5px;
+            bottom: 0;
+            border-radius: 50%;
+            border: none;
+            background-image: linear-gradient(indianred 20%, #9f3535 80%);
+            color: white;
+            font-weight: bold;
+            font-size: 1.125rem;
+            @media (max-width: 840px) {
+                left: -12px;
+                top: -16px;
+            }
+        }
+    }
+}

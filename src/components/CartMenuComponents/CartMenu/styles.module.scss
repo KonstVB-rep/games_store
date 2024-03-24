@@ -1,0 +1,62 @@
+@use '../../../index.scss' as v;
+
+.menu {
+    position: absolute;
+    width: max-content;
+    top: 70px;
+    right: -16px;
+    @include v.flex-column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: v.$border-radius-m;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 3;
+    @media (max-width: 640px) {
+        width: fit-content;
+        border-radius: v.$border-radius-m 0 0 v.$border-radius-m;
+    }
+    @media (max-width: 840px) {
+        top: -40px;
+        right: 0;
+        width: 100vw;
+        padding-top: 120px;
+        border-radius: v.$border-radius-m 0 0 v.$border-radius-m;
+    }
+
+    .total {
+        display: flex;
+        justify-content: space-between;
+        span {
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+    .go-cart {
+        width: max-content;
+        max-width: 200px;
+        text-align: center;
+        padding: 10px 15px;
+        background-color: #e18418;
+        text-transform: uppercase;
+        border-radius: v.$border-radius-l;
+        transition: var(--transition);
+        &:hover,
+        &:focus-visible {
+            background-image: linear-gradient(#1c4d1c 0%, v.$effect-color 55%, #1c4d1c 95%);
+            box-shadow: v.$effect-color 0 0 2px 2px inset;
+            transform: scale(1.1);
+        }
+        &:active {
+            animation: pulse 0.3s;
+            box-shadow: 0 0 0 2em rgba(#fff, 0);
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 v.$effect-color;
+            }
+        }
+        @media (max-width: 480px) {
+            width: 90%;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@use '../../../index.scss' as v;
+
+.card-list {
+    @include v.flex-column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    gap: 50px;
+    @media (max-width: 420px) {
+        position: static;
+    }
+    .wrapper {
+        @include v.flex-column;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0 10px;
+        gap: 20px;
+        overflow-y: auto;
+    }
+}

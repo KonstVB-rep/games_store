@@ -1,0 +1,10 @@
+@use '../../index.scss';
+.game {
+    position: relative;
+    padding: 10px 0;
+    display: block;
+    flex-grow: 1;
+    @media (max-width: 940px) {
+        padding: 20px 0;
+    }
+}

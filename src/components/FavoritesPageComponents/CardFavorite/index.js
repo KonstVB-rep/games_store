@@ -1,1 +1,0 @@
-export {default as CardFavorite} from './CardFavorite';

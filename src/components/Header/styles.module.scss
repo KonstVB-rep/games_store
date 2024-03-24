@@ -1,0 +1,29 @@
+@use '../../index.scss' as v;
+
+.header {
+    padding: 15px 10px;
+    background-color: var(--bg-body);
+    box-shadow: black 0 0 4px 2px;
+    @media (max-width: 840px) {
+        padding: 0;
+        box-shadow: none;
+    }
+    .wrapper {
+        width: 100%;
+        margin: auto;
+        min-height: 60px;
+        @include v.flex-al-center;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 0 5px;
+        @media (max-width: 840px) {
+            position: absolute;
+            top: 0;
+            height: 90px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: black 0 0 4px 2px;
+        }
+    }
+}

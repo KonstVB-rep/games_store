@@ -1,0 +1,15 @@
+@use '../../index.scss' as v;
+.main {
+    @include v.flex-column;
+    flex-grow: 1;
+    @media (max-width: 420px) {
+        padding-top: 0;
+    }
+    .section {
+        margin-top: 30px;
+        position: relative;
+        @include v.flex-column;
+        flex-grow: 1;
+        gap: 20px;
+    }
+}

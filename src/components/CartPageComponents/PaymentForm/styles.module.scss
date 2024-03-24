@@ -1,0 +1,46 @@
+@use '../../../index.scss' as v;
+
+.wrapper {
+    .bg {
+        position: fixed;
+        inset: 0;
+        @include v.flex-al-jc-center;
+        background: rgba(86, 84, 84, 0.8);
+        font-weight: normal;
+        z-index: 5;
+    }
+
+    .content {
+        @include v.flex-al-jc-center;
+        flex-direction: column;
+        min-height: 500px;
+        font-weight: normal;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        padding: 30px;
+        max-width: 500px;
+        background-color: rgb(12, 39, 77);
+        border-radius: v.$border-radius-l;
+        z-index: 6;
+
+        .card {
+            @include v.flex-column;
+            gap: 10px;
+            width: 70%;
+            min-width: 200px;
+            max-width: 400px;
+            height: 200px;
+            background-color: indianred;
+            border-radius: v.$border-radius-l;
+            padding: 20px;
+
+            .card__info {
+                display: flex;
+                gap: 10px;
+            }
+        }
+    }
+}
