@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: '/store',
+                path: '/games-store',
                 element: <HomePage />,
                 errorElement: <ErrorPage id="error" />,
             },

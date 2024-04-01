@@ -21,10 +21,10 @@ const ErrorPage = ({ id }) => {
             <div className={cn.wrapper}>
                 <h1 className={cn.title}>{data[id].title}</h1>
                 {data[id].subTitle && <p className={cn.subTitle}>{data[id].subTitle}</p>}
-                <Link to="/games" className={cn.link}>
+                <p className={cn.text}>Reload the page or go to the main page</p>
+                <Link to="/games-store" className={cn.link}>
                     Go to the main page
                 </Link>
-                <p className={cn.text}>Or reload the page</p>
                 <div className={cn[`${data[id].classBg}`]} aria-hidden={true} />
             </div>
         </main>
