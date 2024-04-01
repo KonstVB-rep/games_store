@@ -1,11 +1,11 @@
 import React from 'react';
-import { Await, useLoaderData } from 'react-router-dom';
 
 import MotionContainer from 'components/MotionContainer';
 import { GameDetails } from 'components/SinglePageComponents';
+import { Await, useLoaderData } from 'react-router-dom';
 
-import { PATH } from '../../constants/api';
 import { getData } from '../../api/getData';
+import { PATH } from '../../constants/api';
 import { transformDataItem } from '../../utils/transformData';
 
 import cn from './styles.module.scss';
@@ -25,6 +25,7 @@ const SinglePage = () => {
 
 export const singlePageLoader = async ({ _, params }) => {
     const { name } = params;
+
     return {
         game: getData(PATH.SINGLE_GAME_URL(name), transformDataItem),
     };

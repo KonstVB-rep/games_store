@@ -1,6 +1,6 @@
 export const currenciesList = {
-  ruble: "₽",
-  dollar: "$",
-  euro: "€",
+    dollar: '$',
+    euro: '€',
+    ruble: '₽',
 };
-export const currency = currenciesList.ruble;
+export const currency = currenciesList.dollar;

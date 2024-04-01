@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NOT_IMAGE from 'assets/not-image.jpg';
+import NOT_IMAGE from 'assets/not-image.webp';
 
 import cn from './styles.module.scss';
 

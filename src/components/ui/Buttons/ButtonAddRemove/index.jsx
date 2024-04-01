@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addProduct, removeProduct, selectCurrentItem } from 'store/cart/cartSlice';
@@ -8,7 +9,6 @@ import cn from './styles.module.scss';
 const ButtonAddRemove = ({ game }) => {
     const currentGame = useSelector(selectCurrentItem(game.id));
     const dispatch = useDispatch();
-
     const addProductInCart = (e) => {
         e.stopPropagation();
         dispatch(addProduct(game));

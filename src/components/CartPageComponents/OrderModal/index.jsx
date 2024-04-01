@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
+
+import ModalLayout from 'components/ModalLayout';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import usePaymentContext from '../PaymentForm/hooks/usePaymentContext';
-import { randomNumber } from 'utils/randomNumber';
 import { clearCartList } from 'store/cart/cartSlice';
-import ModalLayout from 'components/ModalLayout';
+import { randomNumber } from 'utils/randomNumber';
+
+import usePaymentContext from '../PaymentForm/hooks/usePaymentContext';
+
 import DONE from 'assets/done.svg';
 
 import cn from './styles.module.scss';
@@ -22,7 +25,7 @@ const OrderModal = () => {
     const clearCart = () => {
         setShowConfirmModal(false);
         dispatch(clearCartList());
-        navigate('/games_store');
+        navigate('/games');
     };
 
     useEffect(() => {

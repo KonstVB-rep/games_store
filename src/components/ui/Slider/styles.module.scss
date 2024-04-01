@@ -1,23 +1,31 @@
-@use '../../../index.scss' as v;
+@use '../../../style/importer' as v;
 
 .slider {
     width: 100%;
-    padding: 20px 0 40px;
+    padding: 20px 0 40px 10px;
+
     .slider__title {
-        text-transform: uppercase;
         padding: 0 20px;
+        text-transform: uppercase;
+
+        &.slider__title_2rem {
+            font-size: clamp(1rem, 5vw, 2rem);
+        }
     }
+
     .slider__swiper {
-        margin-top: 30px;
         height: 360px;
+        margin-top: 30px;
 
         .swiper-button-prev,
         .swiper-button-next {
             @include v.navigation-slides-buttons;
         }
+
         .swiper-button-prev {
             left: 20px;
         }
+
         .swiper-button-next {
             right: 20px;
         }

@@ -1,9 +1,10 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
 
 import { ShopingCart } from 'components/CartMenuComponents';
 import NavBar from 'components/NavBar';
 import { Button } from 'components/ui/Buttons';
 import { MdArrowBackIosNew } from 'react-icons/md';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import cn from './styles.module.scss';
 
@@ -22,19 +23,13 @@ const Header = () => {
 
                         <ShopingCart />
                     </div>
-
-                    {pathname !== '/games_store' ? (
-                        <Button
-                            title="go back"
-                            className="back"
-                            onClick={goBack}
-                            ariaLabel={'return back'}
-                        >
-                            <MdArrowBackIosNew size={30} />
-                        </Button>
-                    ) : null}
                 </div>
             </header>
+            {pathname !== '/store' ? (
+                <Button title="go back" className="back" onClick={goBack} ariaLabel={'return back'}>
+                    <MdArrowBackIosNew size={30} />
+                </Button>
+            ) : null}
         </>
     );
 };

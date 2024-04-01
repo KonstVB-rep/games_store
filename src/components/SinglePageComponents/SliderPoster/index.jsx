@@ -1,15 +1,17 @@
+import React from 'react';
 import { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation, Thumbs, Keyboard } from 'swiper/modules';
-import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 
 import useNavigationSlider from 'hooks/useNavigationSlider';
+import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
+import 'swiper/css/keyboard';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
-import 'swiper/css/keyboard';
+
+import { FreeMode, Navigation, Thumbs, Keyboard } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import cn from './styles.module.scss';
 

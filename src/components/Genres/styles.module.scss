@@ -1,16 +1,17 @@
-@use '../../index.scss' as v;
+@use '../../style/importer' as v;
 
 .genres {
     display: flex;
     flex-wrap: wrap;
-    align-self: flex-start;
-    align-items: flex-end;
     gap: 5px;
+    align-items: flex-end;
+    align-self: flex-start;
+
     .genre {
-        padding: 5px 10px;
-        border-radius: v.$border-radius-m;
-        background-color: v.$bg-gold;
-        color: white;
         @include v.text-shadow;
+        padding: 5px 10px;
+        color: white;
+        background-color: v.$bg-gold;
+        border-radius: v.$border-radius-m;
     }
 }

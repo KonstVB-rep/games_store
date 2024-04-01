@@ -1,15 +1,17 @@
-@use '../../../index.scss' as v;
+@use '../../../style/importer' as v;
 
 .develops {
     font-size: 1.2rem;
+
     .develops__list {
         @include v.flex-column;
-        padding: 5px 0;
         gap: 5px;
         width: max-content;
+        padding: 5px 0;
+
         li {
-            font-style: italic;
             font-weight: bold;
+            font-style: italic;
         }
     }
 }

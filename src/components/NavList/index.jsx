@@ -1,8 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
 import { AnimatePresence, motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 import { pathNavLinks } from '../../utils/pathLinks';
+
 import cn from './styles.module.scss';
 
 const NavList = ({ isShow, setIsShow }) => {

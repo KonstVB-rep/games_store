@@ -1,4 +1,9 @@
-.favorites {
-    padding: 20px;
-    text-align: center;
+@use '../../style/importer' as v;
+
+.main {
+
+    .favorites {
+        padding: 20px;
+        text-align: center;
+    }
 }

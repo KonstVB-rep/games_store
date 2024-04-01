@@ -1,26 +1,29 @@
-@use '../../../index.scss' as v;
+@use '../../../style/importer' as v;
 
 .skeleton-slider {
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 20px 0;
+
     .skeleton-slider__title {
         display: inline-block;
-        height: 32px;
         width: 200px;
+        height: 32px;
         background-color: dimgrey;
         border-radius: v.$border-radius-m;
         animation: loading 1s linear infinite;
     }
+
     .skeleton-slider__list {
         @include v.flex-al-center;
         gap: 20px;
+
         .skeleton-slider__item {
+            display: inline-block;
             flex-shrink: 0;
             width: 268px;
             height: 358px;
-            display: inline-block;
             background-color: dimgrey;
             border-radius: v.$border-radius-m;
             animation: loading 1s linear infinite;
@@ -28,9 +31,11 @@
     }
 
     @keyframes loading {
+
         from {
             opacity: 1;
         }
+
         to {
             opacity: 0.7;
         }

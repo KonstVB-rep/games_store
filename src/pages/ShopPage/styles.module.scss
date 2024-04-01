@@ -1,0 +1,35 @@
+@use '../../style/importer' as v;
+
+.main {
+    position: relative;
+
+    .section {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        text-align: center;
+
+        @media (width <= 400px) {
+            padding: 20px 0;
+        }
+    }
+
+    .load-more {
+        margin: 40px auto 0;
+        padding: 8px 15px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: black;
+        text-transform: uppercase;
+        background-color: #fbbb43;
+        border-radius: v.$border-radius-s;
+        outline: 1px solid var(--color-main);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--color-secondary);
+            background-color: var(--color-main);
+        }
+    }
+}

@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { getData } from 'api/getData';
+import ShortCard from 'components/ui/ShortCard';
 import { useAsyncValue } from 'react-router-dom';
 
+import 'swiper/css';
+import { SwiperSlide } from 'swiper/react';
+import { transformData } from 'utils/transformData';
+
+import { PATH } from 'constants/api';
+
+import Slider from '../../ui/Slider';
 import FavoriteIcon from '../../ui/icons/FavoriteIcon';
 import Content from '../Content';
 import PlatformsLIst from '../PlatformsLIst';
 import Poster from '../Poster';
-import { getData } from 'api/getData';
-import { PATH } from 'constants/api';
-import { transformData } from 'utils/transformData';
-import { SwiperSlide } from 'swiper/react';
-import ShortCard from 'components/ui/ShortCard';
-import Slider from '../../ui/Slider';
+
 import SliderPoster from '../SliderPoster';
 
-import 'swiper/css';
 import cn from './styles.module.scss';
 
 const getGameSeries = (id) => {
@@ -29,14 +33,16 @@ const GameDetails = () => {
 
     const [gameSeries, setGameSeries] = useState([]);
     const [screenShots, setScreenShots] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         getGameSeries(game.id).then((res) => setGameSeries(res));
         getScreenshots(game.id).then((res) => {
             res.unshift({ image: game.img });
             setScreenShots(res);
         });
-
+        setIsLoading(false);
         return () => {
             setGameSeries([]);
             setScreenShots([]);
@@ -67,7 +73,8 @@ const GameDetails = () => {
             <Slider
                 data={gameSeries}
                 title="Game Series"
-                renderdata={(data) =>
+                isLoading={isLoading}
+                renderData={(data) =>
                     data?.map((game) => (
                         <SwiperSlide
                             key={game.id}

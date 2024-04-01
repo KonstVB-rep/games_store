@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { ButtonAddToCart } from 'components/ui/Buttons';
+
 import { currency } from '../../constants/currency';
 
 import cn from './styles.module.scss';
-import { ButtonAddToCart } from 'components/ui/Buttons';
 
 const PriceGameBox = ({ game }) => {
     return (

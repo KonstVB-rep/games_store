@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export const useKeydown = (key, callback, state) => {
+export const useKeyDown = (key, callback, state) => {
     const callbackRef = useRef(callback);
 
     useEffect(() => {

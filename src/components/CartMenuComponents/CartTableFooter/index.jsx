@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 
 import { selectTotalPrice } from 'store/cart/cartSlice';
+
 import { currency } from 'constants/currency';
 
 import cn from './styles.module.scss';

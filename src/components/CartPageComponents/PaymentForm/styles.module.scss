@@ -1,30 +1,31 @@
-@use '../../../index.scss' as v;
+@use '../../../style/importer' as v;
 
 .wrapper {
+
     .bg {
-        position: fixed;
-        inset: 0;
         @include v.flex-al-jc-center;
-        background: rgba(86, 84, 84, 0.8);
-        font-weight: normal;
+        position: fixed;
         z-index: 5;
+        inset: 0;
+        font-weight: normal;
+        background: rgb(86 84 84 / 80%);
     }
 
     .content {
         @include v.flex-al-jc-center;
-        flex-direction: column;
-        min-height: 500px;
-        font-weight: normal;
         position: absolute;
+        z-index: 6;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        flex-direction: column;
         width: 90%;
-        padding: 30px;
         max-width: 500px;
-        background-color: rgb(12, 39, 77);
+        min-height: 500px;
+        padding: 30px;
+        font-weight: normal;
+        background-color: rgb(12 39 77);
         border-radius: v.$border-radius-l;
-        z-index: 6;
 
         .card {
             @include v.flex-column;
@@ -33,9 +34,9 @@
             min-width: 200px;
             max-width: 400px;
             height: 200px;
+            padding: 20px;
             background-color: indianred;
             border-radius: v.$border-radius-l;
-            padding: 20px;
 
             .card__info {
                 display: flex;

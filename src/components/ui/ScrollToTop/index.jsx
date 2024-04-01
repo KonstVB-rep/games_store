@@ -1,11 +1,11 @@
-import {useEffect} from "react";
+import React from 'react';
+import { useEffect } from 'react';
 
 const ScrollToTop = (props) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
-  return <>{props.children}</>
+    return <>{props.children}</>;
 };
 export default ScrollToTop;

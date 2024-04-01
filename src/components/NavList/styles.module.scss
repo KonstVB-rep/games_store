@@ -1,79 +1,66 @@
-@use '../../index.scss' as v;
+@use '../../style/importer' as v;
 
-.before {
+%before {
+    @include v.background-btn;
     content: '';
     position: absolute;
-    left: 0;
     top: 0;
     bottom: 0;
-    @include v.background-btn;
+    left: 0;
     transition: width 0.3s ease-in-out;
 }
 
 .nav {
     @include v.flex-al-center;
     gap: 30px;
+
     &.desktop {
-        width: 100%;
         justify-content: space-between;
-        height: 100%;
-        @media (max-width: 840px) {
-            display: none;
-        }
-    }
-    &.nav_mobile {
-        position: absolute;
-        top: 0;
-        left: 0;
-        flex-direction: column;
-        align-items: center;
-        padding: 80px 10px 45px;
         width: 100%;
-        z-index: 5;
-        background: var(--bg-body);
-        border: 2px solid transparent;
-        & .link {
-            min-width: 200px;
-            text-align: center;
-        }
-        @media (min-width: 841px) {
+        height: 100%;
+
+        @media (width <=840px) {
             display: none;
         }
     }
-    @media (max-width: 840px) {
-    }
+
     .link {
+        @include v.flex-al-jc-center;
         position: relative;
-        font-size: 1.2rem;
-        font-weight: bold;
-        padding: 4px 12px;
+        overflow: hidden;
         width: max-content;
         height: 35px;
-        text-transform: uppercase;
-        text-align: center;
-        overflow: hidden;
-
+        padding: 4px 12px;
+        font-size: 1.2rem;
+        font-weight: bold;
         color: var(--color-main);
+        text-align: center;
+        text-transform: uppercase;
         border-radius: v.$border-radius-l;
         transition: var(--transition);
-        & span {
-            position: relative;
-            z-index: 1;
-        }
+
         &::before {
-            @extend .before;
+            @extend %before;
             width: 0;
             transition: width 0.3s ease-in-out;
         }
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
+
         &:hover span,
         &:focus-visible span {
             color: white;
         }
+
         &:hover::before,
         &:focus-visible::before {
             width: 100%;
             color: white;
         }
+
         &:active {
             transform: scale(0.9);
         }
@@ -81,9 +68,33 @@
         &.active_link span {
             color: white;
         }
+
         &.active_link::before {
-            @extend .before;
+            @extend %before;
             width: 100%;
         }
     }
+
+    &.nav_mobile {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 80px 10px 45px;
+        background: var(--bg-body);
+        border: 2px solid transparent;
+
+        .link {
+            min-width: 200px;
+            text-align: center;
+        }
+
+        @media (width >=841px) {
+            display: none;
+        }
+    }
+
 }

@@ -1,18 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { getData } from '../../api/getData';
-import { getName } from '../../utils/transformData';
+import { getNameAndImg } from '../../utils/transformData';
 
 const initialState = {
+    error: null,
     gamesList: [],
     status: 'idle',
-    error: null,
 };
 
 export const loadSearchGames = createAsyncThunk(
     'search/loadSearchGames',
     async function (url, { rejectWithValue }) {
-        return await getData(url, getName, rejectWithValue);
+        return await getData(url, getNameAndImg, rejectWithValue);
     }
 );
 

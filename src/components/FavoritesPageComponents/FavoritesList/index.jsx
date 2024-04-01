@@ -1,9 +1,10 @@
 import React from 'react';
+
+import TitleEmptyPage from 'components/TitleEmptyPage';
+import ShortCard from 'components/ui/ShortCard';
 import { useSelector } from 'react-redux';
 
 import { selectFavorites } from 'store/games/gamesSlice';
-import ShortCard from 'components/ui/ShortCard';
-import TitleEmptyPage from 'components/TitleEmptyPage';
 
 import cn from './styles.module.scss';
 

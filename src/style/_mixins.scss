@@ -2,11 +2,13 @@
     display: flex;
     align-items: center;
 }
+
 @mixin flex-al-jc-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 @mixin flex-column {
     display: flex;
     flex-direction: column;
@@ -14,8 +16,8 @@
 
 @mixin flex-al-center-column {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }
 
 @mixin text-shadow {
@@ -25,41 +27,40 @@
 @mixin background-btn {
     background: linear-gradient(
         275deg,
-        rgb(61, 85, 161) 6%,
-        rgb(29, 105, 190) 40%,
-        rgb(24, 98, 169) 71%,
-        rgb(67, 99, 222) 97%
+        rgb(61 85 161) 6%,
+        rgb(29 105 190) 40%,
+        rgb(24 98 169) 71%,
+        rgb(67 99 222) 97%
     );
 }
 
 @mixin navigation-slides-buttons {
+    @include background-btn;
+    cursor: pointer;
     position: absolute;
+    z-index: 10;
+    top: calc(50% + 20px);
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 50%;
-    transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    border-radius: 10px;
-    border-color: transparent;
-    @include background-btn;
     margin-top: -20px;
-    z-index: 10;
-    cursor: pointer;
     filter: drop-shadow(2px 4px 6px black);
+    border-color: transparent;
+    border-radius: 10px;
     transition: var(--transition);
+
     &:hover,
     &:focus-visible {
         transform: scale(1.1) translateY(-50%);
         filter: drop-shadow(2px 4px 6px black) sepia(1);
     }
+
     &:active {
         transform: scale(0.9) translateY(-50%);
         filter: drop-shadow(2px 4px 6px black);
-    }
-    @media (max-width: 1023px) {
-        display: none;
     }
 
     .swiper-button-icon {
@@ -69,4 +70,16 @@
     &.swiper-button-none {
         display: none;
     }
+
+    @media (width <= 1023px) {
+        display: none;
+    }
+}
+
+@mixin container-bg {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    width: 100%;
+    height: 100%;
 }

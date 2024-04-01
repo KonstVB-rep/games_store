@@ -1,10 +1,12 @@
-import React, { memo } from 'react';
-import { Link } from 'react-router-dom';
+import { memo } from 'react';
+
+import { ButtonAddRemove } from 'components/ui/Buttons';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import { selectCurrentItem } from 'store/cart/cartSlice';
 
 import { currency } from 'constants/currency';
-import { selectCurrentItem } from 'store/cart/cartSlice';
-import { ButtonAddRemove } from 'components/ui/Buttons';
 
 import cn from './styles.module.scss';
 

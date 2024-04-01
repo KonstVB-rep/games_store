@@ -1,6 +1,5 @@
+import SEARCH_ICON from 'assets/search.webp';
 import useSearchGame from 'pages/SearchPage/hooks/useSearchGame';
-
-import SEARCH_ICON from 'assets/search.png';
 
 import cn from './styles.module.scss';
 

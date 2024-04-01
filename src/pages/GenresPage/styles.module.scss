@@ -1,14 +1,11 @@
-@use '../../index.scss' as v;
+@use '../../style/importer' as v;
 
 .section {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
     flex-grow: 1;
-    @media (max-width: 940px) {
-        padding-bottom: 20px;
-    }
+    width: 100%;
+    height: 100%;
 
     .swiper {
         position: relative;
@@ -16,29 +13,30 @@
         height: min(67vw, calc(100vh - 120px));
 
         img {
-            // display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .swiper-slide {
             width: 100%;
             height: 100%;
+
             .swiper-bg {
                 position: absolute;
+                inset: 0;
                 width: 100%;
                 height: 100%;
-                inset: 0;
 
                 .swiper-bg__title {
-                    width: 100%;
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    width: 100%;
                     font-size: clamp(2rem, 10vw, 10rem);
-                    text-align: center;
                     color: white;
+                    text-align: center;
                     text-shadow: 3px 3px black;
                 }
             }
@@ -46,12 +44,12 @@
 
         .swiper-scrollbar {
             position: absolute;
-            background-color: rgba(240, 235, 235, 0.4);
-            width: 100%;
+            z-index: 1;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            top: 0;
-            z-index: 1;
+            width: 100%;
+            background-color: rgb(240 235 235 / 40%);
 
             .swiper-scrollbar-drag {
                 height: 4px;
@@ -62,8 +60,12 @@
     }
 
     .description {
+        flex-grow: 1;
         padding: 20px 0;
         font-size: 1.2rem;
-        flex-grow: 1;
+    }
+
+    @media (width <= 940px) {
+        padding-bottom: 20px;
     }
 }

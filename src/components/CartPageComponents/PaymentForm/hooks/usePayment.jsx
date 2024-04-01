@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { normalizeCardNumber } from 'utils/normalizeCardNumber';
+
 import useVisible from '../../../../hooks/useVisible';
 
 const usePayment = () => {
@@ -11,7 +12,6 @@ const usePayment = () => {
     const [ccv, setValueCcv] = useState('');
     const [turnClass, setTurnCLass] = useState('');
     const [cardValidityPeriod, setCardValidityPeriod] = useState({ month: '', year: '' });
-
     const handleFocus = () => {
         setTurnCLass('turned');
     };

@@ -1,8 +1,7 @@
 import ArrowTop from './ArrowTop';
-import ArrowThemeBox from './ArrowThemeBox';
-import ButtonAddToCart from './ButtonAddToCart';
-import ButtonAddRemove from './ButtonAddRemove';
-import Button from './Button';
 import BurgerButton from './BurgerButton';
+import Button from './Button';
+import ButtonAddRemove from './ButtonAddRemove';
+import ButtonAddToCart from './ButtonAddToCart';
 
-export { ArrowTop, ArrowThemeBox, ButtonAddToCart, ButtonAddRemove, Button, BurgerButton };
+export { ArrowTop, ButtonAddToCart, ButtonAddRemove, Button, BurgerButton };

@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { animateScroll as scroll } from 'react-scroll';
+import { useEffect, useState } from 'react';
 
 import { MdArrowBackIosNew } from 'react-icons/md';
+import { animateScroll as scroll } from 'react-scroll';
 
 import cn from './styles.module.scss';
 
 const ArrowTop = () => {
     const [isVisible, setIsVisible] = useState(false);
-
     const handleVisibleArrow = () => {
         const position = document.documentElement.scrollTop;
         if (position > 1000) {

@@ -1,7 +1,8 @@
+import React from 'react';
 import { useLayoutEffect, useState } from 'react';
 
-import SUN_ICON from '../../../assets/sun_icon.svg';
 import MOON_ICON from '../../../assets/moon_icon.svg';
+import SUN_ICON from '../../../assets/sun_icon.svg';
 
 import cn from './styles.module.scss';
 

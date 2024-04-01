@@ -1,5 +1,6 @@
-import React, { createContext } from 'react';
-import usePayment from '../../components/CartPageComponents/PaymentForm/hooks/usePayment';
+import { createContext } from 'react';
+
+import usePayment from 'components/CartPageComponents/PaymentForm/hooks/usePayment';
 
 export const PaymentContext = createContext(null);
 

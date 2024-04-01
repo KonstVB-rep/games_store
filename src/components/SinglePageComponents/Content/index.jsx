@@ -1,8 +1,9 @@
 import React from 'react';
 
-import PriceGameBox from '../../PriceGameBox';
 import Genres from 'components/Genres';
 import RatingInfo from 'components/ui/RatingInfo';
+
+import PriceGameBox from '../../PriceGameBox';
 import DevelopersList from '../DevelopersList';
 
 import cn from './styles.module.scss';

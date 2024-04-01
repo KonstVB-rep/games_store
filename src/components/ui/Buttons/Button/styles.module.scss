@@ -1,96 +1,113 @@
-@use '../../../../index.scss' as v;
+@use '../../../../style/importer' as v;
 
 .btn {
     position: relative;
-    padding: 10px 25px;
-    max-width: 200px;
+    flex-shrink: 0;
     width: max-content;
+    max-width: 200px;
     min-height: 40px;
+    padding: 10px 25px;
+    text-transform: uppercase;
     border: none;
     border-radius: v.$border-radius-l;
-    text-transform: uppercase;
     transition: var(--transition);
-    flex-shrink: 0;
+
     &.primary {
         @include v.background-btn;
         color: white;
+
         &:hover,
         &:focus-visible {
+            transform: scale(1.1);
             background-image: linear-gradient(#1c4d1c 0%, v.$effect-color 55%, #1c4d1c 95%);
             box-shadow: v.$effect-color 0 0 2px 2px inset;
-            transform: scale(1.1);
         }
+
         &:active {
-            animation: pulse 0.3s;
             box-shadow: 0 0 0 2em rgba(#fff, 0);
+            animation: pulse 0.3s;
         }
     }
-    @keyframes pulse {
-        0% {
-            box-shadow: 0 0 0 0 v.$effect-color;
-        }
-    }
-    @media (max-width: 480px) {
-        width: 90%;
-    }
-    &.silver,
-    &.back {
-        @include v.flex-al-jc-center;
-        max-width: max-content;
-        margin-top: 20px;
-        background: gray;
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        transition: var(--transition);
-        color: white;
-        overflow: hidden;
-        & svg {
-            fill: white;
-        }
-        &:hover,
-        &:focus-visible {
-            @include v.background-btn;
-        }
-        &:active {
-            transform: scale(0.9);
-        }
-    }
+
 
     &.silver {
         padding: 10px 30px;
         border-radius: 25px;
     }
+
     &.back {
-        padding: 10px;
-        border-radius: v.$border-radius-s;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        margin-left: 15px;
         position: fixed;
+        z-index: 4;
         top: 94px;
         left: 0;
         margin: 0;
-        z-index: 4;
+        margin-left: 15px;
+        padding: 10px;
+        border-radius: v.$border-radius-m;
     }
-    &.order-button {
-        background: linear-gradient(to right, #5fa3a6, #83a4d4);
-        box-shadow: var(--bg-body-dark) 0px 0px 4px 2px;
+
+    &.silver,
+    &.back {
+        @include v.flex-al-jc-center;
+        overflow: hidden;
+        max-width: max-content;
+        margin-top: 20px;
+        font-size: 1.1rem;
+        color: white;
+        text-transform: uppercase;
+        background: gray;
+        transition: var(--transition);
+
+        svg {
+            fill: white;
+        }
+
         &:hover,
         &:focus-visible {
-            background: linear-gradient(to right, v.$primary-color, #0d55bb);
-            color: white;
+            @include v.background-btn;
         }
+
         &:active {
-            animation: pulse 0.3s;
-            box-shadow: 0 0 0 2em rgba(#fff, 0);
+            transform: scale(0.9);
         }
+    }
+
+    &.order-button {
+        background: linear-gradient(to right, #5fa3a6, #83a4d4);
+        box-shadow: var(--bg-body-dark) 0 0 4px 2px;
+
+        &:hover,
+        &:focus-visible {
+            color: white;
+            background: linear-gradient(to right, v.$primary-color, #0d55bb);
+        }
+
+        &:active {
+            box-shadow: 0 0 0 2em rgba(#fff, 0);
+            animation: pulse 0.3s;
+        }
+
         @keyframes pulse {
+
             0% {
                 box-shadow: 0 0 0 0 v.$primary-color;
             }
         }
-        @media (max-width: 480px) {
+
+        @media (width <=480px) {
             width: 90%;
         }
     }
+
+    @media (width <=480px) {
+        width: 90%;
+    }
+
+    @keyframes pulse {
+
+        0% {
+            box-shadow: 0 0 0 0 v.$effect-color;
+        }
+    }
+
 }

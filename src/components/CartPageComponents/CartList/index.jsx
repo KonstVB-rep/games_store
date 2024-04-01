@@ -1,10 +1,14 @@
-import React, { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+
+import { useCallback } from 'react';
 
 import TitleEmptyPage from 'components/TitleEmptyPage';
-import CartItem from '../CartItem';
-import { clearCartList } from 'store/cart/cartSlice';
 import { Button } from 'components/ui/Buttons';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { clearCartList } from 'store/cart/cartSlice';
+
+import CartItem from '../CartItem';
 
 import cn from './styles.module.scss';
 
@@ -13,7 +17,7 @@ const CartList = () => {
 
     const clearCart = useCallback(() => {
         dispatch(clearCartList());
-    }, []);
+    }, [dispatch]);
 
     const { cartList } = useSelector((state) => state.cart);
 

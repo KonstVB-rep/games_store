@@ -3,14 +3,18 @@ import MotionContainer from 'components/MotionContainer';
 
 import cn from './styles.module.scss';
 
-export default function Favorites() {
+const Favorites = () => {
     return (
-        <div className="container">
-            <MotionContainer>
-                <section className={cn.favorites}>
-                    <FavoritesList />
-                </section>
-            </MotionContainer>
-        </div>
+        <main className={cn.main}>
+            <div className="container">
+                <MotionContainer>
+                    <section className={cn.favorites}>
+                        <FavoritesList />
+                    </section>
+                </MotionContainer>
+            </div>
+        </main>
     );
-}
+};
+
+export default Favorites;

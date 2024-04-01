@@ -1,4 +1,5 @@
 import { replaceStarsOnNumbersCard } from 'utils/replaceStarsOnNumbersCard';
+
 import usePaymentContext from '../hooks/usePaymentContext';
 
 import cn from './styles.module.scss';

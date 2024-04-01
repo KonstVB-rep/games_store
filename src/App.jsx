@@ -1,12 +1,13 @@
 import React, { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
 
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import PortalCreator from 'components/PortalCreator';
+import { ArrowTop } from 'components/ui/Buttons';
 import ScrollToTop from 'components/ui/ScrollToTop';
-import { ArrowThemeBox } from 'components/ui/Buttons';
 import Spinner from 'components/ui/Spinner';
+import ThemeSwitcher from 'components/ui/ThemeSwitcher';
+import { Outlet } from 'react-router-dom';
 
 function App() {
     return (
@@ -19,7 +20,10 @@ function App() {
                     </Suspense>
                 </ScrollToTop>
                 <PortalCreator>
-                    <ArrowThemeBox />
+                    <ArrowTop />
+                </PortalCreator>
+                <PortalCreator>
+                    <ThemeSwitcher />
                 </PortalCreator>
                 <Footer />
             </div>

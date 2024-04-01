@@ -1,9 +1,10 @@
 import React from 'react';
-import usePaymentContext from './hooks/usePaymentContext';
 
 import ModalLayout from '../../ModalLayout';
+
 import Card from './Card';
 import Form from './Form';
+import usePaymentContext from './hooks/usePaymentContext';
 
 import cn from './styles.module.scss';
 

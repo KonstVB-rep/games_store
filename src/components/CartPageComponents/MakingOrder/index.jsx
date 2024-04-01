@@ -1,10 +1,13 @@
 import React from 'react';
+
+import { Button } from 'components/ui/Buttons';
 import { useSelector } from 'react-redux';
-import usePaymentContext from '../PaymentForm/hooks/usePaymentContext';
 
 import { selectTotalPrice } from 'store/cart/cartSlice';
+
 import { currency } from 'constants/currency';
-import { Button } from 'components/ui/Buttons';
+
+import usePaymentContext from '../PaymentForm/hooks/usePaymentContext';
 
 import cn from './styles.module.scss';
 

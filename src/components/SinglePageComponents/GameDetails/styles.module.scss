@@ -1,31 +1,35 @@
-@use '../../../index.scss' as v;
+@use '../../../style/importer' as v;
 
 .section {
     position: relative;
-    width: 100%;
+    overflow: hidden;
     display: grid;
-    padding: 40px 0px 40px;
-    box-shadow: black 0 0 4px 2px;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 20px;
-    overflow: hidden;
-    border-radius: v.$border-radius-m;
+    width: 100%;
+    padding: 40px 0;
     background: linear-gradient(45deg, darkgray, transparent);
-    @media (max-width: 940px) {
-        padding: 40px 0 20px;
-    }
+    border-radius: v.$border-radius-m;
+    box-shadow: black 0 0 4px 2px;
+
     .title {
-        font-size: 3rem;
         grid-column: 1/-1;
         padding: 10px 20px;
+        font-size: 3rem;
         text-align: center;
-        @media (max-width: 640px) {
-            font-size: 2rem;
+
+        @media (width <= 640px) {
             padding: 20px 20px 0;
+            font-size: 2rem;
         }
-        @media (max-width: 480px) {
+
+        @media (width <= 480px) {
             text-align: center;
         }
+    }
+
+    @media (width <= 940px) {
+        padding: 40px 0 20px;
     }
 }

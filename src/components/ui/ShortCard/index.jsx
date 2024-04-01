@@ -1,15 +1,16 @@
 import React from 'react';
+
+import NO_IMAGE from 'assets/not-image.webp';
 import { Link } from 'react-router-dom';
 
 import { ButtonAddToCart } from '../Buttons';
 
 import FavoriteIcon from '../icons/FavoriteIcon';
-import NO_IMAGE from 'assets/not-image.jpg';
 
 import cn from './styles.module.scss';
 
 const ShortCard = ({ game, isCanBuy = true }) => {
-    game.image = game.img ?? game.image__background;
+    game.img = game.img ?? game.image__background;
     const altImage = game.img ? 'Poster' : 'Not found';
 
     return (
@@ -21,7 +22,7 @@ const ShortCard = ({ game, isCanBuy = true }) => {
             ></Link>
             <div className={cn.card__img}>
                 <img
-                    src={game.image || NO_IMAGE}
+                    src={game.img || NO_IMAGE}
                     alt={altImage}
                     className={cn.poster}
                     loading="lazy"

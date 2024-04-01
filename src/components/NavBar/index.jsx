@@ -1,10 +1,11 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
-import useVisible from '../../hooks/useVisible';
 import NavList from 'components/NavList';
 import { BurgerButton } from 'components/ui/Buttons';
-import { useKeydown } from 'hooks/useKeyDown';
+import { useKeyDown } from 'hooks/useKeyDown';
 import { useOutsideClick } from 'hooks/useOutsideClick';
+
+import useVisible from '../../hooks/useVisible';
 
 const NavBar = () => {
     const [isShow, setIsShow] = useVisible();
@@ -12,7 +13,7 @@ const NavBar = () => {
     const ref = useRef(null);
 
     useOutsideClick(ref, () => setIsShow(false), isShow);
-    useKeydown('Escape', () => setIsShow(false), isShow);
+    useKeyDown('Escape', () => setIsShow(false), isShow);
 
     return (
         <div ref={ref}>

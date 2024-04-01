@@ -1,22 +1,33 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { transformData } from '../../utils/transformData';
+import { transformGenres } from 'utils/transformGenres';
+
 import { getData } from '../../api/getData';
+import { transformData } from '../../utils/transformData';
 
 const initialState = {
-    gamesList: [],
-    status: 'loading',
-    error: null,
-    currentPage: 1,
     countPage: 0,
+    currentGenre: 'all',
+    currentPage: 1,
+    error: null,
     favorites: [],
+    gamesList: [],
+    genres: [],
     isEnd: false,
+    status: 'loading',
 };
 
 export const loadGames = createAsyncThunk(
     'games/loadGames',
     async function (url, { rejectWithValue }) {
         return await getData(url, transformData, rejectWithValue);
+    }
+);
+
+export const loadGenres = createAsyncThunk(
+    'games/loadGenres',
+    async function (url, { rejectWithValue }) {
+        return await getData(url, transformGenres, rejectWithValue);
     }
 );
 
@@ -29,6 +40,9 @@ export const gamesSlice = createSlice({
         },
         rememberCountPage: (state) => {
             state.countPage = state.currentPage;
+        },
+        rememberCurrentGenre: (state, action) => {
+            state.currentGenre = action.payload;
         },
         addFavorite: (state, action) => {
             const findFavorite = state.favorites.some((item) => item?.id === action.payload.id);
@@ -50,13 +64,32 @@ export const gamesSlice = createSlice({
         });
         builder.addCase(loadGames.fulfilled, (state, action) => {
             state.status = 'fulfilled';
+
             if (!action.payload.length) {
                 state.isEnd = true;
                 return;
+            } else {
+                state.isEnd = false;
             }
-            if (action.payload.length && state.currentPage > state.countPage) {
+            if (state.currentPage === 1) {
+                state.gamesList = action.payload;
+                return;
+            }
+            if (state.currentPage !== state.countPage) {
                 state.gamesList.push(...action.payload);
             }
+        });
+        builder.addCase(loadGenres.pending, (state) => {
+            state.status = 'loading';
+            state.error = null;
+        });
+        builder.addCase(loadGenres.rejected, (state, action) => {
+            state.status = 'rejected';
+            state.error = action.payload || action.meta.error;
+        });
+        builder.addCase(loadGenres.fulfilled, (state, action) => {
+            state.status = 'fulfilled';
+            state.genres = action.payload;
         });
     },
 });
@@ -66,7 +99,8 @@ export const selectFavorites = (state) => state.games.favorites;
 export const selectSingleFavorite = (id) => (state) =>
     state.games.favorites.find((item) => item?.id === id);
 export const selectGame = (id) => (state) => state.games.gamesList.find((item) => item.id === id);
-export const { rememberCurrentPage, rememberCountPage, addFavorite } = gamesSlice.actions;
+export const { rememberCurrentPage, rememberCountPage, rememberCurrentGenre, addFavorite } =
+    gamesSlice.actions;
 
 const gamesReducer = gamesSlice.reducer;
 export default gamesReducer;

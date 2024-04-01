@@ -1,8 +1,11 @@
 import React from 'react';
+
 import { useSelector } from 'react-redux';
 
-import SHOPPING_CART from 'assets/shopping-cart.svg';
 import { currency } from 'constants/currency';
+
+import SHOPPING_CART from 'assets/shopping-cart.svg';
+
 import cn from './styles.module.scss';
 
 const TotalPrice = () => {

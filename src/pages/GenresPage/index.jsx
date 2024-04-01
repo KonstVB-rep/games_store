@@ -2,10 +2,6 @@ import { Content, Slider } from 'components/GenresPageComponents';
 
 import useGenres from './hooks/useGenres';
 
-import 'swiper/css';
-import 'swiper/css/scrollbar';
-import 'swiper/css/parallax';
-
 import cn from './styles.module.scss';
 
 const GenresPage = () => {

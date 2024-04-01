@@ -7,8 +7,9 @@
             "@src/*": ["src/*"],
             "@components/*": ["src/components/*"],
             "@pages/*": ["src/pages/*"],
-            "@assets/*": ["src/assets/*"]
+            "@assets/*": ["src/assets/*"],
+            "@contexts/*": ["src/contexts/*"]
         }
     },
-    "include": ["src", "src/router"]
+    "include": ["src", "src/router", "src/components", "src/pages"]
 }

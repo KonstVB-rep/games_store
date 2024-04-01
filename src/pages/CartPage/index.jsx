@@ -1,5 +1,5 @@
-import MotionContainer from 'components/MotionContainer';
 import { CartList, PaymentGroup } from 'components/CartPageComponents';
+import MotionContainer from 'components/MotionContainer';
 import PaymentContextProvider from 'contexts/PaymentContextProvider';
 
 import cn from './styles.module.scss';

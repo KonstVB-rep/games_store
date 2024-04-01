@@ -1,6 +1,6 @@
 # Games Store React App
 
-This project [Demo](https://konst1984.github.io/games_store
+This project [Demo](https://konst1984.github.io/games
 /).
 
 ## Available Scripts
@@ -11,10 +11,8 @@ Used by the library:
 
 -   react-router-dom
 -   react-hook-form
--   react-intersection-observer
 -   @headlessui/react
 -   framer-motion
 -   @reduxjs/toolkit
 -   sass
--   react-intersection-observer
 -   react-scroll

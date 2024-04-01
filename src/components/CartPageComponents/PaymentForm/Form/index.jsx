@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { useForm } from 'react-hook-form';
 
 import { dateNow, renderOptionMonths, renderOptionYears } from 'utils/formattingDate';
+
 import usePaymentContext from '../hooks/usePaymentContext';
 
 import cn from './styles.module.scss';

@@ -1,32 +1,35 @@
-@use '../../index.scss' as v;
+@use '../../style/importer' as v;
 
 .purchase {
     @include v.flex-al-center;
+    gap: 15px;
+    align-self: end;
     justify-content: space-between;
+    width: fit-content;
     min-width: 248px;
     max-height: 45px;
-    align-self: end;
     padding: 2px 2px 2px 15px;
-    gap: 15px;
-    width: fit-content;
-    background-color: var(--color-secondary);
-    color: var(--color-secondary);
-    border-radius: v.$border-radius-l;
     font-weight: bold;
+    color: var(--color-secondary);
+    background-color: var(--color-secondary);
+    border-radius: v.$border-radius-l;
     box-shadow: black 0 0 2px 1px inset;
-    @media (max-width: 480px) {
-        flex-direction: column;
-        max-height: none;
-        height: auto;
-        gap: 5px;
-        padding: 5px;
-        width: 100%;
-        border-radius: 50px;
-    }
-    & *:not(button) {
+
+    *:not(button) {
         color: var(--color-main);
     }
+
     .price {
         font-size: 1.5rem;
+    }
+
+    @media (width <=480px) {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        padding: 5px;
+        border-radius: 50px;
     }
 }
