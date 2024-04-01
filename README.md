@@ -1,6 +1,6 @@
 # Games Store React App
 
-This project [Demo](https://konst1984.github.io/games/).
+This project [Demo](https://konst1984.github.io/games-store/).
 
 ## Available Scripts
 
