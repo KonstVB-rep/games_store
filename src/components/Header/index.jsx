@@ -25,7 +25,7 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            {pathname !== '/games-store' ? (
+            {pathname !== '/games_store' ? (
                 <Button title="go back" className="back" onClick={goBack} ariaLabel={'return back'}>
                     <MdArrowBackIosNew size={30} />
                 </Button>
