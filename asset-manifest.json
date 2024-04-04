@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/games_store/static/css/main.ef5b476c.css",
+    "main.css": "/games_store/static/css/main.40ab6b50.css",
     "main.js": "/games_store/static/js/main.89610dc5.js",
     "static/css/282.868b89fa.chunk.css": "/games_store/static/css/282.868b89fa.chunk.css",
     "static/js/282.6de46ab5.chunk.js": "/games_store/static/js/282.6de46ab5.chunk.js",
@@ -34,7 +34,7 @@
     "static/media/sun_icon.svg": "/games_store/static/media/sun_icon.a5fa6ba5e277f06e9a05003eb89f6520.svg",
     "index.html": "/games_store/index.html",
     "static/media/moon_icon.svg": "/games_store/static/media/moon_icon.e996738e3cd29a21a7c3c1c082019d34.svg",
-    "main.ef5b476c.css.map": "/games_store/static/css/main.ef5b476c.css.map",
+    "main.40ab6b50.css.map": "/games_store/static/css/main.40ab6b50.css.map",
     "main.89610dc5.js.map": "/games_store/static/js/main.89610dc5.js.map",
     "282.868b89fa.chunk.css.map": "/games_store/static/css/282.868b89fa.chunk.css.map",
     "282.6de46ab5.chunk.js.map": "/games_store/static/js/282.6de46ab5.chunk.js.map",
@@ -54,7 +54,7 @@
     "134.7c85a326.chunk.js.map": "/games_store/static/js/134.7c85a326.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef5b476c.css",
+    "static/css/main.40ab6b50.css",
     "static/js/main.89610dc5.js"
   ]
 }
