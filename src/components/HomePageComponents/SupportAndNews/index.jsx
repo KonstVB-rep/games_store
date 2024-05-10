@@ -2,7 +2,7 @@ import React from 'react';
 
 import cn from './styles.module.scss';
 
-const SupprtAndNews = () => {
+const SupportAndNews = () => {
     return (
         <div className={cn.section}>
             <div className={cn['section-item']}>
@@ -44,4 +44,4 @@ const SupprtAndNews = () => {
     );
 };
 
-export default SupprtAndNews;
+export default SupportAndNews;

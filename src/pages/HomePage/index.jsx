@@ -1,4 +1,4 @@
-import { About, List, Slider, SupprtAndNews } from 'components/HomePageComponents';
+import { About, List, Slider, SupportAndNews } from 'components/HomePageComponents';
 import Card from 'components/HomePageComponents/Card';
 import Spinner from 'components/ui/Spinner';
 import ErrorPage from 'pages/ErrorPage';
@@ -40,7 +40,7 @@ const Homepage = () => {
                     }
                     isLoading={false}
                 />
-                <SupprtAndNews />
+                <SupportAndNews />
             </div>
             <div className="bg-homepage"></div>
         </div>
