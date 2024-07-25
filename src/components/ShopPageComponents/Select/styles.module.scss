@@ -3,14 +3,15 @@
 .form {
     display: flex;
     align-items: center;
-    width: max-content;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 10px;
     margin-left: auto;
     padding: 15px;
 
     .label {
         @include v.flex-al-jc-center;
         height: 30px;
-        margin-right: 10px;
         padding-right: 10px;
         padding-left: 10px;
         font-weight: 500;
@@ -29,6 +30,18 @@
 
         option {
             color: black;
+        }
+    }
+}
+
+@media (width <= 480px) {
+    .form {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        .label,
+        .select {
+            width: 100%;
         }
     }
 }
