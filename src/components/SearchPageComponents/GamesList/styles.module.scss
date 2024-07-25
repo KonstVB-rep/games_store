@@ -1,5 +1,11 @@
 @use '../../../style/importer' as v;
 
+.title-searchpage {
+    padding-top: 20px;
+    font-size: clamp(1rem, 5vw, 2rem);
+    text-shadow: #2a89c7 2px 2px 5px;
+    text-transform: uppercase;
+}
 .games-list {
     position: relative;
     display: grid;

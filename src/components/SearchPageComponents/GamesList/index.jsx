@@ -14,13 +14,27 @@ const GamesList = memo(() => {
     const renderFoundGames = gamesList.map(({ name, id, img }) => (
         <Game key={id} name={name} id={id} img={img} />
     ));
+    if (status === 'idle') {
+        return (
+            <h1 className={cn['title-searchpage']}>
+                Enter the keyword from the name of the game and press the search button or the enter
+                key
+            </h1>
+        );
+    }
 
+    if (status === 'rejected') {
+        return (
+            <h1 className={cn['title-searchpage']}>Something went wrong!We are working on it</h1>
+        );
+    }
     if (status === 'fulfilled' && !renderFoundGames.length) {
-        return <h1>No results found for your query</h1>;
+        return <h1 className={cn['title-searchpage']}>No results found for your query</h1>;
     }
     return (
         <section>
             <h1 className="visually-hidden">List of game titles</h1>
+
             {status === 'loading' ? (
                 <Spinner />
             ) : (
